@@ -82,7 +82,7 @@ that is unavailable pretends to work.
 |---|---|---|---|
 | **Stables** (standalone) | `org.stablescouncil.stables` | Runs its own Minima node inside the app | The long-term product. One install, nothing else needed |
 | **Stables for Minima Core** | `org.stablescouncil.stables.core` | Uses your existing Minima Core node | People already running Minima Core who do not want a second node |
-| **Stables MiniDapp** | — | The node hosting MiniDapps | Installing into a Minima node you already run |
+| **Stables MiniDapp** | none, it is a package for a node | The node hosting MiniDapps | Installing into a Minima node you already run |
 
 Install one. The standalone app and the Core companion each expect to be the only Stables on the
 device; running several Minima nodes on one phone makes all of them slow.
