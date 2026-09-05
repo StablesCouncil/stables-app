@@ -29,7 +29,7 @@ Stables moves through four stages. Each stage is a channel of the same applicati
 
 ### What has been done
 
-- The showcase and the demo took Stables from a story to a working wallet on Minima: balances,
+- The showcase and the demo took Stables from a story to a working payment infrastructure on Minima: balances,
   activity, sending and receiving, a payment-protection model, a MiniDapp package and an Android app.
 - On 2026-09-03 the Council decided to publish the **standalone Android app first**, on its own,
   rather than hold it for a coordinated set. `v0.0.11.38` was the first published test build;
