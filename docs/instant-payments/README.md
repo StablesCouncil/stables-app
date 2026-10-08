@@ -18,7 +18,7 @@ The current app implements these payment rules in ordinary software. The propose
 
 This means Minima KISS script code that checks withdrawal signatures which our proposed Java Card program can generate using SHA-256. The experimental signature scheme is called LX16. Its verification is split across five helper coins because the complete check is too large for one script's instruction limit.
 
-The simulator-generated signatures have passed the verifier in Minima's actual scripting engine. Altered messages, wrong keys and reused key indices were refused. This establishes the tested signature-verification mechanism, not an independent security endorsement of LX16 or proof that a complete transaction will be mined.
+The simulator-generated signatures have passed the verifier in Minima's actual scripting engine. Complete cumulative withdrawals have also now been mined on mainnet using those signatures, with all checks enabled. Altered signatures, repeated authorisations and payout attacks were refused. This establishes the tested mechanism; independent review of LX16 remains necessary.
 
 See the [signature cross-check](simcard/applet/results/lx16-crosscheck.md), [helper script](simcard/kiss/lx16_helper_K5_P255.kiss) and [signature implementation](simcard/applet/src/main/javacard/org/stables/card/Lx16.java).
 
@@ -36,11 +36,11 @@ Yes. The simulated applet can generate a withdrawal authorisation under laborato
 
 The existing Card-to-Savings mainnet test exercised the Stage 1 software-trusting covenants, authorised by a normal Minima wallet key. It established that those covenants can release vault tokens, restrict the payout and conserve amounts. It did not exercise the complete Stage 2 transaction that verifies the chip-compatible signature across helper inputs, records the redeemed withdrawal total, and releases vault funds through the proposed D1 and D2 path.
 
-The missing on-chain integration test can therefore use simulated-chip signatures and valueless mainnet test tokens now, once the revised covenant set and the governed experiment are ready. A mined success and the expected invalid-signature, repeated-authorisation and payout refusals would establish the tested Minima transaction path. Physical chip security remains a separate validation task. Hardware availability does not block this on-chain feasibility check.
+**That complete test has now passed.** On 2026-10-08, [CHIP-WITHDRAW-01-R4](simcard/evidence/CHIP-WITHDRAW-01-R4/CLOSURE_REPORT.md) mined four complete D1/D2 transactions with simulated-applet signatures and purpose-created valueless tokens. The first cumulative authorisation paid 250; the second authorisation totalled 290 and paid only 40 more. Both lab peers confirmed the same blocks. All eight invalid constructions were refused and never posted. The final reserve plus payouts conserved the original 600 units. Physical chip security remains a separate validation task.
 
 ## Evidence and its limits
 
-These are existing reports supplied with the snapshot. Preparing this documentation did not rerun the payment experiments or publish a transaction.
+The October 8 campaign below was executed in this session. Earlier reports remain supplied historical records; preparing this documentation does not rerun them or upgrade the deployed app vault.
 
 | Component | Supplied evidence | What it demonstrates |
 |---|---|---|
@@ -53,6 +53,7 @@ These are existing reports supplied with the snapshot. Preparing this documentat
 | Chip signature check | [LX16 cross-check](simcard/applet/results/lx16-crosscheck.md) | 39 checks, including live-node KISS dry runs accepting simulated-chip signatures and refusing invalid ones. |
 | Covenant branches | [82-case receipt](simcard/measure/receipts/balance_covenant_branches.json), [design section 5](simcard/docs/chip-balance-design.md) | Original branch logic measured in-process using Minima's own Java implementation; the signature core was also cross-checked on a live node. |
 | Cumulative withdrawal revision | [Revised script](simcard/kiss/balance/chip_account_v2_cumulative.kiss), [before/after simulator comparison](simcard/applet/results/prefix-check.md) | Simulator evidence for handling delayed and out-of-order authorisations. Full revised covenant branch validation is still required. |
+| Complete cumulative withdrawal on mainnet | [R4 closure](simcard/evidence/CHIP-WITHDRAW-01-R4/CLOSURE_REPORT.md), [frozen source](simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/), [exports](simcard/evidence/CHIP-WITHDRAW-01-R4/exports/), [validator and final state](simcard/evidence/CHIP-WITHDRAW-01-R4/closure.json) | Four complete D1/D2 transactions mined, eight attacks refused, payouts 250 + 40, reserve 310. Current baseline variants, with cumulative debit and without deferred caps/windows. |
 
 Older summary documents quote 40 unit tests and 47 relay cases. The supplied individual reports contain the later counts above. Their original dates and caveats remain relevant. The revised covenant comments refer to `d1-order-check.md`, which is absent from the supplied source snapshot; that referenced report is not presented here as verified evidence.
 
@@ -61,17 +62,18 @@ Older summary documents quote 40 unit tests and 47 relay cases. The supplied ind
 1. Install and validate the applet on real hardware, including secure randomness, memory, atomic writes, interruption recovery, communication and performance.
 2. Establish secure provisioning and certification that bind registered keys to the approved chip and software. Protect the balance and payment logic, not just the private key.
 3. Authenticate credits so a chip cannot accept fabricated funding or payments from an uncertified peer.
-4. Complete and test the revised covenant set, update its dependent addresses and registration bindings, and integrate chip authorisations into the app.
-5. Mine complete chip-authorised withdrawal transactions on Minima mainnet using valueless test tokens, verifying transaction-level execution budgets and output accounting. Simulated-chip signatures can supply the authorisations for this test; physical hardware is not required.
+4. Complete the other covenant branches and long-term availability checks, confirm production registration/address bindings, and integrate chip authorisations into the app.
+5. Extend the now-demonstrated mainnet withdrawal path to the complete production key-tree, renewal and application flows. The lab used eight registered applet public keys and tested two withdrawals; it did not validate every production branch or parameter.
 6. Obtain independent review of LX16 and the complete protocol and implementation before using real value.
 
-The cumulative withdrawal rule records how much a chip has authorised in total and pays only the difference from what the chain has already redeemed. Its full revised branch has not been remeasured. The complete chip-authorised withdrawal path has not been demonstrated by a mined mainnet transaction.
+The cumulative withdrawal rule records how much a chip has authorised in total and pays only the difference from what the chain has already redeemed. The complete revised D1/D2 baseline path is now demonstrated on mainnet for the named test cases. The original older covenant set still includes deferred controls and has not been fully revalidated as a whole.
 
-We have demonstrated the core technical mechanism for building this on Minima, assuming the hardware provides the required guarantees. We have not completed the proof of the final integrated system.
+We have demonstrated the complete tested Minima withdrawal mechanism, assuming the hardware and certification provide the required guarantees. Real hardware and the final integrated product remain unfinished.
 
 ## Documentation map
 
 - [Current chip-balance design](simcard/docs/chip-balance-design.md): funding, payments, withdrawals, certification, tested branches and outstanding checks.
+- [Complete mainnet withdrawal results](simcard/evidence/CHIP-WITHDRAW-01-R4/CLOSURE_REPORT.md), [prospective protocol](simcard/docs/CHIP-WITHDRAW-01-R4.md), [baseline candidate generator](simcard/measure/balance-baseline-covenants.mjs).
 - [Stage 1 load and withdrawal design](simcard/docs/step2-load-offload-design.md): the current software-trusting vault, including its security limits.
 - [Simulator package and hardware validation plan](simcard/docs/simulator-status.md).
 - [Card capability requirements](simcard/docs/card-capabilities.md).

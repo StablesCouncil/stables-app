@@ -1,0 +1,267 @@
+{
+  "label": "payout-redirect",
+  "spec": {
+    "inputs": [
+      "0xF3FDB1168EDEB61265DB91F2A7F9F6050A3AEE45236A278F3C5272C1A6AA7487",
+      "0x3B3E1DD07658DB9B714E3A6D87B9BB8DB8D94F72D8262AECAF3F23D1E14236C2"
+    ],
+    "outputs": [
+      {
+        "address": "0x45F60E45D0C29DEDAE46EF0692C94FF037B42E820C8F1FE55094764DE121D238",
+        "amount": "1",
+        "tokenid": "0x1576E8DBE524C68DFEEDE9E13D2528D0DFF274E377DE8364217735E7286E0FBE",
+        "storestate": true
+      },
+      {
+        "address": "0x5B59017F939D158E08D988B7C61527E1E7C4B1118324C8D150B1C14661587BAD",
+        "amount": "250.00000000",
+        "tokenid": "0xF5F086FAC1E0D8BD9FA65A1652146BEEF702F57EC0F6B7AE62395F36A43636E6",
+        "storestate": false
+      },
+      {
+        "address": "0xE1233B0EC0E0C63146B8B3334F18E55BC5701FD5659A33970AA337A489489FBE",
+        "amount": "350.00000000",
+        "tokenid": "0xF5F086FAC1E0D8BD9FA65A1652146BEEF702F57EC0F6B7AE62395F36A43636E6",
+        "storestate": false
+      }
+    ],
+    "state": {
+      "9": "10",
+      "29": "2355473",
+      "120": "0x872255ED72437B5418231C21B506CEA3B9A958471328C72D9FBAB243C2A5C289214475F22FF12C60560163D82BC101E06B80B5B48194B0E15FA78A741380E63A43430334EFB41876B9612BF1618EC1EA82A6EC3DC8C085507C98AB0A32D6AB1A3A26085A23B5B9CA05FCBBBCB9EA42A7C41AB392EB1FE1825A3CDB12A9DAAC8C8D95DF8D3DBC5E5E9F0A67ED4124F346BCD1FEC78ADF3A2E917AACB03F2B538572A0229117D478FB6337D2CB46E90867519DC9B065E8E3A9A776F19A49821B5D000000010000000DF84758000000000100000005D21DBA0000000000000000000000000000000000000000000000000000000000000000001C",
+      "201": "0x0000000005D21DBA00",
+      "202": "0x45F60E45D0C29DEDAE46EF0692C94FF037B42E820C8F1FE55094764DE121D238"
+    }
+  },
+  "before": {
+    "0xF3FDB1168EDEB61265DB91F2A7F9F6050A3AEE45236A278F3C5272C1A6AA7487": {
+      "coinid": "0xF3FDB1168EDEB61265DB91F2A7F9F6050A3AEE45236A278F3C5272C1A6AA7487",
+      "amount": "0.00000000000000000000000000000000000000000001",
+      "address": "0xCEC0FE367EF9CA378207273D390277E0DD4C34D9C4FBAC3494C4CB4B1BEAEC2E",
+      "miniaddress": "MxG086EZ3V3CVNPP8RZ41P77KSG4TV0RY639ME4VEM39564PD5HNQNC5P56TWTA",
+      "tokenid": "0x1576E8DBE524C68DFEEDE9E13D2528D0DFF274E377DE8364217735E7286E0FBE",
+      "token": {
+        "name": {
+          "name": "CHIP-WITHDRAW-01-R2 marker",
+          "description": "Valueless Minima experiment. No redemption value."
+        },
+        "coinid": "0x6D3D5B13AA86BD17EDACC7D3ADA75C8CE1C3E3F3DA821EE3A31BA56D60A1F1C1",
+        "total": "10",
+        "decimals": 0,
+        "script": "RETURN TRUE",
+        "totalamount": "0.0000000000000000000000000000000000000000001",
+        "scale": "44",
+        "created": "2355446",
+        "tokenid": "0x1576E8DBE524C68DFEEDE9E13D2528D0DFF274E377DE8364217735E7286E0FBE"
+      },
+      "tokenamount": "1",
+      "storestate": false,
+      "state": [],
+      "spent": false,
+      "mmrentry": "1726982",
+      "created": "2355472",
+      "age": "1"
+    },
+    "0x3B3E1DD07658DB9B714E3A6D87B9BB8DB8D94F72D8262AECAF3F23D1E14236C2": {
+      "coinid": "0x3B3E1DD07658DB9B714E3A6D87B9BB8DB8D94F72D8262AECAF3F23D1E14236C2",
+      "amount": "0.0000000000000000000000000000000006",
+      "address": "0xE1233B0EC0E0C63146B8B3334F18E55BC5701FD5659A33970AA337A489489FBE",
+      "miniaddress": "MxG08714CTGTG70ZZZKDE5J6D7HHPARZYZ1VYB5J8PPE2Y36UW8WW4VNQCEDE1T",
+      "tokenid": "0xF5F086FAC1E0D8BD9FA65A1652146BEEF702F57EC0F6B7AE62395F36A43636E6",
+      "token": {
+        "name": {
+          "name": "CHIP-WITHDRAW-01-R2 value",
+          "description": "Valueless Minima experiment. No redemption value."
+        },
+        "coinid": "0xB222CE481FED0C1999938E055BDE4FE34B915A89AC3296AF55A5B9A325F9A049",
+        "total": "1000",
+        "decimals": 8,
+        "script": "RETURN TRUE",
+        "totalamount": "0.000000000000000000000000000000001",
+        "scale": "36",
+        "created": "2355450",
+        "tokenid": "0xF5F086FAC1E0D8BD9FA65A1652146BEEF702F57EC0F6B7AE62395F36A43636E6"
+      },
+      "tokenamount": "600",
+      "storestate": false,
+      "state": [],
+      "spent": false,
+      "mmrentry": "1726968",
+      "created": "2355459",
+      "age": "14"
+    }
+  },
+  "flags": {
+    "basic": true,
+    "signatures": true,
+    "mmrproofs": true,
+    "scripts": false
+  },
+  "txncheck": {
+    "coins": [
+      {
+        "tokenid": "0x1576E8DBE524C68DFEEDE9E13D2528D0DFF274E377DE8364217735E7286E0FBE",
+        "input": "0.00000000000000000000000000000000000000000001",
+        "output": "0.00000000000000000000000000000000000000000001",
+        "difference": "0"
+      },
+      {
+        "tokenid": "0xF5F086FAC1E0D8BD9FA65A1652146BEEF702F57EC0F6B7AE62395F36A43636E6",
+        "input": "0.0000000000000000000000000000000006",
+        "output": "0.0000000000000000000000000000000006",
+        "difference": "0"
+      }
+    ],
+    "tokens": 2,
+    "inputs": 2,
+    "outputs": 3,
+    "burn": "0",
+    "validamounts": true,
+    "signatures": 0,
+    "valid": {
+      "basic": true,
+      "signatures": true,
+      "mmrproofs": true,
+      "scripts": false
+    }
+  },
+  "exportSha256": "743db58e1aec11f9b6525128dfaa447088b0c1743f1ab12c75015e22e816e6ac",
+  "exportBytes": 5284,
+  "transactionid": "0x0327AA1B3BCB3AC0033AD5C69729582E80EA8C8588EEA9F1D7A8DA5A1E03AA53",
+  "posted": false,
+  "attribution": [
+    {
+      "input": 0,
+      "success": true,
+      "instructions": 52,
+      "exception": "",
+      "failedClause": null
+    },
+    {
+      "input": 1,
+      "success": false,
+      "instructions": 128,
+      "exception": "",
+      "failedClause": "INST[121] - ASSERT ( function:GETOUTADDR, params:[1] EQ function:SUBSET, params:[96, 128, variable:nr] )"
+    }
+  ],
+  "after": {
+    "0xF3FDB1168EDEB61265DB91F2A7F9F6050A3AEE45236A278F3C5272C1A6AA7487": {
+      "primary": {
+        "coinid": "0xF3FDB1168EDEB61265DB91F2A7F9F6050A3AEE45236A278F3C5272C1A6AA7487",
+        "amount": "0.00000000000000000000000000000000000000000001",
+        "address": "0xCEC0FE367EF9CA378207273D390277E0DD4C34D9C4FBAC3494C4CB4B1BEAEC2E",
+        "miniaddress": "MxG086EZ3V3CVNPP8RZ41P77KSG4TV0RY639ME4VEM39564PD5HNQNC5P56TWTA",
+        "tokenid": "0x1576E8DBE524C68DFEEDE9E13D2528D0DFF274E377DE8364217735E7286E0FBE",
+        "token": {
+          "name": {
+            "name": "CHIP-WITHDRAW-01-R2 marker",
+            "description": "Valueless Minima experiment. No redemption value."
+          },
+          "coinid": "0x6D3D5B13AA86BD17EDACC7D3ADA75C8CE1C3E3F3DA821EE3A31BA56D60A1F1C1",
+          "total": "10",
+          "decimals": 0,
+          "script": "RETURN TRUE",
+          "totalamount": "0.0000000000000000000000000000000000000000001",
+          "scale": "44",
+          "created": "2355446",
+          "tokenid": "0x1576E8DBE524C68DFEEDE9E13D2528D0DFF274E377DE8364217735E7286E0FBE"
+        },
+        "tokenamount": "1",
+        "storestate": false,
+        "state": [],
+        "spent": false,
+        "mmrentry": "1726982",
+        "created": "2355472",
+        "age": "1"
+      },
+      "witness": {
+        "coinid": "0xF3FDB1168EDEB61265DB91F2A7F9F6050A3AEE45236A278F3C5272C1A6AA7487",
+        "amount": "0.00000000000000000000000000000000000000000001",
+        "address": "0xCEC0FE367EF9CA378207273D390277E0DD4C34D9C4FBAC3494C4CB4B1BEAEC2E",
+        "miniaddress": "MxG086EZ3V3CVNPP8RZ41P77KSG4TV0RY639ME4VEM39564PD5HNQNC5P56TWTA",
+        "tokenid": "0x1576E8DBE524C68DFEEDE9E13D2528D0DFF274E377DE8364217735E7286E0FBE",
+        "token": {
+          "name": {
+            "name": "CHIP-WITHDRAW-01-R2 marker",
+            "description": "Valueless Minima experiment. No redemption value."
+          },
+          "coinid": "0x6D3D5B13AA86BD17EDACC7D3ADA75C8CE1C3E3F3DA821EE3A31BA56D60A1F1C1",
+          "total": "10",
+          "decimals": 0,
+          "script": "RETURN TRUE",
+          "totalamount": "0.0000000000000000000000000000000000000000001",
+          "scale": "44",
+          "created": "2355446",
+          "tokenid": "0x1576E8DBE524C68DFEEDE9E13D2528D0DFF274E377DE8364217735E7286E0FBE"
+        },
+        "tokenamount": "1",
+        "storestate": false,
+        "state": [],
+        "spent": false,
+        "mmrentry": "1726982",
+        "created": "2355472",
+        "age": "1"
+      }
+    },
+    "0x3B3E1DD07658DB9B714E3A6D87B9BB8DB8D94F72D8262AECAF3F23D1E14236C2": {
+      "primary": {
+        "coinid": "0x3B3E1DD07658DB9B714E3A6D87B9BB8DB8D94F72D8262AECAF3F23D1E14236C2",
+        "amount": "0.0000000000000000000000000000000006",
+        "address": "0xE1233B0EC0E0C63146B8B3334F18E55BC5701FD5659A33970AA337A489489FBE",
+        "miniaddress": "MxG08714CTGTG70ZZZKDE5J6D7HHPARZYZ1VYB5J8PPE2Y36UW8WW4VNQCEDE1T",
+        "tokenid": "0xF5F086FAC1E0D8BD9FA65A1652146BEEF702F57EC0F6B7AE62395F36A43636E6",
+        "token": {
+          "name": {
+            "name": "CHIP-WITHDRAW-01-R2 value",
+            "description": "Valueless Minima experiment. No redemption value."
+          },
+          "coinid": "0xB222CE481FED0C1999938E055BDE4FE34B915A89AC3296AF55A5B9A325F9A049",
+          "total": "1000",
+          "decimals": 8,
+          "script": "RETURN TRUE",
+          "totalamount": "0.000000000000000000000000000000001",
+          "scale": "36",
+          "created": "2355450",
+          "tokenid": "0xF5F086FAC1E0D8BD9FA65A1652146BEEF702F57EC0F6B7AE62395F36A43636E6"
+        },
+        "tokenamount": "600",
+        "storestate": false,
+        "state": [],
+        "spent": false,
+        "mmrentry": "1726968",
+        "created": "2355459",
+        "age": "14"
+      },
+      "witness": {
+        "coinid": "0x3B3E1DD07658DB9B714E3A6D87B9BB8DB8D94F72D8262AECAF3F23D1E14236C2",
+        "amount": "0.0000000000000000000000000000000006",
+        "address": "0xE1233B0EC0E0C63146B8B3334F18E55BC5701FD5659A33970AA337A489489FBE",
+        "miniaddress": "MxG08714CTGTG70ZZZKDE5J6D7HHPARZYZ1VYB5J8PPE2Y36UW8WW4VNQCEDE1T",
+        "tokenid": "0xF5F086FAC1E0D8BD9FA65A1652146BEEF702F57EC0F6B7AE62395F36A43636E6",
+        "token": {
+          "name": {
+            "name": "CHIP-WITHDRAW-01-R2 value",
+            "description": "Valueless Minima experiment. No redemption value."
+          },
+          "coinid": "0xB222CE481FED0C1999938E055BDE4FE34B915A89AC3296AF55A5B9A325F9A049",
+          "total": "1000",
+          "decimals": 8,
+          "script": "RETURN TRUE",
+          "totalamount": "0.000000000000000000000000000000001",
+          "scale": "36",
+          "created": "2355450",
+          "tokenid": "0xF5F086FAC1E0D8BD9FA65A1652146BEEF702F57EC0F6B7AE62395F36A43636E6"
+        },
+        "tokenamount": "600",
+        "storestate": false,
+        "state": [],
+        "spent": false,
+        "mmrentry": "1726968",
+        "created": "2355459",
+        "age": "14"
+      }
+    }
+  },
+  "deleted": true
+}

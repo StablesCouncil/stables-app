@@ -1,0 +1,891 @@
+{
+  "runId": "CHIP-WITHDRAW-01-R4",
+  "at": "2026-10-08T10:18:42.915Z",
+  "achieved": "L2 for the named complete baseline cumulative withdrawal controls",
+  "tests": {
+    "setup": {
+      "flags": {
+        "basic": true,
+        "signatures": true,
+        "mmrproofs": true,
+        "scripts": true
+      },
+      "posted": true,
+      "exportBytes": 10926,
+      "transactionid": "0x2B8AA08933766B8EA7FCB6DE66FF6E4DAE6BCC7A1D8E6B30CB68CE4996E0BED2",
+      "canonical": {
+        "block": "2355455",
+        "txpowid": "0x000066369454D39A25E961745700D734F6CF21E156DE6E345853839AD796A8ED"
+      },
+      "attribution": [
+        {
+          "input": 0,
+          "success": true,
+          "instructions": 3,
+          "exception": "",
+          "failedClause": null
+        },
+        {
+          "input": 1,
+          "success": true,
+          "instructions": 3,
+          "exception": "",
+          "failedClause": null
+        }
+      ]
+    },
+    "register": {
+      "flags": {
+        "basic": true,
+        "signatures": true,
+        "mmrproofs": true,
+        "scripts": true
+      },
+      "posted": true,
+      "exportBytes": 6509,
+      "transactionid": "0x164BCCACCD75E174DE8473CF639A17C5ACF69F47BBAF2D550977281A66212D83",
+      "canonical": {
+        "block": "2355457",
+        "txpowid": "0x000055CD999EB1F5CF4D65FEEB845194FB56DE96383AB8768C65B4FDA495FFC6"
+      },
+      "attribution": [
+        {
+          "input": 0,
+          "success": true,
+          "instructions": 66,
+          "exception": "",
+          "failedClause": null
+        }
+      ]
+    },
+    "fund": {
+      "flags": {
+        "basic": true,
+        "signatures": true,
+        "mmrproofs": true,
+        "scripts": true
+      },
+      "posted": true,
+      "exportBytes": 11194,
+      "transactionid": "0xE1D98FA8BEEF08D975C561F1046842B4817D9DAA9B6B0862EDE82336F5B31ACA",
+      "canonical": {
+        "block": "2355459",
+        "txpowid": "0x00003494DEE0761F0F4B043178E4AE7819BCDA7639C3A51931F560A3999B77BE"
+      },
+      "attribution": [
+        {
+          "input": 0,
+          "success": true,
+          "instructions": 110,
+          "exception": "",
+          "failedClause": null
+        },
+        {
+          "input": 1,
+          "success": true,
+          "instructions": 3,
+          "exception": "",
+          "failedClause": null
+        }
+      ]
+    },
+    "bad-secret": {
+      "flags": {
+        "basic": true,
+        "signatures": true,
+        "mmrproofs": true,
+        "scripts": false
+      },
+      "posted": false,
+      "exportBytes": 20264,
+      "transactionid": "0xC10F4EB9B70D1E92B11D5929D478902EBCF120E50AD842D52A7A1DA9479A7CC8",
+      "attribution": [
+        {
+          "input": 0,
+          "success": true,
+          "instructions": 377,
+          "exception": "",
+          "failedClause": null
+        },
+        {
+          "input": 1,
+          "success": false,
+          "instructions": 798,
+          "exception": "",
+          "failedClause": "INST[782] - ASSERT ( function:SHA2, params:[variable:t] EQ function:SUBSET, params:[( variable:c * 32 ), ( ( variable:c * 32 ) + 32 ), function:STATE, params:[( variable:p + 2 )]] )"
+        },
+        {
+          "input": 2,
+          "success": true,
+          "instructions": 800,
+          "exception": "",
+          "failedClause": null
+        },
+        {
+          "input": 3,
+          "success": true,
+          "instructions": 800,
+          "exception": "",
+          "failedClause": null
+        },
+        {
+          "input": 4,
+          "success": true,
+          "instructions": 800,
+          "exception": "",
+          "failedClause": null
+        },
+        {
+          "input": 5,
+          "success": true,
+          "instructions": 800,
+          "exception": "",
+          "failedClause": null
+        }
+      ]
+    },
+    "bad-complement": {
+      "flags": {
+        "basic": true,
+        "signatures": true,
+        "mmrproofs": true,
+        "scripts": false
+      },
+      "posted": false,
+      "exportBytes": 20268,
+      "transactionid": "0x5DF1D9C85D9968577311CF66E76E8683508B0D986D96FFC5D93A48D55254354F",
+      "attribution": [
+        {
+          "input": 0,
+          "success": true,
+          "instructions": 377,
+          "exception": "",
+          "failedClause": null
+        },
+        {
+          "input": 1,
+          "success": false,
+          "instructions": 798,
+          "exception": "",
+          "failedClause": "INST[782] - ASSERT ( function:SHA2, params:[variable:t] EQ function:SUBSET, params:[( variable:c * 32 ), ( ( variable:c * 32 ) + 32 ), function:STATE, params:[( variable:p + 2 )]] )"
+        },
+        {
+          "input": 2,
+          "success": true,
+          "instructions": 800,
+          "exception": "",
+          "failedClause": null
+        },
+        {
+          "input": 3,
+          "success": true,
+          "instructions": 800,
+          "exception": "",
+          "failedClause": null
+        },
+        {
+          "input": 4,
+          "success": true,
+          "instructions": 800,
+          "exception": "",
+          "failedClause": null
+        },
+        {
+          "input": 5,
+          "success": true,
+          "instructions": 800,
+          "exception": "",
+          "failedClause": null
+        }
+      ]
+    },
+    "release-redirect": {
+      "flags": {
+        "basic": true,
+        "signatures": true,
+        "mmrproofs": true,
+        "scripts": false
+      },
+      "posted": false,
+      "exportBytes": 20270,
+      "transactionid": "0x3B01F6213B02BE42E7DC83D17166565545B4A3E19F5770B24BDDEA2A26375328",
+      "attribution": [
+        {
+          "input": 0,
+          "success": false,
+          "instructions": 377,
+          "exception": "",
+          "failedClause": "INST[371] - RETURN function:VERIFYOUT, params:[0, variable:q, 1, global:@TOKENID, FALSE]"
+        },
+        {
+          "input": 1,
+          "success": true,
+          "instructions": 800,
+          "exception": "",
+          "failedClause": null
+        },
+        {
+          "input": 2,
+          "success": true,
+          "instructions": 800,
+          "exception": "",
+          "failedClause": null
+        },
+        {
+          "input": 3,
+          "success": true,
+          "instructions": 800,
+          "exception": "",
+          "failedClause": null
+        },
+        {
+          "input": 4,
+          "success": true,
+          "instructions": 800,
+          "exception": "",
+          "failedClause": null
+        },
+        {
+          "input": 5,
+          "success": true,
+          "instructions": 800,
+          "exception": "",
+          "failedClause": null
+        }
+      ]
+    },
+    "d1a": {
+      "flags": {
+        "basic": true,
+        "signatures": true,
+        "mmrproofs": true,
+        "scripts": true
+      },
+      "posted": true,
+      "exportBytes": 20257,
+      "transactionid": "0x3A9A27C59F9F654E64F66B961DF14B2F62959852D19D2BA1CC9CEC3A0A78D4F4",
+      "canonical": {
+        "block": "2355472",
+        "txpowid": "0x00004546A7BBEEFC58FB2E5E50EBAD66DEE19D7CC2B8E978FB5A6DE993563C7C"
+      },
+      "attribution": [
+        {
+          "input": 0,
+          "success": true,
+          "instructions": 377,
+          "exception": "",
+          "failedClause": null
+        },
+        {
+          "input": 1,
+          "success": true,
+          "instructions": 800,
+          "exception": "",
+          "failedClause": null
+        },
+        {
+          "input": 2,
+          "success": true,
+          "instructions": 800,
+          "exception": "",
+          "failedClause": null
+        },
+        {
+          "input": 3,
+          "success": true,
+          "instructions": 800,
+          "exception": "",
+          "failedClause": null
+        },
+        {
+          "input": 4,
+          "success": true,
+          "instructions": 800,
+          "exception": "",
+          "failedClause": null
+        },
+        {
+          "input": 5,
+          "success": true,
+          "instructions": 800,
+          "exception": "",
+          "failedClause": null
+        }
+      ]
+    },
+    "payout-redirect": {
+      "flags": {
+        "basic": true,
+        "signatures": true,
+        "mmrproofs": true,
+        "scripts": false
+      },
+      "posted": false,
+      "exportBytes": 5284,
+      "transactionid": "0x0327AA1B3BCB3AC0033AD5C69729582E80EA8C8588EEA9F1D7A8DA5A1E03AA53",
+      "attribution": [
+        {
+          "input": 0,
+          "success": true,
+          "instructions": 52,
+          "exception": "",
+          "failedClause": null
+        },
+        {
+          "input": 1,
+          "success": false,
+          "instructions": 128,
+          "exception": "",
+          "failedClause": "INST[121] - ASSERT ( function:GETOUTADDR, params:[1] EQ function:SUBSET, params:[96, 128, variable:nr] )"
+        }
+      ]
+    },
+    "payout-overpay": {
+      "flags": {
+        "basic": true,
+        "signatures": true,
+        "mmrproofs": true,
+        "scripts": false
+      },
+      "posted": false,
+      "exportBytes": 5283,
+      "transactionid": "0x1DDD305D8E954D94DE0F0EE32AB9B5A563D9EF8AE6F602C30DE715C2B574A46B",
+      "attribution": [
+        {
+          "input": 0,
+          "success": true,
+          "instructions": 52,
+          "exception": "",
+          "failedClause": null
+        },
+        {
+          "input": 1,
+          "success": false,
+          "instructions": 120,
+          "exception": "",
+          "failedClause": "INST[115] - ASSERT ( ( variable:p * 100000000 ) EQ variable:y )"
+        }
+      ]
+    },
+    "reserve-skim": {
+      "flags": {
+        "basic": true,
+        "signatures": true,
+        "mmrproofs": true,
+        "scripts": false
+      },
+      "posted": false,
+      "exportBytes": 5281,
+      "transactionid": "0x13C1C977D70547F67725AE0BAF0F007A7948FB963A03DEF1AF4CAADDFFEFD2C0",
+      "attribution": [
+        {
+          "input": 0,
+          "success": true,
+          "instructions": 52,
+          "exception": "",
+          "failedClause": null
+        },
+        {
+          "input": 1,
+          "success": false,
+          "instructions": 157,
+          "exception": "",
+          "failedClause": "INST[148] - RETURN function:VERIFYOUT, params:[2, global:@ADDRESS, ( function:GETINAMT, params:[1] - variable:p ), global:@TOKENID, FALSE]"
+        }
+      ]
+    },
+    "d2a": {
+      "flags": {
+        "basic": true,
+        "signatures": true,
+        "mmrproofs": true,
+        "scripts": true
+      },
+      "posted": true,
+      "exportBytes": 5272,
+      "transactionid": "0x28671E918D0542A4EC01FAB12DF5342032C4A8A17239E519B584036A1661EF63",
+      "canonical": {
+        "block": "2355475",
+        "txpowid": "0x00004DE5CEFECDB5FAE4992F1E8DAF055D32BB9127173429A662EBFCA9E2F2E2"
+      },
+      "attribution": [
+        {
+          "input": 0,
+          "success": true,
+          "instructions": 52,
+          "exception": "",
+          "failedClause": null
+        },
+        {
+          "input": 1,
+          "success": true,
+          "instructions": 157,
+          "exception": "",
+          "failedClause": null
+        }
+      ]
+    },
+    "replay-voucher1": {
+      "flags": {
+        "basic": true,
+        "signatures": true,
+        "mmrproofs": true,
+        "scripts": false
+      },
+      "posted": false,
+      "exportBytes": 21773,
+      "transactionid": "0xDE9488F9E0DC2FB35488373C5CCCF671DE8AA6CC61EB4046CD2D4B17E822EAF8",
+      "attribution": [
+        {
+          "input": 0,
+          "success": false,
+          "instructions": 306,
+          "exception": "",
+          "failedClause": "INST[299] - ASSERT ( variable:i GT function:NUMBER, params:[function:SUBSET, params:[204, 208, variable:r]] )"
+        },
+        {
+          "input": 1,
+          "success": true,
+          "instructions": 800,
+          "exception": "",
+          "failedClause": null
+        },
+        {
+          "input": 2,
+          "success": true,
+          "instructions": 800,
+          "exception": "",
+          "failedClause": null
+        },
+        {
+          "input": 3,
+          "success": true,
+          "instructions": 800,
+          "exception": "",
+          "failedClause": null
+        },
+        {
+          "input": 4,
+          "success": true,
+          "instructions": 800,
+          "exception": "",
+          "failedClause": null
+        },
+        {
+          "input": 5,
+          "success": true,
+          "instructions": 800,
+          "exception": "",
+          "failedClause": null
+        }
+      ]
+    },
+    "fake-release": {
+      "flags": {
+        "basic": true,
+        "signatures": true,
+        "mmrproofs": true,
+        "scripts": false
+      },
+      "posted": false,
+      "exportBytes": 8674,
+      "transactionid": "0x2735B2D007266B14DB855A6AA5F89CE271039C2FD56BC9B47B0E92498125FAEF",
+      "attribution": [
+        {
+          "input": 0,
+          "success": false,
+          "instructions": 48,
+          "exception": "",
+          "failedClause": "INST[47] - RETURN FALSE"
+        },
+        {
+          "input": 1,
+          "success": false,
+          "instructions": 89,
+          "exception": "",
+          "failedClause": "INST[65] - ASSERT ( function:GETINADDR, params:[0] EQ function:ADDRESS, params:[( ( ( ( ( ( LET h= + function:STRING, params:[function:SHA2, params:[function:CONCAT, params:[variable:nr, variable:ex]]] ) +  LET acc= ) + function:STRING, params:[function:STATE, params:[202]] ) +  LET vlt= ) + function:STRING, params:[global:@ADDRESS] ) +  LET nr=STATE(120) LET ex=STATE(201) ASSERT SHA2(CONCAT(nr ex)) EQ h ASSERT @INPUT EQ 0 ASSERT @TOTIN EQ 2 ASSERT @TOTOUT EQ 3 ASSERT @TOKENID EQ 0x1576E8DBE524C68DFEEDE9E13D2528D0DFF274E377DE8364217735E7286E0FBE ASSERT GETINADDR(1) EQ vlt ASSERT STATE(9) EQ 10 RETURN VERIFYOUT(0 acc 1 @TOKENID TRUE) )] )"
+        }
+      ]
+    },
+    "d1b": {
+      "flags": {
+        "basic": true,
+        "signatures": true,
+        "mmrproofs": true,
+        "scripts": true
+      },
+      "posted": true,
+      "exportBytes": 21761,
+      "transactionid": "0x3CB9701B1AB629731F6075FF130A72A1FF1CA4C521624D089B3F841277402AEA",
+      "canonical": {
+        "block": "2355478",
+        "txpowid": "0x000011258891AC953A9CCD33CA3616F821992E5A20D6C8B77FBA066B27AA3C0A"
+      },
+      "attribution": [
+        {
+          "input": 0,
+          "success": true,
+          "instructions": 377,
+          "exception": "",
+          "failedClause": null
+        },
+        {
+          "input": 1,
+          "success": true,
+          "instructions": 800,
+          "exception": "",
+          "failedClause": null
+        },
+        {
+          "input": 2,
+          "success": true,
+          "instructions": 800,
+          "exception": "",
+          "failedClause": null
+        },
+        {
+          "input": 3,
+          "success": true,
+          "instructions": 800,
+          "exception": "",
+          "failedClause": null
+        },
+        {
+          "input": 4,
+          "success": true,
+          "instructions": 800,
+          "exception": "",
+          "failedClause": null
+        },
+        {
+          "input": 5,
+          "success": true,
+          "instructions": 800,
+          "exception": "",
+          "failedClause": null
+        }
+      ]
+    },
+    "d2b": {
+      "flags": {
+        "basic": true,
+        "signatures": true,
+        "mmrproofs": true,
+        "scripts": true
+      },
+      "posted": true,
+      "exportBytes": 5139,
+      "transactionid": "0x7A713692ECC5D5182173BA6E7F585211750C43AF5E0CC3149ED20E39879650C4",
+      "canonical": {
+        "block": "2355481",
+        "txpowid": "0x00004017C88D393F1B05DB097105CAF4661BE06097C6AA1718E0722CEDA059CF"
+      },
+      "attribution": [
+        {
+          "input": 0,
+          "success": true,
+          "instructions": 52,
+          "exception": "",
+          "failedClause": null
+        },
+        {
+          "input": 1,
+          "success": true,
+          "instructions": 157,
+          "exception": "",
+          "failedClause": null
+        }
+      ]
+    }
+  },
+  "end": {
+    "9105": {
+      "account": {
+        "coinid": "0x7D04FFFB3A7F9921C0F5B7194170BDE37514B27F1920EE31DE8A21611A77C0FA",
+        "amount": "0.00000000000000000000000000000000000000000001",
+        "address": "0x45F60E45D0C29DEDAE46EF0692C94FF037B42E820C8F1FE55094764DE121D238",
+        "miniaddress": "MxG0825UZ74BK62JNMQSHNF0Q9CWJVG6UQ2T0GCHSFUAK4KEP6U28EW706AKWKE",
+        "tokenid": "0x1576E8DBE524C68DFEEDE9E13D2528D0DFF274E377DE8364217735E7286E0FBE",
+        "token": {
+          "name": {
+            "name": "CHIP-WITHDRAW-01-R2 marker",
+            "description": "Valueless Minima experiment. No redemption value."
+          },
+          "coinid": "0x6D3D5B13AA86BD17EDACC7D3ADA75C8CE1C3E3F3DA821EE3A31BA56D60A1F1C1",
+          "total": "10",
+          "decimals": 0,
+          "script": "RETURN TRUE",
+          "totalamount": "0.0000000000000000000000000000000000000000001",
+          "scale": "44",
+          "created": "2355446",
+          "tokenid": "0x1576E8DBE524C68DFEEDE9E13D2528D0DFF274E377DE8364217735E7286E0FBE"
+        },
+        "tokenamount": "1",
+        "storestate": true,
+        "state": [
+          {
+            "port": 9,
+            "type": 2,
+            "data": "10"
+          },
+          {
+            "port": 29,
+            "type": 2,
+            "data": "2355479"
+          },
+          {
+            "port": 120,
+            "type": 1,
+            "data": "0x872255ED72437B5418231C21B506CEA3B9A958471328C72D9FBAB243C2A5C289214475F22FF12C60560163D82BC101E06B80B5B48194B0E15FA78A741380E63A43430334EFB41876B9612BF1618EC1EA82A6EC3DC8C085507C98AB0A32D6AB1A3A26085A23B5B9CA05FCBBBCB9EA42A7C41AB392EB1FE1825A3CDB12A9DAAC8C8D95DF8D3DBC5E5E9F0A67ED4124F346BCD1FEC78ADF3A2E917AACB03F2B538572A0229117D478FB6337D2CB46E90867519DC9B065E8E3A9A776F19A49821B5D000000010000000DF84758000000000200000006C088E20000000000000000000000000000000000000000000000000000000000000000001C"
+          },
+          {
+            "port": 201,
+            "type": 1,
+            "data": "0x0000000000EE6B2800"
+          },
+          {
+            "port": 202,
+            "type": 1,
+            "data": "0x45F60E45D0C29DEDAE46EF0692C94FF037B42E820C8F1FE55094764DE121D238"
+          }
+        ],
+        "spent": false,
+        "mmrentry": "1727011",
+        "created": "2355481",
+        "age": "1"
+      },
+      "vault": {
+        "coinid": "0xFD6A57243299542C561C0AC0E3DFD0E6FCB733B196178F0E2A763F2EA1D455A0",
+        "amount": "0.00000000000000000000000000000000031",
+        "address": "0xE1233B0EC0E0C63146B8B3334F18E55BC5701FD5659A33970AA337A489489FBE",
+        "miniaddress": "MxG08714CTGTG70ZZZKDE5J6D7HHPARZYZ1VYB5J8PPE2Y36UW8WW4VNQCEDE1T",
+        "tokenid": "0xF5F086FAC1E0D8BD9FA65A1652146BEEF702F57EC0F6B7AE62395F36A43636E6",
+        "token": {
+          "name": {
+            "name": "CHIP-WITHDRAW-01-R2 value",
+            "description": "Valueless Minima experiment. No redemption value."
+          },
+          "coinid": "0xB222CE481FED0C1999938E055BDE4FE34B915A89AC3296AF55A5B9A325F9A049",
+          "total": "1000",
+          "decimals": 8,
+          "script": "RETURN TRUE",
+          "totalamount": "0.000000000000000000000000000000001",
+          "scale": "36",
+          "created": "2355450",
+          "tokenid": "0xF5F086FAC1E0D8BD9FA65A1652146BEEF702F57EC0F6B7AE62395F36A43636E6"
+        },
+        "tokenamount": "310",
+        "storestate": false,
+        "state": [],
+        "spent": false,
+        "mmrentry": "1727013",
+        "created": "2355481",
+        "age": "1"
+      },
+      "payouts": [
+        {
+          "coinid": "0x79B554BC9582FC5FEBD0DE37D9CC51328511F6F5ED44848107E92C427581F829",
+          "amount": "0.00000000000000000000000000000000025",
+          "address": "0x3A26085A23B5B9CA05FCBBBCB9EA42A7C41AB392EB1FE1825A3CDB12A9DAAC8C",
+          "miniaddress": "MxG081Q4Z45K8TYN750BV5RNWSUKGY7ZGDB74NB3VGZ4MHSRC9AJMYCHJPC762A",
+          "tokenid": "0xF5F086FAC1E0D8BD9FA65A1652146BEEF702F57EC0F6B7AE62395F36A43636E6",
+          "token": {
+            "name": {
+              "name": "CHIP-WITHDRAW-01-R2 value",
+              "description": "Valueless Minima experiment. No redemption value."
+            },
+            "coinid": "0xB222CE481FED0C1999938E055BDE4FE34B915A89AC3296AF55A5B9A325F9A049",
+            "total": "1000",
+            "decimals": 8,
+            "script": "RETURN TRUE",
+            "totalamount": "0.000000000000000000000000000000001",
+            "scale": "36",
+            "created": "2355450",
+            "tokenid": "0xF5F086FAC1E0D8BD9FA65A1652146BEEF702F57EC0F6B7AE62395F36A43636E6"
+          },
+          "tokenamount": "250",
+          "storestate": false,
+          "state": [],
+          "spent": false,
+          "mmrentry": "1726989",
+          "created": "2355475",
+          "age": "7"
+        },
+        {
+          "coinid": "0x6EA2E5C18518FB860C7660E144876FAA6C9EF109F7BCAE465E534DE5820EFDE4",
+          "amount": "0.00000000000000000000000000000000004",
+          "address": "0x3A26085A23B5B9CA05FCBBBCB9EA42A7C41AB392EB1FE1825A3CDB12A9DAAC8C",
+          "miniaddress": "MxG081Q4Z45K8TYN750BV5RNWSUKGY7ZGDB74NB3VGZ4MHSRC9AJMYCHJPC762A",
+          "tokenid": "0xF5F086FAC1E0D8BD9FA65A1652146BEEF702F57EC0F6B7AE62395F36A43636E6",
+          "token": {
+            "name": {
+              "name": "CHIP-WITHDRAW-01-R2 value",
+              "description": "Valueless Minima experiment. No redemption value."
+            },
+            "coinid": "0xB222CE481FED0C1999938E055BDE4FE34B915A89AC3296AF55A5B9A325F9A049",
+            "total": "1000",
+            "decimals": 8,
+            "script": "RETURN TRUE",
+            "totalamount": "0.000000000000000000000000000000001",
+            "scale": "36",
+            "created": "2355450",
+            "tokenid": "0xF5F086FAC1E0D8BD9FA65A1652146BEEF702F57EC0F6B7AE62395F36A43636E6"
+          },
+          "tokenamount": "40",
+          "storestate": false,
+          "state": [],
+          "spent": false,
+          "mmrentry": "1727012",
+          "created": "2355481",
+          "age": "1"
+        }
+      ],
+      "totalPaid": "290.00000000",
+      "backingConserved": "600.00000000"
+    },
+    "9205": {
+      "account": {
+        "coinid": "0x7D04FFFB3A7F9921C0F5B7194170BDE37514B27F1920EE31DE8A21611A77C0FA",
+        "amount": "0.00000000000000000000000000000000000000000001",
+        "address": "0x45F60E45D0C29DEDAE46EF0692C94FF037B42E820C8F1FE55094764DE121D238",
+        "miniaddress": "MxG0825UZ74BK62JNMQSHNF0Q9CWJVG6UQ2T0GCHSFUAK4KEP6U28EW706AKWKE",
+        "tokenid": "0x1576E8DBE524C68DFEEDE9E13D2528D0DFF274E377DE8364217735E7286E0FBE",
+        "token": {
+          "name": {
+            "name": "CHIP-WITHDRAW-01-R2 marker",
+            "description": "Valueless Minima experiment. No redemption value."
+          },
+          "coinid": "0x6D3D5B13AA86BD17EDACC7D3ADA75C8CE1C3E3F3DA821EE3A31BA56D60A1F1C1",
+          "total": "10",
+          "decimals": 0,
+          "script": "RETURN TRUE",
+          "totalamount": "0.0000000000000000000000000000000000000000001",
+          "scale": "44",
+          "created": "2355446",
+          "tokenid": "0x1576E8DBE524C68DFEEDE9E13D2528D0DFF274E377DE8364217735E7286E0FBE"
+        },
+        "tokenamount": "1",
+        "storestate": true,
+        "state": [
+          {
+            "port": 9,
+            "type": 2,
+            "data": "10"
+          },
+          {
+            "port": 29,
+            "type": 2,
+            "data": "2355479"
+          },
+          {
+            "port": 120,
+            "type": 1,
+            "data": "0x872255ED72437B5418231C21B506CEA3B9A958471328C72D9FBAB243C2A5C289214475F22FF12C60560163D82BC101E06B80B5B48194B0E15FA78A741380E63A43430334EFB41876B9612BF1618EC1EA82A6EC3DC8C085507C98AB0A32D6AB1A3A26085A23B5B9CA05FCBBBCB9EA42A7C41AB392EB1FE1825A3CDB12A9DAAC8C8D95DF8D3DBC5E5E9F0A67ED4124F346BCD1FEC78ADF3A2E917AACB03F2B538572A0229117D478FB6337D2CB46E90867519DC9B065E8E3A9A776F19A49821B5D000000010000000DF84758000000000200000006C088E20000000000000000000000000000000000000000000000000000000000000000001C"
+          },
+          {
+            "port": 201,
+            "type": 1,
+            "data": "0x0000000000EE6B2800"
+          },
+          {
+            "port": 202,
+            "type": 1,
+            "data": "0x45F60E45D0C29DEDAE46EF0692C94FF037B42E820C8F1FE55094764DE121D238"
+          }
+        ],
+        "spent": false,
+        "mmrentry": "1727011",
+        "created": "2355481",
+        "age": "1"
+      },
+      "vault": {
+        "coinid": "0xFD6A57243299542C561C0AC0E3DFD0E6FCB733B196178F0E2A763F2EA1D455A0",
+        "amount": "0.00000000000000000000000000000000031",
+        "address": "0xE1233B0EC0E0C63146B8B3334F18E55BC5701FD5659A33970AA337A489489FBE",
+        "miniaddress": "MxG08714CTGTG70ZZZKDE5J6D7HHPARZYZ1VYB5J8PPE2Y36UW8WW4VNQCEDE1T",
+        "tokenid": "0xF5F086FAC1E0D8BD9FA65A1652146BEEF702F57EC0F6B7AE62395F36A43636E6",
+        "token": {
+          "name": {
+            "name": "CHIP-WITHDRAW-01-R2 value",
+            "description": "Valueless Minima experiment. No redemption value."
+          },
+          "coinid": "0xB222CE481FED0C1999938E055BDE4FE34B915A89AC3296AF55A5B9A325F9A049",
+          "total": "1000",
+          "decimals": 8,
+          "script": "RETURN TRUE",
+          "totalamount": "0.000000000000000000000000000000001",
+          "scale": "36",
+          "created": "2355450",
+          "tokenid": "0xF5F086FAC1E0D8BD9FA65A1652146BEEF702F57EC0F6B7AE62395F36A43636E6"
+        },
+        "tokenamount": "310",
+        "storestate": false,
+        "state": [],
+        "spent": false,
+        "mmrentry": "1727013",
+        "created": "2355481",
+        "age": "1"
+      },
+      "payouts": [
+        {
+          "coinid": "0x79B554BC9582FC5FEBD0DE37D9CC51328511F6F5ED44848107E92C427581F829",
+          "amount": "0.00000000000000000000000000000000025",
+          "address": "0x3A26085A23B5B9CA05FCBBBCB9EA42A7C41AB392EB1FE1825A3CDB12A9DAAC8C",
+          "miniaddress": "MxG081Q4Z45K8TYN750BV5RNWSUKGY7ZGDB74NB3VGZ4MHSRC9AJMYCHJPC762A",
+          "tokenid": "0xF5F086FAC1E0D8BD9FA65A1652146BEEF702F57EC0F6B7AE62395F36A43636E6",
+          "token": {
+            "name": {
+              "name": "CHIP-WITHDRAW-01-R2 value",
+              "description": "Valueless Minima experiment. No redemption value."
+            },
+            "coinid": "0xB222CE481FED0C1999938E055BDE4FE34B915A89AC3296AF55A5B9A325F9A049",
+            "total": "1000",
+            "decimals": 8,
+            "script": "RETURN TRUE",
+            "totalamount": "0.000000000000000000000000000000001",
+            "scale": "36",
+            "created": "2355450",
+            "tokenid": "0xF5F086FAC1E0D8BD9FA65A1652146BEEF702F57EC0F6B7AE62395F36A43636E6"
+          },
+          "tokenamount": "250",
+          "storestate": false,
+          "state": [],
+          "spent": false,
+          "mmrentry": "1726989",
+          "created": "2355475",
+          "age": "7"
+        },
+        {
+          "coinid": "0x6EA2E5C18518FB860C7660E144876FAA6C9EF109F7BCAE465E534DE5820EFDE4",
+          "amount": "0.00000000000000000000000000000000004",
+          "address": "0x3A26085A23B5B9CA05FCBBBCB9EA42A7C41AB392EB1FE1825A3CDB12A9DAAC8C",
+          "miniaddress": "MxG081Q4Z45K8TYN750BV5RNWSUKGY7ZGDB74NB3VGZ4MHSRC9AJMYCHJPC762A",
+          "tokenid": "0xF5F086FAC1E0D8BD9FA65A1652146BEEF702F57EC0F6B7AE62395F36A43636E6",
+          "token": {
+            "name": {
+              "name": "CHIP-WITHDRAW-01-R2 value",
+              "description": "Valueless Minima experiment. No redemption value."
+            },
+            "coinid": "0xB222CE481FED0C1999938E055BDE4FE34B915A89AC3296AF55A5B9A325F9A049",
+            "total": "1000",
+            "decimals": 8,
+            "script": "RETURN TRUE",
+            "totalamount": "0.000000000000000000000000000000001",
+            "scale": "36",
+            "created": "2355450",
+            "tokenid": "0xF5F086FAC1E0D8BD9FA65A1652146BEEF702F57EC0F6B7AE62395F36A43636E6"
+          },
+          "tokenamount": "40",
+          "storestate": false,
+          "state": [],
+          "spent": false,
+          "mmrentry": "1727012",
+          "created": "2355481",
+          "age": "1"
+        }
+      ],
+      "totalPaid": "290.00000000",
+      "backingConserved": "600.00000000"
+    }
+  }
+}

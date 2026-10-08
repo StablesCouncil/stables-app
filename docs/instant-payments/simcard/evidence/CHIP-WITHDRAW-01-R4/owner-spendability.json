@@ -1,0 +1,64 @@
+{
+  "at": "2026-10-08T10:23:18.132656+00:00",
+  "method": "Confirmed payout coins are returned by the owning node sendable:true filter.",
+  "payouts": [
+    {
+      "coinid": "0x79B554BC9582FC5FEBD0DE37D9CC51328511F6F5ED44848107E92C427581F829",
+      "amount": "0.00000000000000000000000000000000025",
+      "address": "0x3A26085A23B5B9CA05FCBBBCB9EA42A7C41AB392EB1FE1825A3CDB12A9DAAC8C",
+      "miniaddress": "MxG081Q4Z45K8TYN750BV5RNWSUKGY7ZGDB74NB3VGZ4MHSRC9AJMYCHJPC762A",
+      "tokenid": "0xF5F086FAC1E0D8BD9FA65A1652146BEEF702F57EC0F6B7AE62395F36A43636E6",
+      "token": {
+        "name": {
+          "name": "CHIP-WITHDRAW-01-R2 value",
+          "description": "Valueless Minima experiment. No redemption value."
+        },
+        "coinid": "0xB222CE481FED0C1999938E055BDE4FE34B915A89AC3296AF55A5B9A325F9A049",
+        "total": "1000",
+        "decimals": 8,
+        "script": "RETURN TRUE",
+        "totalamount": "0.000000000000000000000000000000001",
+        "scale": "36",
+        "created": "2355450",
+        "tokenid": "0xF5F086FAC1E0D8BD9FA65A1652146BEEF702F57EC0F6B7AE62395F36A43636E6"
+      },
+      "tokenamount": "250",
+      "storestate": false,
+      "state": [],
+      "spent": false,
+      "mmrentry": "1726989",
+      "created": "2355475",
+      "age": "10"
+    },
+    {
+      "coinid": "0x6EA2E5C18518FB860C7660E144876FAA6C9EF109F7BCAE465E534DE5820EFDE4",
+      "amount": "0.00000000000000000000000000000000004",
+      "address": "0x3A26085A23B5B9CA05FCBBBCB9EA42A7C41AB392EB1FE1825A3CDB12A9DAAC8C",
+      "miniaddress": "MxG081Q4Z45K8TYN750BV5RNWSUKGY7ZGDB74NB3VGZ4MHSRC9AJMYCHJPC762A",
+      "tokenid": "0xF5F086FAC1E0D8BD9FA65A1652146BEEF702F57EC0F6B7AE62395F36A43636E6",
+      "token": {
+        "name": {
+          "name": "CHIP-WITHDRAW-01-R2 value",
+          "description": "Valueless Minima experiment. No redemption value."
+        },
+        "coinid": "0xB222CE481FED0C1999938E055BDE4FE34B915A89AC3296AF55A5B9A325F9A049",
+        "total": "1000",
+        "decimals": 8,
+        "script": "RETURN TRUE",
+        "totalamount": "0.000000000000000000000000000000001",
+        "scale": "36",
+        "created": "2355450",
+        "tokenid": "0xF5F086FAC1E0D8BD9FA65A1652146BEEF702F57EC0F6B7AE62395F36A43636E6"
+      },
+      "tokenamount": "40",
+      "storestate": false,
+      "state": [],
+      "spent": false,
+      "mmrentry": "1727012",
+      "created": "2355481",
+      "age": "4"
+    }
+  ],
+  "total": "290",
+  "pass": true
+}

@@ -1,0 +1,440 @@
+{
+  "0x925C36851F9A8D05C77EAA2F017B4A613FF71C91EF8AC9E5F39C8DFA0678814B": {
+    "primary": {
+      "coinid": "0x925C36851F9A8D05C77EAA2F017B4A613FF71C91EF8AC9E5F39C8DFA0678814B",
+      "amount": "0.00000000000000000000000000000000000000000001",
+      "address": "0x45F60E45D0C29DEDAE46EF0692C94FF037B42E820C8F1FE55094764DE121D238",
+      "miniaddress": "MxG0825UZ74BK62JNMQSHNF0Q9CWJVG6UQ2T0GCHSFUAK4KEP6U28EW706AKWKE",
+      "tokenid": "0x1576E8DBE524C68DFEEDE9E13D2528D0DFF274E377DE8364217735E7286E0FBE",
+      "token": {
+        "name": {
+          "name": "CHIP-WITHDRAW-01-R2 marker",
+          "description": "Valueless Minima experiment. No redemption value."
+        },
+        "coinid": "0x6D3D5B13AA86BD17EDACC7D3ADA75C8CE1C3E3F3DA821EE3A31BA56D60A1F1C1",
+        "total": "10",
+        "decimals": 0,
+        "script": "RETURN TRUE",
+        "totalamount": "0.0000000000000000000000000000000000000000001",
+        "scale": "44",
+        "created": "2355446",
+        "tokenid": "0x1576E8DBE524C68DFEEDE9E13D2528D0DFF274E377DE8364217735E7286E0FBE"
+      },
+      "tokenamount": "1",
+      "storestate": true,
+      "state": [
+        {
+          "port": 9,
+          "type": 2,
+          "data": "1"
+        },
+        {
+          "port": 120,
+          "type": 1,
+          "data": "0x872255ED72437B5418231C21B506CEA3B9A958471328C72D9FBAB243C2A5C289214475F22FF12C60560163D82BC101E06B80B5B48194B0E15FA78A741380E63A43430334EFB41876B9612BF1618EC1EA82A6EC3DC8C085507C98AB0A32D6AB1A3A26085A23B5B9CA05FCBBBCB9EA42A7C41AB392EB1FE1825A3CDB12A9DAAC8C8D95DF8D3DBC5E5E9F0A67ED4124F346BCD1FEC78ADF3A2E917AACB03F2B538572A0229117D478FB6337D2CB46E90867519DC9B065E8E3A9A776F19A49821B5D000000010000000DF847580000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001C"
+        }
+      ],
+      "spent": false,
+      "mmrentry": "1726967",
+      "created": "2355459",
+      "age": "11"
+    },
+    "witness": {
+      "coinid": "0x925C36851F9A8D05C77EAA2F017B4A613FF71C91EF8AC9E5F39C8DFA0678814B",
+      "amount": "0.00000000000000000000000000000000000000000001",
+      "address": "0x45F60E45D0C29DEDAE46EF0692C94FF037B42E820C8F1FE55094764DE121D238",
+      "miniaddress": "MxG0825UZ74BK62JNMQSHNF0Q9CWJVG6UQ2T0GCHSFUAK4KEP6U28EW706AKWKE",
+      "tokenid": "0x1576E8DBE524C68DFEEDE9E13D2528D0DFF274E377DE8364217735E7286E0FBE",
+      "token": {
+        "name": {
+          "name": "CHIP-WITHDRAW-01-R2 marker",
+          "description": "Valueless Minima experiment. No redemption value."
+        },
+        "coinid": "0x6D3D5B13AA86BD17EDACC7D3ADA75C8CE1C3E3F3DA821EE3A31BA56D60A1F1C1",
+        "total": "10",
+        "decimals": 0,
+        "script": "RETURN TRUE",
+        "totalamount": "0.0000000000000000000000000000000000000000001",
+        "scale": "44",
+        "created": "2355446",
+        "tokenid": "0x1576E8DBE524C68DFEEDE9E13D2528D0DFF274E377DE8364217735E7286E0FBE"
+      },
+      "tokenamount": "1",
+      "storestate": true,
+      "state": [
+        {
+          "port": 9,
+          "type": 2,
+          "data": "1"
+        },
+        {
+          "port": 120,
+          "type": 1,
+          "data": "0x872255ED72437B5418231C21B506CEA3B9A958471328C72D9FBAB243C2A5C289214475F22FF12C60560163D82BC101E06B80B5B48194B0E15FA78A741380E63A43430334EFB41876B9612BF1618EC1EA82A6EC3DC8C085507C98AB0A32D6AB1A3A26085A23B5B9CA05FCBBBCB9EA42A7C41AB392EB1FE1825A3CDB12A9DAAC8C8D95DF8D3DBC5E5E9F0A67ED4124F346BCD1FEC78ADF3A2E917AACB03F2B538572A0229117D478FB6337D2CB46E90867519DC9B065E8E3A9A776F19A49821B5D000000010000000DF847580000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001C"
+        }
+      ],
+      "spent": false,
+      "mmrentry": "1726967",
+      "created": "2355459",
+      "age": "11"
+    }
+  },
+  "0x3B3E1DD07658DB9B714E3A6D87B9BB8DB8D94F72D8262AECAF3F23D1E14236C2": {
+    "primary": {
+      "coinid": "0x3B3E1DD07658DB9B714E3A6D87B9BB8DB8D94F72D8262AECAF3F23D1E14236C2",
+      "amount": "0.0000000000000000000000000000000006",
+      "address": "0xE1233B0EC0E0C63146B8B3334F18E55BC5701FD5659A33970AA337A489489FBE",
+      "miniaddress": "MxG08714CTGTG70ZZZKDE5J6D7HHPARZYZ1VYB5J8PPE2Y36UW8WW4VNQCEDE1T",
+      "tokenid": "0xF5F086FAC1E0D8BD9FA65A1652146BEEF702F57EC0F6B7AE62395F36A43636E6",
+      "token": {
+        "name": {
+          "name": "CHIP-WITHDRAW-01-R2 value",
+          "description": "Valueless Minima experiment. No redemption value."
+        },
+        "coinid": "0xB222CE481FED0C1999938E055BDE4FE34B915A89AC3296AF55A5B9A325F9A049",
+        "total": "1000",
+        "decimals": 8,
+        "script": "RETURN TRUE",
+        "totalamount": "0.000000000000000000000000000000001",
+        "scale": "36",
+        "created": "2355450",
+        "tokenid": "0xF5F086FAC1E0D8BD9FA65A1652146BEEF702F57EC0F6B7AE62395F36A43636E6"
+      },
+      "tokenamount": "600",
+      "storestate": false,
+      "state": [],
+      "spent": false,
+      "mmrentry": "1726968",
+      "created": "2355459",
+      "age": "11"
+    },
+    "witness": {
+      "coinid": "0x3B3E1DD07658DB9B714E3A6D87B9BB8DB8D94F72D8262AECAF3F23D1E14236C2",
+      "amount": "0.0000000000000000000000000000000006",
+      "address": "0xE1233B0EC0E0C63146B8B3334F18E55BC5701FD5659A33970AA337A489489FBE",
+      "miniaddress": "MxG08714CTGTG70ZZZKDE5J6D7HHPARZYZ1VYB5J8PPE2Y36UW8WW4VNQCEDE1T",
+      "tokenid": "0xF5F086FAC1E0D8BD9FA65A1652146BEEF702F57EC0F6B7AE62395F36A43636E6",
+      "token": {
+        "name": {
+          "name": "CHIP-WITHDRAW-01-R2 value",
+          "description": "Valueless Minima experiment. No redemption value."
+        },
+        "coinid": "0xB222CE481FED0C1999938E055BDE4FE34B915A89AC3296AF55A5B9A325F9A049",
+        "total": "1000",
+        "decimals": 8,
+        "script": "RETURN TRUE",
+        "totalamount": "0.000000000000000000000000000000001",
+        "scale": "36",
+        "created": "2355450",
+        "tokenid": "0xF5F086FAC1E0D8BD9FA65A1652146BEEF702F57EC0F6B7AE62395F36A43636E6"
+      },
+      "tokenamount": "600",
+      "storestate": false,
+      "state": [],
+      "spent": false,
+      "mmrentry": "1726968",
+      "created": "2355459",
+      "age": "11"
+    }
+  },
+  "0x507A343B494AC8A00F033CAC52571364A28C80D699AEA8047A73582FD6BD0D1C": {
+    "primary": {
+      "coinid": "0x507A343B494AC8A00F033CAC52571364A28C80D699AEA8047A73582FD6BD0D1C",
+      "amount": "0.00000001",
+      "address": "0x5F6B0D7F3B5C602FC9860811864875F65261E1605BA1862E56596B23BEE958B8",
+      "miniaddress": "MxG082VDC6NUEQSC0NSJ1G82634GTFMA9GU2Z2RK632SYWPDCHRTQAZN2ZGMQJ2",
+      "tokenid": "0x00",
+      "token": null,
+      "storestate": false,
+      "state": [],
+      "spent": false,
+      "mmrentry": "1726950",
+      "created": "2355455",
+      "age": "15"
+    },
+    "witness": {
+      "coinid": "0x507A343B494AC8A00F033CAC52571364A28C80D699AEA8047A73582FD6BD0D1C",
+      "amount": "0.00000001",
+      "address": "0x5F6B0D7F3B5C602FC9860811864875F65261E1605BA1862E56596B23BEE958B8",
+      "miniaddress": "MxG082VDC6NUEQSC0NSJ1G82634GTFMA9GU2Z2RK632SYWPDCHRTQAZN2ZGMQJ2",
+      "tokenid": "0x00",
+      "token": null,
+      "storestate": false,
+      "state": [],
+      "spent": false,
+      "mmrentry": "1726950",
+      "created": "2355455",
+      "age": "15"
+    }
+  },
+  "0x3392F3FDB40A19B7EDC51F8CA8D1AD34E5E36A074A18C7A0359494728D825E2B": {
+    "primary": {
+      "coinid": "0x3392F3FDB40A19B7EDC51F8CA8D1AD34E5E36A074A18C7A0359494728D825E2B",
+      "amount": "0.00000001",
+      "address": "0x5F6B0D7F3B5C602FC9860811864875F65261E1605BA1862E56596B23BEE958B8",
+      "miniaddress": "MxG082VDC6NUEQSC0NSJ1G82634GTFMA9GU2Z2RK632SYWPDCHRTQAZN2ZGMQJ2",
+      "tokenid": "0x00",
+      "token": null,
+      "storestate": false,
+      "state": [],
+      "spent": false,
+      "mmrentry": "1726951",
+      "created": "2355455",
+      "age": "15"
+    },
+    "witness": {
+      "coinid": "0x3392F3FDB40A19B7EDC51F8CA8D1AD34E5E36A074A18C7A0359494728D825E2B",
+      "amount": "0.00000001",
+      "address": "0x5F6B0D7F3B5C602FC9860811864875F65261E1605BA1862E56596B23BEE958B8",
+      "miniaddress": "MxG082VDC6NUEQSC0NSJ1G82634GTFMA9GU2Z2RK632SYWPDCHRTQAZN2ZGMQJ2",
+      "tokenid": "0x00",
+      "token": null,
+      "storestate": false,
+      "state": [],
+      "spent": false,
+      "mmrentry": "1726951",
+      "created": "2355455",
+      "age": "15"
+    }
+  },
+  "0x22B744BD096AD6A942B942E388B310B82EC3D3DA84ED76C9220C4484BA27C61A": {
+    "primary": {
+      "coinid": "0x22B744BD096AD6A942B942E388B310B82EC3D3DA84ED76C9220C4484BA27C61A",
+      "amount": "0.00000001",
+      "address": "0x5F6B0D7F3B5C602FC9860811864875F65261E1605BA1862E56596B23BEE958B8",
+      "miniaddress": "MxG082VDC6NUEQSC0NSJ1G82634GTFMA9GU2Z2RK632SYWPDCHRTQAZN2ZGMQJ2",
+      "tokenid": "0x00",
+      "token": null,
+      "storestate": false,
+      "state": [],
+      "spent": false,
+      "mmrentry": "1726952",
+      "created": "2355455",
+      "age": "15"
+    },
+    "witness": {
+      "coinid": "0x22B744BD096AD6A942B942E388B310B82EC3D3DA84ED76C9220C4484BA27C61A",
+      "amount": "0.00000001",
+      "address": "0x5F6B0D7F3B5C602FC9860811864875F65261E1605BA1862E56596B23BEE958B8",
+      "miniaddress": "MxG082VDC6NUEQSC0NSJ1G82634GTFMA9GU2Z2RK632SYWPDCHRTQAZN2ZGMQJ2",
+      "tokenid": "0x00",
+      "token": null,
+      "storestate": false,
+      "state": [],
+      "spent": false,
+      "mmrentry": "1726952",
+      "created": "2355455",
+      "age": "15"
+    }
+  },
+  "0x2822789FF18AD70741637CFE78C2FAB0F1CAB457A42BAF9FBD703570AB2460E7": {
+    "primary": {
+      "coinid": "0x2822789FF18AD70741637CFE78C2FAB0F1CAB457A42BAF9FBD703570AB2460E7",
+      "amount": "0.00000001",
+      "address": "0x5F6B0D7F3B5C602FC9860811864875F65261E1605BA1862E56596B23BEE958B8",
+      "miniaddress": "MxG082VDC6NUEQSC0NSJ1G82634GTFMA9GU2Z2RK632SYWPDCHRTQAZN2ZGMQJ2",
+      "tokenid": "0x00",
+      "token": null,
+      "storestate": false,
+      "state": [],
+      "spent": false,
+      "mmrentry": "1726953",
+      "created": "2355455",
+      "age": "15"
+    },
+    "witness": {
+      "coinid": "0x2822789FF18AD70741637CFE78C2FAB0F1CAB457A42BAF9FBD703570AB2460E7",
+      "amount": "0.00000001",
+      "address": "0x5F6B0D7F3B5C602FC9860811864875F65261E1605BA1862E56596B23BEE958B8",
+      "miniaddress": "MxG082VDC6NUEQSC0NSJ1G82634GTFMA9GU2Z2RK632SYWPDCHRTQAZN2ZGMQJ2",
+      "tokenid": "0x00",
+      "token": null,
+      "storestate": false,
+      "state": [],
+      "spent": false,
+      "mmrentry": "1726953",
+      "created": "2355455",
+      "age": "15"
+    }
+  },
+  "0xB4895BDF989C7E1E72316FD5FEBA8A5E82624EF814946C508C29A7A45CC67D7C": {
+    "primary": {
+      "coinid": "0xB4895BDF989C7E1E72316FD5FEBA8A5E82624EF814946C508C29A7A45CC67D7C",
+      "amount": "0.00000001",
+      "address": "0x5F6B0D7F3B5C602FC9860811864875F65261E1605BA1862E56596B23BEE958B8",
+      "miniaddress": "MxG082VDC6NUEQSC0NSJ1G82634GTFMA9GU2Z2RK632SYWPDCHRTQAZN2ZGMQJ2",
+      "tokenid": "0x00",
+      "token": null,
+      "storestate": false,
+      "state": [],
+      "spent": false,
+      "mmrentry": "1726954",
+      "created": "2355455",
+      "age": "15"
+    },
+    "witness": {
+      "coinid": "0xB4895BDF989C7E1E72316FD5FEBA8A5E82624EF814946C508C29A7A45CC67D7C",
+      "amount": "0.00000001",
+      "address": "0x5F6B0D7F3B5C602FC9860811864875F65261E1605BA1862E56596B23BEE958B8",
+      "miniaddress": "MxG082VDC6NUEQSC0NSJ1G82634GTFMA9GU2Z2RK632SYWPDCHRTQAZN2ZGMQJ2",
+      "tokenid": "0x00",
+      "token": null,
+      "storestate": false,
+      "state": [],
+      "spent": false,
+      "mmrentry": "1726954",
+      "created": "2355455",
+      "age": "15"
+    }
+  },
+  "0x9D4805738074D5FDBBD386A1CC457F19E94E900AC8DBB1FF17F678F14CA02A2A": {
+    "primary": {
+      "coinid": "0x9D4805738074D5FDBBD386A1CC457F19E94E900AC8DBB1FF17F678F14CA02A2A",
+      "amount": "0.00000001",
+      "address": "0x5F6B0D7F3B5C602FC9860811864875F65261E1605BA1862E56596B23BEE958B8",
+      "miniaddress": "MxG082VDC6NUEQSC0NSJ1G82634GTFMA9GU2Z2RK632SYWPDCHRTQAZN2ZGMQJ2",
+      "tokenid": "0x00",
+      "token": null,
+      "storestate": false,
+      "state": [],
+      "spent": false,
+      "mmrentry": "1726955",
+      "created": "2355455",
+      "age": "15"
+    },
+    "witness": {
+      "coinid": "0x9D4805738074D5FDBBD386A1CC457F19E94E900AC8DBB1FF17F678F14CA02A2A",
+      "amount": "0.00000001",
+      "address": "0x5F6B0D7F3B5C602FC9860811864875F65261E1605BA1862E56596B23BEE958B8",
+      "miniaddress": "MxG082VDC6NUEQSC0NSJ1G82634GTFMA9GU2Z2RK632SYWPDCHRTQAZN2ZGMQJ2",
+      "tokenid": "0x00",
+      "token": null,
+      "storestate": false,
+      "state": [],
+      "spent": false,
+      "mmrentry": "1726955",
+      "created": "2355455",
+      "age": "15"
+    }
+  },
+  "0x19776D4BCF1C227E145E68CCFDFF87D1F0D48F802DEB3F9513B79BCD7E416B51": {
+    "primary": {
+      "coinid": "0x19776D4BCF1C227E145E68CCFDFF87D1F0D48F802DEB3F9513B79BCD7E416B51",
+      "amount": "0.00000001",
+      "address": "0x5F6B0D7F3B5C602FC9860811864875F65261E1605BA1862E56596B23BEE958B8",
+      "miniaddress": "MxG082VDC6NUEQSC0NSJ1G82634GTFMA9GU2Z2RK632SYWPDCHRTQAZN2ZGMQJ2",
+      "tokenid": "0x00",
+      "token": null,
+      "storestate": false,
+      "state": [],
+      "spent": false,
+      "mmrentry": "1726956",
+      "created": "2355455",
+      "age": "15"
+    },
+    "witness": {
+      "coinid": "0x19776D4BCF1C227E145E68CCFDFF87D1F0D48F802DEB3F9513B79BCD7E416B51",
+      "amount": "0.00000001",
+      "address": "0x5F6B0D7F3B5C602FC9860811864875F65261E1605BA1862E56596B23BEE958B8",
+      "miniaddress": "MxG082VDC6NUEQSC0NSJ1G82634GTFMA9GU2Z2RK632SYWPDCHRTQAZN2ZGMQJ2",
+      "tokenid": "0x00",
+      "token": null,
+      "storestate": false,
+      "state": [],
+      "spent": false,
+      "mmrentry": "1726956",
+      "created": "2355455",
+      "age": "15"
+    }
+  },
+  "0x1A3F804D3B0293C715AB003B812EA7DC379EB312C4D1DF76073C5070AB78EE56": {
+    "primary": {
+      "coinid": "0x1A3F804D3B0293C715AB003B812EA7DC379EB312C4D1DF76073C5070AB78EE56",
+      "amount": "0.00000001",
+      "address": "0x5F6B0D7F3B5C602FC9860811864875F65261E1605BA1862E56596B23BEE958B8",
+      "miniaddress": "MxG082VDC6NUEQSC0NSJ1G82634GTFMA9GU2Z2RK632SYWPDCHRTQAZN2ZGMQJ2",
+      "tokenid": "0x00",
+      "token": null,
+      "storestate": false,
+      "state": [],
+      "spent": false,
+      "mmrentry": "1726957",
+      "created": "2355455",
+      "age": "15"
+    },
+    "witness": {
+      "coinid": "0x1A3F804D3B0293C715AB003B812EA7DC379EB312C4D1DF76073C5070AB78EE56",
+      "amount": "0.00000001",
+      "address": "0x5F6B0D7F3B5C602FC9860811864875F65261E1605BA1862E56596B23BEE958B8",
+      "miniaddress": "MxG082VDC6NUEQSC0NSJ1G82634GTFMA9GU2Z2RK632SYWPDCHRTQAZN2ZGMQJ2",
+      "tokenid": "0x00",
+      "token": null,
+      "storestate": false,
+      "state": [],
+      "spent": false,
+      "mmrentry": "1726957",
+      "created": "2355455",
+      "age": "15"
+    }
+  },
+  "0xBE0AE8C810D43E4BEE4A8DE6D09E4CADAACE22139CCFAD972E7D239123688EFC": {
+    "primary": {
+      "coinid": "0xBE0AE8C810D43E4BEE4A8DE6D09E4CADAACE22139CCFAD972E7D239123688EFC",
+      "amount": "0.00000001",
+      "address": "0x5F6B0D7F3B5C602FC9860811864875F65261E1605BA1862E56596B23BEE958B8",
+      "miniaddress": "MxG082VDC6NUEQSC0NSJ1G82634GTFMA9GU2Z2RK632SYWPDCHRTQAZN2ZGMQJ2",
+      "tokenid": "0x00",
+      "token": null,
+      "storestate": false,
+      "state": [],
+      "spent": false,
+      "mmrentry": "1726958",
+      "created": "2355455",
+      "age": "15"
+    },
+    "witness": {
+      "coinid": "0xBE0AE8C810D43E4BEE4A8DE6D09E4CADAACE22139CCFAD972E7D239123688EFC",
+      "amount": "0.00000001",
+      "address": "0x5F6B0D7F3B5C602FC9860811864875F65261E1605BA1862E56596B23BEE958B8",
+      "miniaddress": "MxG082VDC6NUEQSC0NSJ1G82634GTFMA9GU2Z2RK632SYWPDCHRTQAZN2ZGMQJ2",
+      "tokenid": "0x00",
+      "token": null,
+      "storestate": false,
+      "state": [],
+      "spent": false,
+      "mmrentry": "1726958",
+      "created": "2355455",
+      "age": "15"
+    }
+  },
+  "0xA4550D5120E491BE5BB2420111B6AEDB9EA0A46293B9FEDB164600DB986184B4": {
+    "primary": {
+      "coinid": "0xA4550D5120E491BE5BB2420111B6AEDB9EA0A46293B9FEDB164600DB986184B4",
+      "amount": "0.00000001",
+      "address": "0x5F6B0D7F3B5C602FC9860811864875F65261E1605BA1862E56596B23BEE958B8",
+      "miniaddress": "MxG082VDC6NUEQSC0NSJ1G82634GTFMA9GU2Z2RK632SYWPDCHRTQAZN2ZGMQJ2",
+      "tokenid": "0x00",
+      "token": null,
+      "storestate": false,
+      "state": [],
+      "spent": false,
+      "mmrentry": "1726959",
+      "created": "2355455",
+      "age": "15"
+    },
+    "witness": {
+      "coinid": "0xA4550D5120E491BE5BB2420111B6AEDB9EA0A46293B9FEDB164600DB986184B4",
+      "amount": "0.00000001",
+      "address": "0x5F6B0D7F3B5C602FC9860811864875F65261E1605BA1862E56596B23BEE958B8",
+      "miniaddress": "MxG082VDC6NUEQSC0NSJ1G82634GTFMA9GU2Z2RK632SYWPDCHRTQAZN2ZGMQJ2",
+      "tokenid": "0x00",
+      "token": null,
+      "storestate": false,
+      "state": [],
+      "spent": false,
+      "mmrentry": "1726959",
+      "created": "2355455",
+      "age": "15"
+    }
+  }
+}

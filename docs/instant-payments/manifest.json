@@ -8,15 +8,16 @@
     "Original development files are untouched.",
     "Source and published hashes identify any UTF-8 or prose normalization.",
     "Historical reports are supplied as records, not rerun by this preparation.",
-    "Third-party binaries, downloaded SDKs, runtime logs and private credentials are excluded."
+    "Third-party binaries, downloaded SDKs, repetitive runtime logs and private credentials are excluded.",
+    "CHIP-WITHDRAW evidence preserves full validators, exact exports, canonical observations and frozen source; compact preflight reports omit verbose repeated traces."
   ],
   "files": [
     {
       "path": "README.md",
       "source": "1_development/stream_3_governance/task_instant_payments_publication/README.md",
-      "source_sha256": "b42734ffcf7313c9be1760864aaf5ca38e514219ba9a6c1c71b977125c1afcd8",
-      "published_sha256": "b42734ffcf7313c9be1760864aaf5ca38e514219ba9a6c1c71b977125c1afcd8",
-      "bytes": 11780,
+      "source_sha256": "969ab8e782bbcef9cda3ebaa2a7ae41042b8246f8b8230c8fc44177b396cda0a",
+      "published_sha256": "969ab8e782bbcef9cda3ebaa2a7ae41042b8246f8b8230c8fc44177b396cda0a",
+      "bytes": 12802,
       "normalized": false
     },
     {
@@ -772,6 +773,22 @@
       "normalized": false
     },
     {
+      "path": "simcard/docs/CHIP-WITHDRAW-01-R4.md",
+      "source": "1_development/stream_1_app/work/simcard/docs/CHIP-WITHDRAW-01-R4.md",
+      "source_sha256": "eed3c54ccdbabde487b4f141db9facfdcbbdae11f4ff47b3f34caf06f48a4854",
+      "published_sha256": "eed3c54ccdbabde487b4f141db9facfdcbbdae11f4ff47b3f34caf06f48a4854",
+      "bytes": 4513,
+      "normalized": false
+    },
+    {
+      "path": "simcard/docs/CHIP-WITHDRAW-01.md",
+      "source": "1_development/stream_1_app/work/simcard/docs/CHIP-WITHDRAW-01.md",
+      "source_sha256": "09e543f3dae1f57884c1739196f84fa78b497781443f73ee731255062ae066e3",
+      "published_sha256": "09e543f3dae1f57884c1739196f84fa78b497781443f73ee731255062ae066e3",
+      "bytes": 6254,
+      "normalized": false
+    },
+    {
       "path": "simcard/docs/HANDOFF_2026-09-29.md",
       "source": "1_development/stream_1_app/work/simcard/docs/HANDOFF_2026-09-29.md",
       "source_sha256": "fa68325e28b018533041489f5e0cf3b0b5aa7e8f6354d01493a07ddb3520db31",
@@ -889,6 +906,1550 @@
       "source_sha256": "c3088f58351739f7e0d814764cf40e8d0f87e1aa26ee55f77c682e1c70c6d2c6",
       "published_sha256": "c3088f58351739f7e0d814764cf40e8d0f87e1aa26ee55f77c682e1c70c6d2c6",
       "bytes": 49321,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R1/HARD_STOP.json",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R1/HARD_STOP.json",
+      "source_sha256": "290e1a30ec6bc97281cb9021475aabdea5d15f230537b6270c6a2ccea96ba1d4",
+      "published_sha256": "290e1a30ec6bc97281cb9021475aabdea5d15f230537b6270c6a2ccea96ba1d4",
+      "bytes": 126,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R1/README.md",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R1/README.md",
+      "source_sha256": "4b1a69d09c72ef73af7b10c58f2eec28f8e9986c4d93f0de9e10191b982f2b23",
+      "published_sha256": "4b1a69d09c72ef73af7b10c58f2eec28f8e9986c4d93f0de9e10191b982f2b23",
+      "bytes": 1182,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R1/local-preflight-summary.json",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R1/local-preflight-summary.json",
+      "source_sha256": "86788b89cd340f4518ad4fa6ab54550e8e7667fee7b2282df8c9a6f34ccc44f4",
+      "published_sha256": "86788b89cd340f4518ad4fa6ab54550e8e7667fee7b2282df8c9a6f34ccc44f4",
+      "bytes": 17335,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R1/results/chip-fixtures.json",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R1/results/chip-fixtures.json",
+      "source_sha256": "956f4d7b2dc3fd8da95764b9c1aabe78a3c204adfb16bbf891aec1209fad2b3c",
+      "published_sha256": "956f4d7b2dc3fd8da95764b9c1aabe78a3c204adfb16bbf891aec1209fad2b3c",
+      "bytes": 70863,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R2/HARD_STOP.json",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R2/HARD_STOP.json",
+      "source_sha256": "8dd42be5e287f649ae001f23d41dc39ef4252e73dab4757ba0dd92732bdd285c",
+      "published_sha256": "8dd42be5e287f649ae001f23d41dc39ef4252e73dab4757ba0dd92732bdd285c",
+      "bytes": 180,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R2/README.md",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R2/README.md",
+      "source_sha256": "15aa3bfd71903e5469f7f8f4ea08847d5cd41d14b7bbfdeba9f0658ca4e69abf",
+      "published_sha256": "15aa3bfd71903e5469f7f8f4ea08847d5cd41d14b7bbfdeba9f0658ca4e69abf",
+      "bytes": 1244,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/host/org/stables/host/Apdu.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/host/org/stables/host/Apdu.java",
+      "source_sha256": "378d432e7659f5055bc277d9bb4757b73e5248e97fd670adcbaf525612412f93",
+      "published_sha256": "378d432e7659f5055bc277d9bb4757b73e5248e97fd670adcbaf525612412f93",
+      "bytes": 522,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/host/org/stables/host/Audit.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/host/org/stables/host/Audit.java",
+      "source_sha256": "5e9e6c32215fd6495b761c0c540920441ee8189163c1e45c4af5576827eb3490",
+      "published_sha256": "5e9e6c32215fd6495b761c0c540920441ee8189163c1e45c4af5576827eb3490",
+      "bytes": 3353,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/host/org/stables/host/Bench.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/host/org/stables/host/Bench.java",
+      "source_sha256": "d1a943f4052bf32c64661e9a332454e28240b1e23a7be9419b79c3708a3de5a8",
+      "published_sha256": "d1a943f4052bf32c64661e9a332454e28240b1e23a7be9419b79c3708a3de5a8",
+      "bytes": 10177,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/host/org/stables/host/Card.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/host/org/stables/host/Card.java",
+      "source_sha256": "eecf02b213ff2c96fc76d252d3657962b92cdcc8ea391e31d7b3e0b59d31db0f",
+      "published_sha256": "eecf02b213ff2c96fc76d252d3657962b92cdcc8ea391e31d7b3e0b59d31db0f",
+      "bytes": 16710,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/host/org/stables/host/ChainModel.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/host/org/stables/host/ChainModel.java",
+      "source_sha256": "8e174343ffe6b007c1c0f7a30d50356bfddf6b5151022ba7333e21abbc106284",
+      "published_sha256": "8e174343ffe6b007c1c0f7a30d50356bfddf6b5151022ba7333e21abbc106284",
+      "bytes": 6618,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/host/org/stables/host/Fixtures.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/host/org/stables/host/Fixtures.java",
+      "source_sha256": "83a0d3b3cefa3e2a0efb9e824ab08a16f56ce68dd7a95c08f456eb8e61b07b40",
+      "published_sha256": "83a0d3b3cefa3e2a0efb9e824ab08a16f56ce68dd7a95c08f456eb8e61b07b40",
+      "bytes": 5677,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/host/org/stables/host/Hex.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/host/org/stables/host/Hex.java",
+      "source_sha256": "60a80f6eb589886c238a10873fbd3f4269c8d597d1536ca04b6df6ce0ea85622",
+      "published_sha256": "60a80f6eb589886c238a10873fbd3f4269c8d597d1536ca04b6df6ce0ea85622",
+      "bytes": 2866,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/host/org/stables/host/Lab.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/host/org/stables/host/Lab.java",
+      "source_sha256": "1757e4d4876440da54526c340c4bf35e0cd9a2f5525c5f1ec90db57e3d4dda52",
+      "published_sha256": "1757e4d4876440da54526c340c4bf35e0cd9a2f5525c5f1ec90db57e3d4dda52",
+      "bytes": 3499,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/host/org/stables/host/Lx16Ref.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/host/org/stables/host/Lx16Ref.java",
+      "source_sha256": "a28d11368096d4a28ab87cee845ebb7b32f8cd1f73df519556a48f51860fa818",
+      "published_sha256": "a28d11368096d4a28ab87cee845ebb7b32f8cd1f73df519556a48f51860fa818",
+      "bytes": 2376,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/host/org/stables/host/Main.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/host/org/stables/host/Main.java",
+      "source_sha256": "1a89cfabe5caa1db418aa7bc4e3c30fea04cbd29f56ec7d6ada0f934b4e9fe48",
+      "published_sha256": "1a89cfabe5caa1db418aa7bc4e3c30fea04cbd29f56ec7d6ada0f934b4e9fe48",
+      "bytes": 7786,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/host/org/stables/host/PcscCard.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/host/org/stables/host/PcscCard.java",
+      "source_sha256": "abe64212a4cf7666e3b8d88b1b6c03f8159b4da9a818ae03f7714d6f34fc4af8",
+      "published_sha256": "abe64212a4cf7666e3b8d88b1b6c03f8159b4da9a818ae03f7714d6f34fc4af8",
+      "bytes": 2054,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/host/org/stables/host/Phone.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/host/org/stables/host/Phone.java",
+      "source_sha256": "e617d8b3c7d9a6ae0c9c0a82a56a92c7a7d061dfc8d1962b8661fbfdca9dea22",
+      "published_sha256": "e617d8b3c7d9a6ae0c9c0a82a56a92c7a7d061dfc8d1962b8661fbfdca9dea22",
+      "bytes": 2873,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/host/org/stables/host/RelaySuite.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/host/org/stables/host/RelaySuite.java",
+      "source_sha256": "198d7a91318d35fddd45c9123359899cef15a6095f74e8a92eed4521965d9a51",
+      "published_sha256": "198d7a91318d35fddd45c9123359899cef15a6095f74e8a92eed4521965d9a51",
+      "bytes": 47686,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/host/org/stables/host/SimCard.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/host/org/stables/host/SimCard.java",
+      "source_sha256": "8d65bfd172d52968505cd5ccdc8af0f7e3ee1dde222127ad6aa19a60ced52d77",
+      "published_sha256": "8d65bfd172d52968505cd5ccdc8af0f7e3ee1dde222127ad6aa19a60ced52d77",
+      "bytes": 4982,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/host/org/stables/host/T.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/host/org/stables/host/T.java",
+      "source_sha256": "e4a79659066a99782b22333b45800ac2c874934c9e704c92897ca9c85af418f4",
+      "published_sha256": "e4a79659066a99782b22333b45800ac2c874934c9e704c92897ca9c85af418f4",
+      "bytes": 3669,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/host/org/stables/host/TearControl.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/host/org/stables/host/TearControl.java",
+      "source_sha256": "ec67c841d85f912b79209d19508a50e1e7ce745b0697f5087c28d19afaabd2c4",
+      "published_sha256": "ec67c841d85f912b79209d19508a50e1e7ce745b0697f5087c28d19afaabd2c4",
+      "bytes": 3492,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/host/org/stables/host/TearHarness.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/host/org/stables/host/TearHarness.java",
+      "source_sha256": "8da184869d11aacf050f3e0e6d31bf2b55e3e552df16c5aadfec3c35272f72de",
+      "published_sha256": "8da184869d11aacf050f3e0e6d31bf2b55e3e552df16c5aadfec3c35272f72de",
+      "bytes": 39511,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/host/org/stables/host/UnitTests.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/host/org/stables/host/UnitTests.java",
+      "source_sha256": "231e09746eda041e4609d6c836b4b2b4dfd2ee0ac000db1842e50da042b54e52",
+      "published_sha256": "231e09746eda041e4609d6c836b4b2b4dfd2ee0ac000db1842e50da042b54e52",
+      "bytes": 35944,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/host/org/stables/host/Vendor.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/host/org/stables/host/Vendor.java",
+      "source_sha256": "d74b2576366ede2f6a4e95898fced9ada6a61dcf8a1294f0a09f22da597f8439",
+      "published_sha256": "d74b2576366ede2f6a4e95898fced9ada6a61dcf8a1294f0a09f22da597f8439",
+      "bytes": 3142,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/host/org/stables/host/Wire.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/host/org/stables/host/Wire.java",
+      "source_sha256": "bf768118c1b1aca41be6ec002f7a5a38b4dbfe9bfa1bf050970624482f257b1f",
+      "published_sha256": "bf768118c1b1aca41be6ec002f7a5a38b4dbfe9bfa1bf050970624482f257b1f",
+      "bytes": 4019,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/main/javacard/org/stables/card/BenchApplet.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/main/javacard/org/stables/card/BenchApplet.java",
+      "source_sha256": "3f898450c53c16adb7e956d20535460fb2d70a2360e0706d3cc1774eb28913fd",
+      "published_sha256": "3f898450c53c16adb7e956d20535460fb2d70a2360e0706d3cc1774eb28913fd",
+      "bytes": 10350,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/main/javacard/org/stables/card/Ec.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/main/javacard/org/stables/card/Ec.java",
+      "source_sha256": "cd653a49410ce49b5e0bca7d03d4920873f6999b95fc0c4f6648e212044d9007",
+      "published_sha256": "cd653a49410ce49b5e0bca7d03d4920873f6999b95fc0c4f6648e212044d9007",
+      "bytes": 7404,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/main/javacard/org/stables/card/Lx16.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/main/javacard/org/stables/card/Lx16.java",
+      "source_sha256": "fbacdf3e7fe2ad323956cdc51430d909ec3a2e54c567f90f8461c86b0b35598a",
+      "published_sha256": "fbacdf3e7fe2ad323956cdc51430d909ec3a2e54c567f90f8461c86b0b35598a",
+      "bytes": 7558,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/main/javacard/org/stables/card/Persist.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/main/javacard/org/stables/card/Persist.java",
+      "source_sha256": "b8e7a381ba93e2a6cdf90a273c8e3b83ede9ab6419e0ad946926937fb9a53d2d",
+      "published_sha256": "b8e7a381ba93e2a6cdf90a273c8e3b83ede9ab6419e0ad946926937fb9a53d2d",
+      "bytes": 2279,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/main/javacard/org/stables/card/Proto.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/main/javacard/org/stables/card/Proto.java",
+      "source_sha256": "7524bf598f03a34461f7eaee4e51ecc3c911906f9a90cdf9047e2491560287d0",
+      "published_sha256": "7524bf598f03a34461f7eaee4e51ecc3c911906f9a90cdf9047e2491560287d0",
+      "bytes": 15843,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/main/javacard/org/stables/card/Ram.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/main/javacard/org/stables/card/Ram.java",
+      "source_sha256": "55efb4f164a96fe3e4bb6e673f46821fedd4183bcce10135f878aaf52c7870cd",
+      "published_sha256": "55efb4f164a96fe3e4bb6e673f46821fedd4183bcce10135f878aaf52c7870cd",
+      "bytes": 937,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/main/javacard/org/stables/card/StablesApplet.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/main/javacard/org/stables/card/StablesApplet.java",
+      "source_sha256": "eb4e6b0b2af2fade078de95508a63f12de8ce2ca3017f4ca0c94080c4c253398",
+      "published_sha256": "eb4e6b0b2af2fade078de95508a63f12de8ce2ca3017f4ca0c94080c4c253398",
+      "bytes": 86580,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/main/javacard/org/stables/card/U.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/main/javacard/org/stables/card/U.java",
+      "source_sha256": "fc90b8e9f138f0d721fd6f78aec8ff80832b0ee0c5e9ba8ea32dbcc13a0e5ab4",
+      "published_sha256": "fc90b8e9f138f0d721fd6f78aec8ff80832b0ee0c5e9ba8ea32dbcc13a0e5ab4",
+      "bytes": 4067,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/simshim/com/licel/jcardsim/crypto/SecureRandomNullProvider.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/applet/src/simshim/com/licel/jcardsim/crypto/SecureRandomNullProvider.java",
+      "source_sha256": "f1231e88b97de1c10df65b99e8145f6bac1c6b6acdec429a3e61b8eb0076b787",
+      "published_sha256": "f1231e88b97de1c10df65b99e8145f6bac1c6b6acdec429a3e61b8eb0076b787",
+      "bytes": 963,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/docs/CHIP-WITHDRAW-01.md",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/docs/CHIP-WITHDRAW-01.md",
+      "source_sha256": "09e543f3dae1f57884c1739196f84fa78b497781443f73ee731255062ae066e3",
+      "published_sha256": "09e543f3dae1f57884c1739196f84fa78b497781443f73ee731255062ae066e3",
+      "bytes": 6254,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/measure/balance-baseline-covenants.mjs",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/measure/balance-baseline-covenants.mjs",
+      "source_sha256": "d88a2ed8aa72f38af611129c6c189608cbfcd10653fa83c380a17e2aab18a9c2",
+      "published_sha256": "d88a2ed8aa72f38af611129c6c189608cbfcd10653fa83c380a17e2aab18a9c2",
+      "bytes": 5434,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/measure/balance-covenants.mjs",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/measure/balance-covenants.mjs",
+      "source_sha256": "6a060aff56a0784927492a601a37c76fd823123c70958f2eb3a7d57e65102722",
+      "published_sha256": "6a060aff56a0784927492a601a37c76fd823123c70958f2eb3a7d57e65102722",
+      "bytes": 20226,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/measure/chip-withdrawal-mainnet.mjs",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/measure/chip-withdrawal-mainnet.mjs",
+      "source_sha256": "7a309371fa8e0dd6f606afeda7ea02e28e5b4c90e12ac15e85af36ba0a33e593",
+      "published_sha256": "7a309371fa8e0dd6f606afeda7ea02e28e5b4c90e12ac15e85af36ba0a33e593",
+      "bytes": 32163,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/measure/covenants.mjs",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/measure/covenants.mjs",
+      "source_sha256": "2045d36b0d5c563db98ae64645dd2bc38d3954e81d3a9b37dde366e836afb74e",
+      "published_sha256": "2045d36b0d5c563db98ae64645dd2bc38d3954e81d3a9b37dde366e836afb74e",
+      "bytes": 17923,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/measure/java/KissRunScaled.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/measure/java/KissRunScaled.java",
+      "source_sha256": "f0d9519ab35935e4d623975a0a1b8fe5f60e6187dc72b2e89662dfae8bbadc1f",
+      "published_sha256": "f0d9519ab35935e4d623975a0a1b8fe5f60e6187dc72b2e89662dfae8bbadc1f",
+      "bytes": 5950,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/measure/kissgen.mjs",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/measure/kissgen.mjs",
+      "source_sha256": "bc1a59d1d84d24c73b3b50f46916bf6bf0a16409659ffcc1e1e867f5759cab45",
+      "published_sha256": "bc1a59d1d84d24c73b3b50f46916bf6bf0a16409659ffcc1e1e867f5759cab45",
+      "bytes": 12825,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/measure/ots.mjs",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R2/captured-sources/measure/ots.mjs",
+      "source_sha256": "c52be06ad334b826cb1488aabb2b4f8a84deaadaf885e8b63370c727f6677479",
+      "published_sha256": "c52be06ad334b826cb1488aabb2b4f8a84deaadaf885e8b63370c727f6677479",
+      "bytes": 8257,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R2/fixture-block.json",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R2/fixture-block.json",
+      "source_sha256": "c0ff166374b989b1ebeb87bfc3313b7a275a5afe1ee9ec34f804702f6f165777",
+      "published_sha256": "c0ff166374b989b1ebeb87bfc3313b7a275a5afe1ee9ec34f804702f6f165777",
+      "bytes": 55720,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R2/kiss/account.kiss",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R2/kiss/account.kiss",
+      "source_sha256": "514bef2e062c554ebaaf6f53da8b0476c34d5e47855fc85e7f31a0250cd03ccd",
+      "published_sha256": "514bef2e062c554ebaaf6f53da8b0476c34d5e47855fc85e7f31a0250cd03ccd",
+      "bytes": 3812,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R2/kiss/helper.kiss",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R2/kiss/helper.kiss",
+      "source_sha256": "399cf90b41e4b4b57efc3f0b59b98f0f0dbef040761094d0547d27a5e4c5a49b",
+      "published_sha256": "399cf90b41e4b4b57efc3f0b59b98f0f0dbef040761094d0547d27a5e4c5a49b",
+      "bytes": 149,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R2/kiss/helperBody.kiss",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R2/kiss/helperBody.kiss",
+      "source_sha256": "7e5aab251182c3d9db4896cbd7a4873ceda9c4370b99ba462ab87af3840a8ea9",
+      "published_sha256": "7e5aab251182c3d9db4896cbd7a4873ceda9c4370b99ba462ab87af3840a8ea9",
+      "bytes": 3769,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R2/kiss/registration.kiss",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R2/kiss/registration.kiss",
+      "source_sha256": "713888a8c9f0052bdf7a182a9911ee5fa4889b29d98d8030bc71c23392ef5290",
+      "published_sha256": "713888a8c9f0052bdf7a182a9911ee5fa4889b29d98d8030bc71c23392ef5290",
+      "bytes": 693,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R2/kiss/vault.kiss",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R2/kiss/vault.kiss",
+      "source_sha256": "eb28c8483ceb96a6599ef83d3a2d0ce5f2078dee619267f1165328064b6003aa",
+      "published_sha256": "eb28c8483ceb96a6599ef83d3a2d0ce5f2078dee619267f1165328064b6003aa",
+      "bytes": 1659,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R2/local-preflight-summary.json",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R2/local-preflight-summary.json",
+      "source_sha256": "e20f692ae14004a3d9cb70cb72dee3361cd0c1119f9811cd438ff9597123f378",
+      "published_sha256": "e20f692ae14004a3d9cb70cb72dee3361cd0c1119f9811cd438ff9597123f378",
+      "bytes": 17335,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R2/mint-marker-canonical.json",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R2/mint-marker-canonical.json",
+      "source_sha256": "77d52cde5bbd9317d642fb4dde88ab7f5c36b60389bdd70c3fdc68a12ac27a96",
+      "published_sha256": "77d52cde5bbd9317d642fb4dde88ab7f5c36b60389bdd70c3fdc68a12ac27a96",
+      "bytes": 24593,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R2/mint-value-canonical.json",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R2/mint-value-canonical.json",
+      "source_sha256": "886769599b7835fd63436e8d55499dc90ed02c2608302b5db70e51e3187ce39d",
+      "published_sha256": "886769599b7835fd63436e8d55499dc90ed02c2608302b5db70e51e3187ce39d",
+      "bytes": 24703,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R2/partial-setup-export.json",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R2/partial-setup-export.json",
+      "source_sha256": "29e9ed3eeb608c794da301dde6dc8c3cf1504e9c300da8afce7f15b4396c19ec",
+      "published_sha256": "29e9ed3eeb608c794da301dde6dc8c3cf1504e9c300da8afce7f15b4396c19ec",
+      "bytes": 1048,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R2/results/chip-fixtures.json",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R2/results/chip-fixtures.json",
+      "source_sha256": "0b305d55338ea19af9592628ab52ea4fe23a60baae8641d6d48e84645913b7e3",
+      "published_sha256": "0b305d55338ea19af9592628ab52ea4fe23a60baae8641d6d48e84645913b7e3",
+      "bytes": 70857,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/CLOSURE_REPORT.md",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/CLOSURE_REPORT.md",
+      "source_sha256": "28226ad5198c5f177c6017e8f51c4993da03fc2a856752dfbd1e481b938a87c2",
+      "published_sha256": "28226ad5198c5f177c6017e8f51c4993da03fc2a856752dfbd1e481b938a87c2",
+      "bytes": 1464,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/HARD_STOP.json",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/HARD_STOP.json",
+      "source_sha256": "18ee5d14b6fec777c1290cb1c3230b493329b74b31158bb9917a2d42e9b16e51",
+      "published_sha256": "18ee5d14b6fec777c1290cb1c3230b493329b74b31158bb9917a2d42e9b16e51",
+      "bytes": 127,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/README.md",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/README.md",
+      "source_sha256": "313afcfefe95de9fd278177da09c7eb16039e4df09967e8012a7d1098c240a72",
+      "published_sha256": "313afcfefe95de9fd278177da09c7eb16039e4df09967e8012a7d1098c240a72",
+      "bytes": 767,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/host/org/stables/host/Apdu.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/host/org/stables/host/Apdu.java",
+      "source_sha256": "378d432e7659f5055bc277d9bb4757b73e5248e97fd670adcbaf525612412f93",
+      "published_sha256": "378d432e7659f5055bc277d9bb4757b73e5248e97fd670adcbaf525612412f93",
+      "bytes": 522,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/host/org/stables/host/Audit.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/host/org/stables/host/Audit.java",
+      "source_sha256": "5e9e6c32215fd6495b761c0c540920441ee8189163c1e45c4af5576827eb3490",
+      "published_sha256": "5e9e6c32215fd6495b761c0c540920441ee8189163c1e45c4af5576827eb3490",
+      "bytes": 3353,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/host/org/stables/host/Bench.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/host/org/stables/host/Bench.java",
+      "source_sha256": "d1a943f4052bf32c64661e9a332454e28240b1e23a7be9419b79c3708a3de5a8",
+      "published_sha256": "d1a943f4052bf32c64661e9a332454e28240b1e23a7be9419b79c3708a3de5a8",
+      "bytes": 10177,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/host/org/stables/host/Card.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/host/org/stables/host/Card.java",
+      "source_sha256": "eecf02b213ff2c96fc76d252d3657962b92cdcc8ea391e31d7b3e0b59d31db0f",
+      "published_sha256": "eecf02b213ff2c96fc76d252d3657962b92cdcc8ea391e31d7b3e0b59d31db0f",
+      "bytes": 16710,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/host/org/stables/host/ChainModel.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/host/org/stables/host/ChainModel.java",
+      "source_sha256": "8e174343ffe6b007c1c0f7a30d50356bfddf6b5151022ba7333e21abbc106284",
+      "published_sha256": "8e174343ffe6b007c1c0f7a30d50356bfddf6b5151022ba7333e21abbc106284",
+      "bytes": 6618,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/host/org/stables/host/Fixtures.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/host/org/stables/host/Fixtures.java",
+      "source_sha256": "83a0d3b3cefa3e2a0efb9e824ab08a16f56ce68dd7a95c08f456eb8e61b07b40",
+      "published_sha256": "83a0d3b3cefa3e2a0efb9e824ab08a16f56ce68dd7a95c08f456eb8e61b07b40",
+      "bytes": 5677,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/host/org/stables/host/Hex.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/host/org/stables/host/Hex.java",
+      "source_sha256": "60a80f6eb589886c238a10873fbd3f4269c8d597d1536ca04b6df6ce0ea85622",
+      "published_sha256": "60a80f6eb589886c238a10873fbd3f4269c8d597d1536ca04b6df6ce0ea85622",
+      "bytes": 2866,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/host/org/stables/host/Lab.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/host/org/stables/host/Lab.java",
+      "source_sha256": "1757e4d4876440da54526c340c4bf35e0cd9a2f5525c5f1ec90db57e3d4dda52",
+      "published_sha256": "1757e4d4876440da54526c340c4bf35e0cd9a2f5525c5f1ec90db57e3d4dda52",
+      "bytes": 3499,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/host/org/stables/host/Lx16Ref.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/host/org/stables/host/Lx16Ref.java",
+      "source_sha256": "a28d11368096d4a28ab87cee845ebb7b32f8cd1f73df519556a48f51860fa818",
+      "published_sha256": "a28d11368096d4a28ab87cee845ebb7b32f8cd1f73df519556a48f51860fa818",
+      "bytes": 2376,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/host/org/stables/host/Main.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/host/org/stables/host/Main.java",
+      "source_sha256": "1a89cfabe5caa1db418aa7bc4e3c30fea04cbd29f56ec7d6ada0f934b4e9fe48",
+      "published_sha256": "1a89cfabe5caa1db418aa7bc4e3c30fea04cbd29f56ec7d6ada0f934b4e9fe48",
+      "bytes": 7786,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/host/org/stables/host/PcscCard.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/host/org/stables/host/PcscCard.java",
+      "source_sha256": "abe64212a4cf7666e3b8d88b1b6c03f8159b4da9a818ae03f7714d6f34fc4af8",
+      "published_sha256": "abe64212a4cf7666e3b8d88b1b6c03f8159b4da9a818ae03f7714d6f34fc4af8",
+      "bytes": 2054,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/host/org/stables/host/Phone.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/host/org/stables/host/Phone.java",
+      "source_sha256": "e617d8b3c7d9a6ae0c9c0a82a56a92c7a7d061dfc8d1962b8661fbfdca9dea22",
+      "published_sha256": "e617d8b3c7d9a6ae0c9c0a82a56a92c7a7d061dfc8d1962b8661fbfdca9dea22",
+      "bytes": 2873,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/host/org/stables/host/RelaySuite.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/host/org/stables/host/RelaySuite.java",
+      "source_sha256": "198d7a91318d35fddd45c9123359899cef15a6095f74e8a92eed4521965d9a51",
+      "published_sha256": "198d7a91318d35fddd45c9123359899cef15a6095f74e8a92eed4521965d9a51",
+      "bytes": 47686,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/host/org/stables/host/SimCard.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/host/org/stables/host/SimCard.java",
+      "source_sha256": "8d65bfd172d52968505cd5ccdc8af0f7e3ee1dde222127ad6aa19a60ced52d77",
+      "published_sha256": "8d65bfd172d52968505cd5ccdc8af0f7e3ee1dde222127ad6aa19a60ced52d77",
+      "bytes": 4982,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/host/org/stables/host/T.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/host/org/stables/host/T.java",
+      "source_sha256": "e4a79659066a99782b22333b45800ac2c874934c9e704c92897ca9c85af418f4",
+      "published_sha256": "e4a79659066a99782b22333b45800ac2c874934c9e704c92897ca9c85af418f4",
+      "bytes": 3669,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/host/org/stables/host/TearControl.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/host/org/stables/host/TearControl.java",
+      "source_sha256": "ec67c841d85f912b79209d19508a50e1e7ce745b0697f5087c28d19afaabd2c4",
+      "published_sha256": "ec67c841d85f912b79209d19508a50e1e7ce745b0697f5087c28d19afaabd2c4",
+      "bytes": 3492,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/host/org/stables/host/TearHarness.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/host/org/stables/host/TearHarness.java",
+      "source_sha256": "8da184869d11aacf050f3e0e6d31bf2b55e3e552df16c5aadfec3c35272f72de",
+      "published_sha256": "8da184869d11aacf050f3e0e6d31bf2b55e3e552df16c5aadfec3c35272f72de",
+      "bytes": 39511,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/host/org/stables/host/UnitTests.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/host/org/stables/host/UnitTests.java",
+      "source_sha256": "231e09746eda041e4609d6c836b4b2b4dfd2ee0ac000db1842e50da042b54e52",
+      "published_sha256": "231e09746eda041e4609d6c836b4b2b4dfd2ee0ac000db1842e50da042b54e52",
+      "bytes": 35944,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/host/org/stables/host/Vendor.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/host/org/stables/host/Vendor.java",
+      "source_sha256": "d74b2576366ede2f6a4e95898fced9ada6a61dcf8a1294f0a09f22da597f8439",
+      "published_sha256": "d74b2576366ede2f6a4e95898fced9ada6a61dcf8a1294f0a09f22da597f8439",
+      "bytes": 3142,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/host/org/stables/host/Wire.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/host/org/stables/host/Wire.java",
+      "source_sha256": "bf768118c1b1aca41be6ec002f7a5a38b4dbfe9bfa1bf050970624482f257b1f",
+      "published_sha256": "bf768118c1b1aca41be6ec002f7a5a38b4dbfe9bfa1bf050970624482f257b1f",
+      "bytes": 4019,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/main/javacard/org/stables/card/BenchApplet.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/main/javacard/org/stables/card/BenchApplet.java",
+      "source_sha256": "3f898450c53c16adb7e956d20535460fb2d70a2360e0706d3cc1774eb28913fd",
+      "published_sha256": "3f898450c53c16adb7e956d20535460fb2d70a2360e0706d3cc1774eb28913fd",
+      "bytes": 10350,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/main/javacard/org/stables/card/Ec.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/main/javacard/org/stables/card/Ec.java",
+      "source_sha256": "cd653a49410ce49b5e0bca7d03d4920873f6999b95fc0c4f6648e212044d9007",
+      "published_sha256": "cd653a49410ce49b5e0bca7d03d4920873f6999b95fc0c4f6648e212044d9007",
+      "bytes": 7404,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/main/javacard/org/stables/card/Lx16.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/main/javacard/org/stables/card/Lx16.java",
+      "source_sha256": "fbacdf3e7fe2ad323956cdc51430d909ec3a2e54c567f90f8461c86b0b35598a",
+      "published_sha256": "fbacdf3e7fe2ad323956cdc51430d909ec3a2e54c567f90f8461c86b0b35598a",
+      "bytes": 7558,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/main/javacard/org/stables/card/Persist.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/main/javacard/org/stables/card/Persist.java",
+      "source_sha256": "b8e7a381ba93e2a6cdf90a273c8e3b83ede9ab6419e0ad946926937fb9a53d2d",
+      "published_sha256": "b8e7a381ba93e2a6cdf90a273c8e3b83ede9ab6419e0ad946926937fb9a53d2d",
+      "bytes": 2279,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/main/javacard/org/stables/card/Proto.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/main/javacard/org/stables/card/Proto.java",
+      "source_sha256": "7524bf598f03a34461f7eaee4e51ecc3c911906f9a90cdf9047e2491560287d0",
+      "published_sha256": "7524bf598f03a34461f7eaee4e51ecc3c911906f9a90cdf9047e2491560287d0",
+      "bytes": 15843,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/main/javacard/org/stables/card/Ram.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/main/javacard/org/stables/card/Ram.java",
+      "source_sha256": "55efb4f164a96fe3e4bb6e673f46821fedd4183bcce10135f878aaf52c7870cd",
+      "published_sha256": "55efb4f164a96fe3e4bb6e673f46821fedd4183bcce10135f878aaf52c7870cd",
+      "bytes": 937,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/main/javacard/org/stables/card/StablesApplet.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/main/javacard/org/stables/card/StablesApplet.java",
+      "source_sha256": "eb4e6b0b2af2fade078de95508a63f12de8ce2ca3017f4ca0c94080c4c253398",
+      "published_sha256": "eb4e6b0b2af2fade078de95508a63f12de8ce2ca3017f4ca0c94080c4c253398",
+      "bytes": 86580,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/main/javacard/org/stables/card/U.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/main/javacard/org/stables/card/U.java",
+      "source_sha256": "fc90b8e9f138f0d721fd6f78aec8ff80832b0ee0c5e9ba8ea32dbcc13a0e5ab4",
+      "published_sha256": "fc90b8e9f138f0d721fd6f78aec8ff80832b0ee0c5e9ba8ea32dbcc13a0e5ab4",
+      "bytes": 4067,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/simshim/com/licel/jcardsim/crypto/SecureRandomNullProvider.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/applet/src/simshim/com/licel/jcardsim/crypto/SecureRandomNullProvider.java",
+      "source_sha256": "f1231e88b97de1c10df65b99e8145f6bac1c6b6acdec429a3e61b8eb0076b787",
+      "published_sha256": "f1231e88b97de1c10df65b99e8145f6bac1c6b6acdec429a3e61b8eb0076b787",
+      "bytes": 963,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/docs/CHIP-WITHDRAW-01.md",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/docs/CHIP-WITHDRAW-01.md",
+      "source_sha256": "09e543f3dae1f57884c1739196f84fa78b497781443f73ee731255062ae066e3",
+      "published_sha256": "09e543f3dae1f57884c1739196f84fa78b497781443f73ee731255062ae066e3",
+      "bytes": 6254,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/measure/balance-baseline-covenants.mjs",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/measure/balance-baseline-covenants.mjs",
+      "source_sha256": "d88a2ed8aa72f38af611129c6c189608cbfcd10653fa83c380a17e2aab18a9c2",
+      "published_sha256": "d88a2ed8aa72f38af611129c6c189608cbfcd10653fa83c380a17e2aab18a9c2",
+      "bytes": 5434,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/measure/balance-covenants.mjs",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/measure/balance-covenants.mjs",
+      "source_sha256": "6a060aff56a0784927492a601a37c76fd823123c70958f2eb3a7d57e65102722",
+      "published_sha256": "6a060aff56a0784927492a601a37c76fd823123c70958f2eb3a7d57e65102722",
+      "bytes": 20226,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/measure/chip-withdrawal-mainnet.mjs",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/measure/chip-withdrawal-mainnet.mjs",
+      "source_sha256": "cb645dab8ce9b5b6f48510591eeef7ea1b2a8bcc56455b57a13a4b8c45bb5ed4",
+      "published_sha256": "cb645dab8ce9b5b6f48510591eeef7ea1b2a8bcc56455b57a13a4b8c45bb5ed4",
+      "bytes": 35209,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/measure/covenants.mjs",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/measure/covenants.mjs",
+      "source_sha256": "2045d36b0d5c563db98ae64645dd2bc38d3954e81d3a9b37dde366e836afb74e",
+      "published_sha256": "2045d36b0d5c563db98ae64645dd2bc38d3954e81d3a9b37dde366e836afb74e",
+      "bytes": 17923,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/measure/java/KissRunScaled.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/measure/java/KissRunScaled.java",
+      "source_sha256": "f0d9519ab35935e4d623975a0a1b8fe5f60e6187dc72b2e89662dfae8bbadc1f",
+      "published_sha256": "f0d9519ab35935e4d623975a0a1b8fe5f60e6187dc72b2e89662dfae8bbadc1f",
+      "bytes": 5950,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/measure/kissgen.mjs",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/measure/kissgen.mjs",
+      "source_sha256": "bc1a59d1d84d24c73b3b50f46916bf6bf0a16409659ffcc1e1e867f5759cab45",
+      "published_sha256": "bc1a59d1d84d24c73b3b50f46916bf6bf0a16409659ffcc1e1e867f5759cab45",
+      "bytes": 12825,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/measure/ots.mjs",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/captured-sources/measure/ots.mjs",
+      "source_sha256": "c52be06ad334b826cb1488aabb2b4f8a84deaadaf885e8b63370c727f6677479",
+      "published_sha256": "c52be06ad334b826cb1488aabb2b4f8a84deaadaf885e8b63370c727f6677479",
+      "bytes": 8257,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/exports/bad-secret.hex",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/exports/bad-secret.hex",
+      "source_sha256": "377db2df28a8847d4325a79f81fdcd05503167d2aadf812a68e4af512fb31289",
+      "published_sha256": "377db2df28a8847d4325a79f81fdcd05503167d2aadf812a68e4af512fb31289",
+      "bytes": 44678,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/exports/fund.hex",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/exports/fund.hex",
+      "source_sha256": "67671e829df3b0b93ae489fee2d95210534e28279170852cf49c7c05943e5f23",
+      "published_sha256": "67671e829df3b0b93ae489fee2d95210534e28279170852cf49c7c05943e5f23",
+      "bytes": 22390,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/exports/register.hex",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/exports/register.hex",
+      "source_sha256": "e4c216ef7897f2bb26f2c87f15082ea78436f3921c84da71264e50bcf30b54ef",
+      "published_sha256": "e4c216ef7897f2bb26f2c87f15082ea78436f3921c84da71264e50bcf30b54ef",
+      "bytes": 13020,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/exports/setup.hex",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/exports/setup.hex",
+      "source_sha256": "5e5672b4473dcdb94b6f20388f110d633df72ef6de3ee03b417c4d9247380850",
+      "published_sha256": "5e5672b4473dcdb94b6f20388f110d633df72ef6de3ee03b417c4d9247380850",
+      "bytes": 21854,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/fixture-block.json",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/fixture-block.json",
+      "source_sha256": "e8744922c7579cc46b296c467ccb3c9098bc41fcd8f0656d786243cb7e04eb27",
+      "published_sha256": "e8744922c7579cc46b296c467ccb3c9098bc41fcd8f0656d786243cb7e04eb27",
+      "bytes": 55720,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/fund-canonical.json",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/fund-canonical.json",
+      "source_sha256": "22768258c7e832431da82c2993fd223d4546390710c5a89c81bc03af8747a3a6",
+      "published_sha256": "22768258c7e832431da82c2993fd223d4546390710c5a89c81bc03af8747a3a6",
+      "bytes": 38970,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/fund-result.json",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/fund-result.json",
+      "source_sha256": "187ca5303800432ef8437cafd0cbca4b8a9cc698ebf660ea317466599ab4d74b",
+      "published_sha256": "187ca5303800432ef8437cafd0cbca4b8a9cc698ebf660ea317466599ab4d74b",
+      "bytes": 44141,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/kiss/account.kiss",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/kiss/account.kiss",
+      "source_sha256": "f676c6e9bf9dca3bafa1d4c466a49d14b32f2dc1260bb0a6e9e89fc53d2e3f0e",
+      "published_sha256": "f676c6e9bf9dca3bafa1d4c466a49d14b32f2dc1260bb0a6e9e89fc53d2e3f0e",
+      "bytes": 3812,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/kiss/helper.kiss",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/kiss/helper.kiss",
+      "source_sha256": "277c54a001e06bef71978133b61e5690b811fdec9cee673383fc48ab7d1cc3dc",
+      "published_sha256": "277c54a001e06bef71978133b61e5690b811fdec9cee673383fc48ab7d1cc3dc",
+      "bytes": 149,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/kiss/helperBody.kiss",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/kiss/helperBody.kiss",
+      "source_sha256": "8ae276ca2249d75b5ed7c3b22a0ab2601e2bd24b88f6d669f4f3912f7cc870b0",
+      "published_sha256": "8ae276ca2249d75b5ed7c3b22a0ab2601e2bd24b88f6d669f4f3912f7cc870b0",
+      "bytes": 3769,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/kiss/registration.kiss",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/kiss/registration.kiss",
+      "source_sha256": "8505fd5e8a39302e2bc43f047797f92b6596107cfcad146558f6e91266b59671",
+      "published_sha256": "8505fd5e8a39302e2bc43f047797f92b6596107cfcad146558f6e91266b59671",
+      "bytes": 693,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/kiss/vault.kiss",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/kiss/vault.kiss",
+      "source_sha256": "747cc1c2fee9bb85f9c212b03ff0fd959d87865145588f5353176d5a557e41c2",
+      "published_sha256": "747cc1c2fee9bb85f9c212b03ff0fd959d87865145588f5353176d5a557e41c2",
+      "bytes": 1659,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/local-preflight-summary.json",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/local-preflight-summary.json",
+      "source_sha256": "8cc47bdcb8b183023a49d1644f85838c4f206a4d694e49e5979ebf6349911e48",
+      "published_sha256": "8cc47bdcb8b183023a49d1644f85838c4f206a4d694e49e5979ebf6349911e48",
+      "bytes": 17335,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/register-canonical.json",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/register-canonical.json",
+      "source_sha256": "5c96d97c0bb6566f2f1489901942408fa4e9e521ab97c2147f6a1352f6591516",
+      "published_sha256": "5c96d97c0bb6566f2f1489901942408fa4e9e521ab97c2147f6a1352f6591516",
+      "bytes": 29392,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/register-result.json",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/register-result.json",
+      "source_sha256": "abf34e7a0b1ca995b472f16ebcf017b522b68eb3eecd4979b43bdec26d6b1eee",
+      "published_sha256": "abf34e7a0b1ca995b472f16ebcf017b522b68eb3eecd4979b43bdec26d6b1eee",
+      "bytes": 31056,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/results/chip-fixtures.json",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/results/chip-fixtures.json",
+      "source_sha256": "0b305d55338ea19af9592628ab52ea4fe23a60baae8641d6d48e84645913b7e3",
+      "published_sha256": "0b305d55338ea19af9592628ab52ea4fe23a60baae8641d6d48e84645913b7e3",
+      "bytes": 70857,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/setup-canonical.json",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/setup-canonical.json",
+      "source_sha256": "5e749180aa2c2a432ba3a110970f9f3e6127f7e1868d4944f33a0ce9cfd1e4d6",
+      "published_sha256": "5e749180aa2c2a432ba3a110970f9f3e6127f7e1868d4944f33a0ce9cfd1e4d6",
+      "bytes": 48020,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/setup-result.json",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/setup-result.json",
+      "source_sha256": "2e9fbd429e99ca731f65a945ed760bc135820176589e91957c6de615eeca43af",
+      "published_sha256": "2e9fbd429e99ca731f65a945ed760bc135820176589e91957c6de615eeca43af",
+      "bytes": 55989,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R3/witness-defect.json",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R3/witness-defect.json",
+      "source_sha256": "0238039feee349268a2de83e5f8e39639717cdc02abc619363623b98d12465c2",
+      "published_sha256": "0238039feee349268a2de83e5f8e39639717cdc02abc619363623b98d12465c2",
+      "bytes": 1071,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/CLOSURE_REPORT.md",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/CLOSURE_REPORT.md",
+      "source_sha256": "b04291110ed7afdf9ec869908ed77a32aefada13a91f98119a99e8ceb595ef0b",
+      "published_sha256": "b04291110ed7afdf9ec869908ed77a32aefada13a91f98119a99e8ceb595ef0b",
+      "bytes": 7794,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/README.md",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/README.md",
+      "source_sha256": "62a1ec401dcfc8e6a8eb9590b720b25c78cf0834473d1ee33147539587fb1bbd",
+      "published_sha256": "62a1ec401dcfc8e6a8eb9590b720b25c78cf0834473d1ee33147539587fb1bbd",
+      "bytes": 338,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/bad-complement-result.json",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/bad-complement-result.json",
+      "source_sha256": "1951e0cd7a8b82f0277b669be1f6c98a2244b42ea7c1e3175bea08ec836be5a9",
+      "published_sha256": "1951e0cd7a8b82f0277b669be1f6c98a2244b42ea7c1e3175bea08ec836be5a9",
+      "bytes": 40354,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/bad-secret-result.json",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/bad-secret-result.json",
+      "source_sha256": "f82f8d59b9927922a3d1ab8efbd54815ba4616b5975fb0c9b0ec434ab86c02f2",
+      "published_sha256": "f82f8d59b9927922a3d1ab8efbd54815ba4616b5975fb0c9b0ec434ab86c02f2",
+      "bytes": 40350,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/host/org/stables/host/Apdu.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/host/org/stables/host/Apdu.java",
+      "source_sha256": "378d432e7659f5055bc277d9bb4757b73e5248e97fd670adcbaf525612412f93",
+      "published_sha256": "378d432e7659f5055bc277d9bb4757b73e5248e97fd670adcbaf525612412f93",
+      "bytes": 522,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/host/org/stables/host/Audit.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/host/org/stables/host/Audit.java",
+      "source_sha256": "5e9e6c32215fd6495b761c0c540920441ee8189163c1e45c4af5576827eb3490",
+      "published_sha256": "5e9e6c32215fd6495b761c0c540920441ee8189163c1e45c4af5576827eb3490",
+      "bytes": 3353,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/host/org/stables/host/Bench.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/host/org/stables/host/Bench.java",
+      "source_sha256": "d1a943f4052bf32c64661e9a332454e28240b1e23a7be9419b79c3708a3de5a8",
+      "published_sha256": "d1a943f4052bf32c64661e9a332454e28240b1e23a7be9419b79c3708a3de5a8",
+      "bytes": 10177,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/host/org/stables/host/Card.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/host/org/stables/host/Card.java",
+      "source_sha256": "eecf02b213ff2c96fc76d252d3657962b92cdcc8ea391e31d7b3e0b59d31db0f",
+      "published_sha256": "eecf02b213ff2c96fc76d252d3657962b92cdcc8ea391e31d7b3e0b59d31db0f",
+      "bytes": 16710,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/host/org/stables/host/ChainModel.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/host/org/stables/host/ChainModel.java",
+      "source_sha256": "8e174343ffe6b007c1c0f7a30d50356bfddf6b5151022ba7333e21abbc106284",
+      "published_sha256": "8e174343ffe6b007c1c0f7a30d50356bfddf6b5151022ba7333e21abbc106284",
+      "bytes": 6618,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/host/org/stables/host/Fixtures.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/host/org/stables/host/Fixtures.java",
+      "source_sha256": "83a0d3b3cefa3e2a0efb9e824ab08a16f56ce68dd7a95c08f456eb8e61b07b40",
+      "published_sha256": "83a0d3b3cefa3e2a0efb9e824ab08a16f56ce68dd7a95c08f456eb8e61b07b40",
+      "bytes": 5677,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/host/org/stables/host/Hex.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/host/org/stables/host/Hex.java",
+      "source_sha256": "60a80f6eb589886c238a10873fbd3f4269c8d597d1536ca04b6df6ce0ea85622",
+      "published_sha256": "60a80f6eb589886c238a10873fbd3f4269c8d597d1536ca04b6df6ce0ea85622",
+      "bytes": 2866,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/host/org/stables/host/Lab.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/host/org/stables/host/Lab.java",
+      "source_sha256": "1757e4d4876440da54526c340c4bf35e0cd9a2f5525c5f1ec90db57e3d4dda52",
+      "published_sha256": "1757e4d4876440da54526c340c4bf35e0cd9a2f5525c5f1ec90db57e3d4dda52",
+      "bytes": 3499,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/host/org/stables/host/Lx16Ref.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/host/org/stables/host/Lx16Ref.java",
+      "source_sha256": "a28d11368096d4a28ab87cee845ebb7b32f8cd1f73df519556a48f51860fa818",
+      "published_sha256": "a28d11368096d4a28ab87cee845ebb7b32f8cd1f73df519556a48f51860fa818",
+      "bytes": 2376,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/host/org/stables/host/Main.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/host/org/stables/host/Main.java",
+      "source_sha256": "1a89cfabe5caa1db418aa7bc4e3c30fea04cbd29f56ec7d6ada0f934b4e9fe48",
+      "published_sha256": "1a89cfabe5caa1db418aa7bc4e3c30fea04cbd29f56ec7d6ada0f934b4e9fe48",
+      "bytes": 7786,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/host/org/stables/host/PcscCard.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/host/org/stables/host/PcscCard.java",
+      "source_sha256": "abe64212a4cf7666e3b8d88b1b6c03f8159b4da9a818ae03f7714d6f34fc4af8",
+      "published_sha256": "abe64212a4cf7666e3b8d88b1b6c03f8159b4da9a818ae03f7714d6f34fc4af8",
+      "bytes": 2054,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/host/org/stables/host/Phone.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/host/org/stables/host/Phone.java",
+      "source_sha256": "e617d8b3c7d9a6ae0c9c0a82a56a92c7a7d061dfc8d1962b8661fbfdca9dea22",
+      "published_sha256": "e617d8b3c7d9a6ae0c9c0a82a56a92c7a7d061dfc8d1962b8661fbfdca9dea22",
+      "bytes": 2873,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/host/org/stables/host/RelaySuite.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/host/org/stables/host/RelaySuite.java",
+      "source_sha256": "198d7a91318d35fddd45c9123359899cef15a6095f74e8a92eed4521965d9a51",
+      "published_sha256": "198d7a91318d35fddd45c9123359899cef15a6095f74e8a92eed4521965d9a51",
+      "bytes": 47686,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/host/org/stables/host/SimCard.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/host/org/stables/host/SimCard.java",
+      "source_sha256": "8d65bfd172d52968505cd5ccdc8af0f7e3ee1dde222127ad6aa19a60ced52d77",
+      "published_sha256": "8d65bfd172d52968505cd5ccdc8af0f7e3ee1dde222127ad6aa19a60ced52d77",
+      "bytes": 4982,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/host/org/stables/host/T.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/host/org/stables/host/T.java",
+      "source_sha256": "e4a79659066a99782b22333b45800ac2c874934c9e704c92897ca9c85af418f4",
+      "published_sha256": "e4a79659066a99782b22333b45800ac2c874934c9e704c92897ca9c85af418f4",
+      "bytes": 3669,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/host/org/stables/host/TearControl.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/host/org/stables/host/TearControl.java",
+      "source_sha256": "ec67c841d85f912b79209d19508a50e1e7ce745b0697f5087c28d19afaabd2c4",
+      "published_sha256": "ec67c841d85f912b79209d19508a50e1e7ce745b0697f5087c28d19afaabd2c4",
+      "bytes": 3492,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/host/org/stables/host/TearHarness.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/host/org/stables/host/TearHarness.java",
+      "source_sha256": "8da184869d11aacf050f3e0e6d31bf2b55e3e552df16c5aadfec3c35272f72de",
+      "published_sha256": "8da184869d11aacf050f3e0e6d31bf2b55e3e552df16c5aadfec3c35272f72de",
+      "bytes": 39511,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/host/org/stables/host/UnitTests.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/host/org/stables/host/UnitTests.java",
+      "source_sha256": "231e09746eda041e4609d6c836b4b2b4dfd2ee0ac000db1842e50da042b54e52",
+      "published_sha256": "231e09746eda041e4609d6c836b4b2b4dfd2ee0ac000db1842e50da042b54e52",
+      "bytes": 35944,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/host/org/stables/host/Vendor.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/host/org/stables/host/Vendor.java",
+      "source_sha256": "d74b2576366ede2f6a4e95898fced9ada6a61dcf8a1294f0a09f22da597f8439",
+      "published_sha256": "d74b2576366ede2f6a4e95898fced9ada6a61dcf8a1294f0a09f22da597f8439",
+      "bytes": 3142,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/host/org/stables/host/Wire.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/host/org/stables/host/Wire.java",
+      "source_sha256": "bf768118c1b1aca41be6ec002f7a5a38b4dbfe9bfa1bf050970624482f257b1f",
+      "published_sha256": "bf768118c1b1aca41be6ec002f7a5a38b4dbfe9bfa1bf050970624482f257b1f",
+      "bytes": 4019,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/main/javacard/org/stables/card/BenchApplet.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/main/javacard/org/stables/card/BenchApplet.java",
+      "source_sha256": "3f898450c53c16adb7e956d20535460fb2d70a2360e0706d3cc1774eb28913fd",
+      "published_sha256": "3f898450c53c16adb7e956d20535460fb2d70a2360e0706d3cc1774eb28913fd",
+      "bytes": 10350,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/main/javacard/org/stables/card/Ec.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/main/javacard/org/stables/card/Ec.java",
+      "source_sha256": "cd653a49410ce49b5e0bca7d03d4920873f6999b95fc0c4f6648e212044d9007",
+      "published_sha256": "cd653a49410ce49b5e0bca7d03d4920873f6999b95fc0c4f6648e212044d9007",
+      "bytes": 7404,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/main/javacard/org/stables/card/Lx16.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/main/javacard/org/stables/card/Lx16.java",
+      "source_sha256": "fbacdf3e7fe2ad323956cdc51430d909ec3a2e54c567f90f8461c86b0b35598a",
+      "published_sha256": "fbacdf3e7fe2ad323956cdc51430d909ec3a2e54c567f90f8461c86b0b35598a",
+      "bytes": 7558,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/main/javacard/org/stables/card/Persist.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/main/javacard/org/stables/card/Persist.java",
+      "source_sha256": "b8e7a381ba93e2a6cdf90a273c8e3b83ede9ab6419e0ad946926937fb9a53d2d",
+      "published_sha256": "b8e7a381ba93e2a6cdf90a273c8e3b83ede9ab6419e0ad946926937fb9a53d2d",
+      "bytes": 2279,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/main/javacard/org/stables/card/Proto.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/main/javacard/org/stables/card/Proto.java",
+      "source_sha256": "7524bf598f03a34461f7eaee4e51ecc3c911906f9a90cdf9047e2491560287d0",
+      "published_sha256": "7524bf598f03a34461f7eaee4e51ecc3c911906f9a90cdf9047e2491560287d0",
+      "bytes": 15843,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/main/javacard/org/stables/card/Ram.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/main/javacard/org/stables/card/Ram.java",
+      "source_sha256": "55efb4f164a96fe3e4bb6e673f46821fedd4183bcce10135f878aaf52c7870cd",
+      "published_sha256": "55efb4f164a96fe3e4bb6e673f46821fedd4183bcce10135f878aaf52c7870cd",
+      "bytes": 937,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/main/javacard/org/stables/card/StablesApplet.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/main/javacard/org/stables/card/StablesApplet.java",
+      "source_sha256": "eb4e6b0b2af2fade078de95508a63f12de8ce2ca3017f4ca0c94080c4c253398",
+      "published_sha256": "eb4e6b0b2af2fade078de95508a63f12de8ce2ca3017f4ca0c94080c4c253398",
+      "bytes": 86580,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/main/javacard/org/stables/card/U.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/main/javacard/org/stables/card/U.java",
+      "source_sha256": "fc90b8e9f138f0d721fd6f78aec8ff80832b0ee0c5e9ba8ea32dbcc13a0e5ab4",
+      "published_sha256": "fc90b8e9f138f0d721fd6f78aec8ff80832b0ee0c5e9ba8ea32dbcc13a0e5ab4",
+      "bytes": 4067,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/simshim/com/licel/jcardsim/crypto/SecureRandomNullProvider.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/applet/src/simshim/com/licel/jcardsim/crypto/SecureRandomNullProvider.java",
+      "source_sha256": "f1231e88b97de1c10df65b99e8145f6bac1c6b6acdec429a3e61b8eb0076b787",
+      "published_sha256": "f1231e88b97de1c10df65b99e8145f6bac1c6b6acdec429a3e61b8eb0076b787",
+      "bytes": 963,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/docs/CHIP-WITHDRAW-01-R4.md",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/docs/CHIP-WITHDRAW-01-R4.md",
+      "source_sha256": "eed3c54ccdbabde487b4f141db9facfdcbbdae11f4ff47b3f34caf06f48a4854",
+      "published_sha256": "eed3c54ccdbabde487b4f141db9facfdcbbdae11f4ff47b3f34caf06f48a4854",
+      "bytes": 4513,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/docs/CHIP-WITHDRAW-01.md",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/docs/CHIP-WITHDRAW-01.md",
+      "source_sha256": "09e543f3dae1f57884c1739196f84fa78b497781443f73ee731255062ae066e3",
+      "published_sha256": "09e543f3dae1f57884c1739196f84fa78b497781443f73ee731255062ae066e3",
+      "bytes": 6254,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/measure/balance-baseline-covenants.mjs",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/measure/balance-baseline-covenants.mjs",
+      "source_sha256": "d88a2ed8aa72f38af611129c6c189608cbfcd10653fa83c380a17e2aab18a9c2",
+      "published_sha256": "d88a2ed8aa72f38af611129c6c189608cbfcd10653fa83c380a17e2aab18a9c2",
+      "bytes": 5434,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/measure/balance-covenants.mjs",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/measure/balance-covenants.mjs",
+      "source_sha256": "6a060aff56a0784927492a601a37c76fd823123c70958f2eb3a7d57e65102722",
+      "published_sha256": "6a060aff56a0784927492a601a37c76fd823123c70958f2eb3a7d57e65102722",
+      "bytes": 20226,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/measure/chip-withdrawal-mainnet.mjs",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/measure/chip-withdrawal-mainnet.mjs",
+      "source_sha256": "d31dcc8845fbc7807a01da5123f0ab6a93edd7c2e6032fb713ce9db0264f9665",
+      "published_sha256": "d31dcc8845fbc7807a01da5123f0ab6a93edd7c2e6032fb713ce9db0264f9665",
+      "bytes": 37606,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/measure/covenants.mjs",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/measure/covenants.mjs",
+      "source_sha256": "2045d36b0d5c563db98ae64645dd2bc38d3954e81d3a9b37dde366e836afb74e",
+      "published_sha256": "2045d36b0d5c563db98ae64645dd2bc38d3954e81d3a9b37dde366e836afb74e",
+      "bytes": 17923,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/measure/java/KissRunScaled.java",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/measure/java/KissRunScaled.java",
+      "source_sha256": "f0d9519ab35935e4d623975a0a1b8fe5f60e6187dc72b2e89662dfae8bbadc1f",
+      "published_sha256": "f0d9519ab35935e4d623975a0a1b8fe5f60e6187dc72b2e89662dfae8bbadc1f",
+      "bytes": 5950,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/measure/kissgen.mjs",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/measure/kissgen.mjs",
+      "source_sha256": "bc1a59d1d84d24c73b3b50f46916bf6bf0a16409659ffcc1e1e867f5759cab45",
+      "published_sha256": "bc1a59d1d84d24c73b3b50f46916bf6bf0a16409659ffcc1e1e867f5759cab45",
+      "bytes": 12825,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/measure/ots.mjs",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/captured-sources/measure/ots.mjs",
+      "source_sha256": "c52be06ad334b826cb1488aabb2b4f8a84deaadaf885e8b63370c727f6677479",
+      "published_sha256": "c52be06ad334b826cb1488aabb2b4f8a84deaadaf885e8b63370c727f6677479",
+      "bytes": 8257,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/closure.json",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/closure.json",
+      "source_sha256": "09412a97a3cb9fc1d5dba2467d04276fc2c2bec0fcb1c176356630514743a56a",
+      "published_sha256": "09412a97a3cb9fc1d5dba2467d04276fc2c2bec0fcb1c176356630514743a56a",
+      "bytes": 28321,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/d1a-canonical.json",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/d1a-canonical.json",
+      "source_sha256": "2fb4d79cfb731a502b85badd747f42100ad93c2c385d228461cd05053fb9e1e2",
+      "published_sha256": "2fb4d79cfb731a502b85badd747f42100ad93c2c385d228461cd05053fb9e1e2",
+      "bytes": 56227,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/d1a-result.json",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/d1a-result.json",
+      "source_sha256": "a4e333113ad1654ba2c66df39730d6c0c6e02869aea3d2bb2017a9ce32e404ac",
+      "published_sha256": "a4e333113ad1654ba2c66df39730d6c0c6e02869aea3d2bb2017a9ce32e404ac",
+      "bytes": 85761,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/d1b-canonical.json",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/d1b-canonical.json",
+      "source_sha256": "741853b3f0bed51fbf74a8d62eefe2b256e7a6a374837a8773139b301621934c",
+      "published_sha256": "741853b3f0bed51fbf74a8d62eefe2b256e7a6a374837a8773139b301621934c",
+      "bytes": 64444,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/d1b-result.json",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/d1b-result.json",
+      "source_sha256": "c8ed6d28bfd2196a924c793a67b3c93eaaeefdc42b3f160253ed1a448f713ae1",
+      "published_sha256": "c8ed6d28bfd2196a924c793a67b3c93eaaeefdc42b3f160253ed1a448f713ae1",
+      "bytes": 94168,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/d2a-canonical.json",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/d2a-canonical.json",
+      "source_sha256": "4cd39d1a13af66b8ab9bf19887a498b6d9c757670d86673a59e7edd9fdaf631d",
+      "published_sha256": "4cd39d1a13af66b8ab9bf19887a498b6d9c757670d86673a59e7edd9fdaf631d",
+      "bytes": 25272,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/d2a-result.json",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/d2a-result.json",
+      "source_sha256": "cc7f9d1b54ef401e940c09da4e8d558577999f90c4c96411def1ce26eaece068",
+      "published_sha256": "cc7f9d1b54ef401e940c09da4e8d558577999f90c4c96411def1ce26eaece068",
+      "bytes": 29913,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/d2b-canonical.json",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/d2b-canonical.json",
+      "source_sha256": "320f9dcca42327fac5aa38417d1d272fb98dd61e2e58414f2aa75906a66c22cb",
+      "published_sha256": "320f9dcca42327fac5aa38417d1d272fb98dd61e2e58414f2aa75906a66c22cb",
+      "bytes": 24540,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/d2b-result.json",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/d2b-result.json",
+      "source_sha256": "e03416941dd77974129209565b63bf678ff27a8ea08a8198c36a91ccabaa9b0e",
+      "published_sha256": "e03416941dd77974129209565b63bf678ff27a8ea08a8198c36a91ccabaa9b0e",
+      "bytes": 29103,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/exports/bad-complement.hex",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/exports/bad-complement.hex",
+      "source_sha256": "a2b4a2f5a999d7b7af56059659936d5fafb2d9d8d5f86f1958a5a53635d0cca1",
+      "published_sha256": "a2b4a2f5a999d7b7af56059659936d5fafb2d9d8d5f86f1958a5a53635d0cca1",
+      "bytes": 40538,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/exports/bad-secret.hex",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/exports/bad-secret.hex",
+      "source_sha256": "a169b7bc5bf5c893dd04e948ed19c0bfa14aa9d165186c3f9c7368d408504caf",
+      "published_sha256": "a169b7bc5bf5c893dd04e948ed19c0bfa14aa9d165186c3f9c7368d408504caf",
+      "bytes": 40530,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/exports/d1a.hex",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/exports/d1a.hex",
+      "source_sha256": "38c46f802b5eccbf92dbcb877a05960bc2d127e561d230c614444bcb630b0b53",
+      "published_sha256": "38c46f802b5eccbf92dbcb877a05960bc2d127e561d230c614444bcb630b0b53",
+      "bytes": 40516,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/exports/d1b.hex",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/exports/d1b.hex",
+      "source_sha256": "c65838d08c9bfd58b124179e3c506871734c4c2e1c6e361bf77726effc723a91",
+      "published_sha256": "c65838d08c9bfd58b124179e3c506871734c4c2e1c6e361bf77726effc723a91",
+      "bytes": 43524,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/exports/d2a.hex",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/exports/d2a.hex",
+      "source_sha256": "4e7376c16b0ac32ca9624e57e716f50b1d1a8eebbe4d8dbe7b6bf1eed0beb28c",
+      "published_sha256": "4e7376c16b0ac32ca9624e57e716f50b1d1a8eebbe4d8dbe7b6bf1eed0beb28c",
+      "bytes": 10546,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/exports/d2b.hex",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/exports/d2b.hex",
+      "source_sha256": "a2192075a450af4530799bb02d0933376519c7ad36cf958498286103330da235",
+      "published_sha256": "a2192075a450af4530799bb02d0933376519c7ad36cf958498286103330da235",
+      "bytes": 10280,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/exports/fake-release.hex",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/exports/fake-release.hex",
+      "source_sha256": "b1d37ff292d2483fe304bfb9cef83b434e4973081596c10f81a20ed4c8da3c81",
+      "published_sha256": "b1d37ff292d2483fe304bfb9cef83b434e4973081596c10f81a20ed4c8da3c81",
+      "bytes": 17350,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/exports/payout-overpay.hex",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/exports/payout-overpay.hex",
+      "source_sha256": "a17e470d0114c0117266eb7393beebb260eefacce28b9b9e3ad2aaaa80a65cce",
+      "published_sha256": "a17e470d0114c0117266eb7393beebb260eefacce28b9b9e3ad2aaaa80a65cce",
+      "bytes": 10568,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/exports/payout-redirect.hex",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/exports/payout-redirect.hex",
+      "source_sha256": "2ad64f8dbc38c9091c284b9a2d1a5ef0ae7657a14f76a1a9a4b912404e26ec1e",
+      "published_sha256": "2ad64f8dbc38c9091c284b9a2d1a5ef0ae7657a14f76a1a9a4b912404e26ec1e",
+      "bytes": 10570,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/exports/release-redirect.hex",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/exports/release-redirect.hex",
+      "source_sha256": "57ac01867f16a41a732b044280e7cbe965d5b64147bdb717e639b72fb61a0558",
+      "published_sha256": "57ac01867f16a41a732b044280e7cbe965d5b64147bdb717e639b72fb61a0558",
+      "bytes": 40542,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/exports/replay-voucher1.hex",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/exports/replay-voucher1.hex",
+      "source_sha256": "4cd66ecd3600045a79bc811ea4c2be6f0333611c33d7950a02eb173a903bcd35",
+      "published_sha256": "4cd66ecd3600045a79bc811ea4c2be6f0333611c33d7950a02eb173a903bcd35",
+      "bytes": 43548,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/exports/reserve-skim.hex",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/exports/reserve-skim.hex",
+      "source_sha256": "a57308fa2648c4b6ef0fc210e00fd421003b80bb50baf892c6cee6092cca4a73",
+      "published_sha256": "a57308fa2648c4b6ef0fc210e00fd421003b80bb50baf892c6cee6092cca4a73",
+      "bytes": 10564,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/fake-release-result.json",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/fake-release-result.json",
+      "source_sha256": "41403f5c6debc9a62ade38208b672e3a017adc7658258419f580785d78d1b30d",
+      "published_sha256": "41403f5c6debc9a62ade38208b672e3a017adc7658258419f580785d78d1b30d",
+      "bytes": 14453,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/fixture-block.json",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/fixture-block.json",
+      "source_sha256": "9e65ec04e472226ecbbd9b4b86b51d93c84555229f48e888890e33994c1d2591",
+      "published_sha256": "9e65ec04e472226ecbbd9b4b86b51d93c84555229f48e888890e33994c1d2591",
+      "bytes": 55823,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/initial-coins.json",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/initial-coins.json",
+      "source_sha256": "192f9c3e4e28086059569e1207dfbf978a2cbfae483109334fb45b0574a871ba",
+      "published_sha256": "192f9c3e4e28086059569e1207dfbf978a2cbfae483109334fb45b0574a871ba",
+      "bytes": 17004,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/kiss/account.kiss",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/kiss/account.kiss",
+      "source_sha256": "f676c6e9bf9dca3bafa1d4c466a49d14b32f2dc1260bb0a6e9e89fc53d2e3f0e",
+      "published_sha256": "f676c6e9bf9dca3bafa1d4c466a49d14b32f2dc1260bb0a6e9e89fc53d2e3f0e",
+      "bytes": 3812,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/kiss/helper.kiss",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/kiss/helper.kiss",
+      "source_sha256": "277c54a001e06bef71978133b61e5690b811fdec9cee673383fc48ab7d1cc3dc",
+      "published_sha256": "277c54a001e06bef71978133b61e5690b811fdec9cee673383fc48ab7d1cc3dc",
+      "bytes": 149,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/kiss/helperBody.kiss",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/kiss/helperBody.kiss",
+      "source_sha256": "8ae276ca2249d75b5ed7c3b22a0ab2601e2bd24b88f6d669f4f3912f7cc870b0",
+      "published_sha256": "8ae276ca2249d75b5ed7c3b22a0ab2601e2bd24b88f6d669f4f3912f7cc870b0",
+      "bytes": 3769,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/kiss/registration.kiss",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/kiss/registration.kiss",
+      "source_sha256": "8505fd5e8a39302e2bc43f047797f92b6596107cfcad146558f6e91266b59671",
+      "published_sha256": "8505fd5e8a39302e2bc43f047797f92b6596107cfcad146558f6e91266b59671",
+      "bytes": 693,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/kiss/vault.kiss",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/kiss/vault.kiss",
+      "source_sha256": "747cc1c2fee9bb85f9c212b03ff0fd959d87865145588f5353176d5a557e41c2",
+      "published_sha256": "747cc1c2fee9bb85f9c212b03ff0fd959d87865145588f5353176d5a557e41c2",
+      "bytes": 1659,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/local-preflight-summary.json",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/local-preflight-summary.json",
+      "source_sha256": "b3d2896227e226e0f0a119bd98c1fe9ef97f813c5d30d551854eabfa30afa86a",
+      "published_sha256": "b3d2896227e226e0f0a119bd98c1fe9ef97f813c5d30d551854eabfa30afa86a",
+      "bytes": 17439,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/native-return-check.json",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/native-return-check.json",
+      "source_sha256": "27849cd11e5db9268a44503cc6ed98d2b2e9bda5c80583c981efcdd910d54aa0",
+      "published_sha256": "27849cd11e5db9268a44503cc6ed98d2b2e9bda5c80583c981efcdd910d54aa0",
+      "bytes": 5264,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/owner-spendability.json",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/owner-spendability.json",
+      "source_sha256": "fa885e6155f9b50ed44962a3ecf3081392273f76d13ceb2ff6f57230c69e41af",
+      "published_sha256": "fa885e6155f9b50ed44962a3ecf3081392273f76d13ceb2ff6f57230c69e41af",
+      "bytes": 2534,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/payout-overpay-result.json",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/payout-overpay-result.json",
+      "source_sha256": "f216b619b4923e97729a77de733fb78f44f2199f7542a7ec41bd1f2281de2d7c",
+      "published_sha256": "f216b619b4923e97729a77de733fb78f44f2199f7542a7ec41bd1f2281de2d7c",
+      "bytes": 10665,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/payout-redirect-result.json",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/payout-redirect-result.json",
+      "source_sha256": "d98377e34ef51eaccd03be313d26d2dd608f08b9a1b5b6752d227453f6f1b338",
+      "published_sha256": "d98377e34ef51eaccd03be313d26d2dd608f08b9a1b5b6752d227453f6f1b338",
+      "bytes": 10707,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/release-redirect-result.json",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/release-redirect-result.json",
+      "source_sha256": "85f75dec238bcecbb294c9afb2332560f4182bca3d5840cdfc190e3351db8599",
+      "published_sha256": "85f75dec238bcecbb294c9afb2332560f4182bca3d5840cdfc190e3351db8599",
+      "bytes": 40263,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/replay-voucher1-result.json",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/replay-voucher1-result.json",
+      "source_sha256": "6439e761d35d9a7aaff52fe023bef9354f85f24c22626e91fc46106e9eadbaab",
+      "published_sha256": "6439e761d35d9a7aaff52fe023bef9354f85f24c22626e91fc46106e9eadbaab",
+      "bytes": 41393,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/reserve-skim-result.json",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/reserve-skim-result.json",
+      "source_sha256": "0104f41d35e025681d66b45b0e8ccdb3ed3d5a5fdd4783c8e1eb72185fd3796c",
+      "published_sha256": "0104f41d35e025681d66b45b0e8ccdb3ed3d5a5fdd4783c8e1eb72185fd3796c",
+      "bytes": 10838,
+      "normalized": false
+    },
+    {
+      "path": "simcard/evidence/CHIP-WITHDRAW-01-R4/results/chip-fixtures.json",
+      "source": "1_development/stream_1_app/work/simcard/evidence/CHIP-WITHDRAW-01-R4/results/chip-fixtures.json",
+      "source_sha256": "0b305d55338ea19af9592628ab52ea4fe23a60baae8641d6d48e84645913b7e3",
+      "published_sha256": "0b305d55338ea19af9592628ab52ea4fe23a60baae8641d6d48e84645913b7e3",
+      "bytes": 70857,
       "normalized": false
     },
     {
@@ -1436,6 +2997,14 @@
       "normalized": false
     },
     {
+      "path": "simcard/measure/balance-baseline-covenants.mjs",
+      "source": "1_development/stream_1_app/work/simcard/measure/balance-baseline-covenants.mjs",
+      "source_sha256": "d88a2ed8aa72f38af611129c6c189608cbfcd10653fa83c380a17e2aab18a9c2",
+      "published_sha256": "d88a2ed8aa72f38af611129c6c189608cbfcd10653fa83c380a17e2aab18a9c2",
+      "bytes": 5434,
+      "normalized": false
+    },
+    {
       "path": "simcard/measure/balance-chainwork.mjs",
       "source": "1_development/stream_1_app/work/simcard/measure/balance-chainwork.mjs",
       "source_sha256": "b5faf2581c630181ad3887d4680899d4184651d7cab50239ab5a4bffbc8b6e07",
@@ -1465,6 +3034,22 @@
       "source_sha256": "bfc96aab264d91b0f2eebc43c0d8e35af1c9a4e65e0102e0a294ea0653c9a68a",
       "published_sha256": "bfc96aab264d91b0f2eebc43c0d8e35af1c9a4e65e0102e0a294ea0653c9a68a",
       "bytes": 6257,
+      "normalized": false
+    },
+    {
+      "path": "simcard/measure/chip-withdrawal-mainnet.mjs",
+      "source": "1_development/stream_1_app/work/simcard/measure/chip-withdrawal-mainnet.mjs",
+      "source_sha256": "d31dcc8845fbc7807a01da5123f0ab6a93edd7c2e6032fb713ce9db0264f9665",
+      "published_sha256": "d31dcc8845fbc7807a01da5123f0ab6a93edd7c2e6032fb713ce9db0264f9665",
+      "bytes": 37606,
+      "normalized": false
+    },
+    {
+      "path": "simcard/measure/chip-withdrawal-report.py",
+      "source": "1_development/stream_1_app/work/simcard/measure/chip-withdrawal-report.py",
+      "source_sha256": "a497d8bc250017afbcabab516fab3b40b4bfb839fa37c405f211a13e839abac3",
+      "published_sha256": "a497d8bc250017afbcabab516fab3b40b4bfb839fa37c405f211a13e839abac3",
+      "bytes": 11449,
       "normalized": false
     },
     {
@@ -1502,9 +3087,9 @@
     {
       "path": "simcard/measure/java/KissRunScaled.java",
       "source": "1_development/stream_1_app/work/simcard/measure/java/KissRunScaled.java",
-      "source_sha256": "a9b8739d8fc54ab02b15b07c0d2bc028d4732339ed6fb5b9cd2f4e07f33e919a",
-      "published_sha256": "a9b8739d8fc54ab02b15b07c0d2bc028d4732339ed6fb5b9cd2f4e07f33e919a",
-      "bytes": 5732,
+      "source_sha256": "f0d9519ab35935e4d623975a0a1b8fe5f60e6187dc72b2e89662dfae8bbadc1f",
+      "published_sha256": "f0d9519ab35935e4d623975a0a1b8fe5f60e6187dc72b2e89662dfae8bbadc1f",
+      "bytes": 5950,
       "normalized": false
     },
     {

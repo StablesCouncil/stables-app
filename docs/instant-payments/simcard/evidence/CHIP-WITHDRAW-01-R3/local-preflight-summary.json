@@ -1,0 +1,617 @@
+{
+  "level": "L0, synthetic transaction contexts, not mainnet settlement",
+  "at": "2026-10-08T10:00:30.344Z",
+  "sources": {
+    "measure/chip-withdrawal-mainnet.mjs": "cb645dab8ce9b5b6f48510591eeef7ea1b2a8bcc56455b57a13a4b8c45bb5ed4",
+    "measure/balance-baseline-covenants.mjs": "d88a2ed8aa72f38af611129c6c189608cbfcd10653fa83c380a17e2aab18a9c2",
+    "measure/balance-covenants.mjs": "6a060aff56a0784927492a601a37c76fd823123c70958f2eb3a7d57e65102722",
+    "measure/covenants.mjs": "2045d36b0d5c563db98ae64645dd2bc38d3954e81d3a9b37dde366e836afb74e",
+    "measure/kissgen.mjs": "bc1a59d1d84d24c73b3b50f46916bf6bf0a16409659ffcc1e1e867f5759cab45",
+    "measure/ots.mjs": "c52be06ad334b826cb1488aabb2b4f8a84deaadaf885e8b63370c727f6677479",
+    "measure/java/KissRunScaled.java": "f0d9519ab35935e4d623975a0a1b8fe5f60e6187dc72b2e89662dfae8bbadc1f",
+    "docs/CHIP-WITHDRAW-01.md": "09e543f3dae1f57884c1739196f84fa78b497781443f73ee731255062ae066e3",
+    "../../../../../Crypto/Minima/Nodes/DevNodesSet/9101/minima.jar": "241f9429d0ea2599905fe0950e0dde4c59a2cabe3e480cd89b6e24a628cee56a",
+    "applet/src/main/javacard/org/stables/card/BenchApplet.java": "3f898450c53c16adb7e956d20535460fb2d70a2360e0706d3cc1774eb28913fd",
+    "applet/src/main/javacard/org/stables/card/Ec.java": "cd653a49410ce49b5e0bca7d03d4920873f6999b95fc0c4f6648e212044d9007",
+    "applet/src/main/javacard/org/stables/card/Lx16.java": "fbacdf3e7fe2ad323956cdc51430d909ec3a2e54c567f90f8461c86b0b35598a",
+    "applet/src/main/javacard/org/stables/card/Persist.java": "b8e7a381ba93e2a6cdf90a273c8e3b83ede9ab6419e0ad946926937fb9a53d2d",
+    "applet/src/main/javacard/org/stables/card/Proto.java": "7524bf598f03a34461f7eaee4e51ecc3c911906f9a90cdf9047e2491560287d0",
+    "applet/src/main/javacard/org/stables/card/Ram.java": "55efb4f164a96fe3e4bb6e673f46821fedd4183bcce10135f878aaf52c7870cd",
+    "applet/src/main/javacard/org/stables/card/StablesApplet.java": "eb4e6b0b2af2fade078de95508a63f12de8ce2ca3017f4ca0c94080c4c253398",
+    "applet/src/main/javacard/org/stables/card/U.java": "fc90b8e9f138f0d721fd6f78aec8ff80832b0ee0c5e9ba8ea32dbcc13a0e5ab4",
+    "applet/src/host/org/stables/host/Apdu.java": "378d432e7659f5055bc277d9bb4757b73e5248e97fd670adcbaf525612412f93",
+    "applet/src/host/org/stables/host/Audit.java": "5e9e6c32215fd6495b761c0c540920441ee8189163c1e45c4af5576827eb3490",
+    "applet/src/host/org/stables/host/Bench.java": "d1a943f4052bf32c64661e9a332454e28240b1e23a7be9419b79c3708a3de5a8",
+    "applet/src/host/org/stables/host/Card.java": "eecf02b213ff2c96fc76d252d3657962b92cdcc8ea391e31d7b3e0b59d31db0f",
+    "applet/src/host/org/stables/host/ChainModel.java": "8e174343ffe6b007c1c0f7a30d50356bfddf6b5151022ba7333e21abbc106284",
+    "applet/src/host/org/stables/host/Fixtures.java": "83a0d3b3cefa3e2a0efb9e824ab08a16f56ce68dd7a95c08f456eb8e61b07b40",
+    "applet/src/host/org/stables/host/Hex.java": "60a80f6eb589886c238a10873fbd3f4269c8d597d1536ca04b6df6ce0ea85622",
+    "applet/src/host/org/stables/host/Lab.java": "1757e4d4876440da54526c340c4bf35e0cd9a2f5525c5f1ec90db57e3d4dda52",
+    "applet/src/host/org/stables/host/Lx16Ref.java": "a28d11368096d4a28ab87cee845ebb7b32f8cd1f73df519556a48f51860fa818",
+    "applet/src/host/org/stables/host/Main.java": "1a89cfabe5caa1db418aa7bc4e3c30fea04cbd29f56ec7d6ada0f934b4e9fe48",
+    "applet/src/host/org/stables/host/PcscCard.java": "abe64212a4cf7666e3b8d88b1b6c03f8159b4da9a818ae03f7714d6f34fc4af8",
+    "applet/src/host/org/stables/host/Phone.java": "e617d8b3c7d9a6ae0c9c0a82a56a92c7a7d061dfc8d1962b8661fbfdca9dea22",
+    "applet/src/host/org/stables/host/RelaySuite.java": "198d7a91318d35fddd45c9123359899cef15a6095f74e8a92eed4521965d9a51",
+    "applet/src/host/org/stables/host/SimCard.java": "8d65bfd172d52968505cd5ccdc8af0f7e3ee1dde222127ad6aa19a60ced52d77",
+    "applet/src/host/org/stables/host/T.java": "e4a79659066a99782b22333b45800ac2c874934c9e704c92897ca9c85af418f4",
+    "applet/src/host/org/stables/host/TearControl.java": "ec67c841d85f912b79209d19508a50e1e7ce745b0697f5087c28d19afaabd2c4",
+    "applet/src/host/org/stables/host/TearHarness.java": "8da184869d11aacf050f3e0e6d31bf2b55e3e552df16c5aadfec3c35272f72de",
+    "applet/src/host/org/stables/host/UnitTests.java": "231e09746eda041e4609d6c836b4b2b4dfd2ee0ac000db1842e50da042b54e52",
+    "applet/src/host/org/stables/host/Vendor.java": "d74b2576366ede2f6a4e95898fced9ada6a61dcf8a1294f0a09f22da597f8439",
+    "applet/src/host/org/stables/host/Wire.java": "bf768118c1b1aca41be6ec002f7a5a38b4dbfe9bfa1bf050970624482f257b1f",
+    "applet/src/simshim/com/licel/jcardsim/crypto/SecureRandomNullProvider.java": "f1231e88b97de1c10df65b99e8145f6bac1c6b6acdec429a3e61b8eb0076b787"
+  },
+  "casesSha256": "314f07168a691591f42bfd2602f187805031cc9b72d8ab9e4f318a4c3fbc7580",
+  "total": 63,
+  "passed": 63,
+  "results": [
+    {
+      "name": "register_in0",
+      "success": true,
+      "instructions": 66,
+      "exception": "",
+      "monotonic": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "fund_in0",
+      "success": true,
+      "instructions": 110,
+      "exception": "",
+      "monotonic": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "fund_in1",
+      "success": true,
+      "instructions": 3,
+      "exception": "",
+      "monotonic": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "d1a_in0",
+      "success": true,
+      "instructions": 377,
+      "exception": "",
+      "monotonic": false,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "d1a_in1",
+      "success": true,
+      "instructions": 800,
+      "exception": "",
+      "monotonic": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "d1a_in2",
+      "success": true,
+      "instructions": 800,
+      "exception": "",
+      "monotonic": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "d1a_in3",
+      "success": true,
+      "instructions": 800,
+      "exception": "",
+      "monotonic": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "d1a_in4",
+      "success": true,
+      "instructions": 800,
+      "exception": "",
+      "monotonic": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "d1a_in5",
+      "success": true,
+      "instructions": 800,
+      "exception": "",
+      "monotonic": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "d1b_in0",
+      "success": true,
+      "instructions": 377,
+      "exception": "",
+      "monotonic": false,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "d1b_in1",
+      "success": true,
+      "instructions": 800,
+      "exception": "",
+      "monotonic": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "d1b_in2",
+      "success": true,
+      "instructions": 800,
+      "exception": "",
+      "monotonic": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "d1b_in3",
+      "success": true,
+      "instructions": 800,
+      "exception": "",
+      "monotonic": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "d1b_in4",
+      "success": true,
+      "instructions": 800,
+      "exception": "",
+      "monotonic": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "d1b_in5",
+      "success": true,
+      "instructions": 800,
+      "exception": "",
+      "monotonic": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "bad-secret_in0",
+      "success": true,
+      "instructions": 377,
+      "exception": "",
+      "monotonic": false,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "bad-secret_in1",
+      "success": false,
+      "instructions": 798,
+      "exception": "",
+      "monotonic": true,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "name": "bad-secret_in2",
+      "success": true,
+      "instructions": 800,
+      "exception": "",
+      "monotonic": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "bad-secret_in3",
+      "success": true,
+      "instructions": 800,
+      "exception": "",
+      "monotonic": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "bad-secret_in4",
+      "success": true,
+      "instructions": 800,
+      "exception": "",
+      "monotonic": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "bad-secret_in5",
+      "success": true,
+      "instructions": 800,
+      "exception": "",
+      "monotonic": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "bad-complement_in0",
+      "success": true,
+      "instructions": 377,
+      "exception": "",
+      "monotonic": false,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "bad-complement_in1",
+      "success": false,
+      "instructions": 798,
+      "exception": "",
+      "monotonic": true,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "name": "bad-complement_in2",
+      "success": true,
+      "instructions": 800,
+      "exception": "",
+      "monotonic": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "bad-complement_in3",
+      "success": true,
+      "instructions": 800,
+      "exception": "",
+      "monotonic": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "bad-complement_in4",
+      "success": true,
+      "instructions": 800,
+      "exception": "",
+      "monotonic": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "bad-complement_in5",
+      "success": true,
+      "instructions": 800,
+      "exception": "",
+      "monotonic": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "release-redirect_in0",
+      "success": false,
+      "instructions": 377,
+      "exception": "",
+      "monotonic": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "name": "release-redirect_in1",
+      "success": true,
+      "instructions": 800,
+      "exception": "",
+      "monotonic": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "release-redirect_in2",
+      "success": true,
+      "instructions": 800,
+      "exception": "",
+      "monotonic": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "release-redirect_in3",
+      "success": true,
+      "instructions": 800,
+      "exception": "",
+      "monotonic": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "release-redirect_in4",
+      "success": true,
+      "instructions": 800,
+      "exception": "",
+      "monotonic": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "release-redirect_in5",
+      "success": true,
+      "instructions": 800,
+      "exception": "",
+      "monotonic": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "replay-voucher1_in0",
+      "success": false,
+      "instructions": 306,
+      "exception": "",
+      "monotonic": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "name": "replay-voucher1_in1",
+      "success": true,
+      "instructions": 800,
+      "exception": "",
+      "monotonic": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "replay-voucher1_in2",
+      "success": true,
+      "instructions": 800,
+      "exception": "",
+      "monotonic": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "replay-voucher1_in3",
+      "success": true,
+      "instructions": 800,
+      "exception": "",
+      "monotonic": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "replay-voucher1_in4",
+      "success": true,
+      "instructions": 800,
+      "exception": "",
+      "monotonic": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "replay-voucher1_in5",
+      "success": true,
+      "instructions": 800,
+      "exception": "",
+      "monotonic": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "newer-first_in0",
+      "success": true,
+      "instructions": 377,
+      "exception": "",
+      "monotonic": false,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "newer-first_in1",
+      "success": true,
+      "instructions": 800,
+      "exception": "",
+      "monotonic": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "newer-first_in2",
+      "success": true,
+      "instructions": 800,
+      "exception": "",
+      "monotonic": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "newer-first_in3",
+      "success": true,
+      "instructions": 800,
+      "exception": "",
+      "monotonic": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "newer-first_in4",
+      "success": true,
+      "instructions": 800,
+      "exception": "",
+      "monotonic": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "newer-first_in5",
+      "success": true,
+      "instructions": 800,
+      "exception": "",
+      "monotonic": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "older-after-newer_in0",
+      "success": false,
+      "instructions": 306,
+      "exception": "",
+      "monotonic": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "name": "older-after-newer_in1",
+      "success": true,
+      "instructions": 800,
+      "exception": "",
+      "monotonic": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "older-after-newer_in2",
+      "success": true,
+      "instructions": 800,
+      "exception": "",
+      "monotonic": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "older-after-newer_in3",
+      "success": true,
+      "instructions": 800,
+      "exception": "",
+      "monotonic": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "older-after-newer_in4",
+      "success": true,
+      "instructions": 800,
+      "exception": "",
+      "monotonic": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "older-after-newer_in5",
+      "success": true,
+      "instructions": 800,
+      "exception": "",
+      "monotonic": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "d2a_in0",
+      "success": true,
+      "instructions": 52,
+      "exception": "",
+      "monotonic": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "d2a_in1",
+      "success": true,
+      "instructions": 157,
+      "exception": "",
+      "monotonic": false,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "d2b_in0",
+      "success": true,
+      "instructions": 52,
+      "exception": "",
+      "monotonic": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "d2b_in1",
+      "success": true,
+      "instructions": 157,
+      "exception": "",
+      "monotonic": false,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "payout-redirect_in0",
+      "success": true,
+      "instructions": 52,
+      "exception": "",
+      "monotonic": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "payout-redirect_in1",
+      "success": false,
+      "instructions": 128,
+      "exception": "",
+      "monotonic": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "name": "payout-overpay_in0",
+      "success": true,
+      "instructions": 52,
+      "exception": "",
+      "monotonic": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "payout-overpay_in1",
+      "success": false,
+      "instructions": 120,
+      "exception": "",
+      "monotonic": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "name": "reserve-skim_in0",
+      "success": true,
+      "instructions": 52,
+      "exception": "",
+      "monotonic": true,
+      "expected": true,
+      "pass": true
+    },
+    {
+      "name": "reserve-skim_in1",
+      "success": false,
+      "instructions": 157,
+      "exception": "",
+      "monotonic": false,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "name": "fake-release_in0",
+      "success": false,
+      "instructions": 48,
+      "exception": "",
+      "monotonic": true,
+      "expected": false,
+      "pass": true
+    },
+    {
+      "name": "fake-release_in1",
+      "success": false,
+      "instructions": 89,
+      "exception": "",
+      "monotonic": true,
+      "expected": false,
+      "pass": true
+    }
+  ],
+  "note": "Verbose traces remain in the local results. Frozen source and formal exported transactions are published separately."
+}
