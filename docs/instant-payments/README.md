@@ -30,6 +30,14 @@ This is executable software intended for a chip. It is not a physical secure chi
 
 See the [applet implementation](simcard/applet/src/main/javacard/org/stables/card/StablesApplet.java), [simulator status](simcard/docs/simulator-status.md) and [hardware requirements](simcard/docs/card-capabilities.md).
 
+## Can the complete Minima withdrawal path be tested without hardware?
+
+Yes. The simulated applet can generate a withdrawal authorisation under laboratory keys registered for the test. Minima verifies the signature and transaction data; it cannot directly observe whether a physical chip produced them. The proposed covenant checks should remain enabled. There is no need to weaken authentication or skip signature verification to perform this test.
+
+The existing Card-to-Savings mainnet test exercised the Stage 1 software-trusting covenants, authorised by a normal Minima wallet key. It established that those covenants can release vault tokens, restrict the payout and conserve amounts. It did not exercise the complete Stage 2 transaction that verifies the chip-compatible signature across helper inputs, records the redeemed withdrawal total, and releases vault funds through the proposed D1 and D2 path.
+
+The missing on-chain integration test can therefore use simulated-chip signatures and valueless mainnet test tokens now, once the revised covenant set and the governed experiment are ready. A mined success and the expected invalid-signature, repeated-authorisation and payout refusals would establish the tested Minima transaction path. Physical chip security remains a separate validation task. Hardware availability does not block this on-chain feasibility check.
+
 ## Evidence and its limits
 
 These are existing reports supplied with the snapshot. Preparing this documentation did not rerun the payment experiments or publish a transaction.
@@ -54,7 +62,7 @@ Older summary documents quote 40 unit tests and 47 relay cases. The supplied ind
 2. Establish secure provisioning and certification that bind registered keys to the approved chip and software. Protect the balance and payment logic, not just the private key.
 3. Authenticate credits so a chip cannot accept fabricated funding or payments from an uncertified peer.
 4. Complete and test the revised covenant set, update its dependent addresses and registration bindings, and integrate chip authorisations into the app.
-5. Mine complete chip-authorised withdrawal transactions on Minima mainnet using valueless test tokens, verifying transaction-level execution budgets and output accounting.
+5. Mine complete chip-authorised withdrawal transactions on Minima mainnet using valueless test tokens, verifying transaction-level execution budgets and output accounting. Simulated-chip signatures can supply the authorisations for this test; physical hardware is not required.
 6. Obtain independent review of LX16 and the complete protocol and implementation before using real value.
 
 The cumulative withdrawal rule records how much a chip has authorised in total and pays only the difference from what the chain has already redeemed. Its full revised branch has not been remeasured. The complete chip-authorised withdrawal path has not been demonstrated by a mined mainnet transaction.
