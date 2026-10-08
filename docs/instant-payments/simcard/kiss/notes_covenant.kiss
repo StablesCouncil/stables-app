@@ -1,0 +1,177 @@
+// notes_covenant.kiss
+// NOTES covenant: value coins and anchor marks (CASH / EXPIRE), records (READ / RETIRE).
+// Measured: see measure/receipts/covenant-branches.json (node 1.0.45.15 jar, in-process) and templateChecks there.
+// Placeholders used in the measured copy: STAMP/USDW token ids, BURN/NOTES/POOL addresses and the helper body hash are random test values.
+//   T1_cash_h0_mark: 136 instructions, success=true (expected true)
+//   T1_cash_value_coin: 29 instructions, success=true (expected true)
+//   T1_cash_h1_mark: 372 instructions, success=true (expected true)
+//   T1_cash_h1_helper_first: 800 instructions, success=true (expected true)
+//   T1_cash_h2_mark: 537 instructions, success=true (expected true)
+//   T1_cash_h2_helper_first: 800 instructions, success=true (expected true)
+//   T1_cash_h3_mark: 702 instructions, success=true (expected true)
+//   T1_cash_h3_helper_first: 800 instructions, success=true (expected true)
+//   T1_cash_h3_helper_last: 800 instructions, success=true (expected true)
+//   NEG_T1_payout_redirected: 528 instructions, success=false (expected false)
+//   NEG_T1_helper_missing: 66 instructions, success=false (expected false)
+//   NEG_T1_foreign_helper: 297 instructions, success=false (expected false)
+//   NEG_T1_hop2_tampered_helper: 798 instructions, success=false (expected false)
+//   NEG_T1_signed_by_wrong_key: 182 instructions, success=false (expected false)
+//   NEG_T1_after_expiry: 58 instructions, success=false (expected false)
+//   NEG_T2_record_not_stored: 73 instructions, success=false (expected false)
+//   record_retire: 37 instructions, success=true (expected true)
+//   NEG_record_retire_early: 34 instructions, success=false (expected false)
+//   NEG_lane_MERGE_swallows_record: 47 instructions, success=false (expected false)
+//   C2_record_read: 54 instructions, success=true (expected true)
+//   anchor_expire: 68 instructions, success=true (expected true)
+
+IF @TOKENID EQ 0xCA20F2505BF004D715DDBF8AA257647984F603B69691BEBFD922E88EBD95A063 THEN
+LET ent=PREVSTATE(110+STATE(5))
+ASSERT SUBSET(32 64 ent) EQ @COINID
+ASSERT GETINID(0) EQ SUBSET(0 32 ent)
+RETURN @INPUT EQ 1
+ENDIF ASSERT @TOKENID EQ 0x98DB51DCCF3F6CC7EBA4F239F3D23F3473E8971668945B80CBB8BCEAB97F85DF
+ASSERT @AMOUNT EQ 1
+LET role=PREVSTATE(99)
+IF role EQ 1 THEN
+ASSERT @INPUT EQ 0
+LET i=STATE(5)
+LET ent=PREVSTATE(110+i)
+ASSERT SUBSET(0 32 ent) EQ @COINID
+ASSERT GETINID(1) EQ SUBSET(32 64 ent)
+IF @BLOCK GT PREVSTATE(103) THEN
+ASSERT VERIFYOUT(0 0xCA777B9FD6F1E79EEE12D469E48FAB00AEC95CBDDB2508A88C89BAB0667062ED 1 @TOKENID FALSE)
+RETURN VERIFYOUT(1 PREVSTATE(101) GETINAMT(1) GETINTOK(1) FALSE)
+ENDIF LET h=STATE(1)
+ASSERT h LTE 3
+ASSERT @TOTIN EQ 2+5*h
+IF h GT 0 THEN
+ASSERT STATE(97) EQ 2
+ENDIF LET aid=@COINID
+LET pk=SUBSET(64 96 ent)
+LET prevd=aid
+LET pay=PREVSTATE(101)
+LET sum=CONCAT(aid pk)
+IF h GT 0 THEN
+LET ha=ADDRESS([LET owner=]+STRING(STATE(6))+[ MAST 0x87D2386D6E247A82153098251A5847BC355C02D50B8AED4619E02BDADD87BEB4])
+LET m=0x0000000000000000000000000000000100000000000000000000000000000002000000000000000000000000000000040000000000000000000000000000000800000000000000000000000000000010000000000000000000000000000000200000000000000000000000000000004000000000000000000000000000000080
+LET zz=0x00000000000000000000000000000000
+LET m=CONCAT(m SUBSET(1 128 m) SUBSET(0 1 zz))
+LET m=CONCAT(m SUBSET(2 256 m) SUBSET(0 2 zz))
+LET m=CONCAT(m SUBSET(4 512 m) SUBSET(0 4 zz))
+LET m=CONCAT(m SUBSET(8 1024 m) SUBSET(0 8 zz))
+LET m=CONCAT(m m)
+LET m=SUBSET(0 4080 m)
+ENDIF IF h GTE 1 THEN
+LET d=SHA2(CONCAT(0x01 aid 0x01 prevd STATE(19)))
+ASSERT SHA2(CONCAT(0x01 STATE(18))) EQ pk
+LET e=CONCAT(SUBSET(16 32 d) SUBSET(16 32 d))
+LET f=CONCAT(SUBSET(0 16 d) SUBSET(0 16 d))
+LET e=CONCAT(e e)
+LET f=CONCAT(f f)
+LET e=CONCAT(e e)
+LET f=CONCAT(f f)
+LET e=CONCAT(e e)
+LET f=CONCAT(f f)
+LET e=CONCAT(e e)
+LET f=CONCAT(f f)
+LET e=CONCAT(e e)
+LET f=CONCAT(f f)
+LET e=CONCAT(e e)
+LET f=CONCAT(f f)
+LET e=CONCAT(e f)
+LET e=SUBSET(0 4080 e)
+ASSERT (CONCAT(0x01 STATE(16))&CONCAT(0x01 m)) EQ (CONCAT(0x01 e)&CONCAT(0x01 m))
+ASSERT GETINADDR(2+0) EQ ha
+ASSERT GETINADDR(2+1) EQ ha
+ASSERT GETINADDR(2+2) EQ ha
+ASSERT GETINADDR(2+3) EQ ha
+ASSERT GETINADDR(2+4) EQ ha
+LET pk=SUBSET(0 32 STATE(19))
+LET pay=SUBSET(32 64 STATE(19))
+LET prevd=d
+LET sum=CONCAT(sum d pk)
+ENDIF IF h GTE 2 THEN
+LET d=SHA2(CONCAT(0x01 aid 0x02 prevd STATE(35)))
+ASSERT SHA2(CONCAT(0x01 STATE(34))) EQ pk
+LET e=CONCAT(SUBSET(16 32 d) SUBSET(16 32 d))
+LET f=CONCAT(SUBSET(0 16 d) SUBSET(0 16 d))
+LET e=CONCAT(e e)
+LET f=CONCAT(f f)
+LET e=CONCAT(e e)
+LET f=CONCAT(f f)
+LET e=CONCAT(e e)
+LET f=CONCAT(f f)
+LET e=CONCAT(e e)
+LET f=CONCAT(f f)
+LET e=CONCAT(e e)
+LET f=CONCAT(f f)
+LET e=CONCAT(e e)
+LET f=CONCAT(f f)
+LET e=CONCAT(e f)
+LET e=SUBSET(0 4080 e)
+ASSERT (CONCAT(0x01 STATE(32))&CONCAT(0x01 m)) EQ (CONCAT(0x01 e)&CONCAT(0x01 m))
+ASSERT GETINADDR(7+0) EQ ha
+ASSERT GETINADDR(7+1) EQ ha
+ASSERT GETINADDR(7+2) EQ ha
+ASSERT GETINADDR(7+3) EQ ha
+ASSERT GETINADDR(7+4) EQ ha
+LET pk=SUBSET(0 32 STATE(35))
+LET pay=SUBSET(32 64 STATE(35))
+LET prevd=d
+LET sum=CONCAT(sum d pk)
+ENDIF IF h GTE 3 THEN
+LET d=SHA2(CONCAT(0x01 aid 0x03 prevd STATE(51)))
+ASSERT SHA2(CONCAT(0x01 STATE(50))) EQ pk
+LET e=CONCAT(SUBSET(16 32 d) SUBSET(16 32 d))
+LET f=CONCAT(SUBSET(0 16 d) SUBSET(0 16 d))
+LET e=CONCAT(e e)
+LET f=CONCAT(f f)
+LET e=CONCAT(e e)
+LET f=CONCAT(f f)
+LET e=CONCAT(e e)
+LET f=CONCAT(f f)
+LET e=CONCAT(e e)
+LET f=CONCAT(f f)
+LET e=CONCAT(e e)
+LET f=CONCAT(f f)
+LET e=CONCAT(e e)
+LET f=CONCAT(f f)
+LET e=CONCAT(e f)
+LET e=SUBSET(0 4080 e)
+ASSERT (CONCAT(0x01 STATE(48))&CONCAT(0x01 m)) EQ (CONCAT(0x01 e)&CONCAT(0x01 m))
+ASSERT GETINADDR(12+0) EQ ha
+ASSERT GETINADDR(12+1) EQ ha
+ASSERT GETINADDR(12+2) EQ ha
+ASSERT GETINADDR(12+3) EQ ha
+ASSERT GETINADDR(12+4) EQ ha
+LET pk=SUBSET(0 32 STATE(51))
+LET pay=SUBSET(32 64 STATE(51))
+LET prevd=d
+LET sum=CONCAT(sum d pk)
+ENDIF LET sum=CONCAT(sum pay)
+LET q=ADDRESS([LET h=]+STRING(SHA2(sum))+[
+LET rec=]+STRING(@ADDRESS)+[
+LET s=STATE(200)
+ASSERT SHA2(s) EQ h
+IF @TOKENID EQ 0x98DB51DCCF3F6CC7EBA4F239F3D23F3473E8971668945B80CBB8BCEAB97F85DF THEN
+ASSERT @INPUT EQ 0
+LET pay=SUBSET(LEN(s)-32 LEN(s) s)
+ASSERT GETINADDR(1) EQ @ADDRESS
+ASSERT STATE(202) EQ GETINAMT(1)
+ASSERT STATE(99) EQ 2
+ASSERT STATE(201) LTE @BLOCK
+ASSERT STATE(201) GTE @BLOCK-20
+ASSERT VERIFYOUT(0 pay GETINAMT(1) GETINTOK(1) FALSE)
+RETURN VERIFYOUT(1 rec 1 @TOKENID TRUE)
+ENDIF RETURN @INPUT EQ 1 AND GETINADDR(0) EQ @ADDRESS AND GETINTOK(0) EQ 0x98DB51DCCF3F6CC7EBA4F239F3D23F3473E8971668945B80CBB8BCEAB97F85DF])
+ASSERT VERIFYOUT(0 q 1 @TOKENID FALSE)
+RETURN VERIFYOUT(1 q GETINAMT(1) GETINTOK(1) FALSE)
+ENDIF IF role EQ 2 THEN
+IF @BLOCK GT PREVSTATE(201)+12000 THEN
+RETURN VERIFYOUT(@INPUT 0xCA777B9FD6F1E79EEE12D469E48FAB00AEC95CBDDB2508A88C89BAB0667062ED 1 @TOKENID FALSE)
+ENDIF ASSERT @INPUT EQ 1
+ASSERT STATE(9) EQ 4
+ASSERT SAMESTATE(99 99)
+ASSERT SAMESTATE(200 202)
+RETURN VERIFYOUT(1 @ADDRESS 1 @TOKENID TRUE)
+ENDIF RETURN FALSE

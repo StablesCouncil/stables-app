@@ -1,0 +1,20 @@
+{
+  "node": {
+    "version": "1.0.45.15",
+    "block": 2336761,
+    "rpcPort": 9105
+  },
+  "timestamp": "2026-09-27T14:20:05.265Z",
+  "purpose": "W4 per-digit loop overhead (chain steps removed) and whole-signature estimate",
+  "measured": {
+    "digits4": 270,
+    "digits8": 522
+  },
+  "perDigitOverhead": 63,
+  "perChainStep": 10,
+  "chainStepsThisSignature": 630,
+  "expectedChainSteps": 502.5,
+  "estimatedWholeSignatureInstructions": 10539,
+  "estimateForExpectedSteps": 9264,
+  "note": "Extrapolation from measured slopes; the whole signature cannot run in one script (receipt w4_full_verify hits 1,025)."
+}

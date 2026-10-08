@@ -1,0 +1,15 @@
+// helper_address.kiss
+// Per-owner helper address; MAST runs the fixed chunk-verifier body.
+// Measured: see measure/receipts/covenant-branches.json (node 1.0.45.15 jar, in-process) and templateChecks there.
+// Placeholders used in the measured copy: STAMP/USDW token ids, BURN/NOTES/POOL addresses and the helper body hash are random test values.
+//   T1_cash_h1_helper_first: 800 instructions, success=true (expected true)
+//   T1_cash_h2_helper_first: 800 instructions, success=true (expected true)
+//   T1_cash_h3_helper_first: 800 instructions, success=true (expected true)
+//   T1_cash_h3_helper_last: 800 instructions, success=true (expected true)
+//   NEG_T1_helper_missing: 66 instructions, success=false (expected false)
+//   NEG_T1_foreign_helper: 297 instructions, success=false (expected false)
+//   NEG_T1_hop2_tampered_helper: 798 instructions, success=false (expected false)
+//   XCHECK_helper_in_process: 790 instructions, success=true (expected true)
+//   C1_claim_verify_2hops_helper: 800 instructions, success=true (expected true)
+
+LET owner=0xEA4E648ABA9E0DC2E293AFA9A3520759DFDED3E23C4D0F4A23953BABAC10F9E9 MAST 0x87D2386D6E247A82153098251A5847BC355C02D50B8AED4619E02BDADD87BEB4

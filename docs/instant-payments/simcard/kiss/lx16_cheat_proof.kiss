@@ -1,0 +1,21 @@
+// lx16_cheat_proof.kiss
+// Purpose: Proof of cheating (labelled-XOR Lamport, n=16): two secrets of one position of one key, plus the key's membership in the device root
+// Measured: 50 instructions, success=false, parseok=true
+// Node 1.0.45.15 (lab peer 9101), runscript dry run, 2026-09-27T15:24:28.244Z. Receipt: measure/receipts/lx16_cheat_proof_same_secret.json
+// Script size: 480 characters. Comment-free body below (deploy form).
+
+LET i=STATE(12)
+LET c=STATE(13)
+LET w=i-c*64
+LET a=STATE(10)
+LET b=STATE(11)
+LET tt=SHA2(SUBSET(0 16 SHA2(a))) ^ SHA2(SUBSET(0 16 SHA2(b)))
+ASSERT CONCAT(0x01 tt) EQ CONCAT(0x01 SUBSET(w*32 w*32+32 STATE(14)))
+LET v=i%128
+LET q=8*(15-FLOOR(v/8))+(v%8)
+ASSERT NOT BITGET(a q)
+ASSERT BITGET(b q)
+ASSERT SHA2(CONCAT(0x01 STATE(14))) EQ SUBSET(c*32 c*32+32 STATE(15))
+ASSERT SHA2(CONCAT(0x01 STATE(15))) EQ STATE(16)
+ASSERT PROOF(STATE(16) 0 STATE(17) STATE(18) STATE(19))
+RETURN TRUE

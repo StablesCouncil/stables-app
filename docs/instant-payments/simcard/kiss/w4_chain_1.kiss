@@ -1,0 +1,13 @@
+// w4_chain_1.kiss
+// Purpose: Winternitz chain cost probe: 1 SHA2 steps in a WHILE loop
+// State ports: 20 signature (67 x 32) or chain start, 21 digest, 22 public key hash
+// Node 1.0.45.15 (lab peer 9101, RPC 9105), runscript dry run. Measurements (receipt = measure/receipts/<name>.json):
+//   w4_chain_1: 21 instructions, success=true (W4 chain slope, 1 steps)
+// Script size: 84 characters; state data in the measured call: 32 bytes. Body below is comment-free (deploy form).
+
+LET x=STATE(20)
+LET k=0
+WHILE k LT 1 DO
+LET x=SHA2(x)
+LET k=k+1
+ENDWHILE RETURN TRUE

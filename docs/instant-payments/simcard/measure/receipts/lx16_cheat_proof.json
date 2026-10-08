@@ -1,0 +1,23 @@
+{
+  "measurement": "lx16_cheat_proof",
+  "purpose": "Proof of cheating (labelled-XOR Lamport, n=16): two secrets of one position of one key, plus the key's membership in the device root",
+  "note": "proof of cheating, position 5, device root of 1,024 keys",
+  "node": {
+    "version": "1.0.45.15",
+    "block": 2336835,
+    "rpcPort": 9105
+  },
+  "timestamp": "2026-09-27T15:24:28.231Z",
+  "command": "runscript (POST, dry run)",
+  "scriptChars": 480,
+  "stateBytes": 2681,
+  "result": {
+    "success": true,
+    "parseok": true,
+    "monotonic": true,
+    "instructions": 117,
+    "executionError": null,
+    "rpcMs": 13,
+    "address": "0x9141B01C5D548A5EBDAD17431210A58D1900F6EF73B5B99CA4523180595DD6DC"
+  }
+}

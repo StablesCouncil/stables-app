@@ -1,0 +1,67 @@
+{
+  "purpose": "Probes behind step 2 design choices: 8-decimal arithmetic in-process, and SUMINPUTS on the live node",
+  "node": {
+    "version": "1.0.45.15",
+    "block": 2338904,
+    "rpcPort": 9105
+  },
+  "timestamp": "2026-09-28T19:33:57.248Z",
+  "inProcess": [
+    {
+      "name": "GETINAMT reads 8-decimal token units",
+      "expected": true,
+      "success": true,
+      "instructions": 5,
+      "monotonic": true,
+      "asExpected": true
+    },
+    {
+      "name": "@AMOUNT reads 8-decimal token units",
+      "expected": true,
+      "success": true,
+      "instructions": 4,
+      "monotonic": true,
+      "asExpected": true
+    },
+    {
+      "name": "VERIFYOUT(@AMOUNT) under keepstate at 8 decimals (the doctrine trap form)",
+      "expected": "observe",
+      "success": true,
+      "instructions": 7,
+      "monotonic": true,
+      "asExpected": null
+    },
+    {
+      "name": "SUMINPUTS adds 8-decimal amounts exactly",
+      "expected": true,
+      "success": true,
+      "instructions": 5,
+      "monotonic": true,
+      "asExpected": true
+    },
+    {
+      "name": "SUMINPUTS one atom off is refused",
+      "expected": false,
+      "success": false,
+      "instructions": 5,
+      "monotonic": true,
+      "asExpected": true
+    },
+    {
+      "name": "@COINAGE = block - created, and marks the script non-monotonic",
+      "expected": true,
+      "success": true,
+      "instructions": 4,
+      "monotonic": false,
+      "asExpected": true
+    }
+  ],
+  "liveSuminputs": {
+    "script": "RETURN SUMINPUTS(0x00) EQ 0",
+    "parseok": true,
+    "success": true,
+    "instructions": 5,
+    "note": "runscript runs on an empty transaction, so the sum is 0: this proves the function exists and runs on 1.0.45.15, not its arithmetic (that is the in-process rows)."
+  },
+  "finding": "The doctrine records VERIFYOUT(@AMOUNT) under keepstate failing on 8-decimal tokens on chain. In-process at scale 36 the same form PASSES, so this method does not reproduce that failure and does not identify its cause (the in-process token object may differ from what a real output carries, or the cause lay elsewhere, for example amount rounding at the RPC). Step 2 keeps the doctrine's pinned-port form anyway (defensive, 2 instructions). L1 observation, not an overturn."
+}

@@ -1,0 +1,307 @@
+{
+  "purpose": "Card-made LX16 and P-256 signatures (jCardSim) checked with the existing verifiers; KISS by runscript dry runs only",
+  "node": {
+    "version": "1.0.45.15",
+    "block": 2339305,
+    "rpcPort": 9105
+  },
+  "timestamp": "2026-09-29T01:23:34.857Z",
+  "pass": 39,
+  "total": 39,
+  "rows": [
+    {
+      "group": "ots.mjs",
+      "name": "voucher key 1: digest = SHA-256(0x44 | chip id | message)",
+      "expect": true,
+      "got": true,
+      "pass": true
+    },
+    {
+      "group": "ots.mjs",
+      "name": "voucher key 1: lxVerify (n=16, 5 chunks, 255 positions)",
+      "expect": true,
+      "got": true,
+      "pass": true
+    },
+    {
+      "group": "ots.mjs",
+      "name": "voucher key 1: pk = SHA-256(0x01 | chunk digests)",
+      "expect": true,
+      "got": true,
+      "pass": true
+    },
+    {
+      "group": "ots.mjs",
+      "name": "voucher key 1: a tampered secret is refused",
+      "expect": false,
+      "got": false,
+      "pass": true
+    },
+    {
+      "group": "ots.mjs",
+      "name": "voucher key 1: another digest is refused",
+      "expect": false,
+      "got": false,
+      "pass": true
+    },
+    {
+      "group": "ots.mjs",
+      "name": "voucher key 2: digest = SHA-256(0x44 | chip id | message)",
+      "expect": true,
+      "got": true,
+      "pass": true
+    },
+    {
+      "group": "ots.mjs",
+      "name": "voucher key 2: lxVerify (n=16, 5 chunks, 255 positions)",
+      "expect": true,
+      "got": true,
+      "pass": true
+    },
+    {
+      "group": "ots.mjs",
+      "name": "voucher key 2: pk = SHA-256(0x01 | chunk digests)",
+      "expect": true,
+      "got": true,
+      "pass": true
+    },
+    {
+      "group": "ots.mjs",
+      "name": "voucher key 2: a tampered secret is refused",
+      "expect": false,
+      "got": false,
+      "pass": true
+    },
+    {
+      "group": "ots.mjs",
+      "name": "voucher key 2: another digest is refused",
+      "expect": false,
+      "got": false,
+      "pass": true
+    },
+    {
+      "group": "ots.mjs",
+      "name": "bench key 5, digest 0: lxVerify",
+      "expect": true,
+      "got": true,
+      "pass": true
+    },
+    {
+      "group": "ots.mjs",
+      "name": "bench key 5, digest 1: lxVerify",
+      "expect": true,
+      "got": true,
+      "pass": true
+    },
+    {
+      "group": "P-256 (node:crypto)",
+      "name": "vendor certificate over the chip key, by the vendor key",
+      "expect": true,
+      "got": true,
+      "pass": true
+    },
+    {
+      "group": "P-256 (node:crypto)",
+      "name": "HELLO, by the receiver chip",
+      "expect": true,
+      "got": true,
+      "pass": true
+    },
+    {
+      "group": "P-256 (node:crypto)",
+      "name": "TRANSFER, by the payer chip",
+      "expect": true,
+      "got": true,
+      "pass": true
+    },
+    {
+      "group": "P-256 (node:crypto)",
+      "name": "ACK, by the receiver chip",
+      "expect": true,
+      "got": true,
+      "pass": true
+    },
+    {
+      "group": "P-256 (node:crypto)",
+      "name": "TRANSFER with the amount altered is refused",
+      "expect": false,
+      "got": false,
+      "pass": true
+    },
+    {
+      "group": "P-256 (node:crypto)",
+      "name": "TRANSFER checked with another chip key is refused",
+      "expect": false,
+      "got": false,
+      "pass": true
+    },
+    {
+      "group": "KISS helper (runscript)",
+      "name": "voucher key 1, helper input 1 (chunk 0)",
+      "expect": true,
+      "got": true,
+      "pass": true,
+      "instructions": 790
+    },
+    {
+      "group": "KISS helper (runscript)",
+      "name": "voucher key 1, helper input 2 (chunk 1)",
+      "expect": true,
+      "got": true,
+      "pass": true,
+      "instructions": 790
+    },
+    {
+      "group": "KISS helper (runscript)",
+      "name": "voucher key 1, helper input 3 (chunk 2)",
+      "expect": true,
+      "got": true,
+      "pass": true,
+      "instructions": 790
+    },
+    {
+      "group": "KISS helper (runscript)",
+      "name": "voucher key 1, helper input 4 (chunk 3)",
+      "expect": true,
+      "got": true,
+      "pass": true,
+      "instructions": 790
+    },
+    {
+      "group": "KISS helper (runscript)",
+      "name": "voucher key 1, helper input 5 (chunk 4)",
+      "expect": true,
+      "got": true,
+      "pass": true,
+      "instructions": 790
+    },
+    {
+      "group": "KISS helper (runscript)",
+      "name": "voucher key 2, helper input 1 (chunk 0)",
+      "expect": true,
+      "got": true,
+      "pass": true,
+      "instructions": 790
+    },
+    {
+      "group": "KISS helper (runscript)",
+      "name": "voucher key 2, helper input 2 (chunk 1)",
+      "expect": true,
+      "got": true,
+      "pass": true,
+      "instructions": 790
+    },
+    {
+      "group": "KISS helper (runscript)",
+      "name": "voucher key 2, helper input 3 (chunk 2)",
+      "expect": true,
+      "got": true,
+      "pass": true,
+      "instructions": 790
+    },
+    {
+      "group": "KISS helper (runscript)",
+      "name": "voucher key 2, helper input 4 (chunk 3)",
+      "expect": true,
+      "got": true,
+      "pass": true,
+      "instructions": 790
+    },
+    {
+      "group": "KISS helper (runscript)",
+      "name": "voucher key 2, helper input 5 (chunk 4)",
+      "expect": true,
+      "got": true,
+      "pass": true,
+      "instructions": 790
+    },
+    {
+      "group": "KISS helper (runscript)",
+      "name": "refusal: a tampered secret",
+      "expect": false,
+      "got": false,
+      "pass": true,
+      "instructions": 788
+    },
+    {
+      "group": "KISS helper (runscript)",
+      "name": "refusal: a tampered complement",
+      "expect": false,
+      "got": false,
+      "pass": true,
+      "instructions": 788
+    },
+    {
+      "group": "KISS D1 core (runscript)",
+      "name": "voucher key 1 against the chip account record",
+      "expect": true,
+      "got": true,
+      "pass": true,
+      "instructions": 313
+    },
+    {
+      "group": "KISS D1 core (runscript)",
+      "name": "voucher key 2 after key 1 was used on chain",
+      "expect": true,
+      "got": true,
+      "pass": true,
+      "instructions": 313
+    },
+    {
+      "group": "KISS D1 core (runscript)",
+      "name": "refusal: key index already used (i <= u)",
+      "expect": false,
+      "got": false,
+      "pass": true,
+      "instructions": 212
+    },
+    {
+      "group": "KISS D1 core (runscript)",
+      "name": "refusal: a label flipped",
+      "expect": false,
+      "got": false,
+      "pass": true,
+      "instructions": 177
+    },
+    {
+      "group": "KISS D1 core (runscript)",
+      "name": "refusal: signed by another key (chunk digests of key 2 claimed for key 1)",
+      "expect": false,
+      "got": false,
+      "pass": true,
+      "instructions": 198
+    },
+    {
+      "group": "KISS D1 core (runscript)",
+      "name": "refusal: the amount in the message altered",
+      "expect": false,
+      "got": false,
+      "pass": true,
+      "instructions": 177
+    },
+    {
+      "group": "KISS proof of cheating (runscript)",
+      "name": "two card signatures by one key (position 1, chunk 0)",
+      "expect": true,
+      "got": true,
+      "pass": true,
+      "instructions": 114
+    },
+    {
+      "group": "KISS proof of cheating (runscript)",
+      "name": "refusal: the same secret twice",
+      "expect": false,
+      "got": false,
+      "pass": true,
+      "instructions": 50
+    },
+    {
+      "group": "KISS proof of cheating (runscript)",
+      "name": "refusal: the key is not the one in the tree at that index",
+      "expect": false,
+      "got": false,
+      "pass": true,
+      "instructions": 112
+    }
+  ]
+}

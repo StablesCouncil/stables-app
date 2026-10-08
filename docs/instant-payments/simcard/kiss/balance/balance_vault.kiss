@@ -1,0 +1,87 @@
+// balance_vault.kiss (chip-balance model, Phase 1 redo, docs/chip-balance-design.md)
+// Purpose: shared USDw reserve: deposits, lanes with a per-lane daily outflow brake, PAY at defund settle, MERGE, SPLIT, retirement to a successor after 5 years dormant
+// Ports: 9 op; 180 lane window start; 181 lane window use; 29 claimed block; 120 / 201 / 202 release-coin summary
+// Measured: measure/receipts/balance_covenant_branches.json (node 1.0.45.15 jar in-process; templates and clean-invariance on the live node).
+// Placeholders in the measured copy: CHIP / USDw token ids, BURN / SUCCESSOR addresses and the helper owner tag are random test values;
+// VAULT, CHIPACC, VENDOR, DISP and the helper body hash are the real addresses of these exact texts.
+// Measured branches:
+//   D2_vault_lane_pay: 167 instructions, success=true (expected true)
+//   NEG_D2_vault_pays_elsewhere: 148 instructions, success=false (expected false)
+//   NEG_D2_vault_overpays: 140 instructions, success=false (expected false)
+//   NEG_D2_vault_fake_Q: 71 instructions, success=false (expected false)
+//   NEG_D2_vault_brake: 131 instructions, success=false (expected false)
+//   D2_vault_brake_floor_lets_small_lane_pay: 167 instructions, success=true (expected true)
+//   EV2_bond_pays_vault: 62 instructions, success=true (expected true)
+//   vault_MERGE_lane_plus_2_deposits: 104 instructions, success=true (expected true)
+//   vault_MERGE_deposit_side: 24 instructions, success=true (expected true)
+//   NEG_vault_MERGE_skims: 104 instructions, success=false (expected false)
+//   vault_SPLIT_lane: 51 instructions, success=true (expected true)
+//   vault_RETIRE_after_dormancy: 23 instructions, success=true (expected true)
+//   NEG_vault_RETIRE_early: 15 instructions, success=false (expected false)
+//   NEG_vault_deposit_spent_as_lane: 92 instructions, success=false (expected false)
+
+ASSERT @TOKENID EQ 0x041F9B529E29A3B2803527A8E9DB6197440E314E338B4E379EDF7987286BD556
+LET op=STATE(9)
+IF op EQ 24 THEN
+ASSERT @COINAGE GT 3153600
+RETURN VERIFYOUT(@INPUT 0xCBF32BF28F7175368EF9A0A81960308E0984C1B6F500481135F9611BA004029C GETINAMT(@INPUT) @TOKENID FALSE)
+ENDIF IF op EQ 11 THEN
+IF @INPUT GT 0 THEN
+RETURN GETINADDR(0) EQ @ADDRESS
+ENDIF LET t=0
+LET s=0
+WHILE t LT @TOTIN DO
+ASSERT GETINADDR(t) EQ @ADDRESS
+ASSERT GETINTOK(t) EQ @TOKENID
+LET s=s+GETINAMT(t)
+LET t=t+1
+ENDWHILE ASSERT SAMESTATE(180 181)
+RETURN VERIFYOUT(0 @ADDRESS s @TOKENID TRUE)
+ENDIF IF op EQ 12 THEN
+ASSERT @TOTIN EQ 1
+ASSERT SAMESTATE(180 181)
+LET a=GETOUTAMT(0)
+ASSERT a GT 0
+ASSERT VERIFYOUT(0 @ADDRESS a @TOKENID TRUE)
+RETURN VERIFYOUT(1 @ADDRESS GETINAMT(0)-a @TOKENID TRUE)
+ENDIF IF op EQ 10 THEN
+ASSERT @INPUT EQ 2
+ASSERT GETINTOK(0) EQ 0xDEF4F22B26E6C2941C4157DEDB6165D5F34C51C7D45F2B225E0F939EC3BC7E23
+LET nr=STATE(120)
+LET ex=STATE(201)
+ASSERT NUMBER(SUBSET(0 1 ex)) EQ 0
+ASSERT GETINADDR(0) EQ ADDRESS([LET h=]+STRING(SHA2(CONCAT(nr ex)))+[
+LET acc=]+STRING(STATE(202))+[
+LET vlt=]+STRING(@ADDRESS)+[
+LET nr=STATE(120)
+LET ex=STATE(201)
+ASSERT SHA2(CONCAT(nr ex)) EQ h
+ASSERT @INPUT EQ 0
+ASSERT GETINTOK(1) EQ 0xDEF4F22B26E6C2941C4157DEDB6165D5F34C51C7D45F2B225E0F939EC3BC7E23
+ASSERT GETINAMT(1) GT 1
+ASSERT STATE(150) EQ SUBSET(128 160 nr)
+ASSERT VERIFYOUT(0 acc 1 @TOKENID TRUE)
+IF NUMBER(SUBSET(0 1 ex)) EQ 0 THEN
+ASSERT STATE(9) EQ 10
+RETURN GETINADDR(2) EQ vlt
+ENDIF ASSERT STATE(9) EQ 30
+RETURN TRUE])
+ASSERT STATE(29) LTE @BLOCK
+ASSERT STATE(29) GTE @BLOCK-20
+LET y=NUMBER(SUBSET(1 9 ex))
+LET ws=PREVSTATE(180)
+LET wu=PREVSTATE(181)+y
+IF STATE(29) GT ws+1728 THEN
+LET ws=STATE(29)
+LET wu=y
+ENDIF ASSERT STATE(180) EQ ws
+ASSERT STATE(181) EQ wu
+LET bal=GETINAMT(2)
+ASSERT (wu*100 LTE bal*100000000*10) OR (wu LTE 100000000000)
+LET p=GETOUTAMT(3)
+ASSERT p*100000000 EQ y
+ASSERT GETOUTADDR(3) EQ SUBSET(96 128 nr)
+ASSERT GETOUTTOK(3) EQ @TOKENID
+ASSERT  NOT GETOUTKEEPSTATE(3)
+RETURN VERIFYOUT(2 @ADDRESS bal-p @TOKENID TRUE)
+ENDIF RETURN FALSE

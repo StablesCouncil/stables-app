@@ -1,0 +1,86 @@
+// instant_registration.kiss (step 2: Instant payments load and offload, docs/step2-load-offload-design.md)
+// Purpose: design A (recommended): per-account, per-currency registration coin; the dedicated withdrawal key signs; daily cash-out limit; payout pinned to the owner's Savings address
+// Ports: 0 magic; 1 account id; 2 withdrawal key; 3 payout; 4 window start; 5 used; 6 claimed block; 7 amount; 8 op (1 withdraw, 2 close); 10 change; 11 dust; 12 currency governed
+// Measured: measure/receipts/step2_covenant_branches.json (node 1.0.45.15 jar in-process, 8-decimal token scaling; parse, clean form and address on the live node 1.0.45.15).
+// Register only the comment-free text below, in the runscript CLEAN form (newscript files text as given; the address is of the clean form).
+// Address of this exact text (clean form): 0x8E1CC987DBA05EAFE8967A8F51DFC3F5496CF0F82F4640980B934987994826B7. Parameters: limit 1000 per window, window 1728 blocks, claimed-block slack 20.
+// Measured transactions (instructions per input, ! = that input refused; verdict = every input passes):
+//   A_WITHDRAW_1_vault_coin_fresh_window: 131/31 -> valid=true (expected true)
+//   A_WITHDRAW_window_continues_900_62: 136/31 -> valid=true (expected true)
+//   A_WITHDRAW_window_resets_after_a_day: 136/28 -> valid=true (expected true)
+//   A_WITHDRAW_exactly_the_limit: 136/28 -> valid=true (expected true)
+//   A_WITHDRAW_2_vault_coins: 131/31/31 -> valid=true (expected true)
+//   A_WITHDRAW_5_vault_coins: 131/31/31/31/31/31 -> valid=true (expected true)
+//   A_WITHDRAW_10_vault_coins: 131/31/31/31/31/31/31/31/31/31/31 -> valid=true (expected true)
+//   A_WITHDRAW_20_vault_coins: 131/31/31/31/31/31/31/31/31/31/31/31/31/31/31/31/31/31/31/31/31 -> valid=true (expected true)
+//   A_WITHDRAW_own_coin_added_goes_to_the_vault: 131/31 -> valid=true (expected true)
+//   A_WITHDRAW_xWiniwa_via_Winiwa_dust_registration: 129/31 -> valid=true (expected true)
+//   NEG_A_currency_swapped_in_state: 15!/31 -> valid=false (expected false)
+//   NEG_A_over_daily_limit_same_day: 72!/31 -> valid=false (expected false)
+//   NEG_A_over_limit_in_one_withdrawal: 67!/31 -> valid=false (expected false)
+//   NEG_A_unsigned: 19!/31 -> valid=false (expected false)
+//   NEG_A_signed_by_another_key: 19!/31 -> valid=false (expected false)
+//   NEG_A_payout_redirected_in_output: 113!/31 -> valid=false (expected false)
+//   NEG_A_payout_redirected_in_state: 11!/31 -> valid=false (expected false)
+//   NEG_A_key_swapped_in_state_signed_by_attacker: 11!/31 -> valid=false (expected false)
+//   NEG_A_change_skimmed_to_extra_output: 121!/31! -> valid=false (expected false)
+//   NEG_A_change_understated: 105!/31 -> valid=false (expected false)
+//   NEG_A_change_kept_with_state_fake_load: 131/31! -> valid=false (expected false)
+//   NEG_A_vault_coin_of_another_currency: 121!/31/17! -> valid=false (expected false)
+//   NEG_A_no_registration_at_input_0: 12! -> valid=false (expected false)
+//   NEG_A_vault_coin_alone: 12! -> valid=false (expected false)
+//   NEG_A_registration_not_at_input_0: 12!/7! -> valid=false (expected false)
+//   NEG_A_claimed_block_stale: 40!/31 -> valid=false (expected false)
+//   NEG_A_claimed_block_in_future: 34!/31 -> valid=false (expected false)
+//   NEG_A_window_not_advanced: 82!/31 -> valid=false (expected false)
+//   NEG_A_forged_negative_usage: 64!/28 -> valid=false (expected false)
+//   NEG_A_registration_recreated_elsewhere: 131!/31 -> valid=false (expected false)
+//   NEG_A_registration_recreated_without_state: 131!/31 -> valid=false (expected false)
+//   NEG_A_extra_keepstate_output_at_vault: 121!/31! -> valid=false (expected false)
+//   A_CLOSE_dust_to_owner: 37 -> valid=true (expected true)
+//   NEG_A_CLOSE_unsigned: 19! -> valid=false (expected false)
+//   NEG_A_CLOSE_redirected: 37! -> valid=false (expected false)
+//   NEG_A_CLOSE_with_vault_coins: 37/17! -> valid=false (expected false)
+LET op=STATE(8)
+ASSERT @INPUT EQ 0
+ASSERT SAMESTATE(0 3)
+ASSERT SAMESTATE(12 12)
+ASSERT SIGNEDBY(PREVSTATE(2))
+IF op EQ 2 THEN
+ASSERT STATE(11) EQ @AMOUNT
+RETURN VERIFYOUT(0 PREVSTATE(3) STATE(11) @TOKENID FALSE)
+ENDIF
+ASSERT op EQ 1
+LET cb=STATE(6)
+ASSERT cb LTE @BLOCK
+ASSERT cb GTE @BLOCK-20
+LET w=STATE(7)
+ASSERT w GT 0
+LET ws=PREVSTATE(4)
+LET wu=PREVSTATE(5)
+IF cb GT ws+1728 THEN
+LET ws=cb
+LET wu=w
+ELSE
+ASSERT wu GTE 0
+LET wu=wu+w
+ENDIF
+ASSERT wu LTE 1000
+ASSERT STATE(4) EQ ws
+ASSERT STATE(5) EQ wu
+ASSERT STATE(11) EQ @AMOUNT
+LET t=PREVSTATE(12)
+LET d=0
+IF @TOKENID EQ t THEN
+LET d=@AMOUNT
+ENDIF
+LET c=SUMINPUTS(t)-d-w
+ASSERT STATE(10) EQ c
+ASSERT VERIFYOUT(0 PREVSTATE(3) w t FALSE)
+IF c GT 0 THEN
+ASSERT @TOTOUT EQ 3
+ELSE
+ASSERT c EQ 0
+ASSERT @TOTOUT EQ 2
+ENDIF
+RETURN VERIFYOUT(@TOTOUT-1 @ADDRESS STATE(11) @TOKENID TRUE)

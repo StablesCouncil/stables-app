@@ -1,0 +1,2001 @@
+{
+  "purpose": "Step 2 (Instant payments: on-chain load and offload): instruction cost and refusal behaviour of every covenant branch, honest and refused, with 8-decimal token scaling",
+  "node": {
+    "version": "1.0.45.15",
+    "block": 2338907,
+    "rpcPort": 9105
+  },
+  "jar": "DevNodesSet/9101/minima.jar (1.0.45.15)",
+  "timestamp": "2026-09-28T19:36:16.041Z",
+  "method": "java/KissRunScaled.java: new Contract per input + setGlobals + run, as TxPoWChecker; tokens at scale 36 (8 decimals); every input of each transaction run, verdict = all inputs pass. Texts, addresses and clean-invariance on the live node (runscript).",
+  "parameters": {
+    "limit": 1000,
+    "day": 1728,
+    "slack": 20,
+    "dormancy": 3153600,
+    "magic": "0x53544931",
+    "dust": "0.00000001",
+    "block": 2340000,
+    "successorPlaceholder": "0x0177E50CA6B89B494998C22399FD218E2E21A0C42E5EB56690DF0F8F1AFC62F9",
+    "winiwa": "0xD4F5DD3546F25D327CBF2B6867E193CE5DB6491AC9C65BBDCECACA1A6688063F",
+    "xwiniwa": "0xEFA53EFF58616DDBDF0B6D6DBB4E18F041C4509FB3DB3B7E5482B99ABC72F127"
+  },
+  "texts": {
+    "reg": {
+      "chars": 833,
+      "cleanChars": 833,
+      "address": "0x8E1CC987DBA05EAFE8967A8F51DFC3F5496CF0F82F4640980B934987994826B7",
+      "cleanInvariant": true
+    },
+    "regh": {
+      "chars": 863,
+      "cleanChars": 863,
+      "address": "0x96CAB9BA1CEDFE2598232233E816ACFA1D470F256C8DC0F69209AD41BC3E69B1",
+      "cleanInvariant": true
+    },
+    "vault": {
+      "chars": 675,
+      "cleanChars": 675,
+      "address": "0xC1EA8355E70CC00C70AD0AF3E15DEE4E3C5111A63F67376DC1EFBC64CC6ACE62",
+      "cleanInvariant": true
+    },
+    "vaulth": {
+      "chars": 675,
+      "cleanChars": 675,
+      "address": "0xF8054CAC3A1DF1824EAF7E6251C5B2BE721805F8E3D252A0CC125F673DCEA911",
+      "cleanInvariant": true
+    },
+    "core": {
+      "chars": 379,
+      "cleanChars": 379,
+      "address": "0x5C81206AAD653A5B2D49951E5D59CF62D397CD67FB58D153FFE852ED15F0DE2E",
+      "cleanInvariant": true
+    }
+  },
+  "summary": {
+    "transactions": 51,
+    "unexpected": 0,
+    "honest": 15,
+    "refusals": 36,
+    "maxInstructionsAnyInput": 143
+  },
+  "crossCheck": {
+    "script": "kiss/step2/reg_core_runscript.kiss",
+    "liveHonest": {
+      "success": true,
+      "instructions": 74,
+      "monotonic": false,
+      "error": null
+    },
+    "inProcessHonest": {
+      "name": "core",
+      "success": true,
+      "instructions": 74,
+      "exception": "",
+      "monotonic": false
+    },
+    "liveWindowNotAdvanced": {
+      "success": false,
+      "instructions": 74
+    },
+    "inProcessWindowNotAdvanced": {
+      "name": "core_window_not_advanced",
+      "success": false,
+      "instructions": 74,
+      "exception": "",
+      "monotonic": false
+    },
+    "liveUnsigned": {
+      "success": false,
+      "instructions": 15
+    },
+    "countsMatch": true
+  },
+  "cases": [
+    {
+      "name": "A_WITHDRAW_1_vault_coin_fresh_window",
+      "design": "A",
+      "expectedValid": true,
+      "valid": true,
+      "asExpected": true,
+      "expectedRefusedBy": [],
+      "refusedBy": [],
+      "maxInstructionsPerInput": 131,
+      "sumInstructionsAllInputs": 162,
+      "inputs": [
+        {
+          "input": 0,
+          "role": "registration",
+          "success": true,
+          "instructions": 131,
+          "monotonic": false,
+          "exception": ""
+        },
+        {
+          "input": 1,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "note": "C withdraws 25.12345678 Winiwa from A's 100 load (pooled). First withdrawal: the window opens at the claimed block."
+    },
+    {
+      "name": "A_WITHDRAW_window_continues_900_62",
+      "design": "A",
+      "expectedValid": true,
+      "valid": true,
+      "asExpected": true,
+      "expectedRefusedBy": [],
+      "refusedBy": [],
+      "maxInstructionsPerInput": 136,
+      "sumInstructionsAllInputs": 167,
+      "inputs": [
+        {
+          "input": 0,
+          "role": "registration",
+          "success": true,
+          "instructions": 136,
+          "monotonic": false,
+          "exception": ""
+        },
+        {
+          "input": 1,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "note": "Same day: 500.5 already used, 400.12345678 more makes 900.62345678, under 1,000."
+    },
+    {
+      "name": "A_WITHDRAW_window_resets_after_a_day",
+      "design": "A",
+      "expectedValid": true,
+      "valid": true,
+      "asExpected": true,
+      "expectedRefusedBy": [],
+      "refusedBy": [],
+      "maxInstructionsPerInput": 136,
+      "sumInstructionsAllInputs": 164,
+      "inputs": [
+        {
+          "input": 0,
+          "role": "registration",
+          "success": true,
+          "instructions": 136,
+          "monotonic": false,
+          "exception": ""
+        },
+        {
+          "input": 1,
+          "role": "vault",
+          "success": true,
+          "instructions": 28,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "note": "Yesterday's window was full (1,000); more than 1,728 blocks later a new window opens. Exact spend: no change output."
+    },
+    {
+      "name": "A_WITHDRAW_exactly_the_limit",
+      "design": "A",
+      "expectedValid": true,
+      "valid": true,
+      "asExpected": true,
+      "expectedRefusedBy": [],
+      "refusedBy": [],
+      "maxInstructionsPerInput": 136,
+      "sumInstructionsAllInputs": 164,
+      "inputs": [
+        {
+          "input": 0,
+          "role": "registration",
+          "success": true,
+          "instructions": 136,
+          "monotonic": false,
+          "exception": ""
+        },
+        {
+          "input": 1,
+          "role": "vault",
+          "success": true,
+          "instructions": 28,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "note": "The limit is inclusive."
+    },
+    {
+      "name": "A_WITHDRAW_2_vault_coins",
+      "design": "A",
+      "expectedValid": true,
+      "valid": true,
+      "asExpected": true,
+      "expectedRefusedBy": [],
+      "refusedBy": [],
+      "maxInstructionsPerInput": 131,
+      "sumInstructionsAllInputs": 193,
+      "inputs": [
+        {
+          "input": 0,
+          "role": "registration",
+          "success": true,
+          "instructions": 131,
+          "monotonic": false,
+          "exception": ""
+        },
+        {
+          "input": 1,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "input": 2,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "note": "2 vault coins (loads and earlier change) in one withdrawal."
+    },
+    {
+      "name": "A_WITHDRAW_5_vault_coins",
+      "design": "A",
+      "expectedValid": true,
+      "valid": true,
+      "asExpected": true,
+      "expectedRefusedBy": [],
+      "refusedBy": [],
+      "maxInstructionsPerInput": 131,
+      "sumInstructionsAllInputs": 286,
+      "inputs": [
+        {
+          "input": 0,
+          "role": "registration",
+          "success": true,
+          "instructions": 131,
+          "monotonic": false,
+          "exception": ""
+        },
+        {
+          "input": 1,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "input": 2,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "input": 3,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "input": 4,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "input": 5,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "note": "5 vault coins (loads and earlier change) in one withdrawal."
+    },
+    {
+      "name": "A_WITHDRAW_10_vault_coins",
+      "design": "A",
+      "expectedValid": true,
+      "valid": true,
+      "asExpected": true,
+      "expectedRefusedBy": [],
+      "refusedBy": [],
+      "maxInstructionsPerInput": 131,
+      "sumInstructionsAllInputs": 441,
+      "inputs": [
+        {
+          "input": 0,
+          "role": "registration",
+          "success": true,
+          "instructions": 131,
+          "monotonic": false,
+          "exception": ""
+        },
+        {
+          "input": 1,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "input": 2,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "input": 3,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "input": 4,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "input": 5,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "input": 6,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "input": 7,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "input": 8,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "input": 9,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "input": 10,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "note": "10 vault coins (loads and earlier change) in one withdrawal."
+    },
+    {
+      "name": "A_WITHDRAW_20_vault_coins",
+      "design": "A",
+      "expectedValid": true,
+      "valid": true,
+      "asExpected": true,
+      "expectedRefusedBy": [],
+      "refusedBy": [],
+      "maxInstructionsPerInput": 131,
+      "sumInstructionsAllInputs": 751,
+      "inputs": [
+        {
+          "input": 0,
+          "role": "registration",
+          "success": true,
+          "instructions": 131,
+          "monotonic": false,
+          "exception": ""
+        },
+        {
+          "input": 1,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "input": 2,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "input": 3,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "input": 4,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "input": 5,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "input": 6,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "input": 7,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "input": 8,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "input": 9,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "input": 10,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "input": 11,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "input": 12,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "input": 13,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "input": 14,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "input": 15,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "input": 16,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "input": 17,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "input": 18,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "input": 19,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "input": 20,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "note": "20 vault coins (loads and earlier change) in one withdrawal."
+    },
+    {
+      "name": "A_WITHDRAW_own_coin_added_goes_to_the_vault",
+      "design": "A",
+      "expectedValid": true,
+      "valid": true,
+      "asExpected": true,
+      "expectedRefusedBy": [],
+      "refusedBy": [],
+      "maxInstructionsPerInput": 131,
+      "sumInstructionsAllInputs": 162,
+      "inputs": [
+        {
+          "input": 0,
+          "role": "registration",
+          "success": true,
+          "instructions": 131,
+          "monotonic": false,
+          "exception": ""
+        },
+        {
+          "input": 1,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "input": 2,
+          "address": "foreign",
+          "measured": false
+        }
+      ],
+      "note": "A foreign coin of the same currency can only be donated into the vault change: SUMINPUTS counts it, and no output can take it back. (Its own script, not run here, must also agree.)"
+    },
+    {
+      "name": "A_WITHDRAW_xWiniwa_via_Winiwa_dust_registration",
+      "design": "A",
+      "expectedValid": true,
+      "valid": true,
+      "asExpected": true,
+      "expectedRefusedBy": [],
+      "refusedBy": [],
+      "maxInstructionsPerInput": 129,
+      "sumInstructionsAllInputs": 160,
+      "inputs": [
+        {
+          "input": 0,
+          "role": "registration",
+          "success": true,
+          "instructions": 129,
+          "monotonic": false,
+          "exception": ""
+        },
+        {
+          "input": 1,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "note": "The registration coin holds Winiwa dust but governs xWiniwa (port 12): a receiver with no xWiniwa in Savings can still move xWiniwa out."
+    },
+    {
+      "name": "NEG_A_currency_swapped_in_state",
+      "design": "A",
+      "expectedValid": false,
+      "valid": false,
+      "asExpected": true,
+      "expectedRefusedBy": [
+        0
+      ],
+      "refusedBy": [
+        0
+      ],
+      "maxInstructionsPerInput": 31,
+      "sumInstructionsAllInputs": 46,
+      "inputs": [
+        {
+          "input": 0,
+          "role": "registration",
+          "success": false,
+          "instructions": 15,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "input": 1,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "note": "A registration for xWiniwa cannot be pointed at Winiwa (SAMESTATE on port 12)."
+    },
+    {
+      "name": "NEG_A_over_daily_limit_same_day",
+      "design": "A",
+      "expectedValid": false,
+      "valid": false,
+      "asExpected": true,
+      "expectedRefusedBy": [
+        0
+      ],
+      "refusedBy": [
+        0
+      ],
+      "maxInstructionsPerInput": 72,
+      "sumInstructionsAllInputs": 103,
+      "inputs": [
+        {
+          "input": 0,
+          "role": "registration",
+          "success": false,
+          "instructions": 72,
+          "monotonic": false,
+          "exception": ""
+        },
+        {
+          "input": 1,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "note": "900 used + 200 = 1,100 > 1,000."
+    },
+    {
+      "name": "NEG_A_over_limit_in_one_withdrawal",
+      "design": "A",
+      "expectedValid": false,
+      "valid": false,
+      "asExpected": true,
+      "expectedRefusedBy": [
+        0
+      ],
+      "refusedBy": [
+        0
+      ],
+      "maxInstructionsPerInput": 67,
+      "sumInstructionsAllInputs": 98,
+      "inputs": [
+        {
+          "input": 0,
+          "role": "registration",
+          "success": false,
+          "instructions": 67,
+          "monotonic": false,
+          "exception": ""
+        },
+        {
+          "input": 1,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "note": "One atom over the limit."
+    },
+    {
+      "name": "NEG_A_unsigned",
+      "design": "A",
+      "expectedValid": false,
+      "valid": false,
+      "asExpected": true,
+      "expectedRefusedBy": [
+        0
+      ],
+      "refusedBy": [
+        0
+      ],
+      "maxInstructionsPerInput": 31,
+      "sumInstructionsAllInputs": 50,
+      "inputs": [
+        {
+          "input": 0,
+          "role": "registration",
+          "success": false,
+          "instructions": 19,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "input": 1,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "name": "NEG_A_signed_by_another_key",
+      "design": "A",
+      "expectedValid": false,
+      "valid": false,
+      "asExpected": true,
+      "expectedRefusedBy": [
+        0
+      ],
+      "refusedBy": [
+        0
+      ],
+      "maxInstructionsPerInput": 31,
+      "sumInstructionsAllInputs": 50,
+      "inputs": [
+        {
+          "input": 0,
+          "role": "registration",
+          "success": false,
+          "instructions": 19,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "input": 1,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "name": "NEG_A_payout_redirected_in_output",
+      "design": "A",
+      "expectedValid": false,
+      "valid": false,
+      "asExpected": true,
+      "expectedRefusedBy": [
+        0
+      ],
+      "refusedBy": [
+        0
+      ],
+      "maxInstructionsPerInput": 113,
+      "sumInstructionsAllInputs": 144,
+      "inputs": [
+        {
+          "input": 0,
+          "role": "registration",
+          "success": false,
+          "instructions": 113,
+          "monotonic": false,
+          "exception": ""
+        },
+        {
+          "input": 1,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "name": "NEG_A_payout_redirected_in_state",
+      "design": "A",
+      "expectedValid": false,
+      "valid": false,
+      "asExpected": true,
+      "expectedRefusedBy": [
+        0
+      ],
+      "refusedBy": [
+        0
+      ],
+      "maxInstructionsPerInput": 31,
+      "sumInstructionsAllInputs": 42,
+      "inputs": [
+        {
+          "input": 0,
+          "role": "registration",
+          "success": false,
+          "instructions": 11,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "input": 1,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "note": "SAMESTATE(0 3) pins the payout."
+    },
+    {
+      "name": "NEG_A_key_swapped_in_state_signed_by_attacker",
+      "design": "A",
+      "expectedValid": false,
+      "valid": false,
+      "asExpected": true,
+      "expectedRefusedBy": [
+        0
+      ],
+      "refusedBy": [
+        0
+      ],
+      "maxInstructionsPerInput": 31,
+      "sumInstructionsAllInputs": 42,
+      "inputs": [
+        {
+          "input": 0,
+          "role": "registration",
+          "success": false,
+          "instructions": 11,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "input": 1,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "name": "NEG_A_change_skimmed_to_extra_output",
+      "design": "A",
+      "expectedValid": false,
+      "valid": false,
+      "asExpected": true,
+      "expectedRefusedBy": [
+        0,
+        1
+      ],
+      "refusedBy": [
+        0,
+        1
+      ],
+      "maxInstructionsPerInput": 121,
+      "sumInstructionsAllInputs": 152,
+      "inputs": [
+        {
+          "input": 0,
+          "role": "registration",
+          "success": false,
+          "instructions": 121,
+          "monotonic": false,
+          "exception": ""
+        },
+        {
+          "input": 1,
+          "role": "vault",
+          "success": false,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "name": "NEG_A_change_understated",
+      "design": "A",
+      "expectedValid": false,
+      "valid": false,
+      "asExpected": true,
+      "expectedRefusedBy": [
+        0
+      ],
+      "refusedBy": [
+        0
+      ],
+      "maxInstructionsPerInput": 105,
+      "sumInstructionsAllInputs": 136,
+      "inputs": [
+        {
+          "input": 0,
+          "role": "registration",
+          "success": false,
+          "instructions": 105,
+          "monotonic": false,
+          "exception": ""
+        },
+        {
+          "input": 1,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "note": "The vault coin accepts the declared change; the registration coin refuses it (SUMINPUTS)."
+    },
+    {
+      "name": "NEG_A_change_kept_with_state_fake_load",
+      "design": "A",
+      "expectedValid": false,
+      "valid": false,
+      "asExpected": true,
+      "expectedRefusedBy": [
+        1
+      ],
+      "refusedBy": [
+        1
+      ],
+      "maxInstructionsPerInput": 131,
+      "sumInstructionsAllInputs": 162,
+      "inputs": [
+        {
+          "input": 0,
+          "role": "registration",
+          "success": true,
+          "instructions": 131,
+          "monotonic": false,
+          "exception": ""
+        },
+        {
+          "input": 1,
+          "role": "vault",
+          "success": false,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "note": "Change carrying state would look like a new load naming the account in port 1."
+    },
+    {
+      "name": "NEG_A_vault_coin_of_another_currency",
+      "design": "A",
+      "expectedValid": false,
+      "valid": false,
+      "asExpected": true,
+      "expectedRefusedBy": [
+        0,
+        2
+      ],
+      "refusedBy": [
+        0,
+        2
+      ],
+      "maxInstructionsPerInput": 121,
+      "sumInstructionsAllInputs": 169,
+      "inputs": [
+        {
+          "input": 0,
+          "role": "registration",
+          "success": false,
+          "instructions": 121,
+          "monotonic": false,
+          "exception": ""
+        },
+        {
+          "input": 1,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "input": 2,
+          "role": "vault",
+          "success": false,
+          "instructions": 17,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "name": "NEG_A_no_registration_at_input_0",
+      "design": "A",
+      "expectedValid": false,
+      "valid": false,
+      "asExpected": true,
+      "expectedRefusedBy": [
+        1
+      ],
+      "refusedBy": [
+        1
+      ],
+      "maxInstructionsPerInput": 12,
+      "sumInstructionsAllInputs": 12,
+      "inputs": [
+        {
+          "input": 0,
+          "address": "foreign",
+          "measured": false
+        },
+        {
+          "input": 1,
+          "role": "vault",
+          "success": false,
+          "instructions": 12,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "note": "A thief puts its own coin at input 0: the vault coin refuses."
+    },
+    {
+      "name": "NEG_A_vault_coin_alone",
+      "design": "A",
+      "expectedValid": false,
+      "valid": false,
+      "asExpected": true,
+      "expectedRefusedBy": [
+        0
+      ],
+      "refusedBy": [
+        0
+      ],
+      "maxInstructionsPerInput": 12,
+      "sumInstructionsAllInputs": 12,
+      "inputs": [
+        {
+          "input": 0,
+          "role": "vault",
+          "success": false,
+          "instructions": 12,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "name": "NEG_A_registration_not_at_input_0",
+      "design": "A",
+      "expectedValid": false,
+      "valid": false,
+      "asExpected": true,
+      "expectedRefusedBy": [
+        0,
+        1
+      ],
+      "refusedBy": [
+        0,
+        1
+      ],
+      "maxInstructionsPerInput": 12,
+      "sumInstructionsAllInputs": 19,
+      "inputs": [
+        {
+          "input": 0,
+          "role": "vault",
+          "success": false,
+          "instructions": 12,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "input": 1,
+          "role": "registration",
+          "success": false,
+          "instructions": 7,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "name": "NEG_A_claimed_block_stale",
+      "design": "A",
+      "expectedValid": false,
+      "valid": false,
+      "asExpected": true,
+      "expectedRefusedBy": [
+        0
+      ],
+      "refusedBy": [
+        0
+      ],
+      "maxInstructionsPerInput": 40,
+      "sumInstructionsAllInputs": 71,
+      "inputs": [
+        {
+          "input": 0,
+          "role": "registration",
+          "success": false,
+          "instructions": 40,
+          "monotonic": false,
+          "exception": ""
+        },
+        {
+          "input": 1,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "name": "NEG_A_claimed_block_in_future",
+      "design": "A",
+      "expectedValid": false,
+      "valid": false,
+      "asExpected": true,
+      "expectedRefusedBy": [
+        0
+      ],
+      "refusedBy": [
+        0
+      ],
+      "maxInstructionsPerInput": 34,
+      "sumInstructionsAllInputs": 65,
+      "inputs": [
+        {
+          "input": 0,
+          "role": "registration",
+          "success": false,
+          "instructions": 34,
+          "monotonic": false,
+          "exception": ""
+        },
+        {
+          "input": 1,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "name": "NEG_A_window_not_advanced",
+      "design": "A",
+      "expectedValid": false,
+      "valid": false,
+      "asExpected": true,
+      "expectedRefusedBy": [
+        0
+      ],
+      "refusedBy": [
+        0
+      ],
+      "maxInstructionsPerInput": 82,
+      "sumInstructionsAllInputs": 113,
+      "inputs": [
+        {
+          "input": 0,
+          "role": "registration",
+          "success": false,
+          "instructions": 82,
+          "monotonic": false,
+          "exception": ""
+        },
+        {
+          "input": 1,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "note": "The builder tries to keep \"used\" at 500."
+    },
+    {
+      "name": "NEG_A_forged_negative_usage",
+      "design": "A",
+      "expectedValid": false,
+      "valid": false,
+      "asExpected": true,
+      "expectedRefusedBy": [
+        0
+      ],
+      "refusedBy": [
+        0
+      ],
+      "maxInstructionsPerInput": 64,
+      "sumInstructionsAllInputs": 92,
+      "inputs": [
+        {
+          "input": 0,
+          "role": "registration",
+          "success": false,
+          "instructions": 64,
+          "monotonic": false,
+          "exception": ""
+        },
+        {
+          "input": 1,
+          "role": "vault",
+          "success": true,
+          "instructions": 28,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "note": "Anyone can create a coin at the registration address with any state; a negative usage is refused."
+    },
+    {
+      "name": "NEG_A_registration_recreated_elsewhere",
+      "design": "A",
+      "expectedValid": false,
+      "valid": false,
+      "asExpected": true,
+      "expectedRefusedBy": [
+        0
+      ],
+      "refusedBy": [
+        0
+      ],
+      "maxInstructionsPerInput": 131,
+      "sumInstructionsAllInputs": 162,
+      "inputs": [
+        {
+          "input": 0,
+          "role": "registration",
+          "success": false,
+          "instructions": 131,
+          "monotonic": false,
+          "exception": ""
+        },
+        {
+          "input": 1,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "name": "NEG_A_registration_recreated_without_state",
+      "design": "A",
+      "expectedValid": false,
+      "valid": false,
+      "asExpected": true,
+      "expectedRefusedBy": [
+        0
+      ],
+      "refusedBy": [
+        0
+      ],
+      "maxInstructionsPerInput": 131,
+      "sumInstructionsAllInputs": 162,
+      "inputs": [
+        {
+          "input": 0,
+          "role": "registration",
+          "success": false,
+          "instructions": 131,
+          "monotonic": false,
+          "exception": ""
+        },
+        {
+          "input": 1,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "name": "NEG_A_extra_keepstate_output_at_vault",
+      "design": "A",
+      "expectedValid": false,
+      "valid": false,
+      "asExpected": true,
+      "expectedRefusedBy": [
+        0,
+        1
+      ],
+      "refusedBy": [
+        0,
+        1
+      ],
+      "maxInstructionsPerInput": 121,
+      "sumInstructionsAllInputs": 152,
+      "inputs": [
+        {
+          "input": 0,
+          "role": "registration",
+          "success": false,
+          "instructions": 121,
+          "monotonic": false,
+          "exception": ""
+        },
+        {
+          "input": 1,
+          "role": "vault",
+          "success": false,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "name": "A_CLOSE_dust_to_owner",
+      "design": "A",
+      "expectedValid": true,
+      "valid": true,
+      "asExpected": true,
+      "expectedRefusedBy": [],
+      "refusedBy": [],
+      "maxInstructionsPerInput": 37,
+      "sumInstructionsAllInputs": 37,
+      "inputs": [
+        {
+          "input": 0,
+          "role": "registration",
+          "success": true,
+          "instructions": 37,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "name": "NEG_A_CLOSE_unsigned",
+      "design": "A",
+      "expectedValid": false,
+      "valid": false,
+      "asExpected": true,
+      "expectedRefusedBy": [
+        0
+      ],
+      "refusedBy": [
+        0
+      ],
+      "maxInstructionsPerInput": 19,
+      "sumInstructionsAllInputs": 19,
+      "inputs": [
+        {
+          "input": 0,
+          "role": "registration",
+          "success": false,
+          "instructions": 19,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "name": "NEG_A_CLOSE_redirected",
+      "design": "A",
+      "expectedValid": false,
+      "valid": false,
+      "asExpected": true,
+      "expectedRefusedBy": [
+        0
+      ],
+      "refusedBy": [
+        0
+      ],
+      "maxInstructionsPerInput": 37,
+      "sumInstructionsAllInputs": 37,
+      "inputs": [
+        {
+          "input": 0,
+          "role": "registration",
+          "success": false,
+          "instructions": 37,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "name": "NEG_A_CLOSE_with_vault_coins",
+      "design": "A",
+      "expectedValid": false,
+      "valid": false,
+      "asExpected": true,
+      "expectedRefusedBy": [
+        1
+      ],
+      "refusedBy": [
+        1
+      ],
+      "maxInstructionsPerInput": 37,
+      "sumInstructionsAllInputs": 54,
+      "inputs": [
+        {
+          "input": 0,
+          "role": "registration",
+          "success": true,
+          "instructions": 37,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "input": 1,
+          "role": "vault",
+          "success": false,
+          "instructions": 17,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "name": "V_MERGE_3_coins",
+      "design": "A",
+      "expectedValid": true,
+      "valid": true,
+      "asExpected": true,
+      "expectedRefusedBy": [],
+      "refusedBy": [],
+      "maxInstructionsPerInput": 39,
+      "sumInstructionsAllInputs": 117,
+      "inputs": [
+        {
+          "input": 0,
+          "role": "vault",
+          "success": true,
+          "instructions": 39,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "input": 1,
+          "role": "vault",
+          "success": true,
+          "instructions": 39,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "input": 2,
+          "role": "vault",
+          "success": true,
+          "instructions": 39,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "note": "Anyone may merge vault coins of one currency into one coin that carries no state."
+    },
+    {
+      "name": "NEG_V_MERGE_skims",
+      "design": "A",
+      "expectedValid": false,
+      "valid": false,
+      "asExpected": true,
+      "expectedRefusedBy": [
+        0
+      ],
+      "refusedBy": [
+        0,
+        1
+      ],
+      "maxInstructionsPerInput": 39,
+      "sumInstructionsAllInputs": 78,
+      "inputs": [
+        {
+          "input": 0,
+          "role": "vault",
+          "success": false,
+          "instructions": 39,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "input": 1,
+          "role": "vault",
+          "success": false,
+          "instructions": 39,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "name": "NEG_V_MERGE_skims_to_second_output",
+      "design": "A",
+      "expectedValid": false,
+      "valid": false,
+      "asExpected": true,
+      "expectedRefusedBy": [
+        0
+      ],
+      "refusedBy": [
+        0,
+        1
+      ],
+      "maxInstructionsPerInput": 25,
+      "sumInstructionsAllInputs": 50,
+      "inputs": [
+        {
+          "input": 0,
+          "role": "vault",
+          "success": false,
+          "instructions": 25,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "input": 1,
+          "role": "vault",
+          "success": false,
+          "instructions": 25,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "name": "NEG_V_MERGE_output_keeps_state",
+      "design": "A",
+      "expectedValid": false,
+      "valid": false,
+      "asExpected": true,
+      "expectedRefusedBy": [
+        0
+      ],
+      "refusedBy": [
+        0,
+        1
+      ],
+      "maxInstructionsPerInput": 39,
+      "sumInstructionsAllInputs": 78,
+      "inputs": [
+        {
+          "input": 0,
+          "role": "vault",
+          "success": false,
+          "instructions": 39,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "input": 1,
+          "role": "vault",
+          "success": false,
+          "instructions": 39,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "name": "NEG_V_MERGE_mixed_currency",
+      "design": "A",
+      "expectedValid": false,
+      "valid": false,
+      "asExpected": true,
+      "expectedRefusedBy": [
+        0,
+        1
+      ],
+      "refusedBy": [
+        0,
+        1
+      ],
+      "maxInstructionsPerInput": 25,
+      "sumInstructionsAllInputs": 46,
+      "inputs": [
+        {
+          "input": 0,
+          "role": "vault",
+          "success": false,
+          "instructions": 25,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "input": 1,
+          "role": "vault",
+          "success": false,
+          "instructions": 21,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "name": "V_RETIRE_after_dormancy",
+      "design": "A",
+      "expectedValid": true,
+      "valid": true,
+      "asExpected": true,
+      "expectedRefusedBy": [],
+      "refusedBy": [],
+      "maxInstructionsPerInput": 36,
+      "sumInstructionsAllInputs": 72,
+      "inputs": [
+        {
+          "input": 0,
+          "role": "vault",
+          "success": true,
+          "instructions": 36,
+          "monotonic": false,
+          "exception": ""
+        },
+        {
+          "input": 1,
+          "role": "vault",
+          "success": true,
+          "instructions": 36,
+          "monotonic": false,
+          "exception": ""
+        }
+      ],
+      "note": "After about 5 years without movement anyone may move a coin to the successor fixed at deployment."
+    },
+    {
+      "name": "NEG_V_RETIRE_too_early",
+      "design": "A",
+      "expectedValid": false,
+      "valid": false,
+      "asExpected": true,
+      "expectedRefusedBy": [
+        0
+      ],
+      "refusedBy": [
+        0
+      ],
+      "maxInstructionsPerInput": 19,
+      "sumInstructionsAllInputs": 19,
+      "inputs": [
+        {
+          "input": 0,
+          "role": "vault",
+          "success": false,
+          "instructions": 19,
+          "monotonic": false,
+          "exception": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "name": "NEG_V_RETIRE_redirected",
+      "design": "A",
+      "expectedValid": false,
+      "valid": false,
+      "asExpected": true,
+      "expectedRefusedBy": [
+        0
+      ],
+      "refusedBy": [
+        0
+      ],
+      "maxInstructionsPerInput": 36,
+      "sumInstructionsAllInputs": 36,
+      "inputs": [
+        {
+          "input": 0,
+          "role": "vault",
+          "success": false,
+          "instructions": 36,
+          "monotonic": false,
+          "exception": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "name": "NEG_V_RETIRE_amount_misstated",
+      "design": "A",
+      "expectedValid": false,
+      "valid": false,
+      "asExpected": true,
+      "expectedRefusedBy": [
+        0
+      ],
+      "refusedBy": [
+        0
+      ],
+      "maxInstructionsPerInput": 26,
+      "sumInstructionsAllInputs": 26,
+      "inputs": [
+        {
+          "input": 0,
+          "role": "vault",
+          "success": false,
+          "instructions": 26,
+          "monotonic": false,
+          "exception": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "name": "NEG_V_unknown_operation",
+      "design": "A",
+      "expectedValid": false,
+      "valid": false,
+      "asExpected": true,
+      "expectedRefusedBy": [
+        0
+      ],
+      "refusedBy": [
+        0
+      ],
+      "maxInstructionsPerInput": 17,
+      "sumInstructionsAllInputs": 17,
+      "inputs": [
+        {
+          "input": 0,
+          "role": "vault",
+          "success": false,
+          "instructions": 17,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "name": "C_WITHDRAW_reveal_next_link",
+      "design": "C",
+      "expectedValid": true,
+      "valid": true,
+      "asExpected": true,
+      "expectedRefusedBy": [],
+      "refusedBy": [],
+      "maxInstructionsPerInput": 138,
+      "sumInstructionsAllInputs": 169,
+      "inputs": [
+        {
+          "input": 0,
+          "role": "registration",
+          "success": true,
+          "instructions": 138,
+          "monotonic": false,
+          "exception": ""
+        },
+        {
+          "input": 1,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "note": "No signature at all: works in MiniDapp read mode and on Core without Admin."
+    },
+    {
+      "name": "NEG_C_wrong_link",
+      "design": "C",
+      "expectedValid": false,
+      "valid": false,
+      "asExpected": true,
+      "expectedRefusedBy": [
+        0
+      ],
+      "refusedBy": [
+        0
+      ],
+      "maxInstructionsPerInput": 31,
+      "sumInstructionsAllInputs": 57,
+      "inputs": [
+        {
+          "input": 0,
+          "role": "registration",
+          "success": false,
+          "instructions": 26,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "input": 1,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "name": "NEG_C_replay_the_head_itself",
+      "design": "C",
+      "expectedValid": false,
+      "valid": false,
+      "asExpected": true,
+      "expectedRefusedBy": [
+        0
+      ],
+      "refusedBy": [
+        0
+      ],
+      "maxInstructionsPerInput": 31,
+      "sumInstructionsAllInputs": 57,
+      "inputs": [
+        {
+          "input": 0,
+          "role": "registration",
+          "success": false,
+          "instructions": 26,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "input": 1,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "name": "NEG_C_payout_redirected",
+      "design": "C",
+      "expectedValid": false,
+      "valid": false,
+      "asExpected": true,
+      "expectedRefusedBy": [
+        0
+      ],
+      "refusedBy": [
+        0
+      ],
+      "maxInstructionsPerInput": 120,
+      "sumInstructionsAllInputs": 151,
+      "inputs": [
+        {
+          "input": 0,
+          "role": "registration",
+          "success": false,
+          "instructions": 120,
+          "monotonic": false,
+          "exception": ""
+        },
+        {
+          "input": 1,
+          "role": "vault",
+          "success": true,
+          "instructions": 31,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "note": ""
+    },
+    {
+      "name": "C_FRONTRUN_same_link_other_amount_still_valid",
+      "design": "C",
+      "expectedValid": true,
+      "valid": true,
+      "asExpected": true,
+      "expectedRefusedBy": [],
+      "refusedBy": [],
+      "maxInstructionsPerInput": 143,
+      "sumInstructionsAllInputs": 171,
+      "inputs": [
+        {
+          "input": 0,
+          "role": "registration",
+          "success": true,
+          "instructions": 143,
+          "monotonic": false,
+          "exception": ""
+        },
+        {
+          "input": 1,
+          "role": "vault",
+          "success": true,
+          "instructions": 28,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "note": "THE WEAKNESS OF C: whoever sees link1 in the mempool can post a competing withdrawal of up to the limit. It still pays only the owner, but not the amount the owner's app debited."
+    }
+  ]
+}

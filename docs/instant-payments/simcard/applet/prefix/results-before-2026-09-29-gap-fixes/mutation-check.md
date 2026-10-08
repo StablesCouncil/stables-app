@@ -1,0 +1,15 @@
+# Mutation check: the tear harness catches broken applets
+
+Negative controls (simulator only). Each mutant is the instrumented applet with one deliberate atomicity bug. A mutant is
+"caught" when at least one interruption point fails an invariant. Per-mutant tables: `results/tear-mutant-M*.md`.
+
+| Mutant | Deliberate bug | Scenario run | Expected to break | Points passing | Caught | First failing row (truncated) |
+|---|---|---|---|---|---|---|
+| M1 | PAY commits the debit in its own transaction, before the pending entry is written | tap (PIN-less) | I1 (value lost) | 33 of 42 | yes | / 8 / tap (PIN-less) / power cut before write 7 / P:PAY / begin pay:956 < process:293 (0 B) / atomic / FAIL after recovery: USDw balances 180.00 + in flight 0.00 + vouchers 0.00 = 180.00; Winiwa balances 40.00 + in flight 0.00 + vouchers 0.00 = 40.00 (before: USDw balances 210.00 + in flight 0.00 + vouchers 0.00 = 210.00; Winiwa balances 40.00 + in flight 0.00 + vouchers 0.00 = 40.00) / pass / pas |
+| M2 | CREDIT marks the nonce credited after the commit instead of inside it | tap (PIN-less) | I1 or I4 (credited and cancelled) | 39 of 40 | yes | / 23 / tap (PIN-less) / power cut before write 22 / R:CREDIT / setByte credit:1107 < process:294 (1 B) / atomic / FAIL after recovery: value created: USDw balances 240.00 + in flight 0.00 + vouchers 0.00 = 240.00; Winiwa balances 40.00 + in flight 0.00 + vouchers 0.00 = 40.00 / pass / pass / pass / **FAIL**  / power cut on R / |
+| M3 | DEFUND marks its LX16 key used only after committing the voucher | defund | I3 (one key, two digests) | 84 of 86 | yes | / 13 / defund / power cut before write 12 / P:DEFUND / setByte defund:1546 < process:303 (1 B) / atomic / pass / pass / FAIL after recovery: key P:1 emitted two digests / pass / **FAIL**  / power cut on P / |
+| M4 | CANCEL restores the balance but marks the entry cancelled in a separate transaction | cancel | I1 (value created) | 37 of 40 | yes | / 22 / cancel / power cut before write 21 / P:CANCEL / begin cancel:1292 < process:298 (0 B) / atomic / FAIL after recovery: value created: USDw balances 225.00 + in flight 0.00 + vouchers 0.00 = 225.00; Winiwa balances 40.00 + in flight 0.00 + vouchers 0.00 = 40.00 / pass / pass / pass / **FAIL**  / power cut on P / |
+| M5 | VERIFY_PIN decrements the try counter inside a transaction, so a tear after the compare rolls it back | wrong PIN | I2 (PIN try given back after the compare) | 2 of 7 | yes | / 1 / wrong PIN / none (enumeration run) / - / - / - / pass / pass / pass / pass / **FAIL** persistence violations: [secret compared before a try was durably spent (tries before 3, now 2, transaction open) at verifyPin:677 < process:287] / completed / |
+| M6 | VERIFY_PIN compares the PIN first and spends the try afterwards | wrong PIN | I2 (PIN compared before the try is spent) | 0 of 4 | yes | / 1 / wrong PIN / none (enumeration run) / - / - / - / pass / pass / pass / pass / **FAIL** persistence violations: [secret compared before a try was durably spent (tries before 3, now 3) at verifyPin:675 < process:287] / completed / |
+
+Caught: 6 of 6.

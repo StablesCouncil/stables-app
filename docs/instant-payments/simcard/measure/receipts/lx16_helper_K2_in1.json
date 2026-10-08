@@ -1,0 +1,23 @@
+{
+  "measurement": "lx16_helper_K2_in1",
+  "purpose": "Labelled-XOR Lamport (n=16) helper: verifies 128 of the 256 positions of one hop signature",
+  "note": "hop 1 chunk 0 of 2",
+  "node": {
+    "version": "1.0.45.15",
+    "block": 2336831,
+    "rpcPort": 9105
+  },
+  "timestamp": "2026-09-27T15:22:08.018Z",
+  "command": "runscript (POST, dry run)",
+  "scriptChars": 9193,
+  "stateBytes": 8401,
+  "result": {
+    "success": false,
+    "parseok": true,
+    "monotonic": true,
+    "instructions": 1025,
+    "executionError": "org.minima.kissvm.exceptions.ExecutionException: MAX instruction number reached! 1025",
+    "rpcMs": 292,
+    "address": "0x1D8F164376B1AD522598A262CD5CD9CE4076825EFC1BAF96736F24BF4864742E"
+  }
+}

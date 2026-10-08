@@ -1,0 +1,56 @@
+// d1_core_runscript_v2_cumulative.kiss: the D1 defund signature core, gap fix of 2026-09-29 (defund voucher ordering).
+// Derived from d1_core_runscript.kiss (kept unchanged, measured 313 instructions). Two changes, both in the defund amount:
+//   the voucher field at bytes 4..12 is the chip's CUMULATIVE defunded total Dv (was the amount y of that defund);
+//   y = Dv - D (D = the record's defunded total, bytes 208..216), still ASSERT y GT 0; the new record stores D = Dv.
+// Together with the unchanged "i GT u" rule: a voucher older than the last one used is refused, and the newest voucher
+// pays everything not yet paid, so vouchers can reach the chain in any order and none is ever stranded.
+// Measured (runscript dry runs on lab peer 9101): see applet/results/d1-order-check.md (instruction counts and orders).
+
+LET r=STATE(120)
+LET mm=STATE(19)
+ASSERT LEN(mm) EQ 52
+LET d=SHA2(CONCAT(0x44 SUBSET(0 32 r) mm))
+LET pk=SHA2(CONCAT(0x01 STATE(18)))
+LET m=0x0000000000000000000000000000000100000000000000000000000000000002000000000000000000000000000000040000000000000000000000000000000800000000000000000000000000000010000000000000000000000000000000200000000000000000000000000000004000000000000000000000000000000080
+LET zz=0x00000000000000000000000000000000
+LET m=CONCAT(m SUBSET(1 128 m) SUBSET(0 1 zz))
+LET m=CONCAT(m SUBSET(2 256 m) SUBSET(0 2 zz))
+LET m=CONCAT(m SUBSET(4 512 m) SUBSET(0 4 zz))
+LET m=CONCAT(m SUBSET(8 1024 m) SUBSET(0 8 zz))
+LET m=CONCAT(m m)
+LET m=SUBSET(0 4080 m)
+LET e=CONCAT(SUBSET(16 32 d) SUBSET(16 32 d))
+LET ff=CONCAT(SUBSET(0 16 d) SUBSET(0 16 d))
+LET e=CONCAT(e e)
+LET ff=CONCAT(ff ff)
+LET e=CONCAT(e e)
+LET ff=CONCAT(ff ff)
+LET e=CONCAT(e e)
+LET ff=CONCAT(ff ff)
+LET e=CONCAT(e e)
+LET ff=CONCAT(ff ff)
+LET e=CONCAT(e e)
+LET ff=CONCAT(ff ff)
+LET e=CONCAT(e e)
+LET ff=CONCAT(ff ff)
+LET e=CONCAT(e ff)
+LET e=SUBSET(0 4080 e)
+ASSERT (CONCAT(0x01 STATE(16)) & CONCAT(0x01 m)) EQ (CONCAT(0x01 e) & CONCAT(0x01 m))
+LET i=NUMBER(SUBSET(0 4 mm))
+ASSERT PROOF(pk i SUBSET(32 64 r) NUMBER(SUBSET(241 249 r)) STATE(27))
+LET kc=NUMBER(SUBSET(12 16 mm))
+ASSERT i GT NUMBER(SUBSET(204 208 r))
+ASSERT kc LTE NUMBER(SUBSET(192 196 r))
+ASSERT NUMBER(SUBSET(28 36 mm)) LTE 100000000000
+LET y=NUMBER(SUBSET(4 12 mm))-NUMBER(SUBSET(208 216 r))
+ASSERT y GT 0
+LET ws=NUMBER(SUBSET(216 220 r))
+LET wu=NUMBER(SUBSET(220 228 r))+y
+IF STATE(29) GT ws+12096 THEN
+LET ws=STATE(29)
+LET wu=y
+ENDIF ASSERT wu LTE NUMBER(SUBSET(228 236 r))
+LET nr=CONCAT(SUBSET(0 204 r) SETLEN(4 HEX(i)) SUBSET(4 12 mm) SETLEN(4 HEX(ws)) SETLEN(8 HEX(wu)) SUBSET(228 249 r))
+LET ex=CONCAT(0x00 SETLEN(8 HEX(y)))
+LET hh=SHA2(CONCAT(nr ex))
+RETURN TRUE

@@ -1,0 +1,68 @@
+{
+  "purpose": "Chip-balance transaction sizes (FUND, D1, D2, evidence settle, swap claim) against the 65,536-byte TxPoW cap and the 100,000-character Core IPC reply cap",
+  "node": {
+    "version": "1.0.45.15",
+    "block": 2337110,
+    "rpcPort": 9105
+  },
+  "timestamp": "2026-09-27T19:00:36.896Z",
+  "method": "one real provable coin with stored state + measured state/witness bytes; extra covenant inputs at the Phase 1 per-input size (1854 B) and helpers at 1102 B; header allowance 1,200 B",
+  "rows": [
+    {
+      "name": "FUND (account + user USDw; outputs: account, vault deposit, change)",
+      "measuredBodyBytes": 10171,
+      "extraCovenantInputs": 0,
+      "helpers": 0,
+      "witnessScriptChars": 6031,
+      "headerAllowance": 1200,
+      "totalTxPoWBytesEstimate": 10054,
+      "fits64KB": true,
+      "fitsCoreIpcReply": true
+    },
+    {
+      "name": "D1 defund verify (account + 5 helpers; output: release coin)",
+      "measuredBodyBytes": 22238,
+      "extraCovenantInputs": 0,
+      "helpers": 5,
+      "witnessScriptChars": 9949,
+      "headerAllowance": 1200,
+      "totalTxPoWBytesEstimate": 27631,
+      "fits64KB": true,
+      "fitsCoreIpcReply": true
+    },
+    {
+      "name": "D2 defund settle (release coin + vendor gate + vault lane; 4 outputs)",
+      "measuredBodyBytes": 12069,
+      "extraCovenantInputs": 2,
+      "helpers": 0,
+      "witnessScriptChars": 7478,
+      "headerAllowance": 1200,
+      "totalTxPoWBytesEstimate": 15660,
+      "fits64KB": true,
+      "fitsCoreIpcReply": true
+    },
+    {
+      "name": "Evidence settle (release coin + gate + bond coin; 4 outputs)",
+      "measuredBodyBytes": 10001,
+      "extraCovenantInputs": 2,
+      "helpers": 0,
+      "witnessScriptChars": 5427,
+      "headerAllowance": 1200,
+      "totalTxPoWBytesEstimate": 13592,
+      "fits64KB": true,
+      "fitsCoreIpcReply": true
+    },
+    {
+      "name": "Swap claim (swap coin; output seller)",
+      "measuredBodyBytes": 3904,
+      "extraCovenantInputs": 0,
+      "helpers": 0,
+      "witnessScriptChars": 422,
+      "headerAllowance": 1200,
+      "totalTxPoWBytesEstimate": 3787,
+      "fits64KB": true,
+      "fitsCoreIpcReply": true
+    }
+  ],
+  "defundTotalBytes": 43291
+}

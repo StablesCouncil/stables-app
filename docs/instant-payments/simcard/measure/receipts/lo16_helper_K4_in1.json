@@ -1,0 +1,23 @@
+{
+  "measurement": "lo16_helper_K4_in1",
+  "purpose": "Ordered (textbook) Lamport (n=16) helper: 64 positions, one IF per bit",
+  "note": "ordered Lamport hop 1 chunk 0 of 4",
+  "node": {
+    "version": "1.0.45.15",
+    "block": 2336756,
+    "rpcPort": 9105
+  },
+  "timestamp": "2026-09-27T14:15:55.631Z",
+  "command": "runscript (POST, dry run)",
+  "scriptChars": 11302,
+  "stateBytes": 8352,
+  "result": {
+    "success": false,
+    "parseok": true,
+    "monotonic": true,
+    "instructions": 1025,
+    "executionError": "org.minima.kissvm.exceptions.ExecutionException: MAX instruction number reached! 1025",
+    "rpcMs": 526,
+    "address": "0xA0C388C94E56CF1D13F98510F35F5A24624DCF9D254245D45DDDD1AF938D1DFF"
+  }
+}

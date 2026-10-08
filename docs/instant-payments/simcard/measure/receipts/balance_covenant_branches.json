@@ -1,0 +1,763 @@
+{
+  "purpose": "Instruction cost and refusal behaviour of every chip-balance covenant branch (in-process on the node jar) plus template checks and a live-node runscript count of the defund signature core",
+  "node": {
+    "version": "1.0.45.15",
+    "block": 2337109,
+    "rpcPort": 9105
+  },
+  "jar": "DevNodesSet/9101/minima.jar (1.0.45.15)",
+  "method": "java/KissRun.java: new Contract per input + setGlobals + run, as TxPoWChecker",
+  "timestamp": "2026-09-27T18:59:52.341Z",
+  "parameters": {
+    "awindow": "12096",
+    "capAtoms": "100000000000",
+    "minFund": "1",
+    "retireAge": "1051200",
+    "vwindow": "1728",
+    "betaPct": "10",
+    "floorAtoms": "100000000000",
+    "dormancy": "3153600",
+    "gwindow": "12096",
+    "rhoPct": "100",
+    "vfloorAtoms": "100000000000",
+    "penaltyAtoms": "1000000000000",
+    "freezeAt": "3",
+    "maxWl": "500000000000",
+    "wdelay": "51840",
+    "abandon": "1261440",
+    "minBondAtoms": "1000000000000",
+    "bondPerChipAtoms": "1000000000"
+  },
+  "addresses": {
+    "VAULT": "0x9D2602FC8CCE7E4BBE95F07F82ED762D28EC6558583120D7323C523470F50426",
+    "ACC": "0x97E745974324D0BBCD5D18253C63E57D0789E38BC89E7BDFC332907923E12778",
+    "VENDOR": "0x84EB442C3E60DB7220C83CA4F4F72E24CF0A66A494B66D45A7D69F41A12A1452",
+    "DISP": "0x642E61EC7B7F115A2DF71CA38501B2B10D533D6F23E10D4ED575FB744ED76535",
+    "HELPER": "0xC27679F91A5EFF0AEC3ADC6CE99CA5ED475AB52FD9F6F896B3EBDFF3773B65B3"
+  },
+  "keyTree": {
+    "leaves": 64,
+    "rootSum": "2016",
+    "proofChars": 498
+  },
+  "templateChecks": {
+    "releaseQ": {
+      "agree": true,
+      "cleanInvariant": true,
+      "chars": 627
+    },
+    "swap": {
+      "cleanInvariant": true,
+      "chars": 422
+    },
+    "helper": {
+      "agree": true,
+      "cleanInvariant": true
+    },
+    "helperBody": {
+      "cleanInvariant": true,
+      "chars": 3768
+    },
+    "vault": {
+      "parseok": true,
+      "cleanInvariant": true,
+      "chars": 2043
+    },
+    "acc": {
+      "parseok": true,
+      "cleanInvariant": true,
+      "chars": 6005
+    },
+    "vendor": {
+      "parseok": true,
+      "cleanInvariant": true,
+      "chars": 4770
+    },
+    "disp": {
+      "parseok": true,
+      "cleanInvariant": true,
+      "chars": 835
+    }
+  },
+  "scriptChars": {
+    "vault": 2043,
+    "helperBody": 3768,
+    "helperAddr": 148,
+    "acc": 6005,
+    "vendor": 4770,
+    "disp": 835
+  },
+  "d1CoreCrossCheck": {
+    "liveRunscript": {
+      "instructions": 313,
+      "success": true
+    },
+    "inProcess": {
+      "instructions": 313,
+      "success": true
+    },
+    "liveRefusalReusedKey": {
+      "success": false,
+      "instructions": 177
+    }
+  },
+  "table": [
+    {
+      "name": "acc_FUND_100",
+      "instructions": 96,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_acc_FUND_deposit_elsewhere",
+      "instructions": 40,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_acc_FUND_counter_skips",
+      "instructions": 89,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_acc_FUND_total_inflated",
+      "instructions": 89,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_acc_FUND_evidence_revoked",
+      "instructions": 32,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "acc_D1_defund_verify",
+      "instructions": 432,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "helper_D1_first",
+      "instructions": 800,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "helper_D1_last",
+      "instructions": 800,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_helper_D1_tampered_complement",
+      "instructions": 798,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_acc_D1_Q_redirected",
+      "instructions": 432,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_acc_D1_foreign_helper",
+      "instructions": 257,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_acc_D1_helper_missing",
+      "instructions": 45,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_helper_D1_tampered_secret",
+      "instructions": 798,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "acc_D1_tampered_secret_passes_anchor_caught_by_helper",
+      "instructions": 432,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_acc_D1_label_flipped",
+      "instructions": 231,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_acc_D1_key_index_reused",
+      "instructions": 310,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_acc_D1_signed_by_other_key",
+      "instructions": 288,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_acc_D1_funding_count_above_chain",
+      "instructions": 318,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_acc_D1_window_limit",
+      "instructions": 365,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "acc_D1_window_reset_allows_901",
+      "instructions": 437,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_acc_D1_balance_above_cap",
+      "instructions": 326,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "acc_D1_owner_revoked_still_pays_owner",
+      "instructions": 432,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_acc_D1_evidence_revoked_chip",
+      "instructions": 302,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "acc_EVIDENCE_funding_mismatch",
+      "instructions": 367,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "acc_EVIDENCE_balance_above_cap",
+      "instructions": 367,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_acc_EVIDENCE_nothing_wrong",
+      "instructions": 319,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "acc_EVIDENCE_clone_two_secrets",
+      "instructions": 221,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_acc_EVIDENCE_clone_same_secret",
+      "instructions": 106,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_acc_EVIDENCE_clone_key_not_in_root",
+      "instructions": 173,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "acc_OWNER_revoke",
+      "instructions": 88,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_acc_OWNER_revoke_unsigned",
+      "instructions": 46,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "acc_OWNER_set_payout",
+      "instructions": 78,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_acc_OWNER_set_payout_by_vendor",
+      "instructions": 50,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "acc_VENDOR_revoke",
+      "instructions": 96,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "acc_RETIRE_revoked_idle",
+      "instructions": 67,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_acc_RETIRE_active_account",
+      "instructions": 56,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "D2_Q_release",
+      "instructions": 66,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "D2_vendor_gate",
+      "instructions": 127,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "D2_vault_lane_pay",
+      "instructions": 167,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_D2_vault_pays_elsewhere",
+      "instructions": 148,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_D2_vault_overpays",
+      "instructions": 140,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_D2_Q_record_not_kept",
+      "instructions": 48,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_D2_Q_wrong_summary",
+      "instructions": 19,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_D2_vault_fake_Q",
+      "instructions": 71,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_D2_gate_other_vendor",
+      "instructions": 41,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_D2_gate_headroom_exhausted",
+      "instructions": 120,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_D2_gate_frozen_vendor",
+      "instructions": 76,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_D2_vault_brake",
+      "instructions": 131,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "D2_vault_brake_floor_lets_small_lane_pay",
+      "instructions": 167,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "EV2_Q_release",
+      "instructions": 63,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "EV2_gate_slash",
+      "instructions": 115,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "EV2_bond_pays_vault",
+      "instructions": 62,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_EV2_bond_pays_elsewhere",
+      "instructions": 52,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_EV2_gate_penalty_too_small",
+      "instructions": 87,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_EV2_gate_with_defund_Q",
+      "instructions": 42,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "gate_REGISTER_chip",
+      "instructions": 94,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_gate_REGISTER_unsigned",
+      "instructions": 31,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_gate_REGISTER_other_vendor_key",
+      "instructions": 52,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_gate_REGISTER_preloaded_balance_counter",
+      "instructions": 59,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_gate_REGISTER_to_fake_account_address",
+      "instructions": 85,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "gate_WITHDRAW_request",
+      "instructions": 54,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "gate_WITHDRAW_after_delay",
+      "instructions": 93,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "bond_WITHDRAW_after_delay",
+      "instructions": 72,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_gate_WITHDRAW_too_early",
+      "instructions": 51,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_gate_WITHDRAW_after_incident",
+      "instructions": 56,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "gate_ABANDON_retirement",
+      "instructions": 46,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "bond_ABANDON_retirement",
+      "instructions": 36,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "vault_MERGE_lane_plus_2_deposits",
+      "instructions": 104,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "vault_MERGE_deposit_side",
+      "instructions": 24,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_vault_MERGE_skims",
+      "instructions": 104,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "vault_SPLIT_lane",
+      "instructions": 51,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "vault_RETIRE_after_dormancy",
+      "instructions": 23,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_vault_RETIRE_early",
+      "instructions": 15,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_vault_deposit_spent_as_lane",
+      "instructions": 92,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": "org.minima.kissvm.exceptions.ExecutionException: PREVSTATE Missing : 180"
+    },
+    {
+      "name": "disp_ADMIT_vendor",
+      "instructions": 107,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_disp_ADMIT_bond_below_minimum",
+      "instructions": 37,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_disp_ADMIT_too_much_stock_for_bond",
+      "instructions": 44,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "swap_CLAIM_with_secret",
+      "instructions": 28,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_swap_CLAIM_wrong_secret",
+      "instructions": 20,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_swap_CLAIM_redirected",
+      "instructions": 28,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "swap_REFUND_after_deadline",
+      "instructions": 20,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_swap_REFUND_before_deadline",
+      "instructions": 19,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": "org.minima.kissvm.exceptions.ExecutionException: State Variable does not exist 210"
+    }
+  ],
+  "badRows": 0
+}

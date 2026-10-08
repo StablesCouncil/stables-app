@@ -1,0 +1,226 @@
+{
+  "node": {
+    "version": "1.0.45.15",
+    "block": 2336831,
+    "rpcPort": 9105
+  },
+  "timestamp": "2026-09-27T15:22:10.372Z",
+  "summary": [
+    {
+      "name": "lx32_helper_K8_in1",
+      "instructions": 428,
+      "success": true,
+      "expectSuccess": true,
+      "error": null,
+      "stateBytes": 16785,
+      "scriptChars": 2001
+    },
+    {
+      "name": "lx32_helper_K8_in8",
+      "instructions": 428,
+      "success": true,
+      "expectSuccess": true,
+      "error": null,
+      "stateBytes": 16785,
+      "scriptChars": 2001
+    },
+    {
+      "name": "lx32_helper_K4_in1",
+      "instructions": 786,
+      "success": true,
+      "expectSuccess": true,
+      "error": null,
+      "stateBytes": 16657,
+      "scriptChars": 3889
+    },
+    {
+      "name": "lx32_helper_K4_in4",
+      "instructions": 786,
+      "success": true,
+      "expectSuccess": true,
+      "error": null,
+      "stateBytes": 16657,
+      "scriptChars": 3889
+    },
+    {
+      "name": "lx32_helper_K4_in1_tampered",
+      "instructions": 784,
+      "success": false,
+      "expectSuccess": false,
+      "error": null,
+      "stateBytes": 16657,
+      "scriptChars": 3889
+    },
+    {
+      "name": "lx32_helper_K2_in1",
+      "instructions": 1025,
+      "success": false,
+      "expectSuccess": false,
+      "error": "org.minima.kissvm.exceptions.ExecutionException: MAX instruction number reached! 1025",
+      "stateBytes": 16593,
+      "scriptChars": 7665
+    },
+    {
+      "name": "lx32_anchor_hops1",
+      "instructions": 143,
+      "success": true,
+      "expectSuccess": true,
+      "error": null,
+      "stateBytes": 16657,
+      "scriptChars": 1257
+    },
+    {
+      "name": "lx32_anchor_hops1_label_flipped",
+      "instructions": 133,
+      "success": false,
+      "expectSuccess": false,
+      "error": null,
+      "stateBytes": 16657,
+      "scriptChars": 1257
+    },
+    {
+      "name": "lx32_anchor_hops1_wrong_key",
+      "instructions": 84,
+      "success": false,
+      "expectSuccess": false,
+      "error": null,
+      "stateBytes": 16657,
+      "scriptChars": 1257
+    },
+    {
+      "name": "lx32_anchor_hops2",
+      "instructions": 217,
+      "success": true,
+      "expectSuccess": true,
+      "error": null,
+      "stateBytes": 33249,
+      "scriptChars": 1621
+    },
+    {
+      "name": "lx32_anchor_hops3",
+      "instructions": 291,
+      "success": true,
+      "expectSuccess": true,
+      "error": null,
+      "stateBytes": 49841,
+      "scriptChars": 1985
+    },
+    {
+      "name": "lx32_full_single_coin",
+      "instructions": 1025,
+      "success": false,
+      "expectSuccess": false,
+      "error": "org.minima.kissvm.exceptions.ExecutionException: MAX instruction number reached! 1025",
+      "stateBytes": 16657,
+      "scriptChars": 19432
+    },
+    {
+      "name": "lx16_helper_K8_in1",
+      "instructions": 524,
+      "success": true,
+      "expectSuccess": true,
+      "error": null,
+      "stateBytes": 8593,
+      "scriptChars": 2400
+    },
+    {
+      "name": "lx16_helper_K8_in8",
+      "instructions": 524,
+      "success": true,
+      "expectSuccess": true,
+      "error": null,
+      "stateBytes": 8593,
+      "scriptChars": 2400
+    },
+    {
+      "name": "lx16_helper_K4_in1",
+      "instructions": 978,
+      "success": true,
+      "expectSuccess": true,
+      "error": null,
+      "stateBytes": 8465,
+      "scriptChars": 4585
+    },
+    {
+      "name": "lx16_helper_K4_in4",
+      "instructions": 978,
+      "success": true,
+      "expectSuccess": true,
+      "error": null,
+      "stateBytes": 8465,
+      "scriptChars": 4585
+    },
+    {
+      "name": "lx16_helper_K4_in1_tampered",
+      "instructions": 976,
+      "success": false,
+      "expectSuccess": false,
+      "error": null,
+      "stateBytes": 8465,
+      "scriptChars": 4585
+    },
+    {
+      "name": "lx16_helper_K2_in1",
+      "instructions": 1025,
+      "success": false,
+      "expectSuccess": false,
+      "error": "org.minima.kissvm.exceptions.ExecutionException: MAX instruction number reached! 1025",
+      "stateBytes": 8401,
+      "scriptChars": 9193
+    },
+    {
+      "name": "lx16_anchor_hops1",
+      "instructions": 176,
+      "success": true,
+      "expectSuccess": true,
+      "error": null,
+      "stateBytes": 8465,
+      "scriptChars": 1116
+    },
+    {
+      "name": "lx16_anchor_hops1_label_flipped",
+      "instructions": 166,
+      "success": false,
+      "expectSuccess": false,
+      "error": null,
+      "stateBytes": 8465,
+      "scriptChars": 1116
+    },
+    {
+      "name": "lx16_anchor_hops1_wrong_key",
+      "instructions": 77,
+      "success": false,
+      "expectSuccess": false,
+      "error": null,
+      "stateBytes": 8465,
+      "scriptChars": 1116
+    },
+    {
+      "name": "lx16_anchor_hops2",
+      "instructions": 290,
+      "success": true,
+      "expectSuccess": true,
+      "error": null,
+      "stateBytes": 16865,
+      "scriptChars": 1660
+    },
+    {
+      "name": "lx16_anchor_hops3",
+      "instructions": 404,
+      "success": true,
+      "expectSuccess": true,
+      "error": null,
+      "stateBytes": 25265,
+      "scriptChars": 2204
+    },
+    {
+      "name": "lx16_full_single_coin",
+      "instructions": 1025,
+      "success": false,
+      "expectSuccess": false,
+      "error": "org.minima.kissvm.exceptions.ExecutionException: MAX instruction number reached! 1025",
+      "stateBytes": 8465,
+      "scriptChars": 22624
+    }
+  ]
+}

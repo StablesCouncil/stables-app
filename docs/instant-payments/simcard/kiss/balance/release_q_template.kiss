@@ -1,0 +1,29 @@
+// release_q_template.kiss (chip-balance model, Phase 1 redo, docs/chip-balance-design.md)
+// Purpose: release coin Q: LET h=<summary hash> LET acc=<CHIPACC> LET vlt=<VAULT> + body. Carries a verified defund or evidence from D1 to the small settle transaction D2
+// Ports: 9 op (10 defund, 30 evidence); 120 new account record; 201 extra (flag, amount); 150 vendor key pinned by the gate
+// Measured: measure/receipts/balance_covenant_branches.json (node 1.0.45.15 jar in-process; templates and clean-invariance on the live node).
+// Placeholders in the measured copy: CHIP / USDw token ids, BURN / SUCCESSOR addresses and the helper owner tag are random test values;
+// VAULT, CHIPACC, VENDOR, DISP and the helper body hash are the real addresses of these exact texts.
+// Measured branches:
+//   NEG_acc_D1_Q_redirected: 432 instructions, success=false (expected false)
+//   D2_Q_release: 66 instructions, success=true (expected true)
+//   NEG_D2_Q_record_not_kept: 48 instructions, success=false (expected false)
+//   NEG_D2_Q_wrong_summary: 19 instructions, success=false (expected false)
+//   EV2_Q_release: 63 instructions, success=true (expected true)
+
+LET h=0x<summary-hash>
+LET acc=0x<CHIPACC>
+LET vlt=0x<VAULT>
+LET nr=STATE(120)
+LET ex=STATE(201)
+ASSERT SHA2(CONCAT(nr ex)) EQ h
+ASSERT @INPUT EQ 0
+ASSERT GETINTOK(1) EQ CHIPID
+ASSERT GETINAMT(1) GT 1
+ASSERT STATE(150) EQ SUBSET(128 160 nr)
+ASSERT VERIFYOUT(0 acc 1 @TOKENID TRUE)
+IF NUMBER(SUBSET(0 1 ex)) EQ 0 THEN
+ASSERT STATE(9) EQ 10
+RETURN GETINADDR(2) EQ vlt
+ENDIF ASSERT STATE(9) EQ 30
+RETURN TRUE

@@ -1,0 +1,197 @@
+// chip_account.kiss (chip-balance model, Phase 1 redo, docs/chip-balance-design.md)
+// Purpose: one coin per chip (1 CHIP): FUND, D1 defund verify with 5 LX16 helpers, funding-mismatch / cap / clone evidence, owner revoke, owner payout change, vendor revoke, retirement
+// Ports: 9 op; 120 account record (249 bytes, layout in measure/balance-covenants.mjs); 16/17/18 LX16 R, C, chunk digests; 19 voucher message (52 bytes); 27 key MMR proof; 29 claimed block; 97 helper offset; 10-15, 26, 28 clone proof; 122 new payout
+// Measured: measure/receipts/balance_covenant_branches.json (node 1.0.45.15 jar in-process; templates and clean-invariance on the live node).
+// Placeholders in the measured copy: CHIP / USDw token ids, BURN / SUCCESSOR addresses and the helper owner tag are random test values;
+// VAULT, CHIPACC, VENDOR, DISP and the helper body hash are the real addresses of these exact texts.
+// Measured branches:
+//   acc_FUND_100: 96 instructions, success=true (expected true)
+//   NEG_acc_FUND_deposit_elsewhere: 40 instructions, success=false (expected false)
+//   NEG_acc_FUND_counter_skips: 89 instructions, success=false (expected false)
+//   NEG_acc_FUND_total_inflated: 89 instructions, success=false (expected false)
+//   NEG_acc_FUND_evidence_revoked: 32 instructions, success=false (expected false)
+//   acc_D1_defund_verify: 432 instructions, success=true (expected true)
+//   NEG_acc_D1_Q_redirected: 432 instructions, success=false (expected false)
+//   NEG_acc_D1_foreign_helper: 257 instructions, success=false (expected false)
+//   NEG_acc_D1_helper_missing: 45 instructions, success=false (expected false)
+//   acc_D1_tampered_secret_passes_anchor_caught_by_helper: 432 instructions, success=true (expected true)
+//   NEG_acc_D1_label_flipped: 231 instructions, success=false (expected false)
+//   NEG_acc_D1_key_index_reused: 310 instructions, success=false (expected false)
+//   NEG_acc_D1_signed_by_other_key: 288 instructions, success=false (expected false)
+//   NEG_acc_D1_funding_count_above_chain: 318 instructions, success=false (expected false)
+//   NEG_acc_D1_window_limit: 365 instructions, success=false (expected false)
+//   acc_D1_window_reset_allows_901: 437 instructions, success=true (expected true)
+//   NEG_acc_D1_balance_above_cap: 326 instructions, success=false (expected false)
+//   acc_D1_owner_revoked_still_pays_owner: 432 instructions, success=true (expected true)
+//   NEG_acc_D1_evidence_revoked_chip: 302 instructions, success=false (expected false)
+//   acc_EVIDENCE_funding_mismatch: 367 instructions, success=true (expected true)
+//   acc_EVIDENCE_balance_above_cap: 367 instructions, success=true (expected true)
+//   NEG_acc_EVIDENCE_nothing_wrong: 319 instructions, success=false (expected false)
+//   acc_EVIDENCE_clone_two_secrets: 221 instructions, success=true (expected true)
+//   NEG_acc_EVIDENCE_clone_same_secret: 106 instructions, success=false (expected false)
+//   NEG_acc_EVIDENCE_clone_key_not_in_root: 173 instructions, success=false (expected false)
+//   acc_OWNER_revoke: 88 instructions, success=true (expected true)
+//   NEG_acc_OWNER_revoke_unsigned: 46 instructions, success=false (expected false)
+//   acc_OWNER_set_payout: 78 instructions, success=true (expected true)
+//   NEG_acc_OWNER_set_payout_by_vendor: 50 instructions, success=false (expected false)
+//   acc_VENDOR_revoke: 96 instructions, success=true (expected true)
+//   acc_RETIRE_revoked_idle: 67 instructions, success=true (expected true)
+//   NEG_acc_RETIRE_active_account: 56 instructions, success=false (expected false)
+
+ASSERT @TOKENID EQ 0xDEF4F22B26E6C2941C4157DEDB6165D5F34C51C7D45F2B225E0F939EC3BC7E23
+ASSERT @AMOUNT EQ 1
+LET r=PREVSTATE(120)
+LET op=STATE(9)
+LET st=NUMBER(SUBSET(236 237 r))
+IF op EQ 1 THEN
+ASSERT @INPUT EQ 0
+ASSERT st EQ 0
+LET x=GETOUTAMT(1)
+ASSERT GETOUTADDR(1) EQ 0x9D2602FC8CCE7E4BBE95F07F82ED762D28EC6558583120D7323C523470F50426
+ASSERT GETOUTTOK(1) EQ 0x041F9B529E29A3B2803527A8E9DB6197440E314E338B4E379EDF7987286BD556
+ASSERT  NOT GETOUTKEEPSTATE(1)
+ASSERT x GTE 1
+ASSERT STATE(120) EQ CONCAT(SUBSET(0 192 r) SETLEN(4 HEX(NUMBER(SUBSET(192 196 r))+1)) SETLEN(8 HEX(NUMBER(SUBSET(196 204 r))+x*100000000)) SUBSET(204 249 r))
+RETURN VERIFYOUT(0 @ADDRESS 1 @TOKENID TRUE)
+ENDIF IF (op EQ 2) OR (op EQ 3) THEN
+ASSERT @INPUT EQ 0
+ASSERT STATE(97) EQ 1
+ASSERT @TOTIN EQ 6
+ASSERT STATE(29) LTE @BLOCK
+ASSERT STATE(29) GTE @BLOCK-20
+LET mm=STATE(19)
+ASSERT LEN(mm) EQ 52
+LET d=SHA2(CONCAT(0x44 SUBSET(0 32 r) mm))
+LET pk=SHA2(CONCAT(0x01 STATE(18)))
+LET m=0x0000000000000000000000000000000100000000000000000000000000000002000000000000000000000000000000040000000000000000000000000000000800000000000000000000000000000010000000000000000000000000000000200000000000000000000000000000004000000000000000000000000000000080
+LET zz=0x00000000000000000000000000000000
+LET m=CONCAT(m SUBSET(1 128 m) SUBSET(0 1 zz))
+LET m=CONCAT(m SUBSET(2 256 m) SUBSET(0 2 zz))
+LET m=CONCAT(m SUBSET(4 512 m) SUBSET(0 4 zz))
+LET m=CONCAT(m SUBSET(8 1024 m) SUBSET(0 8 zz))
+LET m=CONCAT(m m)
+LET m=SUBSET(0 4080 m)
+LET e=CONCAT(SUBSET(16 32 d) SUBSET(16 32 d))
+LET ff=CONCAT(SUBSET(0 16 d) SUBSET(0 16 d))
+LET e=CONCAT(e e)
+LET ff=CONCAT(ff ff)
+LET e=CONCAT(e e)
+LET ff=CONCAT(ff ff)
+LET e=CONCAT(e e)
+LET ff=CONCAT(ff ff)
+LET e=CONCAT(e e)
+LET ff=CONCAT(ff ff)
+LET e=CONCAT(e e)
+LET ff=CONCAT(ff ff)
+LET e=CONCAT(e e)
+LET ff=CONCAT(ff ff)
+LET e=CONCAT(e ff)
+LET e=SUBSET(0 4080 e)
+ASSERT (CONCAT(0x01 STATE(16))&CONCAT(0x01 m)) EQ (CONCAT(0x01 e)&CONCAT(0x01 m))
+LET ha=ADDRESS([LET owner=]+STRING(SUBSET(160 192 r))+[ MAST 0xABCCFC6203BBACBB7F7140588D58A669F6D68DC13B704C8BD730171F2EC4D0F8])
+ASSERT GETINADDR(1) EQ ha
+ASSERT GETINADDR(2) EQ ha
+ASSERT GETINADDR(3) EQ ha
+ASSERT GETINADDR(4) EQ ha
+ASSERT GETINADDR(5) EQ ha
+LET i=NUMBER(SUBSET(0 4 mm))
+ASSERT PROOF(pk i SUBSET(32 64 r) NUMBER(SUBSET(241 249 r)) STATE(27))
+LET kc=NUMBER(SUBSET(12 16 mm))
+IF op EQ 2 THEN
+ASSERT st LTE 1
+ASSERT i GT NUMBER(SUBSET(204 208 r))
+ASSERT kc LTE NUMBER(SUBSET(192 196 r))
+ASSERT NUMBER(SUBSET(28 36 mm)) LTE 100000000000
+LET y=NUMBER(SUBSET(4 12 mm))
+ASSERT y GT 0
+LET ws=NUMBER(SUBSET(216 220 r))
+LET wu=NUMBER(SUBSET(220 228 r))+y
+IF STATE(29) GT ws+12096 THEN
+LET ws=STATE(29)
+LET wu=y
+ENDIF ASSERT wu LTE NUMBER(SUBSET(228 236 r))
+LET nr=CONCAT(SUBSET(0 204 r) SETLEN(4 HEX(i)) SETLEN(8 HEX(NUMBER(SUBSET(208 216 r))+y)) SETLEN(4 HEX(ws)) SETLEN(8 HEX(wu)) SUBSET(228 249 r))
+LET ex=CONCAT(0x00 SETLEN(8 HEX(y)))
+ELSE ASSERT st LTE 1
+ASSERT (kc GT NUMBER(SUBSET(192 196 r))) OR (NUMBER(SUBSET(28 36 mm)) GT 100000000000)
+LET nr=CONCAT(SUBSET(0 236 r) 0x02 SETLEN(4 HEX(STATE(29))) SUBSET(241 249 r))
+LET ex=CONCAT(0x01 0x0000000000000000)
+ENDIF LET q=ADDRESS([LET h=]+STRING(SHA2(CONCAT(nr ex)))+[
+LET acc=]+STRING(@ADDRESS)+[
+LET vlt=]+STRING(0x9D2602FC8CCE7E4BBE95F07F82ED762D28EC6558583120D7323C523470F50426)+[
+LET nr=STATE(120)
+LET ex=STATE(201)
+ASSERT SHA2(CONCAT(nr ex)) EQ h
+ASSERT @INPUT EQ 0
+ASSERT GETINTOK(1) EQ 0xDEF4F22B26E6C2941C4157DEDB6165D5F34C51C7D45F2B225E0F939EC3BC7E23
+ASSERT GETINAMT(1) GT 1
+ASSERT STATE(150) EQ SUBSET(128 160 nr)
+ASSERT VERIFYOUT(0 acc 1 @TOKENID TRUE)
+IF NUMBER(SUBSET(0 1 ex)) EQ 0 THEN
+ASSERT STATE(9) EQ 10
+RETURN GETINADDR(2) EQ vlt
+ENDIF ASSERT STATE(9) EQ 30
+RETURN TRUE])
+RETURN VERIFYOUT(0 q 1 @TOKENID FALSE)
+ENDIF IF op EQ 4 THEN
+ASSERT @INPUT EQ 0
+ASSERT st LTE 1
+ASSERT STATE(29) LTE @BLOCK
+ASSERT STATE(29) GTE @BLOCK-20
+LET i=STATE(12)
+LET c=STATE(13)
+LET w=i-c*51
+LET a=STATE(10)
+LET b=STATE(11)
+LET tt=SHA2(SUBSET(0 16 SHA2(a)))^SHA2(SUBSET(0 16 SHA2(b)))
+ASSERT CONCAT(0x01 tt) EQ CONCAT(0x01 SUBSET(w*32 w*32+32 STATE(14)))
+LET v=i%128
+LET z=8*(15-FLOOR(v/8))+(v%8)
+ASSERT  NOT BITGET(a z)
+ASSERT BITGET(b z)
+ASSERT SHA2(CONCAT(0x01 STATE(14))) EQ SUBSET(c*32 c*32+32 STATE(15))
+LET pk=SHA2(CONCAT(0x01 STATE(15)))
+ASSERT PROOF(pk STATE(26) SUBSET(32 64 r) NUMBER(SUBSET(241 249 r)) STATE(28))
+LET nr=CONCAT(SUBSET(0 236 r) 0x02 SETLEN(4 HEX(STATE(29))) SUBSET(241 249 r))
+LET ex=CONCAT(0x01 0x0000000000000000)
+LET q=ADDRESS([LET h=]+STRING(SHA2(CONCAT(nr ex)))+[
+LET acc=]+STRING(@ADDRESS)+[
+LET vlt=]+STRING(0x9D2602FC8CCE7E4BBE95F07F82ED762D28EC6558583120D7323C523470F50426)+[
+LET nr=STATE(120)
+LET ex=STATE(201)
+ASSERT SHA2(CONCAT(nr ex)) EQ h
+ASSERT @INPUT EQ 0
+ASSERT GETINTOK(1) EQ 0xDEF4F22B26E6C2941C4157DEDB6165D5F34C51C7D45F2B225E0F939EC3BC7E23
+ASSERT GETINAMT(1) GT 1
+ASSERT STATE(150) EQ SUBSET(128 160 nr)
+ASSERT VERIFYOUT(0 acc 1 @TOKENID TRUE)
+IF NUMBER(SUBSET(0 1 ex)) EQ 0 THEN
+ASSERT STATE(9) EQ 10
+RETURN GETINADDR(2) EQ vlt
+ENDIF ASSERT STATE(9) EQ 30
+RETURN TRUE])
+RETURN VERIFYOUT(0 q 1 @TOKENID FALSE)
+ENDIF IF op EQ 20 THEN
+ASSERT SIGNEDBY(SUBSET(64 96 r))
+ASSERT st EQ 0
+ASSERT STATE(29) LTE @BLOCK
+ASSERT STATE(29) GTE @BLOCK-20
+ASSERT STATE(120) EQ CONCAT(SUBSET(0 236 r) 0x01 SETLEN(4 HEX(STATE(29))) SUBSET(241 249 r))
+RETURN VERIFYOUT(@INPUT @ADDRESS 1 @TOKENID TRUE)
+ENDIF IF op EQ 21 THEN
+ASSERT SIGNEDBY(SUBSET(64 96 r))
+ASSERT LEN(STATE(122)) EQ 32
+ASSERT STATE(120) EQ CONCAT(SUBSET(0 96 r) STATE(122) SUBSET(128 249 r))
+RETURN VERIFYOUT(@INPUT @ADDRESS 1 @TOKENID TRUE)
+ENDIF IF op EQ 22 THEN
+ASSERT SIGNEDBY(SUBSET(128 160 r))
+ASSERT st LTE 1
+ASSERT STATE(29) LTE @BLOCK
+ASSERT STATE(29) GTE @BLOCK-20
+ASSERT STATE(120) EQ CONCAT(SUBSET(0 236 r) 0x03 SETLEN(4 HEX(STATE(29))) SUBSET(241 249 r))
+RETURN VERIFYOUT(@INPUT @ADDRESS 1 @TOKENID TRUE)
+ENDIF IF op EQ 24 THEN
+ASSERT st GT 0
+ASSERT @COINAGE GT 1051200
+RETURN VERIFYOUT(@INPUT 0xB81FEBCCB5E5395148E6F1CF13B2428D5FC191999B59327CAC38601734F8B6D7 1 @TOKENID FALSE)
+ENDIF RETURN FALSE

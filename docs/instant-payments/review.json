@@ -1,0 +1,11 @@
+{
+  "files": 290,
+  "bytes": 2964656,
+  "index_links": "pass",
+  "credential_pattern_check": "pass",
+  "historical_or_external_links": [],
+  "missing_referenced_evidence": [
+    "simcard/applet/results/d1-order-check.md"
+  ],
+  "publication": "not attempted; Council GitHub authentication required"
+}

@@ -1,0 +1,10 @@
+{
+  "node": {
+    "version": "1.0.45.15",
+    "block": 2336756,
+    "rpcPort": 9105
+  },
+  "timestamp": "2026-09-27T14:16:02.047Z",
+  "purpose": "MMR proof bytes for device roots (mmrcreate)",
+  "keys1024_proofBytes": 406
+}

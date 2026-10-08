@@ -1,0 +1,21 @@
+// swap_htlc.kiss (chip-balance model, Phase 1 redo, docs/chip-balance-design.md)
+// Purpose: trustless savings -> checking swap (crux 1 option a4): CLAIM with the buyer chip receipt secret, REFUND after the deadline
+// Ports: 210+@INPUT secret
+// Measured: measure/receipts/balance_covenant_branches.json (node 1.0.45.15 jar in-process; templates and clean-invariance on the live node).
+// Placeholders in the measured copy: CHIP / USDw token ids, BURN / SUCCESSOR addresses and the helper owner tag are random test values;
+// VAULT, CHIPACC, VENDOR, DISP and the helper body hash are the real addresses of these exact texts.
+// Measured branches:
+//   swap_CLAIM_with_secret: 28 instructions, success=true (expected true)
+//   NEG_swap_CLAIM_wrong_secret: 20 instructions, success=false (expected false)
+//   NEG_swap_CLAIM_redirected: 28 instructions, success=false (expected false)
+//   swap_REFUND_after_deadline: 20 instructions, success=true (expected true)
+//   NEG_swap_REFUND_before_deadline: 19 instructions, success=false (expected false)
+
+LET h=0x<h>
+LET sel=0x<seller>
+LET buy=0x<buyer>
+LET dl=<deadline>
+IF @BLOCK GT dl THEN
+RETURN VERIFYOUT(@INPUT buy GETINAMT(@INPUT) @TOKENID FALSE)
+ENDIF ASSERT SHA2(STATE(210+@INPUT)) EQ h
+RETURN VERIFYOUT(@INPUT sel GETINAMT(@INPUT) @TOKENID FALSE)

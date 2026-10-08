@@ -1,0 +1,76 @@
+// instant_vault.kiss (step 2: Instant payments load and offload, docs/step2-load-offload-design.md)
+// Purpose: the pooled vault, generic by token id: WITHDRAW (only beside a registration coin at input 0), MERGE (anyone), RETIRE (after dormancy, to the successor)
+// Ports: 8 op (1 withdraw, 3 merge, 4 retire); 10 change or merged total; 12 currency (withdraw, pinned by the registration coin); 100+i retirement amount of input i
+// Measured: measure/receipts/step2_covenant_branches.json (node 1.0.45.15 jar in-process, 8-decimal token scaling; parse, clean form and address on the live node 1.0.45.15).
+// Register only the comment-free text below, in the runscript CLEAN form (newscript files text as given; the address is of the clean form).
+// Address of this exact text (clean form): 0xC1EA8355E70CC00C70AD0AF3E15DEE4E3C5111A63F67376DC1EFBC64CC6ACE62. It names the registration address 0x8E1CC987DBA05EAFE8967A8F51DFC3F5496CF0F82F4640980B934987994826B7 and a PLACEHOLDER successor 0x0177E50CA6B89B494998C22399FD218E2E21A0C42E5EB56690DF0F8F1AFC62F9 (the real successor is a founder decision fixed before deployment, which changes this address). Dormancy 3153600 blocks.
+// Measured transactions (instructions per input, ! = that input refused; verdict = every input passes):
+//   A_WITHDRAW_1_vault_coin_fresh_window: 131/31 -> valid=true (expected true)
+//   A_WITHDRAW_window_continues_900_62: 136/31 -> valid=true (expected true)
+//   A_WITHDRAW_window_resets_after_a_day: 136/28 -> valid=true (expected true)
+//   A_WITHDRAW_exactly_the_limit: 136/28 -> valid=true (expected true)
+//   A_WITHDRAW_2_vault_coins: 131/31/31 -> valid=true (expected true)
+//   A_WITHDRAW_5_vault_coins: 131/31/31/31/31/31 -> valid=true (expected true)
+//   A_WITHDRAW_10_vault_coins: 131/31/31/31/31/31/31/31/31/31/31 -> valid=true (expected true)
+//   A_WITHDRAW_20_vault_coins: 131/31/31/31/31/31/31/31/31/31/31/31/31/31/31/31/31/31/31/31/31 -> valid=true (expected true)
+//   A_WITHDRAW_own_coin_added_goes_to_the_vault: 131/31 -> valid=true (expected true)
+//   A_WITHDRAW_xWiniwa_via_Winiwa_dust_registration: 129/31 -> valid=true (expected true)
+//   NEG_A_currency_swapped_in_state: 15!/31 -> valid=false (expected false)
+//   NEG_A_over_daily_limit_same_day: 72!/31 -> valid=false (expected false)
+//   NEG_A_over_limit_in_one_withdrawal: 67!/31 -> valid=false (expected false)
+//   NEG_A_unsigned: 19!/31 -> valid=false (expected false)
+//   NEG_A_signed_by_another_key: 19!/31 -> valid=false (expected false)
+//   NEG_A_payout_redirected_in_output: 113!/31 -> valid=false (expected false)
+//   NEG_A_payout_redirected_in_state: 11!/31 -> valid=false (expected false)
+//   NEG_A_key_swapped_in_state_signed_by_attacker: 11!/31 -> valid=false (expected false)
+//   NEG_A_change_skimmed_to_extra_output: 121!/31! -> valid=false (expected false)
+//   NEG_A_change_understated: 105!/31 -> valid=false (expected false)
+//   NEG_A_change_kept_with_state_fake_load: 131/31! -> valid=false (expected false)
+//   NEG_A_vault_coin_of_another_currency: 121!/31/17! -> valid=false (expected false)
+//   NEG_A_no_registration_at_input_0: 12! -> valid=false (expected false)
+//   NEG_A_vault_coin_alone: 12! -> valid=false (expected false)
+//   NEG_A_registration_not_at_input_0: 12!/7! -> valid=false (expected false)
+//   NEG_A_claimed_block_stale: 40!/31 -> valid=false (expected false)
+//   NEG_A_claimed_block_in_future: 34!/31 -> valid=false (expected false)
+//   NEG_A_window_not_advanced: 82!/31 -> valid=false (expected false)
+//   NEG_A_forged_negative_usage: 64!/28 -> valid=false (expected false)
+//   NEG_A_registration_recreated_elsewhere: 131!/31 -> valid=false (expected false)
+//   NEG_A_registration_recreated_without_state: 131!/31 -> valid=false (expected false)
+//   NEG_A_extra_keepstate_output_at_vault: 121!/31! -> valid=false (expected false)
+//   A_CLOSE_dust_to_owner: 37 -> valid=true (expected true)
+//   NEG_A_CLOSE_unsigned: 19! -> valid=false (expected false)
+//   NEG_A_CLOSE_redirected: 37! -> valid=false (expected false)
+//   NEG_A_CLOSE_with_vault_coins: 37/17! -> valid=false (expected false)
+//   V_MERGE_3_coins: 39/39/39 -> valid=true (expected true)
+//   NEG_V_MERGE_skims: 39!/39! -> valid=false (expected false)
+//   NEG_V_MERGE_skims_to_second_output: 25!/25! -> valid=false (expected false)
+//   NEG_V_MERGE_output_keeps_state: 39!/39! -> valid=false (expected false)
+//   NEG_V_MERGE_mixed_currency: 25!/21! -> valid=false (expected false)
+//   V_RETIRE_after_dormancy: 36/36 -> valid=true (expected true)
+//   NEG_V_RETIRE_too_early: 19! -> valid=false (expected false)
+//   NEG_V_RETIRE_redirected: 36! -> valid=false (expected false)
+//   NEG_V_RETIRE_amount_misstated: 26! -> valid=false (expected false)
+//   NEG_V_unknown_operation: 17! -> valid=false (expected false)
+LET op=STATE(8)
+IF op EQ 1 THEN
+ASSERT GETINADDR(0) EQ 0x8E1CC987DBA05EAFE8967A8F51DFC3F5496CF0F82F4640980B934987994826B7
+ASSERT @TOKENID EQ STATE(12)
+LET c=STATE(10)
+IF c GT 0 THEN
+RETURN VERIFYOUT(1 @ADDRESS c @TOKENID FALSE)
+ENDIF
+RETURN c EQ 0
+ENDIF
+IF op EQ 3 THEN
+ASSERT GETINADDR(0) EQ @ADDRESS
+ASSERT GETINTOK(0) EQ @TOKENID
+ASSERT @TOTOUT EQ 1
+ASSERT STATE(10) EQ SUMINPUTS(@TOKENID)
+RETURN VERIFYOUT(0 @ADDRESS STATE(10) @TOKENID FALSE)
+ENDIF
+IF op EQ 4 THEN
+ASSERT @COINAGE GT 3153600
+ASSERT STATE(100+@INPUT) EQ @AMOUNT
+RETURN VERIFYOUT(@INPUT 0x0177E50CA6B89B494998C22399FD218E2E21A0C42E5EB56690DF0F8F1AFC62F9 STATE(100+@INPUT) @TOKENID FALSE)
+ENDIF
+RETURN FALSE

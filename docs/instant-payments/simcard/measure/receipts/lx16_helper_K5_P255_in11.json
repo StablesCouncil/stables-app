@@ -1,0 +1,23 @@
+{
+  "measurement": "lx16_helper_K5_P255_in11",
+  "purpose": "Labelled-XOR Lamport (n=16) helper: verifies 51 of the 255 positions of one hop signature",
+  "note": "input 11: hop 3 chunk 0",
+  "node": {
+    "version": "1.0.45.15",
+    "block": 2336835,
+    "rpcPort": 9105
+  },
+  "timestamp": "2026-09-27T15:24:24.143Z",
+  "command": "runscript (POST, dry run)",
+  "scriptChars": 3673,
+  "stateBytes": 25265,
+  "result": {
+    "success": true,
+    "parseok": true,
+    "monotonic": true,
+    "instructions": 790,
+    "executionError": null,
+    "rpcMs": 520,
+    "address": "0xB9BCB7760EBFE899FEE426F6F94BA282FFC41CF83A71D9E285CA2FCF6B28E229"
+  }
+}

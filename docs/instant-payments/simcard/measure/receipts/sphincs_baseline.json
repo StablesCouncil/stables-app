@@ -1,0 +1,42 @@
+{
+  "purpose": "Baseline: Minima shipped SPHINCS (FORS/HORST + one WOTS CHECKSIG) on-chain verification cost",
+  "node": {
+    "version": "1.0.45.15",
+    "block": 2336768,
+    "rpcPort": 9105
+  },
+  "timestamp": "2026-09-27T14:29:10.511Z",
+  "nodeCore": {
+    "instructions": 837,
+    "success": true,
+    "error": null,
+    "rpcMs": 1024
+  },
+  "nodeCoreWrongMessage": {
+    "instructions": 94,
+    "success": false
+  },
+  "inProcessFullScript_1_1_2_6": {
+    "sphincs_1_1": {
+      "inputs": 1,
+      "outputs": 1,
+      "instructions": 893,
+      "success": true
+    },
+    "sphincs_2_2": {
+      "inputs": 2,
+      "outputs": 2,
+      "instructions": 937,
+      "success": true
+    },
+    "sphincs_7_2": {
+      "inputs": 7,
+      "outputs": 2,
+      "instructions": 997,
+      "success": true
+    }
+  },
+  "signatureStateBytes": 20363,
+  "structure": "16 HORST rounds x (PROOF of HORST root into FORS root + PROOF of SHA3(secret) into a 65,536-leaf HORST tree, index = 2 bytes of the hashed message) + 1 CHECKSIG (Minima WOTS) of the FORS root",
+  "chipKeygenLeaves": 1048576
+}

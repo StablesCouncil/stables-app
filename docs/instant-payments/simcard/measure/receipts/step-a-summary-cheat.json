@@ -1,0 +1,46 @@
+{
+  "node": {
+    "version": "1.0.45.15",
+    "block": 2336835,
+    "rpcPort": 9105
+  },
+  "timestamp": "2026-09-27T15:24:28.245Z",
+  "summary": [
+    {
+      "name": "lx32_cheat_proof",
+      "instructions": 111,
+      "success": true,
+      "expectSuccess": true,
+      "error": null,
+      "stateBytes": 2713,
+      "scriptChars": 454
+    },
+    {
+      "name": "lx32_cheat_proof_same_secret",
+      "instructions": 44,
+      "success": false,
+      "expectSuccess": false,
+      "error": null,
+      "stateBytes": 2713,
+      "scriptChars": 454
+    },
+    {
+      "name": "lx16_cheat_proof",
+      "instructions": 117,
+      "success": true,
+      "expectSuccess": true,
+      "error": null,
+      "stateBytes": 2681,
+      "scriptChars": 480
+    },
+    {
+      "name": "lx16_cheat_proof_same_secret",
+      "instructions": 50,
+      "success": false,
+      "expectSuccess": false,
+      "error": null,
+      "stateBytes": 2681,
+      "scriptChars": 480
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "purpose": "Crux 1 option (b): cost and security of a chip verifying Minima chain data (PoW headers + MMR proof) itself",
+  "node": {
+    "version": "1.0.45.15",
+    "block": 2337082,
+    "rpcPort": 9105
+  },
+  "timestamp": "2026-09-27T18:44:04.664Z",
+  "measured": {
+    "difficulty": "0x00000081C7AF6B4E6E0B85E85935DE53F9517C263FF244196EC20B6D943135B7",
+    "weight": "78797409670",
+    "length": 2066,
+    "speed": 0.020699,
+    "block": 2337082
+  },
+  "derived": {
+    "hashesPerBlockFromTarget": 33094210,
+    "hashesPerBlockFromWeight": 38140082,
+    "networkHashRatePerSecondAt50s": 661884.2,
+    "attackerHashRatesAssumed": {
+      "laptopCpu": 20000000,
+      "consumerGpu": 2000000000
+    },
+    "privateForkMiningTime": {
+      "laptopCpu": {
+        "1_blocks_seconds": 1.655,
+        "6_blocks_seconds": 9.928,
+        "100_blocks_seconds": 165.471,
+        "1000_blocks_seconds": 1654.71
+      },
+      "consumerGpu": {
+        "1_blocks_seconds": 0.017,
+        "6_blocks_seconds": 0.099,
+        "100_blocks_seconds": 1.655,
+        "1000_blocks_seconds": 16.547
+      }
+    },
+    "chipSoftwareSha3SecondsPerCall": 6.7,
+    "keccakPermutationsAssumed": {
+      "coin": 2,
+      "mmrProof": 17,
+      "header": 10
+    },
+    "chipTimeToCheckOneFunding": {
+      "0_confirmations_minutes": 3.2,
+      "6_confirmations_minutes": 9.9,
+      "100_confirmations_minutes": 114.9
+    }
+  },
+  "reading": "Minima blocks carry tens of millions of hashes of work; a laptop mines a fake block in seconds and a GPU in milliseconds, so a chip that trusts PoW headers can be fed a private fork cheaply, and checking even one proof in software SHA-3 takes minutes to hours of chip time."
+}

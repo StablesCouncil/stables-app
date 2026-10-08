@@ -1,0 +1,21 @@
+// sphincs_baseline_core.kiss
+// Purpose: the verification core of Minima's shipped KISSVM_SPHINCS_SCRIPT (utils/sphincs/SPHINCSUtils.java:22),
+//          with the transaction-message loops replaced by STATE(102) = the hashed message.
+// Measured on node 1.0.45.15: 837 instructions, success=true; wrong message -> success=false (94).
+// Full shipped script in-process (1.1.2.6 build): 1 in/1 out 893, 2/2 937, 7/2 997 instructions.
+// Signature data in state: 20363 bytes (ports 0-79 HORST rounds, 100 WOTS signature, 101 FORS root). Receipt: measure/receipts/sphincs_baseline.json
+
+LET sphincspublickey=0x4256A1CE4CF551222FE2E244989F8FF92BCB25F074AD166AC5CBD8E5890A0D6D
+LET hashedmessage=STATE(102)
+LET forsrootdata=STATE(101)
+ASSERT CHECKSIG(sphincspublickey forsrootdata STATE(100))
+LET counter=0
+WHILE counter LT 16 DO
+LET statepos=counter*5
+LET horstroot=STATE(statepos)
+ASSERT PROOF(horstroot counter forsrootdata 120 STATE(statepos+1))
+LET keypos=counter*2
+LET ref=NUMBER(SUBSET(keypos keypos+2 hashedmessage))
+ASSERT PROOF(SHA3(STATE(statepos+2)) ref horstroot 2147450880 STATE(statepos+3))
+LET counter=INC(counter)
+ENDWHILE RETURN TRUE

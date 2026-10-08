@@ -1,0 +1,709 @@
+{
+  "note": "Stage 2 applet package dependencies. Every file is checked against its publisher digest and this SHA-256 by tools/fetch-deps.mjs. SDK files come from martinpaljak/oracle_javacard_sdks at commit 700ec80afdda210a0e62fb6a151a9cddc1acd244 (a repository, not a release; its files are checked by git blob sha1). JDK: the installed Eclipse Adoptium JDK 17 (not downloaded).",
+  "files": {
+    "ant-javacard.jar": {
+      "name": "ant-javacard",
+      "version": "v26.05.15",
+      "kind": "github-release",
+      "url": "https://github.com/martinpaljak/ant-javacard/releases/download/v26.05.15/ant-javacard.jar",
+      "bytes": 65577,
+      "published": {
+        "sha256": "14f5e25c07b184e4ec02ee148892c2ea7ad5d7e9db8b91109524df8f7d000589"
+      },
+      "sha256": "14f5e25c07b184e4ec02ee148892c2ea7ad5d7e9db8b91109524df8f7d000589"
+    },
+    "ant-1.10.15.jar": {
+      "name": "org.apache.ant:ant",
+      "version": "1.10.15",
+      "kind": "maven-central",
+      "url": "https://repo1.maven.org/maven2/org/apache/ant/ant/1.10.15/ant-1.10.15.jar",
+      "bytes": 2304360,
+      "published": {
+        "sha1": "da854f5503ee061a5a3b2cfcbe98ee27aa4a5ef9"
+      },
+      "sha256": "763acda4a69588c9ea8817a952851ff0c2fc4bffa1d081c2565dc407f29d5794"
+    },
+    "ant-launcher-1.10.15.jar": {
+      "name": "org.apache.ant:ant-launcher",
+      "version": "1.10.15",
+      "kind": "maven-central",
+      "url": "https://repo1.maven.org/maven2/org/apache/ant/ant-launcher/1.10.15/ant-launcher-1.10.15.jar",
+      "bytes": 18870,
+      "published": {
+        "sha1": "81431ce614ae38b187de683381f4a35a1db3b1c6"
+      },
+      "sha256": "5c8551990307a032336d98ddaed549a39a689f07d4d4c6b950601bf22b3d6a1b"
+    },
+    "jcardsim-3.0.6.0.jar": {
+      "name": "com.klinec:jcardsim",
+      "version": "3.0.6.0",
+      "kind": "maven-central",
+      "url": "https://repo1.maven.org/maven2/com/klinec/jcardsim/3.0.6.0/jcardsim-3.0.6.0.jar",
+      "bytes": 1202576,
+      "published": {
+        "sha1": "826e315e72e158e67c534c5be2e90e8cf7be76d8"
+      },
+      "sha256": "db6de7ffde71651c45d00df7e160771685cec3e14e444bf36b796658d289942f"
+    },
+    "sdks/jc304_kit/api_export_files/java/io/javacard/io.exp": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc304_kit/api_export_files/java/io/javacard/io.exp",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc304_kit/api_export_files/java/io/javacard/io.exp",
+      "bytes": 212,
+      "published": {
+        "gitBlobSha1": "931133af56f823aa1846e3a8dab5097b4202ae0a"
+      },
+      "sha256": "5e290b392c5d63ad0493fc5ddf2e19d2b5f2b1e40d3f48311e51ec987571a4e8"
+    },
+    "sdks/jc304_kit/api_export_files/java/lang/javacard/lang.exp": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc304_kit/api_export_files/java/lang/javacard/lang.exp",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc304_kit/api_export_files/java/lang/javacard/lang.exp",
+      "bytes": 881,
+      "published": {
+        "gitBlobSha1": "f34981865d8e0cab8c21ed73c4bae3ff537d147d"
+      },
+      "sha256": "10053d8a6d088c3e86a07d615b424c52b82e6bc0008d762a539acb60f3e6fe89"
+    },
+    "sdks/jc304_kit/api_export_files/java/rmi/javacard/rmi.exp": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc304_kit/api_export_files/java/rmi/javacard/rmi.exp",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc304_kit/api_export_files/java/rmi/javacard/rmi.exp",
+      "bytes": 280,
+      "published": {
+        "gitBlobSha1": "209cdf37f8ca4652fe85fc78ee82d9a6d17d75f5"
+      },
+      "sha256": "90fd3936d7ef7f72f1005ea6633ce1783a67ab58088135df1814a95eaa498022"
+    },
+    "sdks/jc304_kit/api_export_files/javacard/framework/javacard/framework.exp": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc304_kit/api_export_files/javacard/framework/javacard/framework.exp",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc304_kit/api_export_files/javacard/framework/javacard/framework.exp",
+      "bytes": 7351,
+      "published": {
+        "gitBlobSha1": "98ed9b0675c9480c04e88d27c69002c3fef581a4"
+      },
+      "sha256": "1ef1449286bbde1783267e749a37f08bc8ee5f5b033d5ffc061b9386a01e1f18"
+    },
+    "sdks/jc304_kit/api_export_files/javacard/framework/service/javacard/service.exp": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc304_kit/api_export_files/javacard/framework/service/javacard/service.exp",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc304_kit/api_export_files/javacard/framework/service/javacard/service.exp",
+      "bytes": 2901,
+      "published": {
+        "gitBlobSha1": "8fbef2f6b34c11bc63a1a465be183c123e303828"
+      },
+      "sha256": "c092c7bd90d0ffc4dbdfac4b6d4992cfc71528dc80d7d8836c10097bc3da1c19"
+    },
+    "sdks/jc304_kit/api_export_files/javacard/security/javacard/security.exp": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc304_kit/api_export_files/javacard/security/javacard/security.exp",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc304_kit/api_export_files/javacard/security/javacard/security.exp",
+      "bytes": 11677,
+      "published": {
+        "gitBlobSha1": "121e2b6c98ff84495cb93040a707efbb455d179d"
+      },
+      "sha256": "51614c447c5388e57539e3502a29a37722f11f0d5a3666ba2c4f30114cf71db4"
+    },
+    "sdks/jc304_kit/api_export_files/javacardx/apdu/javacard/apdu.exp": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc304_kit/api_export_files/javacardx/apdu/javacard/apdu.exp",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc304_kit/api_export_files/javacardx/apdu/javacard/apdu.exp",
+      "bytes": 113,
+      "published": {
+        "gitBlobSha1": "c9183d4f3edb36531a14ef9ce3ead21832429a63"
+      },
+      "sha256": "b40a10130edf974d01517c9c08e860d642e84ec635395c825511f75d1e7075b2"
+    },
+    "sdks/jc304_kit/api_export_files/javacardx/biometry/javacard/biometry.exp": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc304_kit/api_export_files/javacardx/biometry/javacard/biometry.exp",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc304_kit/api_export_files/javacardx/biometry/javacard/biometry.exp",
+      "bytes": 2254,
+      "published": {
+        "gitBlobSha1": "fb46fa306f4a42a95473efc641b5ca5ed90ee7db"
+      },
+      "sha256": "edf30ad3b6b02387d40c22d72dc20c9b5348a832551350e19596825a5b8c7022"
+    },
+    "sdks/jc304_kit/api_export_files/javacardx/crypto/javacard/crypto.exp": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc304_kit/api_export_files/javacardx/crypto/javacard/crypto.exp",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc304_kit/api_export_files/javacardx/crypto/javacard/crypto.exp",
+      "bytes": 2585,
+      "published": {
+        "gitBlobSha1": "35ca0a785f61d3e3706c9e6ebd69a8e67458b5b0"
+      },
+      "sha256": "9824786258b3734a0043376a17a0047ca641ab6dd1ab60b0bb8738ad9b905e76"
+    },
+    "sdks/jc304_kit/api_export_files/javacardx/external/javacard/external.exp": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc304_kit/api_export_files/javacardx/external/javacard/external.exp",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc304_kit/api_export_files/javacardx/external/javacard/external.exp",
+      "bytes": 857,
+      "published": {
+        "gitBlobSha1": "4af91e53addd3e0a22b689258f9ddfbd0055a81b"
+      },
+      "sha256": "ffe847fe5b6d0cfb41b90a6813ae14a267fc7a33d2e81c9b667e5521f142434a"
+    },
+    "sdks/jc304_kit/api_export_files/javacardx/framework/math/javacard/math.exp": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc304_kit/api_export_files/javacardx/framework/math/javacard/math.exp",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc304_kit/api_export_files/javacardx/framework/math/javacard/math.exp",
+      "bytes": 812,
+      "published": {
+        "gitBlobSha1": "89a1ac6c55c95a8554309066ac86f73d930477be"
+      },
+      "sha256": "e14a124ff7d9659b0c2b8e692b74ffc879d8bdfa5100f314da40f3111e2f70dc"
+    },
+    "sdks/jc304_kit/api_export_files/javacardx/framework/string/javacard/string.exp": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc304_kit/api_export_files/javacardx/framework/string/javacard/string.exp",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc304_kit/api_export_files/javacardx/framework/string/javacard/string.exp",
+      "bytes": 1494,
+      "published": {
+        "gitBlobSha1": "7a3b73c3781afdb18424e6ca199806ef0e3bff87"
+      },
+      "sha256": "26171f514e74d4316ac9ab5d5f3729edf12b8a6e2dee3b168ff09594c69bf587"
+    },
+    "sdks/jc304_kit/api_export_files/javacardx/framework/tlv/javacard/tlv.exp": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc304_kit/api_export_files/javacardx/framework/tlv/javacard/tlv.exp",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc304_kit/api_export_files/javacardx/framework/tlv/javacard/tlv.exp",
+      "bytes": 3011,
+      "published": {
+        "gitBlobSha1": "58495fb014b7b8f03a0cc5c237af9dd7276c3b8a"
+      },
+      "sha256": "903b90b6abd47f6a7b33425118f2e405f0db14c6258a868cf1ceff50a21b9db2"
+    },
+    "sdks/jc304_kit/api_export_files/javacardx/framework/util/intx/javacard/intx.exp": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc304_kit/api_export_files/javacardx/framework/util/intx/javacard/intx.exp",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc304_kit/api_export_files/javacardx/framework/util/intx/javacard/intx.exp",
+      "bytes": 309,
+      "published": {
+        "gitBlobSha1": "881a9612d59a35ba904ff74d3d0e24d68bf58c35"
+      },
+      "sha256": "11cb75c1bff96e1903c6c36d934219f7d8d7da63f3dcb29edc850500a23e603d"
+    },
+    "sdks/jc304_kit/api_export_files/javacardx/framework/util/javacard/util.exp": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc304_kit/api_export_files/javacardx/framework/util/javacard/util.exp",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc304_kit/api_export_files/javacardx/framework/util/javacard/util.exp",
+      "bytes": 819,
+      "published": {
+        "gitBlobSha1": "3ce0d16bafeb2904159cb8270e7bb8faf887dbd8"
+      },
+      "sha256": "50fa7bdc3fffb571de9dab4237cca23d3b0f7343dbd9770fd955f1aaa75a0f93"
+    },
+    "sdks/jc304_kit/lib/JCBytecodeProfiler.jar": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc304_kit/lib/JCBytecodeProfiler.jar",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc304_kit/lib/JCBytecodeProfiler.jar",
+      "bytes": 630230,
+      "published": {
+        "gitBlobSha1": "af123cad5b35565a9c5945f1b8c978c8314e90e3"
+      },
+      "sha256": "ac870c0204529de90e6c4498e01e0bb69516b4809594c41285c4d5befc725d97"
+    },
+    "sdks/jc304_kit/lib/ant-contrib-1.0b3.jar": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc304_kit/lib/ant-contrib-1.0b3.jar",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc304_kit/lib/ant-contrib-1.0b3.jar",
+      "bytes": 224277,
+      "published": {
+        "gitBlobSha1": "062537661a514c2ce97d18948f4f25f7226cc1a0"
+      },
+      "sha256": "be33a69818310b5c55e41dc11d48cd895f5f129da4b0d28c2f4c6c3e1cbcf3fc"
+    },
+    "sdks/jc304_kit/lib/api_classic.jar": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc304_kit/lib/api_classic.jar",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc304_kit/lib/api_classic.jar",
+      "bytes": 45136,
+      "published": {
+        "gitBlobSha1": "abbdf339dec3232207fc28214271715844435314"
+      },
+      "sha256": "da78593a03efa978990d0784bbba00871e5221827cc609cecef5444aa757bc21"
+    },
+    "sdks/jc304_kit/lib/api_classic_annotations.jar": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc304_kit/lib/api_classic_annotations.jar",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc304_kit/lib/api_classic_annotations.jar",
+      "bytes": 17174,
+      "published": {
+        "gitBlobSha1": "f951dac8ff09fb59c1509fa0063541d653ca4147"
+      },
+      "sha256": "61d3dade40f695a262d92a3002444f240074cfbdf3eb2133ea9ce658d848f548"
+    },
+    "sdks/jc304_kit/lib/api_connected.jar": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc304_kit/lib/api_connected.jar",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc304_kit/lib/api_connected.jar",
+      "bytes": 142812,
+      "published": {
+        "gitBlobSha1": "14812ba6adca4a87633853fdfffda07ea5557afe"
+      },
+      "sha256": "6e12a02000a17b4696c09c0d58b9465b9ece79deb81ff2bd7ca3435e36465271"
+    },
+    "sdks/jc304_kit/lib/asm-all-3.1.jar": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc304_kit/lib/asm-all-3.1.jar",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc304_kit/lib/asm-all-3.1.jar",
+      "bytes": 199879,
+      "published": {
+        "gitBlobSha1": "5f37af522383b086c8794adb81da7247cec56d13"
+      },
+      "sha256": "1f71a25d982b13210ea72ea07d709dd95504f390e82a7f9a4c0af192a56efcd9"
+    },
+    "sdks/jc304_kit/lib/bcel-5.2.jar": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc304_kit/lib/bcel-5.2.jar",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc304_kit/lib/bcel-5.2.jar",
+      "bytes": 533339,
+      "published": {
+        "gitBlobSha1": "2fa90cebdc06e396031d8e52c77dead0eda02d89"
+      },
+      "sha256": "7b87e2fd9ac3205a6e5ba9ef5e58a8f0ab8d1a0e0d00cb2a761951fa298cc733"
+    },
+    "sdks/jc304_kit/lib/commons-cli-1.0.jar": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc304_kit/lib/commons-cli-1.0.jar",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc304_kit/lib/commons-cli-1.0.jar",
+      "bytes": 30117,
+      "published": {
+        "gitBlobSha1": "22a004e14e16720cae9af97d4d1475b12d2388aa"
+      },
+      "sha256": "43f24850b7b7b7d79c5fa652418518fbdf427e602b1edabe6f11b85fb93eb013"
+    },
+    "sdks/jc304_kit/lib/commons-codec-1.3.jar": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc304_kit/lib/commons-codec-1.3.jar",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc304_kit/lib/commons-codec-1.3.jar",
+      "bytes": 46725,
+      "published": {
+        "gitBlobSha1": "957b6752af9a60c1bb2a4f65db0e90e5ce00f521"
+      },
+      "sha256": "1bafd2ece2e88db4cdf835a7f8f0de65fab5b1147977a5dcc59b7c1b8c6f5080"
+    },
+    "sdks/jc304_kit/lib/commons-httpclient-3.0.jar": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc304_kit/lib/commons-httpclient-3.0.jar",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc304_kit/lib/commons-httpclient-3.0.jar",
+      "bytes": 279383,
+      "published": {
+        "gitBlobSha1": "54a9300e68bcaa29ad769e7eee8e777d8894b3d3"
+      },
+      "sha256": "7afd18f30e98c92bf873b64bafeea43b4abdeaba62a4e50e1b6b2d00405ef7ef"
+    },
+    "sdks/jc304_kit/lib/commons-logging-1.1.jar": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc304_kit/lib/commons-logging-1.1.jar",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc304_kit/lib/commons-logging-1.1.jar",
+      "bytes": 52915,
+      "published": {
+        "gitBlobSha1": "2ff9bbd90d63f92cdffea944869ed9bea7ead49c"
+      },
+      "sha256": "9e8d01f172301b966f1f404aa6fc0bdbec478ae9197256ad95bfcad1ef927601"
+    },
+    "sdks/jc304_kit/lib/jctasks.jar": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc304_kit/lib/jctasks.jar",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc304_kit/lib/jctasks.jar",
+      "bytes": 49557,
+      "published": {
+        "gitBlobSha1": "5026df3816a8eda7b8919f72c5a2ec50b8397342"
+      },
+      "sha256": "7fb8952d22479432b57f6ca0b4813f9a19c988fa992a2fd81a92fecf7f7804c1"
+    },
+    "sdks/jc304_kit/lib/logging.properties": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc304_kit/lib/logging.properties",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc304_kit/lib/logging.properties",
+      "bytes": 2221,
+      "published": {
+        "gitBlobSha1": "f8a9cb6140867c9a6b91f0e9ea375eb4960d46a4"
+      },
+      "sha256": "bb5376d213102ea5082e847c99b0f777068b3d83304338cd1762d3fb5adfc590"
+    },
+    "sdks/jc304_kit/lib/tools.jar": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc304_kit/lib/tools.jar",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc304_kit/lib/tools.jar",
+      "bytes": 1459340,
+      "published": {
+        "gitBlobSha1": "d1bc160a8bab86708db64bfe9c67e52a5081b45d"
+      },
+      "sha256": "2686d2b3857e9db430966a048e6e17e6f4492bfeeeb9f2c01bf70f574e6e97b0"
+    },
+    "sdks/jc305u4_kit/api_export_files/java/io/javacard/io.exp": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc305u4_kit/api_export_files/java/io/javacard/io.exp",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc305u4_kit/api_export_files/java/io/javacard/io.exp",
+      "bytes": 212,
+      "published": {
+        "gitBlobSha1": "931133af56f823aa1846e3a8dab5097b4202ae0a"
+      },
+      "sha256": "5e290b392c5d63ad0493fc5ddf2e19d2b5f2b1e40d3f48311e51ec987571a4e8"
+    },
+    "sdks/jc305u4_kit/api_export_files/java/lang/javacard/lang.exp": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc305u4_kit/api_export_files/java/lang/javacard/lang.exp",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc305u4_kit/api_export_files/java/lang/javacard/lang.exp",
+      "bytes": 881,
+      "published": {
+        "gitBlobSha1": "f34981865d8e0cab8c21ed73c4bae3ff537d147d"
+      },
+      "sha256": "10053d8a6d088c3e86a07d615b424c52b82e6bc0008d762a539acb60f3e6fe89"
+    },
+    "sdks/jc305u4_kit/api_export_files/java/rmi/javacard/rmi.exp": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc305u4_kit/api_export_files/java/rmi/javacard/rmi.exp",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc305u4_kit/api_export_files/java/rmi/javacard/rmi.exp",
+      "bytes": 280,
+      "published": {
+        "gitBlobSha1": "209cdf37f8ca4652fe85fc78ee82d9a6d17d75f5"
+      },
+      "sha256": "90fd3936d7ef7f72f1005ea6633ce1783a67ab58088135df1814a95eaa498022"
+    },
+    "sdks/jc305u4_kit/api_export_files/javacard/framework/javacard/framework.exp": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc305u4_kit/api_export_files/javacard/framework/javacard/framework.exp",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc305u4_kit/api_export_files/javacard/framework/javacard/framework.exp",
+      "bytes": 8344,
+      "published": {
+        "gitBlobSha1": "fd14eac73b233cbc5bd7a78bfb20d2967abf1535"
+      },
+      "sha256": "6a870ca54cd8cdeabcd0e1b016958e2f5d4c17ed30eb2c29a19ab3c52b5a1e18"
+    },
+    "sdks/jc305u4_kit/api_export_files/javacard/framework/service/javacard/service.exp": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc305u4_kit/api_export_files/javacard/framework/service/javacard/service.exp",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc305u4_kit/api_export_files/javacard/framework/service/javacard/service.exp",
+      "bytes": 2901,
+      "published": {
+        "gitBlobSha1": "8fbef2f6b34c11bc63a1a465be183c123e303828"
+      },
+      "sha256": "c092c7bd90d0ffc4dbdfac4b6d4992cfc71528dc80d7d8836c10097bc3da1c19"
+    },
+    "sdks/jc305u4_kit/api_export_files/javacard/security/javacard/security.exp": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc305u4_kit/api_export_files/javacard/security/javacard/security.exp",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc305u4_kit/api_export_files/javacard/security/javacard/security.exp",
+      "bytes": 14393,
+      "published": {
+        "gitBlobSha1": "39e57627c07c2de27b3281817dd8f2969a05242a"
+      },
+      "sha256": "fa0e5e67cf0d968615fa6acb3152a85214b87fe8c4b2168278e1987897f729ab"
+    },
+    "sdks/jc305u4_kit/api_export_files/javacardx/apdu/javacard/apdu.exp": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc305u4_kit/api_export_files/javacardx/apdu/javacard/apdu.exp",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc305u4_kit/api_export_files/javacardx/apdu/javacard/apdu.exp",
+      "bytes": 113,
+      "published": {
+        "gitBlobSha1": "c9183d4f3edb36531a14ef9ce3ead21832429a63"
+      },
+      "sha256": "b40a10130edf974d01517c9c08e860d642e84ec635395c825511f75d1e7075b2"
+    },
+    "sdks/jc305u4_kit/api_export_files/javacardx/apdu/util/javacard/util.exp": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc305u4_kit/api_export_files/javacardx/apdu/util/javacard/util.exp",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc305u4_kit/api_export_files/javacardx/apdu/util/javacard/util.exp",
+      "bytes": 306,
+      "published": {
+        "gitBlobSha1": "6a1e9e1e6c4d5abb081f28a61314415e4f2ec292"
+      },
+      "sha256": "a27f7d47d7be612c665411b232d3220127d5341906053490db5b52f71413a817"
+    },
+    "sdks/jc305u4_kit/api_export_files/javacardx/biometry/javacard/biometry.exp": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc305u4_kit/api_export_files/javacardx/biometry/javacard/biometry.exp",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc305u4_kit/api_export_files/javacardx/biometry/javacard/biometry.exp",
+      "bytes": 2254,
+      "published": {
+        "gitBlobSha1": "677859810612dc5cc19f71ee25860c642a2ebb6a"
+      },
+      "sha256": "c5165dabd2cfa67e9aa6abf104d2ebea8940f0026ffa3b51be3ab4e31638b46e"
+    },
+    "sdks/jc305u4_kit/api_export_files/javacardx/biometry1toN/javacard/biometry1toN.exp": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc305u4_kit/api_export_files/javacardx/biometry1toN/javacard/biometry1toN.exp",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc305u4_kit/api_export_files/javacardx/biometry1toN/javacard/biometry1toN.exp",
+      "bytes": 3084,
+      "published": {
+        "gitBlobSha1": "88527985087cd014f537d679fa0cf756e3b2eabd"
+      },
+      "sha256": "ca50d04c692123e49fbc26027f2845de8ec8536829ceff2aa8334a9e1fa87e77"
+    },
+    "sdks/jc305u4_kit/api_export_files/javacardx/crypto/javacard/crypto.exp": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc305u4_kit/api_export_files/javacardx/crypto/javacard/crypto.exp",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc305u4_kit/api_export_files/javacardx/crypto/javacard/crypto.exp",
+      "bytes": 3588,
+      "published": {
+        "gitBlobSha1": "e1ff132d004f074ac6ad0191ce7627df1421b50c"
+      },
+      "sha256": "3a8498df283ed081bf8690ba5cdfd90742f4efc2e15729d57ee804793b67e1b0"
+    },
+    "sdks/jc305u4_kit/api_export_files/javacardx/external/javacard/external.exp": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc305u4_kit/api_export_files/javacardx/external/javacard/external.exp",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc305u4_kit/api_export_files/javacardx/external/javacard/external.exp",
+      "bytes": 857,
+      "published": {
+        "gitBlobSha1": "4af91e53addd3e0a22b689258f9ddfbd0055a81b"
+      },
+      "sha256": "ffe847fe5b6d0cfb41b90a6813ae14a267fc7a33d2e81c9b667e5521f142434a"
+    },
+    "sdks/jc305u4_kit/api_export_files/javacardx/framework/math/javacard/math.exp": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc305u4_kit/api_export_files/javacardx/framework/math/javacard/math.exp",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc305u4_kit/api_export_files/javacardx/framework/math/javacard/math.exp",
+      "bytes": 812,
+      "published": {
+        "gitBlobSha1": "89a1ac6c55c95a8554309066ac86f73d930477be"
+      },
+      "sha256": "e14a124ff7d9659b0c2b8e692b74ffc879d8bdfa5100f314da40f3111e2f70dc"
+    },
+    "sdks/jc305u4_kit/api_export_files/javacardx/framework/string/javacard/string.exp": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc305u4_kit/api_export_files/javacardx/framework/string/javacard/string.exp",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc305u4_kit/api_export_files/javacardx/framework/string/javacard/string.exp",
+      "bytes": 1494,
+      "published": {
+        "gitBlobSha1": "7a3b73c3781afdb18424e6ca199806ef0e3bff87"
+      },
+      "sha256": "26171f514e74d4316ac9ab5d5f3729edf12b8a6e2dee3b168ff09594c69bf587"
+    },
+    "sdks/jc305u4_kit/api_export_files/javacardx/framework/tlv/javacard/tlv.exp": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc305u4_kit/api_export_files/javacardx/framework/tlv/javacard/tlv.exp",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc305u4_kit/api_export_files/javacardx/framework/tlv/javacard/tlv.exp",
+      "bytes": 3011,
+      "published": {
+        "gitBlobSha1": "58495fb014b7b8f03a0cc5c237af9dd7276c3b8a"
+      },
+      "sha256": "903b90b6abd47f6a7b33425118f2e405f0db14c6258a868cf1ceff50a21b9db2"
+    },
+    "sdks/jc305u4_kit/api_export_files/javacardx/framework/util/intx/javacard/intx.exp": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc305u4_kit/api_export_files/javacardx/framework/util/intx/javacard/intx.exp",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc305u4_kit/api_export_files/javacardx/framework/util/intx/javacard/intx.exp",
+      "bytes": 309,
+      "published": {
+        "gitBlobSha1": "881a9612d59a35ba904ff74d3d0e24d68bf58c35"
+      },
+      "sha256": "11cb75c1bff96e1903c6c36d934219f7d8d7da63f3dcb29edc850500a23e603d"
+    },
+    "sdks/jc305u4_kit/api_export_files/javacardx/framework/util/javacard/util.exp": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc305u4_kit/api_export_files/javacardx/framework/util/javacard/util.exp",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc305u4_kit/api_export_files/javacardx/framework/util/javacard/util.exp",
+      "bytes": 845,
+      "published": {
+        "gitBlobSha1": "a1ce7e96c216163bd139614eae87ba317d1f7a18"
+      },
+      "sha256": "558456f2c68e9e623ca713159828aa9e9589304d75e47ef137b370987983a97c"
+    },
+    "sdks/jc305u4_kit/api_export_files/javacardx/security/javacard/security.exp": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc305u4_kit/api_export_files/javacardx/security/javacard/security.exp",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc305u4_kit/api_export_files/javacardx/security/javacard/security.exp",
+      "bytes": 403,
+      "published": {
+        "gitBlobSha1": "5153a68de41361ac16c3e58ba895715a58a0dd5c"
+      },
+      "sha256": "a8aa3c369b652e4d453f0ca4ec0df5b873dff23b045d343e165d26eac5e6e3fe"
+    },
+    "sdks/jc305u4_kit/lib/ant-contrib-1.0b3.jar": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc305u4_kit/lib/ant-contrib-1.0b3.jar",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc305u4_kit/lib/ant-contrib-1.0b3.jar",
+      "bytes": 224277,
+      "published": {
+        "gitBlobSha1": "062537661a514c2ce97d18948f4f25f7226cc1a0"
+      },
+      "sha256": "be33a69818310b5c55e41dc11d48cd895f5f129da4b0d28c2f4c6c3e1cbcf3fc"
+    },
+    "sdks/jc305u4_kit/lib/api_classic.jar": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc305u4_kit/lib/api_classic.jar",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc305u4_kit/lib/api_classic.jar",
+      "bytes": 56735,
+      "published": {
+        "gitBlobSha1": "4eb971c10aa4edce907a5616ce5f112dfc08b066"
+      },
+      "sha256": "c4308dbee192dc3f12509121660d071b46fabd4423c4bf97147e039c1d162ed8"
+    },
+    "sdks/jc305u4_kit/lib/api_classic_annotations.jar": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc305u4_kit/lib/api_classic_annotations.jar",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc305u4_kit/lib/api_classic_annotations.jar",
+      "bytes": 23086,
+      "published": {
+        "gitBlobSha1": "967d0094775966aa92494cd45d83694c749ecdf9"
+      },
+      "sha256": "f9d275744b6eefead8b609fe4ddd5c0759f97ba7e1c3d4d9f1581485bfae12ed"
+    },
+    "sdks/jc305u4_kit/lib/api_connected.jar": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc305u4_kit/lib/api_connected.jar",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc305u4_kit/lib/api_connected.jar",
+      "bytes": 142812,
+      "published": {
+        "gitBlobSha1": "14812ba6adca4a87633853fdfffda07ea5557afe"
+      },
+      "sha256": "6e12a02000a17b4696c09c0d58b9465b9ece79deb81ff2bd7ca3435e36465271"
+    },
+    "sdks/jc305u4_kit/lib/asm-all-3.1.jar": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc305u4_kit/lib/asm-all-3.1.jar",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc305u4_kit/lib/asm-all-3.1.jar",
+      "bytes": 199879,
+      "published": {
+        "gitBlobSha1": "5f37af522383b086c8794adb81da7247cec56d13"
+      },
+      "sha256": "1f71a25d982b13210ea72ea07d709dd95504f390e82a7f9a4c0af192a56efcd9"
+    },
+    "sdks/jc305u4_kit/lib/commons-cli-1.0.jar": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc305u4_kit/lib/commons-cli-1.0.jar",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc305u4_kit/lib/commons-cli-1.0.jar",
+      "bytes": 30117,
+      "published": {
+        "gitBlobSha1": "22a004e14e16720cae9af97d4d1475b12d2388aa"
+      },
+      "sha256": "43f24850b7b7b7d79c5fa652418518fbdf427e602b1edabe6f11b85fb93eb013"
+    },
+    "sdks/jc305u4_kit/lib/commons-codec-1.3.jar": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc305u4_kit/lib/commons-codec-1.3.jar",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc305u4_kit/lib/commons-codec-1.3.jar",
+      "bytes": 46725,
+      "published": {
+        "gitBlobSha1": "957b6752af9a60c1bb2a4f65db0e90e5ce00f521"
+      },
+      "sha256": "1bafd2ece2e88db4cdf835a7f8f0de65fab5b1147977a5dcc59b7c1b8c6f5080"
+    },
+    "sdks/jc305u4_kit/lib/commons-httpclient-3.0.jar": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc305u4_kit/lib/commons-httpclient-3.0.jar",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc305u4_kit/lib/commons-httpclient-3.0.jar",
+      "bytes": 279383,
+      "published": {
+        "gitBlobSha1": "54a9300e68bcaa29ad769e7eee8e777d8894b3d3"
+      },
+      "sha256": "7afd18f30e98c92bf873b64bafeea43b4abdeaba62a4e50e1b6b2d00405ef7ef"
+    },
+    "sdks/jc305u4_kit/lib/commons-logging-1.1.jar": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc305u4_kit/lib/commons-logging-1.1.jar",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc305u4_kit/lib/commons-logging-1.1.jar",
+      "bytes": 52915,
+      "published": {
+        "gitBlobSha1": "2ff9bbd90d63f92cdffea944869ed9bea7ead49c"
+      },
+      "sha256": "9e8d01f172301b966f1f404aa6fc0bdbec478ae9197256ad95bfcad1ef927601"
+    },
+    "sdks/jc305u4_kit/lib/jc-debug-proxy.jar": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc305u4_kit/lib/jc-debug-proxy.jar",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc305u4_kit/lib/jc-debug-proxy.jar",
+      "bytes": 613503,
+      "published": {
+        "gitBlobSha1": "2b806da640f320cd89ddb484917299c0d1ac44b1"
+      },
+      "sha256": "d73b8eb79e18bf9410fe4947c8640fa2024d31772b90daac22d79f3f04db4607"
+    },
+    "sdks/jc305u4_kit/lib/jctasks.jar": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc305u4_kit/lib/jctasks.jar",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc305u4_kit/lib/jctasks.jar",
+      "bytes": 50008,
+      "published": {
+        "gitBlobSha1": "c35aa44b71c7bab1b7908ba3621a7660626d5873"
+      },
+      "sha256": "0055853d448c5f346f185d13610460c022280c7a036f683242f2d3ed398cceb8"
+    },
+    "sdks/jc305u4_kit/lib/logging.properties": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc305u4_kit/lib/logging.properties",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc305u4_kit/lib/logging.properties",
+      "bytes": 2157,
+      "published": {
+        "gitBlobSha1": "728d2dd2e67040b43f7d62bd411e558d0af25597"
+      },
+      "sha256": "abfdbd155299493920a93bc78147198d4cb9cfced25d804fc03e7f1525c18436"
+    },
+    "sdks/jc305u4_kit/lib/tools.jar": {
+      "name": "martinpaljak/oracle_javacard_sdks:jc305u4_kit/lib/tools.jar",
+      "version": "700ec80afdda210a0e62fb6a151a9cddc1acd244",
+      "kind": "github-repo-file",
+      "url": "https://raw.githubusercontent.com/martinpaljak/oracle_javacard_sdks/700ec80afdda210a0e62fb6a151a9cddc1acd244/jc305u4_kit/lib/tools.jar",
+      "bytes": 1370636,
+      "published": {
+        "gitBlobSha1": "fd213e22ad56eb27fba2b95cccc64ecf26353f59"
+      },
+      "sha256": "32f88f9a9465884eeb9172aacfe7e24b86200c3a80071bc77cec40c99c55e154"
+    }
+  }
+}

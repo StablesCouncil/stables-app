@@ -1,0 +1,15 @@
+// reg_core_v2_runscript.kiss (step 2 version 2): the transaction-free core of the registration coin's WITHDRAW, for a live-node cross-check
+// Measured: live node 1.0.45.15 runscript = 30 instructions (success=true, monotonic=true); in-process = 30 (success=true); counts match: true.
+// Refusals on the live node: unsigned 7 (success=false); zero amount 30 (success=false); payout changed 15 (success=false).
+// The full vault v2 text with operation 4 (v1 RETIRE) on the live node: 13 instructions, success=false.
+
+LET op=STATE(8)
+ASSERT SIGNEDBY(PREVSTATE(2))
+IF op EQ 2 THEN
+RETURN FALSE
+ENDIF
+ASSERT SAMESTATE(0 3)
+ASSERT SAMESTATE(12 12)
+ASSERT op EQ 1
+LET w=STATE(7)
+RETURN w GT 0

@@ -1,0 +1,501 @@
+{
+  "purpose": "Instruction cost and refusal behaviour of every covenant branch (in-process, node jar) plus template checks on the live node",
+  "node": {
+    "version": "1.0.45.15",
+    "block": 2336796,
+    "rpcPort": 9105
+  },
+  "jar": "DevNodesSet/9101/minima.jar (1.0.45.15)",
+  "method": "java/KissRun.java: new Contract per input + setGlobals + run, as TxPoWChecker",
+  "timestamp": "2026-09-27T14:52:37.932Z",
+  "templateChecks": {
+    "releaseQ": {
+      "kissAddress": "0xD0171C6EAE2CBEE5968AE82D013982A5147C82C00E735BAD2FCA496861A93689",
+      "literalAddress": "0xD0171C6EAE2CBEE5968AE82D013982A5147C82C00E735BAD2FCA496861A93689",
+      "agree": true,
+      "cleanInvariant": true
+    },
+    "voucherV": {
+      "agree": true,
+      "cleanInvariant": true
+    },
+    "helper": {
+      "agree": true,
+      "cleanInvariant": true
+    },
+    "helperBody": {
+      "cleanInvariant": false,
+      "chars": 3770
+    },
+    "notes": {
+      "parseok": true,
+      "cleanInvariant": true,
+      "chars": 5013
+    },
+    "dispenser": {
+      "parseok": true,
+      "cleanInvariant": true,
+      "chars": 5270
+    },
+    "pool": {
+      "parseok": true,
+      "cleanInvariant": true,
+      "chars": 2144
+    },
+    "bond": {
+      "parseok": true,
+      "cleanInvariant": true,
+      "chars": 2726
+    },
+    "vendor": {
+      "parseok": true,
+      "cleanInvariant": true,
+      "chars": 986
+    }
+  },
+  "scriptChars": {
+    "notes": 5013,
+    "dispenser": 5270,
+    "helperAddr": 148,
+    "helperBody": 3770,
+    "pool": 2144,
+    "bond": 2726,
+    "vendor": 986
+  },
+  "table": [
+    {
+      "name": "T1_cash_h0_mark",
+      "instructions": 136,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "T1_cash_value_coin",
+      "instructions": 29,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "T1_cash_h1_mark",
+      "instructions": 372,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "T1_cash_h1_helper_first",
+      "instructions": 800,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "T1_cash_h2_mark",
+      "instructions": 537,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "T1_cash_h2_helper_first",
+      "instructions": 800,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "T1_cash_h3_mark",
+      "instructions": 702,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "T1_cash_h3_helper_first",
+      "instructions": 800,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "T1_cash_h3_helper_last",
+      "instructions": 800,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_T1_payout_redirected",
+      "instructions": 528,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_T1_helper_missing",
+      "instructions": 66,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_T1_foreign_helper",
+      "instructions": 297,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_T1_hop2_tampered_helper",
+      "instructions": 798,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_T1_signed_by_wrong_key",
+      "instructions": 182,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_T1_after_expiry",
+      "instructions": 58,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "XCHECK_helper_in_process",
+      "instructions": 790,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": "",
+      "runscriptInstructions": 790,
+      "runscriptSuccess": true
+    },
+    {
+      "name": "anchor_expire",
+      "instructions": 68,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "T2_settle_Q_stamp",
+      "instructions": 73,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "T2_settle_Q_value",
+      "instructions": 30,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_T2_wrong_summary",
+      "instructions": 12,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_T2_record_not_stored",
+      "instructions": 73,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "record_retire",
+      "instructions": 37,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_record_retire_early",
+      "instructions": 34,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "lane_LOAD_3_notes",
+      "instructions": 203,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_lane_LOAD_value_elsewhere",
+      "instructions": 54,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_lane_LOAD_expiry_too_far",
+      "instructions": 30,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "lane_MERGE_2",
+      "instructions": 67,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_lane_MERGE_swallows_record",
+      "instructions": 47,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "lane_SPLIT",
+      "instructions": 52,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "C1_claim_verify_2hops_lane",
+      "instructions": 565,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "C1_claim_verify_2hops_helper",
+      "instructions": 800,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_C1_key_not_in_root",
+      "instructions": 516,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_C1_voucher_redirected",
+      "instructions": 552,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "C2_voucher",
+      "instructions": 108,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "C2_record_read",
+      "instructions": 54,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "C2_bond_freeze_by_claim",
+      "instructions": 97,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_C2_no_conflict",
+      "instructions": 93,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_C2_fake_voucher",
+      "instructions": 29,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "C2_pool_register_2nd",
+      "instructions": 138,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_C2_pool_duplicate_claim",
+      "instructions": 100,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "bond_freeze_by_cheat_proof",
+      "instructions": 158,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_bond_freeze_same_secret_twice",
+      "instructions": 57,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "bond_withdraw_request",
+      "instructions": 42,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_bond_withdraw_request_unsigned",
+      "instructions": 19,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "bond_withdraw_after_delay",
+      "instructions": 39,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_bond_withdraw_too_early",
+      "instructions": 31,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "bond_renew_add_root",
+      "instructions": 85,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_bond_renew_replaces_root",
+      "instructions": 64,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "bond_abandoned_retirement",
+      "instructions": 39,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "pool_settle_3_claims_pro_rata",
+      "instructions": 308,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_pool_settle_overpays_one",
+      "instructions": 258,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "NEG_pool_settle_inside_window",
+      "instructions": 22,
+      "success": false,
+      "expected": false,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "pool_settle_with_vendor_topup",
+      "instructions": 261,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    },
+    {
+      "name": "vendor_contribute_checksig",
+      "instructions": 171,
+      "success": true,
+      "expected": true,
+      "asExpected": true,
+      "exception": ""
+    }
+  ]
+}

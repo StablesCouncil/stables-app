@@ -1,0 +1,23 @@
+{
+  "measurement": "lx16_helper_K4_in1_tampered",
+  "purpose": "Labelled-XOR Lamport (n=16) helper: verifies 64 of the 256 positions of one hop signature",
+  "note": "tampered secret must be refused",
+  "node": {
+    "version": "1.0.45.15",
+    "block": 2336831,
+    "rpcPort": 9105
+  },
+  "timestamp": "2026-09-27T15:22:07.688Z",
+  "command": "runscript (POST, dry run)",
+  "scriptChars": 4585,
+  "stateBytes": 8465,
+  "result": {
+    "success": false,
+    "parseok": true,
+    "monotonic": true,
+    "instructions": 976,
+    "executionError": null,
+    "rpcMs": 184,
+    "address": "0x94F77CC596E257EF9A542277D3DB9384D47872FFEAA13FDB51FD9BC0A72021F0"
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "purpose": "Cashing transaction (T1) sizes with the real covenant texts (LX16, 255 positions, 5 helpers per hop) against the 65,536-byte TxPoW cap and the 100,000-character Core IPC reply cap",
+  "node": {
+    "version": "1.0.45.15",
+    "block": 2336797,
+    "rpcPort": 9105
+  },
+  "timestamp": "2026-09-27T14:52:45.035Z",
+  "results": {
+    "emptyTxn": 38,
+    "oneMinimaOutput": 66,
+    "oneTokenOutput": 187,
+    "state4080": 4086,
+    "stateOverheadPerHexPort": 6,
+    "tokenCoin": {
+      "coinid": "0x02D2DEA81E2F5CDBCC3D3278CC638EEC1E9DF8C2FC71F1D3C4BEEE718CFF7125",
+      "token": true,
+      "statePorts": 10,
+      "mmrentry": "1639026",
+      "coinBytesInTxn": 442,
+      "afterBasicsDelta": 2733,
+      "scriptChars": 1317,
+      "proofChunks": 17,
+      "coinProofBytes": 1412,
+      "mmrProofBytesApprox": 970
+    },
+    "minimaStateCoin": {
+      "coinid": "0x0C0D2FFFFFB16978966C87FF75DF85A058DD9CBD24C802D54A80B3A4C67B7FEB",
+      "token": false,
+      "statePorts": 43,
+      "mmrentry": "1690333",
+      "coinBytesInTxn": 488,
+      "afterBasicsDelta": 4971,
+      "scriptChars": 3530,
+      "proofChunks": 17,
+      "coinProofBytes": 1437,
+      "mmrProofBytesApprox": 949
+    },
+    "derived": {
+      "helperInputBytes": 1102,
+      "note": "helper input = coin in transaction + coin in witness proof + MMR proof (proof size from the real token coin)"
+    },
+    "cashingTable": [
+      {
+        "hops": 1,
+        "measuredBodyBytes": 21061,
+        "helpers": 5,
+        "helperBytes": 5510,
+        "valueCoinBytes": 1854,
+        "scriptsInWitnessChars": 8953,
+        "headerAllowance": 1200,
+        "totalTxPoWBytesEstimate": 28308,
+        "fits64KB": true,
+        "fitsCoreIpcReply": true,
+        "txncheckBasic": true
+      },
+      {
+        "hops": 2,
+        "measuredBodyBytes": 29485,
+        "helpers": 10,
+        "helperBytes": 11020,
+        "valueCoinBytes": 1854,
+        "scriptsInWitnessChars": 8953,
+        "headerAllowance": 1200,
+        "totalTxPoWBytesEstimate": 42242,
+        "fits64KB": true,
+        "fitsCoreIpcReply": true,
+        "txncheckBasic": true
+      },
+      {
+        "hops": 3,
+        "measuredBodyBytes": 37909,
+        "helpers": 15,
+        "helperBytes": 16530,
+        "valueCoinBytes": 1854,
+        "scriptsInWitnessChars": 8953,
+        "headerAllowance": 1200,
+        "totalTxPoWBytesEstimate": 56176,
+        "fits64KB": true,
+        "fitsCoreIpcReply": false,
+        "txncheckBasic": true
+      },
+      {
+        "hops": 4,
+        "measuredBodyBytes": 46333,
+        "helpers": 20,
+        "helperBytes": 22040,
+        "valueCoinBytes": 1854,
+        "scriptsInWitnessChars": 8953,
+        "headerAllowance": 1200,
+        "totalTxPoWBytesEstimate": 70110,
+        "fits64KB": false,
+        "fitsCoreIpcReply": false,
+        "txncheckBasic": true
+      }
+    ]
+  }
+}

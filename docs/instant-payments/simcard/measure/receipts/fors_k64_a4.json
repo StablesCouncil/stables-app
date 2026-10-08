@@ -1,0 +1,23 @@
+{
+  "measurement": "fors_k64_a4",
+  "purpose": "FORS-style few-time signature with SHA2 leaves (k=64 trees of 2^4 leaves), one PROOF per revealed secret",
+  "note": "FORS-style k=64 a=4, PROOF per revealed secret",
+  "node": {
+    "version": "1.0.45.15",
+    "block": 2336756,
+    "rpcPort": 9105
+  },
+  "timestamp": "2026-09-27T14:16:27.768Z",
+  "command": "runscript (POST, dry run)",
+  "scriptChars": 6794,
+  "stateBytes": 14784,
+  "result": {
+    "success": false,
+    "parseok": true,
+    "monotonic": true,
+    "instructions": 1025,
+    "executionError": "org.minima.kissvm.exceptions.ExecutionException: MAX instruction number reached! 1025",
+    "rpcMs": 410,
+    "address": "0x52123E9B1F5B69343E9E0F74F7ADD203A24260F7242909883120206B4CE9B6EA"
+  }
+}

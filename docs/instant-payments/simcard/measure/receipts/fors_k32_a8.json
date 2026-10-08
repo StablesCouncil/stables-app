@@ -1,0 +1,23 @@
+{
+  "measurement": "fors_k32_a8",
+  "purpose": "FORS-style few-time signature with SHA2 leaves (k=32 trees of 2^8 leaves), one PROOF per revealed secret",
+  "note": "FORS-style k=32 a=8, PROOF per revealed secret",
+  "node": {
+    "version": "1.0.45.15",
+    "block": 2336756,
+    "rpcPort": 9105
+  },
+  "timestamp": "2026-09-27T14:16:26.863Z",
+  "command": "runscript (POST, dry run)",
+  "scriptChars": 3193,
+  "stateBytes": 12756,
+  "result": {
+    "success": true,
+    "parseok": true,
+    "monotonic": true,
+    "instructions": 625,
+    "executionError": null,
+    "rpcMs": 169,
+    "address": "0xB04156D7B54F69047D11F60A7BD33EE8B84AB74AF7B6667828E2A3158F84135A"
+  }
+}

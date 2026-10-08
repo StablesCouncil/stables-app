@@ -1,0 +1,208 @@
+{
+  "purpose": "Probes behind the step 2 version 2 design: 8-decimal arithmetic, SUMINPUTS on the live node, monotonic texts, and whether any coin can be trapped at the vault",
+  "node": {
+    "version": "1.0.45.15",
+    "block": 2338969,
+    "rpcPort": 9105
+  },
+  "timestamp": "2026-09-28T20:27:02.292Z",
+  "inProcess": [
+    {
+      "group": "arith",
+      "name": "GETINAMT reads 8-decimal token units",
+      "expected": true,
+      "success": true,
+      "perInput": [
+        {
+          "success": true,
+          "instructions": 5,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "asExpected": true
+    },
+    {
+      "group": "arith",
+      "name": "@AMOUNT reads 8-decimal token units",
+      "expected": true,
+      "success": true,
+      "perInput": [
+        {
+          "success": true,
+          "instructions": 4,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "asExpected": true
+    },
+    {
+      "group": "arith",
+      "name": "VERIFYOUT(@AMOUNT) under keepstate at 8 decimals (the doctrine trap form)",
+      "expected": "observe",
+      "success": true,
+      "perInput": [
+        {
+          "success": true,
+          "instructions": 7,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "asExpected": null
+    },
+    {
+      "group": "arith",
+      "name": "SUMINPUTS adds 8-decimal amounts exactly",
+      "expected": true,
+      "success": true,
+      "perInput": [
+        {
+          "success": true,
+          "instructions": 5,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "asExpected": true
+    },
+    {
+      "group": "arith",
+      "name": "SUMINPUTS one atom off is refused",
+      "expected": false,
+      "success": false,
+      "perInput": [
+        {
+          "success": false,
+          "instructions": 5,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "asExpected": true
+    },
+    {
+      "group": "trap",
+      "name": "TRAP vault coin carrying junk state (ports 8, 10, 12 set to hostile values) is still withdrawable",
+      "note": "The vault reads only the spending transaction's state, never a coin's own stored state, so no stored state can lock a vault coin.",
+      "expected": true,
+      "success": true,
+      "perInput": [
+        {
+          "success": true,
+          "instructions": 93,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "success": true,
+          "instructions": 28,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "asExpected": true
+    },
+    {
+      "group": "trap",
+      "name": "TRAP native MINIMA sent to the vault is withdrawable (registration holding Winiwa dust governs 0x00)",
+      "note": "Any token that reaches the vault can leave: a registration for that token id is free to create.",
+      "expected": true,
+      "success": true,
+      "perInput": [
+        {
+          "success": true,
+          "instructions": 91,
+          "monotonic": true,
+          "exception": ""
+        },
+        {
+          "success": true,
+          "instructions": 28,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "asExpected": true
+    },
+    {
+      "group": "trap",
+      "name": "TRAP a registration coin stored WITHOUT port 12 cannot withdraw (refused; it cannot touch the vault)",
+      "note": "App rule: create a registration only with ports 0, 1, 2, 3 and 12 set. A malformed one is refused for withdrawals; its owner can still close it (next probe).",
+      "expected": false,
+      "success": false,
+      "perInput": [
+        {
+          "success": false,
+          "instructions": 23,
+          "monotonic": true,
+          "exception": "org.minima.kissvm.exceptions.ExecutionException: PREVSTATE Missing : 12"
+        },
+        {
+          "success": true,
+          "instructions": 28,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "asExpected": true
+    },
+    {
+      "group": "trap",
+      "name": "TRAP a registration coin stored WITHOUT port 12 can still be CLOSED by its owner",
+      "note": "v2 puts CLOSE before the state pins, so the owner recovers the atom of a malformed registration (only ports 2 and 3 are needed).",
+      "expected": true,
+      "success": true,
+      "perInput": [
+        {
+          "success": true,
+          "instructions": 29,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "asExpected": true
+    },
+    {
+      "group": "trap",
+      "name": "TRAP a registration coin holding 100 Winiwa by mistake: CLOSE returns all of it to the owner",
+      "note": "Whatever amount sits in a registration coin, its owner gets all of it back (STATE(11) must equal @AMOUNT).",
+      "expected": true,
+      "success": true,
+      "perInput": [
+        {
+          "success": true,
+          "instructions": 29,
+          "monotonic": true,
+          "exception": ""
+        }
+      ],
+      "asExpected": true
+    }
+  ],
+  "liveSuminputs": {
+    "script": "RETURN SUMINPUTS(0x00) EQ 0",
+    "parseok": true,
+    "success": true,
+    "instructions": 5,
+    "note": "runscript runs on an empty transaction, so the sum is 0: this proves the function exists and runs on 1.0.45.15, not its arithmetic (that is the in-process rows)."
+  },
+  "monotonicByConstruction": {
+    "rule": "Contract.getGlobal marks a script non-monotonic when it reads @BLOCK, @BLOCKMILLI or @COINAGE (src/org/minima/kissvm/Contract.java, 1.1.2.6); a monotonic transaction is script-checked once and never goes stale (TxPoWChecker.checkTxPoWScripts, NIOMessage).",
+    "scan": {
+      "registration_v2": {
+        "nonMonotonicGlobalsRead": []
+      },
+      "vault_v2": {
+        "nonMonotonicGlobalsRead": []
+      },
+      "registration_hashchain_v2": {
+        "nonMonotonicGlobalsRead": []
+      }
+    },
+    "measured": "every input of every case in step2v2_covenant_branches.json reports monotonic=true (summary.everyInputMonotonic)",
+    "everyInputMonotonic": true
+  },
+  "finding": "Unchanged from v1: VERIFYOUT(@AMOUNT) under keepstate PASSES in-process at scale 36, so this method does not reproduce the doctrine's recorded on-chain failure; the v2 texts keep the pinned-port form (STATE(11) EQ @AMOUNT, then VERIFYOUT(... STATE(11) ...))."
+}

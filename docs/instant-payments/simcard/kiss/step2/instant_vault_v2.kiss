@@ -1,0 +1,78 @@
+// instant_vault_v2.kiss (step 2 version 2: Instant payments load and offload, docs/step2-load-offload-design.md)
+// Purpose: the pooled vault, generic by token id: WITHDRAW (only beside a registration coin at input 0) and MERGE (anyone); NO retirement branch, no successor, nothing is ever swept
+// Ports: 8 op (1 withdraw, 3 merge; anything else refused); 10 change or merged total; 12 currency (withdraw, pinned by the registration coin)
+// Measured: measure/receipts/step2v2_covenant_branches.json (node 1.0.45.15 jar in-process, 8-decimal token scaling; parse, clean form and address on the live node 1.0.45.15).
+// DEPLOY ONLY THE CLEAN FORM: register and spend the exact single-line text in the matching .clean.txt file (runscript clean form); the multi-line text below hashes to a different, phantom address (txn-building laws 2 and 3).
+// Address of the clean form: 0xE23CA9F24CF5BDC49B75964DA145A0AE75F69E6DFD37BDCEAB5765AEB3A53413 (MxG08727WKV4J7YNN29MTCM9MGKB85EENR9SRFT6UUSTAQNCMNB799K2EU5DAJE). It names the registration address 0x5337459E075F10B5340ACF645B7815D016570787ACBF632CD5ADBB19C8F45449.
+// Measured transactions (instructions per input, ! = that input refused; verdict = every input passes):
+//   A_WITHDRAW_1_vault_coin: 88/31 -> valid=true (expected true)
+//   A_WITHDRAW_whole_coin_no_change: 93/28 -> valid=true (expected true)
+//   A_WITHDRAW_2_vault_coins: 88/31/31 -> valid=true (expected true)
+//   A_WITHDRAW_5_vault_coins: 88/31/31/31/31/31 -> valid=true (expected true)
+//   A_WITHDRAW_10_vault_coins: 88/31/31/31/31/31/31/31/31/31/31 -> valid=true (expected true)
+//   A_WITHDRAW_20_vault_coins: 88/31/31/31/31/31/31/31/31/31/31/31/31/31/31/31/31/31/31/31/31 -> valid=true (expected true)
+//   A_WITHDRAW_30_vault_coins: 88/31/31/31/31/31/31/31/31/31/31/31/31/31/31/31/31/31/31/31/31/31/31/31/31/31/31/31/31/31/31 -> valid=true (expected true)
+//   A_WITHDRAW_own_coin_added_goes_to_the_vault: 88/31 -> valid=true (expected true)
+//   A_WITHDRAW_xWiniwa_via_Winiwa_dust_registration: 86/31 -> valid=true (expected true)
+//   NEG_A_currency_swapped_in_state: 23!/31 -> valid=false (expected false)
+//   A_WITHDRAW_large_amount_no_limit: 88/31 -> valid=true (expected true)
+//   A_WITHDRAW_everything_5_coins_no_change: 93/28/28/28/28/28 -> valid=true (expected true)
+//   A_WITHDRAW_coin_10_years_old: 93/28 -> valid=true (expected true)
+//   A_WITHDRAW_reserved_ports_4_to_6_not_read: 88/31 -> valid=true (expected true)
+//   DEMO_T3_C_withdraws_25_from_A_load_of_100: 88/31 -> valid=true (expected true)
+//   DEMO_T5_B_withdraws_35_from_change_75: 88/31 -> valid=true (expected true)
+//   DEMO_T6_A_withdraws_40_vault_to_zero: 93/28 -> valid=true (expected true)
+//   NEG_DEMO_T6_A_registration_paying_C: 70!/28 -> valid=false (expected false)
+//   NEG_A_unsigned: 11!/31 -> valid=false (expected false)
+//   NEG_A_signed_by_another_key: 11!/31 -> valid=false (expected false)
+//   NEG_A_payout_redirected_in_output: 70!/31 -> valid=false (expected false)
+//   NEG_A_payout_redirected_in_state: 19!/31 -> valid=false (expected false)
+//   NEG_A_key_swapped_in_state_signed_by_attacker: 11!/31 -> valid=false (expected false)
+//   NEG_A_account_id_swapped_in_state: 19!/31 -> valid=false (expected false)
+//   NEG_A_change_skimmed_to_extra_output: 78!/31! -> valid=false (expected false)
+//   NEG_A_change_understated: 62!/31 -> valid=false (expected false)
+//   NEG_A_change_kept_with_state_fake_load: 88/31! -> valid=false (expected false)
+//   NEG_A_vault_coin_of_another_currency: 78!/31/17! -> valid=false (expected false)
+//   NEG_A_no_registration_at_input_0: 12! -> valid=false (expected false)
+//   NEG_A_vault_coin_alone: 12! -> valid=false (expected false)
+//   NEG_A_registration_not_at_input_0: 12!/7! -> valid=false (expected false)
+//   NEG_A_registration_recreated_elsewhere: 88!/31 -> valid=false (expected false)
+//   NEG_A_registration_recreated_without_state: 88!/31 -> valid=false (expected false)
+//   NEG_A_registration_not_recreated: 78!/31 -> valid=false (expected false)
+//   NEG_A_registration_dust_skimmed: 88!/31 -> valid=false (expected false)
+//   NEG_A_extra_keepstate_output_at_vault: 78!/31! -> valid=false (expected false)
+//   NEG_A_zero_amount: 34!/31 -> valid=false (expected false)
+//   NEG_A_negative_amount: 34!/31 -> valid=false (expected false)
+//   A_CLOSE_dust_to_owner: 29 -> valid=true (expected true)
+//   A_CLOSE_after_10_years: 29 -> valid=true (expected true)
+//   NEG_A_CLOSE_unsigned: 11! -> valid=false (expected false)
+//   NEG_A_CLOSE_redirected: 29! -> valid=false (expected false)
+//   NEG_A_CLOSE_with_vault_coins: 29/13! -> valid=false (expected false)
+//   V_MERGE_3_coins: 39/39/39 -> valid=true (expected true)
+//   V_MERGE_coins_10_years_old: 39/39 -> valid=true (expected true)
+//   NEG_V_MERGE_skims: 39!/39! -> valid=false (expected false)
+//   NEG_V_MERGE_skims_to_second_output: 25!/25! -> valid=false (expected false)
+//   NEG_V_MERGE_output_keeps_state: 39!/39! -> valid=false (expected false)
+//   NEG_V_MERGE_mixed_currency: 25!/21! -> valid=false (expected false)
+//   NEG_V_op4_retire_after_dormancy_to_old_successor: 13!/13! -> valid=false (expected false)
+//   NEG_V_op4_after_10_years_to_anyone: 13! -> valid=false (expected false)
+//   NEG_V_withdraw_op_after_10_years_without_registration: 12! -> valid=false (expected false)
+//   NEG_V_unknown_operation: 13! -> valid=false (expected false)
+LET op=STATE(8)
+IF op EQ 1 THEN
+ASSERT GETINADDR(0) EQ 0x5337459E075F10B5340ACF645B7815D016570787ACBF632CD5ADBB19C8F45449
+ASSERT @TOKENID EQ STATE(12)
+LET c=STATE(10)
+IF c GT 0 THEN
+RETURN VERIFYOUT(1 @ADDRESS c @TOKENID FALSE)
+ENDIF
+RETURN c EQ 0
+ENDIF
+IF op EQ 3 THEN
+ASSERT GETINADDR(0) EQ @ADDRESS
+ASSERT GETINTOK(0) EQ @TOKENID
+ASSERT @TOTOUT EQ 1
+ASSERT STATE(10) EQ SUMINPUTS(@TOKENID)
+RETURN VERIFYOUT(0 @ADDRESS STATE(10) @TOKENID FALSE)
+ENDIF
+RETURN FALSE

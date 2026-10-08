@@ -1,0 +1,34 @@
+// w4_full_verify.kiss
+// Purpose: Winternitz (4 bits per chain, SHA-256) full verification: 64 message chains + 3 checksum chains
+// State ports: 20 signature (67 x 32) or chain start, 21 digest, 22 public key hash
+// Node 1.0.45.15 (lab peer 9101, RPC 9105), runscript dry run. Measurements (receipt = measure/receipts/<name>.json):
+//   w4_full_verify: 1025 instructions, success=false (full W4 verification in one script) [ExecutionException: MAX instruction number reached! 1025]
+// Script size: 502 characters; state data in the measured call: 2208 bytes. Body below is comment-free (deploy form).
+
+LET d=STATE(21)
+LET sg=STATE(20)
+LET i=0
+LET cs=0
+LET acc=0x01
+WHILE i LT 67 DO 
+IF i LT 64 THEN
+LET v=NUMBER(SUBSET(FLOOR(i/2) FLOOR(i/2)+1 d))
+IF i%2 EQ 0 THEN
+LET v=FLOOR(v/16)
+ELSE LET v=v%16
+ENDIF LET cs=cs+15-v 
+ELSEIF i EQ 64 THEN
+LET v=FLOOR(cs/256)
+ELSEIF i EQ 65 THEN
+LET v=FLOOR(cs/16)%16
+ELSE LET v=cs%16
+ENDIF 
+LET x=SUBSET(i*32 i*32+32 sg)
+LET k=v
+WHILE k LT 15 DO
+LET x=SHA2(x)
+LET k=k+1
+ENDWHILE 
+LET acc=CONCAT(acc x)
+LET i=i+1
+ENDWHILE RETURN SHA2(SUBSET(1 LEN(acc) acc)) EQ STATE(22)

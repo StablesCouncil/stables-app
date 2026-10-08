@@ -1,0 +1,26 @@
+// lx16_cheat_proof_K5_P255_runscript.kiss: the proof of cheating for LX16 keys as the chip makes them (255 positions,
+// 5 chunks of 51), in a form the LIVE node can run with runscript (dry run).
+// Derived line by line from kiss/balance/chip_account.kiss, branch op 4 (clone evidence, measured in-process at 221
+// instructions): the transaction functions (@INPUT, @BLOCK, VERIFYOUT, the record fields) are removed and the key
+// tree root and root sum come from ports 16 and 17 instead of the account record. The older standalone
+// kiss/lx16_cheat_proof.kiss is the 4-chunk (64 per chunk) variant and does not fit K5 keys.
+// Ports: 10 secret with label 0, 11 secret with label 1, 12 position, 13 chunk, 14 T blob of that chunk (51 x 32 B),
+//        15 chunk digests (160 B), 16 key-tree root, 17 key-tree root sum, 26 key index (leaf value), 28 MMR proof.
+// Used only by crosscheck/lx16-crosscheck.mjs, in runscript dry runs on lab peer 9101. Status: deferred machinery
+// (appendix D.3); checked here only because 0c.2 asks the card's signatures to pass the existing verifiers.
+
+LET i=STATE(12)
+LET c=STATE(13)
+LET w=i-c*51
+LET a=STATE(10)
+LET b=STATE(11)
+LET tt=SHA2(SUBSET(0 16 SHA2(a)))^SHA2(SUBSET(0 16 SHA2(b)))
+ASSERT CONCAT(0x01 tt) EQ CONCAT(0x01 SUBSET(w*32 w*32+32 STATE(14)))
+LET v=i%128
+LET z=8*(15-FLOOR(v/8))+(v%8)
+ASSERT NOT BITGET(a z)
+ASSERT BITGET(b z)
+ASSERT SHA2(CONCAT(0x01 STATE(14))) EQ SUBSET(c*32 c*32+32 STATE(15))
+LET pk=SHA2(CONCAT(0x01 STATE(15)))
+ASSERT PROOF(pk STATE(26) STATE(16) STATE(17) STATE(28))
+RETURN TRUE

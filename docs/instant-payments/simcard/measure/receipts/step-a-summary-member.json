@@ -1,0 +1,19 @@
+{
+  "node": {
+    "version": "1.0.45.15",
+    "block": 2336756,
+    "rpcPort": 9105
+  },
+  "timestamp": "2026-09-27T14:16:02.928Z",
+  "summary": [
+    {
+      "name": "device_root_membership",
+      "instructions": 11,
+      "success": true,
+      "expectSuccess": true,
+      "error": null,
+      "stateBytes": 2713,
+      "scriptChars": 55
+    }
+  ]
+}

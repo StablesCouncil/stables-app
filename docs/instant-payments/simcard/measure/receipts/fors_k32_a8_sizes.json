@@ -1,0 +1,13 @@
+{
+  "node": {
+    "version": "1.0.45.15",
+    "block": 2336756,
+    "rpcPort": 9105
+  },
+  "timestamp": "2026-09-27T14:16:26.875Z",
+  "secretsBytes": 1024,
+  "rootsBytes": 1024,
+  "proofBytes": 10644,
+  "totalSignatureBytes": 12692,
+  "leavesPerKey": 8192
+}

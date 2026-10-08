@@ -1,0 +1,8 @@
+// device_root_membership.kiss
+// Purpose: Membership of a one-time key commitment in a device root (Minima MMR via PROOF)
+// State ports: 16 key commitment, 17 device root, 18 root sum, 19 MMR proof
+// Node 1.0.45.15 (lab peer 9101, RPC 9105), runscript dry run. Measurements (receipt = measure/receipts/<name>.json):
+//   device_root_membership: 11 instructions, success=true (device root membership, 1,024 keys)
+// Script size: 55 characters; state data in the measured call: 2713 bytes. Body below is comment-free (deploy form).
+
+RETURN PROOF(STATE(16) 0 STATE(17) STATE(18) STATE(19))

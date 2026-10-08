@@ -1,0 +1,23 @@
+{
+  "measurement": "lx16_anchor_hops1",
+  "purpose": "Labelled-XOR Lamport (n=16) anchor-side checks for 1 hop(s): digest chain, key commitment, bulk label check",
+  "note": "anchor-side checks, 1 hop(s)",
+  "node": {
+    "version": "1.0.45.15",
+    "block": 2336831,
+    "rpcPort": 9105
+  },
+  "timestamp": "2026-09-27T15:22:08.134Z",
+  "command": "runscript (POST, dry run)",
+  "scriptChars": 1116,
+  "stateBytes": 8465,
+  "result": {
+    "success": true,
+    "parseok": true,
+    "monotonic": true,
+    "instructions": 176,
+    "executionError": null,
+    "rpcMs": 81,
+    "address": "0xBF9B456632BC617E20F039E3057E01E154F15DD4281A54C7B5A250D1D95915BE"
+  }
+}

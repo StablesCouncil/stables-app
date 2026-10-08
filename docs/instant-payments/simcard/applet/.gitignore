@@ -1,0 +1,4 @@
+# downloaded dependencies (re-fetched and hash-checked by tools/fetch-deps.mjs against deps.lock.json)
+lib/
+# build output (CAP files, simulator classes, mutants)
+build/

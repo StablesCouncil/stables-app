@@ -1,0 +1,23 @@
+{
+  "measurement": "lo16_helper_K8_in1",
+  "purpose": "Ordered (textbook) Lamport (n=16) helper: 32 positions, one IF per bit",
+  "note": "ordered Lamport hop 1 chunk 0 of 8",
+  "node": {
+    "version": "1.0.45.15",
+    "block": 2336756,
+    "rpcPort": 9105
+  },
+  "timestamp": "2026-09-27T14:15:55.084Z",
+  "command": "runscript (POST, dry run)",
+  "scriptChars": 5719,
+  "stateBytes": 8480,
+  "result": {
+    "success": true,
+    "parseok": true,
+    "monotonic": true,
+    "instructions": 692,
+    "executionError": null,
+    "rpcMs": 240,
+    "address": "0x74E75263511CCF87ECFBA8EC92EE50F1971B8EB9A86EFFC5CDAAB22CCB0B0F5F"
+  }
+}

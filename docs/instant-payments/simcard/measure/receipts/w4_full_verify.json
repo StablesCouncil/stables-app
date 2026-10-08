@@ -1,0 +1,23 @@
+{
+  "measurement": "w4_full_verify",
+  "purpose": "Winternitz (4 bits per chain, SHA-256) full verification: 64 message chains + 3 checksum chains",
+  "note": "full W4 verification in one script",
+  "node": {
+    "version": "1.0.45.15",
+    "block": 2336756,
+    "rpcPort": 9105
+  },
+  "timestamp": "2026-09-27T14:16:04.451Z",
+  "command": "runscript (POST, dry run)",
+  "scriptChars": 502,
+  "stateBytes": 2208,
+  "result": {
+    "success": false,
+    "parseok": true,
+    "monotonic": true,
+    "instructions": 1025,
+    "executionError": "org.minima.kissvm.exceptions.ExecutionException: MAX instruction number reached! 1025",
+    "rpcMs": 236,
+    "address": "0x0DA21E15D586BEDCAABAC95EC94A70B48EDAD862E392607DD7D6041A29315B27"
+  }
+}

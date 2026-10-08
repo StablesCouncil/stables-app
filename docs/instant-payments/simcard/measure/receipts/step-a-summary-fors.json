@@ -1,0 +1,28 @@
+{
+  "node": {
+    "version": "1.0.45.15",
+    "block": 2336756,
+    "rpcPort": 9105
+  },
+  "timestamp": "2026-09-27T14:16:27.778Z",
+  "summary": [
+    {
+      "name": "fors_k32_a8",
+      "instructions": 625,
+      "success": true,
+      "expectSuccess": true,
+      "error": null,
+      "stateBytes": 12756,
+      "scriptChars": 3193
+    },
+    {
+      "name": "fors_k64_a4",
+      "instructions": 1025,
+      "success": false,
+      "expectSuccess": true,
+      "error": "org.minima.kissvm.exceptions.ExecutionException: MAX instruction number reached! 1025",
+      "stateBytes": 14784,
+      "scriptChars": 6794
+    }
+  ]
+}

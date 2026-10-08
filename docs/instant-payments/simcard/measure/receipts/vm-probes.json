@@ -1,0 +1,158 @@
+{
+  "purpose": "KISS VM behaviour probes relied on by the Phase 1 designs",
+  "node": {
+    "version": "1.0.45.15",
+    "block": 2336750,
+    "rpcPort": 9105
+  },
+  "timestamp": "2026-09-27T14:06:45.037Z",
+  "results": {
+    "concat33": {
+      "script": "LET a=CONCAT(0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01) RETURN LEN(a) EQ 33",
+      "success": false,
+      "parseok": false,
+      "instructions": 0,
+      "executionError": null
+    },
+    "concat32": {
+      "script": "LET a=CONCAT(0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01 0x01) RETURN LEN(a) EQ 32",
+      "success": true,
+      "parseok": true,
+      "instructions": 39,
+      "executionError": null
+    },
+    "emptyHex": {
+      "script": "LET a=0x RETURN TRUE",
+      "success": false,
+      "parseok": false,
+      "instructions": 0,
+      "executionError": null
+    },
+    "andStripsLeadingZeros": {
+      "script": "LET a=0x00FF00FF & 0x0FFF00FF RETURN LEN(a) EQ 3",
+      "success": true,
+      "parseok": true,
+      "instructions": 9,
+      "executionError": null
+    },
+    "andKeepsLenWithGuard": {
+      "script": "LET a=0x01FF00FF & 0x01FF00FF RETURN LEN(a) EQ 4",
+      "success": true,
+      "parseok": true,
+      "instructions": 9,
+      "executionError": null
+    },
+    "xorStripsLeadingZeros": {
+      "script": "LET a=0x12FF ^ 0x12AA RETURN LEN(a) EQ 1",
+      "success": true,
+      "parseok": true,
+      "instructions": 9,
+      "executionError": null
+    },
+    "orStripsLeadingZeros": {
+      "script": "LET a=0x0000FF | 0x000000 RETURN LEN(a) EQ 1",
+      "success": true,
+      "parseok": true,
+      "instructions": 9,
+      "executionError": null
+    },
+    "xorEqualLen": {
+      "script": "LET a=0x12FF ^ 0x13AA RETURN a EQ 0x0155",
+      "success": true,
+      "parseok": true,
+      "instructions": 8,
+      "executionError": null
+    },
+    "shiftlBlock": {
+      "script": "LET a=0x0000000000000000000000000000000000000000000000000000000000000001 LET b=a<<1 RETURN b EQ 0x0000000000000000000000000000000000000000000000000000000000000002",
+      "success": false,
+      "parseok": true,
+      "instructions": 10,
+      "executionError": null
+    },
+    "shiftlLenKept": {
+      "script": "LET a=0x0000000000000000000000000000000000000000000000000000000000000001 LET b=a<<1 RETURN LEN(b) EQ 32",
+      "success": false,
+      "parseok": true,
+      "instructions": 11,
+      "executionError": null
+    },
+    "shiftlTopBitDropped": {
+      "script": "LET a=0x8000000000000000000000000000000000000000000000000000000000000000 LET b=a<<1 RETURN LEN(b) EQ 32",
+      "success": false,
+      "parseok": true,
+      "instructions": 11,
+      "executionError": null
+    },
+    "shiftlTwoBlocks": {
+      "script": "LET a=0x00000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000001 LET b=a<<3 RETURN b EQ 0x00000000000000000000000000000000000000...",
+      "success": false,
+      "parseok": true,
+      "instructions": 10,
+      "executionError": null
+    },
+    "shift128": {
+      "script": "LET a=0x0000000000000000000000000000000000000000000000000000000000000001 LET b=a<<128 RETURN b EQ 0x0000000000000000000000000000000100000000000000000000000000000000",
+      "success": false,
+      "parseok": true,
+      "instructions": 10,
+      "executionError": null
+    },
+    "numberByte": {
+      "script": "LET d=0x00A1FF LET n=NUMBER(SUBSET(1 2 d)) RETURN n EQ 161",
+      "success": true,
+      "parseok": true,
+      "instructions": 12,
+      "executionError": null
+    },
+    "numberTwoBytes": {
+      "script": "LET d=0x00A1FF LET n=NUMBER(SUBSET(1 3 d)) RETURN n EQ 41471",
+      "success": true,
+      "parseok": true,
+      "instructions": 12,
+      "executionError": null
+    },
+    "bitgetLittleEndian": {
+      "script": "LET d=0x0100 RETURN BITGET(d 0) AND NOT BITGET(d 8)",
+      "success": true,
+      "parseok": true,
+      "instructions": 12,
+      "executionError": null
+    },
+    "hexEqLenSensitive": {
+      "script": "RETURN NOT (0x0001 EQ 0x01)",
+      "success": true,
+      "parseok": true,
+      "instructions": 6,
+      "executionError": null
+    },
+    "sha2Known": {
+      "script": "RETURN SHA2(0x616263) EQ 0xBA7816BF8F01CFEA414140DE5DAE2223B00361A396177A9CB410FF61F20015AD",
+      "success": true,
+      "parseok": true,
+      "instructions": 5,
+      "executionError": null
+    },
+    "moduloByte": {
+      "script": "LET n=NUMBER(0xB7) RETURN (n % 16) EQ 7",
+      "success": true,
+      "parseok": true,
+      "instructions": 9,
+      "executionError": null
+    },
+    "floorDiv16": {
+      "script": "LET n=NUMBER(0xB7) RETURN FLOOR(n / 16) EQ 11",
+      "success": true,
+      "parseok": true,
+      "instructions": 10,
+      "executionError": null
+    },
+    "proofFnExists": {
+      "script": "RETURN TRUE",
+      "success": true,
+      "parseok": true,
+      "instructions": 2,
+      "executionError": null
+    }
+  }
+}

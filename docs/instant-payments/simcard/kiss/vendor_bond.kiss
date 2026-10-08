@@ -1,0 +1,40 @@
+// vendor_bond.kiss
+// Vendor bond: tops up victims of a certified chip (CHECKSIG of the device root) and burns a penalty; withdrawal; retirement.
+// Measured: see measure/receipts/covenant-branches.json (node 1.0.45.15 jar, in-process) and templateChecks there.
+// Placeholders used in the measured copy: STAMP/USDW token ids, BURN/NOTES/POOL addresses and the helper body hash are random test values.
+//   pool_settle_with_vendor_topup: 261 instructions, success=true (expected true)
+//   vendor_contribute_checksig: 171 instructions, success=true (expected true)
+
+LET op=STATE(9)
+IF op EQ 30 THEN
+ASSERT @INPUT EQ 1
+ASSERT STATE(127) EQ PREVSTATE(150)
+ASSERT CHECKSIG(PREVSTATE(150) STATE(120) STATE(128))
+LET c=STATE(139)
+LET tot=0
+LET k=0
+WHILE k LT c DO
+LET tot=tot+STATE(141+3*k)
+LET k=k+1
+ENDWHILE LET sh=tot*2-STATE(131)
+IF sh LT 0 THEN
+LET sh=0
+ENDIF IF sh GT 1000*2 THEN
+LET sh=1000*2
+ENDIF ASSERT STATE(236)*2 EQ sh
+ASSERT STATE(239) EQ @ADDRESS
+ASSERT VERIFYOUT(c+1 0xCA777B9FD6F1E79EEE12D469E48FAB00AEC95CBDDB2508A88C89BAB0667062ED 50 @TOKENID FALSE)
+ASSERT SAMESTATE(150 151)
+RETURN VERIFYOUT(c+2 @ADDRESS @AMOUNT-STATE(236)-50 @TOKENID TRUE)
+ENDIF IF op EQ 21 THEN
+ASSERT SIGNEDBY(PREVSTATE(150))
+ASSERT SAMESTATE(150 151)
+RETURN VERIFYOUT(0 @ADDRESS @AMOUNT @TOKENID TRUE)
+ENDIF IF op EQ 22 THEN
+ASSERT SIGNEDBY(PREVSTATE(150))
+ASSERT @COINAGE GT 20000
+RETURN VERIFYOUT(0 PREVSTATE(151) @AMOUNT @TOKENID FALSE)
+ENDIF IF op EQ 24 THEN
+ASSERT @COINAGE GT 700000
+RETURN VERIFYOUT(0 PREVSTATE(151) @AMOUNT @TOKENID FALSE)
+ENDIF RETURN FALSE

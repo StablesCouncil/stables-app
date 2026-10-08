@@ -1,0 +1,33 @@
+// chip_dispenser.kiss (chip-balance model, Phase 1 redo, docs/chip-balance-design.md)
+// Purpose: CHIP marker dispenser: ADMIT a vendor (CHIP stock proportional to its bond, bond >= minimum)
+// Ports: 9 op; 150-156 new gate state; 158 stock released
+// Measured: measure/receipts/balance_covenant_branches.json (node 1.0.45.15 jar in-process; templates and clean-invariance on the live node).
+// Placeholders in the measured copy: CHIP / USDw token ids, BURN / SUCCESSOR addresses and the helper owner tag are random test values;
+// VAULT, CHIPACC, VENDOR, DISP and the helper body hash are the real addresses of these exact texts.
+// Measured branches:
+//   disp_ADMIT_vendor: 107 instructions, success=true (expected true)
+//   NEG_disp_ADMIT_bond_below_minimum: 37 instructions, success=false (expected false)
+//   NEG_disp_ADMIT_too_much_stock_for_bond: 44 instructions, success=false (expected false)
+
+ASSERT @TOKENID EQ 0xDEF4F22B26E6C2941C4157DEDB6165D5F34C51C7D45F2B225E0F939EC3BC7E23
+ASSERT @AMOUNT GT 1
+LET op=STATE(9)
+IF op EQ 50 THEN
+ASSERT @INPUT EQ 0
+LET k=STATE(158)
+ASSERT k GT 1
+ASSERT @AMOUNT-k GT 1
+ASSERT STATE(154) GTE 1000000000000
+ASSERT k*1000000000 LTE STATE(154)
+ASSERT STATE(153) EQ 0
+ASSERT STATE(155) EQ 0
+ASSERT STATE(156) EQ 0
+ASSERT STATE(152) LTE @BLOCK
+ASSERT LEN(STATE(150)) EQ 32
+ASSERT VERIFYOUT(0 0x84EB442C3E60DB7220C83CA4F4F72E24CF0A66A494B66D45A7D69F41A12A1452 k @TOKENID TRUE)
+ASSERT GETOUTADDR(1) EQ 0x84EB442C3E60DB7220C83CA4F4F72E24CF0A66A494B66D45A7D69F41A12A1452
+ASSERT GETOUTTOK(1) EQ 0x041F9B529E29A3B2803527A8E9DB6197440E314E338B4E379EDF7987286BD556
+ASSERT GETOUTAMT(1)*100000000 EQ STATE(154)
+ASSERT GETOUTKEEPSTATE(1)
+RETURN VERIFYOUT(2 @ADDRESS @AMOUNT-k @TOKENID FALSE)
+ENDIF RETURN FALSE

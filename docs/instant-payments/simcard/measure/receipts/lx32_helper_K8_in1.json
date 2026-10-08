@@ -1,0 +1,23 @@
+{
+  "measurement": "lx32_helper_K8_in1",
+  "purpose": "Labelled-XOR Lamport (n=32) helper: verifies 32 of the 256 positions of one hop signature",
+  "note": "hop 1 chunk 0 of 8",
+  "node": {
+    "version": "1.0.45.15",
+    "block": 2336831,
+    "rpcPort": 9105
+  },
+  "timestamp": "2026-09-27T15:22:00.285Z",
+  "command": "runscript (POST, dry run)",
+  "scriptChars": 2001,
+  "stateBytes": 16785,
+  "result": {
+    "success": true,
+    "parseok": true,
+    "monotonic": true,
+    "instructions": 428,
+    "executionError": null,
+    "rpcMs": 176,
+    "address": "0x7CA222C11B5A43E923757A93E130B604E0DB1FAD3029D780E08F66CFF73B6238"
+  }
+}

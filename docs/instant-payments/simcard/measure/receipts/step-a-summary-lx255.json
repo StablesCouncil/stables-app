@@ -1,0 +1,109 @@
+{
+  "node": {
+    "version": "1.0.45.15",
+    "block": 2336835,
+    "rpcPort": 9105
+  },
+  "timestamp": "2026-09-27T15:24:26.056Z",
+  "summary": [
+    {
+      "name": "lx16_helper_K5_P255_in1",
+      "instructions": 790,
+      "success": true,
+      "expectSuccess": true,
+      "error": null,
+      "stateBytes": 25265,
+      "scriptChars": 3673
+    },
+    {
+      "name": "lx16_helper_K5_P255_in5",
+      "instructions": 790,
+      "success": true,
+      "expectSuccess": true,
+      "error": null,
+      "stateBytes": 25265,
+      "scriptChars": 3673
+    },
+    {
+      "name": "lx16_helper_K5_P255_in6",
+      "instructions": 790,
+      "success": true,
+      "expectSuccess": true,
+      "error": null,
+      "stateBytes": 25265,
+      "scriptChars": 3673
+    },
+    {
+      "name": "lx16_helper_K5_P255_in10",
+      "instructions": 790,
+      "success": true,
+      "expectSuccess": true,
+      "error": null,
+      "stateBytes": 25265,
+      "scriptChars": 3673
+    },
+    {
+      "name": "lx16_helper_K5_P255_in11",
+      "instructions": 790,
+      "success": true,
+      "expectSuccess": true,
+      "error": null,
+      "stateBytes": 25265,
+      "scriptChars": 3673
+    },
+    {
+      "name": "lx16_helper_K5_P255_in15",
+      "instructions": 790,
+      "success": true,
+      "expectSuccess": true,
+      "error": null,
+      "stateBytes": 25265,
+      "scriptChars": 3673
+    },
+    {
+      "name": "lx16_helper_K5_P255_in6_tampered_complement",
+      "instructions": 788,
+      "success": false,
+      "expectSuccess": false,
+      "error": null,
+      "stateBytes": 25265,
+      "scriptChars": 3673
+    },
+    {
+      "name": "lx16_anchor_hops1_P255",
+      "instructions": 186,
+      "success": true,
+      "expectSuccess": true,
+      "error": null,
+      "stateBytes": 8465,
+      "scriptChars": 1162
+    },
+    {
+      "name": "lx16_anchor_hops2_P255",
+      "instructions": 305,
+      "success": true,
+      "expectSuccess": true,
+      "error": null,
+      "stateBytes": 16865,
+      "scriptChars": 1729
+    },
+    {
+      "name": "lx16_anchor_hops3_P255",
+      "instructions": 424,
+      "success": true,
+      "expectSuccess": true,
+      "error": null,
+      "stateBytes": 25265,
+      "scriptChars": 2296
+    },
+    {
+      "name": "lx16_anchor_hops1_P255_label_flipped",
+      "instructions": 176,
+      "success": false,
+      "expectSuccess": false,
+      "error": null,
+      "stateBytes": 8465,
+      "scriptChars": 1162
+    }
+  ]
+}

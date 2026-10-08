@@ -1,0 +1,161 @@
+{
+  "purpose": "Step 2 version 2 final covenant addresses: live node + two jars in-process, clean form, deployable bytes and their hashes",
+  "node": {
+    "version": "1.0.45.15",
+    "block": 2338969,
+    "rpcPort": 9105
+  },
+  "timestamp": "2026-09-28T20:26:43.621Z",
+  "versions": {
+    "liveNode": "1.0.45.15",
+    "inProcessJars": [
+      "1.0.45.15",
+      "1.1.2.6"
+    ]
+  },
+  "rule": "A covenant address is the hash of the exact script bytes. These addresses are of the runscript CLEAN form (single line). Register (newscript) and spend with exactly the clean text in the .clean.txt file; the multi-line source hashes to the phantom address listed (txn-building laws 2 and 3).",
+  "deploymentOrder": [
+    "registration_v2 first (names nothing)",
+    "vault_v2 second (names the registration_v2 address as a literal)"
+  ],
+  "rows": [
+    {
+      "name": "registration_v2 (design A, adopted)",
+      "address": "0x5337459E075F10B5340ACF645B7815D016570787ACBF632CD5ADBB19C8F45449",
+      "mxAddress": "MxG082J6T2PS1QV22QJ82MFCHDNG5EG2PBGF1TCNTHWPYDDNCCSHT2K96PU118J",
+      "liveNode1_0_45_15": {
+        "address": "0x5337459E075F10B5340ACF645B7815D016570787ACBF632CD5ADBB19C8F45449",
+        "parseok": true,
+        "cleanChars": 589,
+        "cleanOfCleanSameAddress": true
+      },
+      "inProcess": {
+        "1.0.45.15": {
+          "address": "0x5337459E075F10B5340ACF645B7815D016570787ACBF632CD5ADBB19C8F45449",
+          "mx": "MxG082J6T2PS1QV22QJ82MFCHDNG5EG2PBGF1TCNTHWPYDDNCCSHT2K96PU118J",
+          "cleanIsFixedPoint": true
+        },
+        "1.1.2.6": {
+          "address": "0x5337459E075F10B5340ACF645B7815D016570787ACBF632CD5ADBB19C8F45449",
+          "mx": "MxG082J6T2PS1QV22QJ82MFCHDNG5EG2PBGF1TCNTHWPYDDNCCSHT2K96PU118J",
+          "cleanIsFixedPoint": true,
+          "sameCleanText": true
+        }
+      },
+      "allAgree": true,
+      "phantomIfRawTextRegistered": {
+        "rawMultiLineAddress": "0xC4B574EA362B47D8DDA72518E696908F0A7BFE363A2B58F90822463436EDD12F",
+        "differsFromClean": true,
+        "sameIn1126": true
+      },
+      "cleanText": "LET op=STATE(8) ASSERT @INPUT EQ 0 ASSERT SIGNEDBY(PREVSTATE(2)) IF op EQ 2 THEN ASSERT STATE(11) EQ @AMOUNT RETURN VERIFYOUT(0 PREVSTATE(3) STATE(11) @TOKENID FALSE) ENDIF ASSERT SAMESTATE(0 3) ASSERT SAMESTATE(12 12) ASSERT op EQ 1 LET w=STATE(7) ASSERT w GT 0 ASSERT STATE(11) EQ @AMOUNT LET t=PREVSTATE(12) LET d=0 IF @TOKENID EQ t THEN LET d=@AMOUNT ENDIF LET c=SUMINPUTS(t)-d-w ASSERT STATE(10) EQ c ASSERT VERIFYOUT(0 PREVSTATE(3) w t FALSE) IF c GT 0 THEN ASSERT @TOTOUT EQ 3 ELSE ASSERT c EQ 0 ASSERT @TOTOUT EQ 2 ENDIF RETURN VERIFYOUT(@TOTOUT-1 @ADDRESS STATE(11) @TOKENID TRUE)",
+      "cleanTextSha256": "a033264f9442cded205a8f7224d41e2387763148e2138351b2e0fbf541ce2d9e",
+      "cleanTextBytes": 589,
+      "cleanFile": "kiss/step2/instant_registration_v2.clean.txt",
+      "kissFile": "kiss/step2/instant_registration_v2.kiss",
+      "kissFileSha256": "2b0080cf58347c0d82ddff61511a69a74cb824971036f07009195816155c9073"
+    },
+    {
+      "name": "vault_v2 (names the registration_v2 address)",
+      "address": "0xE23CA9F24CF5BDC49B75964DA145A0AE75F69E6DFD37BDCEAB5765AEB3A53413",
+      "mxAddress": "MxG08727WKV4J7YNN29MTCM9MGKB85EENR9SRFT6UUSTAQNCMNB799K2EU5DAJE",
+      "liveNode1_0_45_15": {
+        "address": "0xE23CA9F24CF5BDC49B75964DA145A0AE75F69E6DFD37BDCEAB5765AEB3A53413",
+        "parseok": true,
+        "cleanChars": 465,
+        "cleanOfCleanSameAddress": true
+      },
+      "inProcess": {
+        "1.0.45.15": {
+          "address": "0xE23CA9F24CF5BDC49B75964DA145A0AE75F69E6DFD37BDCEAB5765AEB3A53413",
+          "mx": "MxG08727WKV4J7YNN29MTCM9MGKB85EENR9SRFT6UUSTAQNCMNB799K2EU5DAJE",
+          "cleanIsFixedPoint": true
+        },
+        "1.1.2.6": {
+          "address": "0xE23CA9F24CF5BDC49B75964DA145A0AE75F69E6DFD37BDCEAB5765AEB3A53413",
+          "mx": "MxG08727WKV4J7YNN29MTCM9MGKB85EENR9SRFT6UUSTAQNCMNB799K2EU5DAJE",
+          "cleanIsFixedPoint": true,
+          "sameCleanText": true
+        }
+      },
+      "allAgree": true,
+      "phantomIfRawTextRegistered": {
+        "rawMultiLineAddress": "0x5FF94F305A3CFCDB24A1D3B00DE5C8EC495C3795FFD9AF37C63C785A54290C6C",
+        "differsFromClean": true,
+        "sameIn1126": true
+      },
+      "cleanText": "LET op=STATE(8) IF op EQ 1 THEN ASSERT GETINADDR(0) EQ 0x5337459E075F10B5340ACF645B7815D016570787ACBF632CD5ADBB19C8F45449 ASSERT @TOKENID EQ STATE(12) LET c=STATE(10) IF c GT 0 THEN RETURN VERIFYOUT(1 @ADDRESS c @TOKENID FALSE) ENDIF RETURN c EQ 0 ENDIF IF op EQ 3 THEN ASSERT GETINADDR(0) EQ @ADDRESS ASSERT GETINTOK(0) EQ @TOKENID ASSERT @TOTOUT EQ 1 ASSERT STATE(10) EQ SUMINPUTS(@TOKENID) RETURN VERIFYOUT(0 @ADDRESS STATE(10) @TOKENID FALSE) ENDIF RETURN FALSE",
+      "cleanTextSha256": "e63e0452b1a3d3e641f7b3016e1318070e0291223e0dae48a74f826bc0b76f6a",
+      "cleanTextBytes": 465,
+      "cleanFile": "kiss/step2/instant_vault_v2.clean.txt",
+      "kissFile": "kiss/step2/instant_vault_v2.kiss",
+      "kissFileSha256": "92013536f66756c7fbdc7571f70091397cbba8ed0a23251243ea3937555c4de7"
+    },
+    {
+      "name": "registration_hashchain_v2 (design C, not adopted)",
+      "address": "0xEEFF65F4F7B27C12F125A8EA812DD4FEB58B0914EAE81990B1AAAF57D65D397D",
+      "mxAddress": "MxG087EVTWV9TTWFG9F29D8TA0WRY7UMM5GW57AT0CP1CDAYTBTCN9PFYVYTB0Y",
+      "liveNode1_0_45_15": {
+        "address": "0xEEFF65F4F7B27C12F125A8EA812DD4FEB58B0914EAE81990B1AAAF57D65D397D",
+        "parseok": true,
+        "cleanChars": 619,
+        "cleanOfCleanSameAddress": true
+      },
+      "inProcess": {
+        "1.0.45.15": {
+          "address": "0xEEFF65F4F7B27C12F125A8EA812DD4FEB58B0914EAE81990B1AAAF57D65D397D",
+          "mx": "MxG087EVTWV9TTWFG9F29D8TA0WRY7UMM5GW57AT0CP1CDAYTBTCN9PFYVYTB0Y",
+          "cleanIsFixedPoint": true
+        },
+        "1.1.2.6": {
+          "address": "0xEEFF65F4F7B27C12F125A8EA812DD4FEB58B0914EAE81990B1AAAF57D65D397D",
+          "mx": "MxG087EVTWV9TTWFG9F29D8TA0WRY7UMM5GW57AT0CP1CDAYTBTCN9PFYVYTB0Y",
+          "cleanIsFixedPoint": true,
+          "sameCleanText": true
+        }
+      },
+      "allAgree": true,
+      "phantomIfRawTextRegistered": {
+        "rawMultiLineAddress": "0x11C75DA4C23E9A8AD0F0FA9DBBF1E530764DD3A47901E08FBD6ACA6CC01B139E",
+        "differsFromClean": true,
+        "sameIn1126": true
+      },
+      "cleanText": "LET op=STATE(8) ASSERT @INPUT EQ 0 ASSERT SHA2(STATE(2)) EQ PREVSTATE(2) IF op EQ 2 THEN ASSERT STATE(11) EQ @AMOUNT RETURN VERIFYOUT(0 PREVSTATE(3) STATE(11) @TOKENID FALSE) ENDIF ASSERT SAMESTATE(0 1) ASSERT SAMESTATE(3 3) ASSERT SAMESTATE(12 12) ASSERT op EQ 1 LET w=STATE(7) ASSERT w GT 0 ASSERT STATE(11) EQ @AMOUNT LET t=PREVSTATE(12) LET d=0 IF @TOKENID EQ t THEN LET d=@AMOUNT ENDIF LET c=SUMINPUTS(t)-d-w ASSERT STATE(10) EQ c ASSERT VERIFYOUT(0 PREVSTATE(3) w t FALSE) IF c GT 0 THEN ASSERT @TOTOUT EQ 3 ELSE ASSERT c EQ 0 ASSERT @TOTOUT EQ 2 ENDIF RETURN VERIFYOUT(@TOTOUT-1 @ADDRESS STATE(11) @TOKENID TRUE)",
+      "cleanTextSha256": "d5b9d6eab6cc1d67badd680aa16490589eaf5d01bcc07e33596390f3941e278d",
+      "cleanTextBytes": 619
+    },
+    {
+      "name": "vault_hashchain_v2 (design C, not adopted)",
+      "address": "0xBA459058956D11BB6FFF6C65A6DAFBD533B9B5E992A8D55274FCB0D13C6CD39E",
+      "mxAddress": "MxG085Q8M85H5BD26TMVVRCCMJDYUUY6ESRBQCWY3AY4T7SM38JZR6JJPD9KDZY",
+      "liveNode1_0_45_15": {
+        "address": "0xBA459058956D11BB6FFF6C65A6DAFBD533B9B5E992A8D55274FCB0D13C6CD39E",
+        "parseok": true,
+        "cleanChars": 465,
+        "cleanOfCleanSameAddress": true
+      },
+      "inProcess": {
+        "1.0.45.15": {
+          "address": "0xBA459058956D11BB6FFF6C65A6DAFBD533B9B5E992A8D55274FCB0D13C6CD39E",
+          "mx": "MxG085Q8M85H5BD26TMVVRCCMJDYUUY6ESRBQCWY3AY4T7SM38JZR6JJPD9KDZY",
+          "cleanIsFixedPoint": true
+        },
+        "1.1.2.6": {
+          "address": "0xBA459058956D11BB6FFF6C65A6DAFBD533B9B5E992A8D55274FCB0D13C6CD39E",
+          "mx": "MxG085Q8M85H5BD26TMVVRCCMJDYUUY6ESRBQCWY3AY4T7SM38JZR6JJPD9KDZY",
+          "cleanIsFixedPoint": true,
+          "sameCleanText": true
+        }
+      },
+      "allAgree": true,
+      "phantomIfRawTextRegistered": {
+        "rawMultiLineAddress": "0x3C2FC1090C31B8695E473F2B27DE00E28CAA77BFE5441FE4855440501D406B15",
+        "differsFromClean": true,
+        "sameIn1126": true
+      },
+      "cleanText": "LET op=STATE(8) IF op EQ 1 THEN ASSERT GETINADDR(0) EQ 0xEEFF65F4F7B27C12F125A8EA812DD4FEB58B0914EAE81990B1AAAF57D65D397D ASSERT @TOKENID EQ STATE(12) LET c=STATE(10) IF c GT 0 THEN RETURN VERIFYOUT(1 @ADDRESS c @TOKENID FALSE) ENDIF RETURN c EQ 0 ENDIF IF op EQ 3 THEN ASSERT GETINADDR(0) EQ @ADDRESS ASSERT GETINTOK(0) EQ @TOKENID ASSERT @TOTOUT EQ 1 ASSERT STATE(10) EQ SUMINPUTS(@TOKENID) RETURN VERIFYOUT(0 @ADDRESS STATE(10) @TOKENID FALSE) ENDIF RETURN FALSE",
+      "cleanTextSha256": "ea555d42a3e19914dfe56f6d8b599d58b2452b996c7bc6a47b5e681dcf58b459",
+      "cleanTextBytes": 465
+    }
+  ]
+}

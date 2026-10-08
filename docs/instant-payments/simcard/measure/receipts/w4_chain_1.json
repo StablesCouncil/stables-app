@@ -1,0 +1,23 @@
+{
+  "measurement": "w4_chain_1",
+  "purpose": "Winternitz chain cost probe: 1 SHA2 steps in a WHILE loop",
+  "note": "W4 chain slope, 1 steps",
+  "node": {
+    "version": "1.0.45.15",
+    "block": 2336756,
+    "rpcPort": 9105
+  },
+  "timestamp": "2026-09-27T14:16:04.135Z",
+  "command": "runscript (POST, dry run)",
+  "scriptChars": 84,
+  "stateBytes": 32,
+  "result": {
+    "success": true,
+    "parseok": true,
+    "monotonic": true,
+    "instructions": 21,
+    "executionError": null,
+    "rpcMs": 37,
+    "address": "0xA39BCBD82CDCABBD6342458E483C235E65A7F7CC764308673127BCA8C03135AF"
+  }
+}

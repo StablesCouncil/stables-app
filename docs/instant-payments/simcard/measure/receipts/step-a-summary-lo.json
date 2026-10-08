@@ -1,0 +1,46 @@
+{
+  "node": {
+    "version": "1.0.45.15",
+    "block": 2336756,
+    "rpcPort": 9105
+  },
+  "timestamp": "2026-09-27T14:15:55.637Z",
+  "summary": [
+    {
+      "name": "lo32_helper_K8_in1",
+      "instructions": 601,
+      "success": true,
+      "expectSuccess": true,
+      "error": null,
+      "stateBytes": 16672,
+      "scriptChars": 4918
+    },
+    {
+      "name": "lo32_helper_K4_in1",
+      "instructions": 1025,
+      "success": false,
+      "expectSuccess": true,
+      "error": "org.minima.kissvm.exceptions.ExecutionException: MAX instruction number reached! 1025",
+      "stateBytes": 16544,
+      "scriptChars": 9910
+    },
+    {
+      "name": "lo16_helper_K8_in1",
+      "instructions": 692,
+      "success": true,
+      "expectSuccess": true,
+      "error": null,
+      "stateBytes": 8480,
+      "scriptChars": 5719
+    },
+    {
+      "name": "lo16_helper_K4_in1",
+      "instructions": 1025,
+      "success": false,
+      "expectSuccess": true,
+      "error": "org.minima.kissvm.exceptions.ExecutionException: MAX instruction number reached! 1025",
+      "stateBytes": 8352,
+      "scriptChars": 11302
+    }
+  ]
+}

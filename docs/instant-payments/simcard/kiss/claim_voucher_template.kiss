@@ -1,0 +1,28 @@
+// claim_voucher_template.kiss
+// Claim voucher V: LET h=<statement hash> LET rec=<NOTES> + body. Proves a verified victim chain conflicts with a record.
+// Measured: see measure/receipts/covenant-branches.json (node 1.0.45.15 jar, in-process) and templateChecks there.
+// Placeholders used in the measured copy: STAMP/USDW token ids, BURN/NOTES/POOL addresses and the helper body hash are random test values.
+//   C2_voucher: 108 instructions, success=true (expected true)
+//   C2_record_read: 54 instructions, success=true (expected true)
+//   C2_bond_freeze_by_claim: 97 instructions, success=true (expected true)
+//   NEG_C2_no_conflict: 93 instructions, success=false (expected false)
+//   NEG_C2_fake_voucher: 29 instructions, success=false (expected false)
+//   C2_pool_register_2nd: 138 instructions, success=true (expected true)
+//   NEG_C2_pool_duplicate_claim: 100 instructions, success=false (expected false)
+
+LET h=0x<statement-hash>
+LET rec=0x<NOTES>
+LET s=STATE(230)
+ASSERT SHA2(s) EQ h
+ASSERT @INPUT EQ 0
+ASSERT GETINADDR(1) EQ rec
+LET r=STATE(200)
+ASSERT SUBSET(0 32 r) EQ SUBSET(0 32 s)
+LET j=NUMBER(SUBSET(32 33 s))
+LET o=32+64*(j-1)
+ASSERT SUBSET(o o+32 r) EQ SUBSET(33 65 s)
+ASSERT SUBSET(o-32 o r) EQ SUBSET(65 97 s)
+IF o+64 LT LEN(r) THEN
+ASSERT SUBSET(o+32 o+64 r) NEQ SUBSET(97 129 s)
+ENDIF ASSERT STATE(231) EQ SUBSET(161 193 s)
+RETURN VERIFYOUT(0 BURN 1 @TOKENID FALSE)

@@ -1,0 +1,26 @@
+// reg_core_runscript.kiss (step 2): the transaction-free core of the registration coin's WITHDRAW, for a live-node cross-check
+// Measured: live node 1.0.45.15 runscript = 74 instructions (success=true); in-process = 74 (success=true); counts match: true.
+// Refusals on the live node: window not advanced 74 (success=false); unsigned 15 (success=false).
+
+LET op=STATE(8)
+ASSERT SAMESTATE(0 3)
+ASSERT SAMESTATE(12 12)
+ASSERT SIGNEDBY(PREVSTATE(2))
+ASSERT op EQ 1
+LET cb=STATE(6)
+ASSERT cb LTE @BLOCK
+ASSERT cb GTE @BLOCK-20
+LET w=STATE(7)
+ASSERT w GT 0
+LET ws=PREVSTATE(4)
+LET wu=PREVSTATE(5)
+IF cb GT ws+1728 THEN
+LET ws=cb
+LET wu=w
+ELSE
+ASSERT wu GTE 0
+LET wu=wu+w
+ENDIF
+ASSERT wu LTE 1000
+ASSERT STATE(4) EQ ws
+RETURN STATE(5) EQ wu

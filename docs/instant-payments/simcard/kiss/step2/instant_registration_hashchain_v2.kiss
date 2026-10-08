@@ -1,0 +1,41 @@
+// instant_registration_hashchain_v2.kiss (step 2 version 2: Instant payments load and offload, docs/step2-load-offload-design.md)
+// Purpose: design C (compared, NOT adopted): the same registration authorised by revealing the next link of an app-held SHA-256 hash chain; no Minima key; no limit
+// Ports: 0 magic; 1 account id; 2 hash-chain head (the spend reveals its preimage here); 3 payout; 4, 5, 6 RESERVED and unused (a later registration version with a limit: 4 window start, 5 used, 6 claimed block); 7 amount; 8 op (1 withdraw, 2 close); 10 change; 11 dust; 12 currency governed
+// Measured: measure/receipts/step2v2_covenant_branches.json (node 1.0.45.15 jar in-process, 8-decimal token scaling; parse, clean form and address on the live node 1.0.45.15).
+// DEPLOY ONLY THE CLEAN FORM: register and spend the exact single-line text in the matching .clean.txt file (runscript clean form); the multi-line text below hashes to a different, phantom address (txn-building laws 2 and 3).
+// Address of the clean form: 0xEEFF65F4F7B27C12F125A8EA812DD4FEB58B0914EAE81990B1AAAF57D65D397D; its vault variant (the same vault text naming this address): 0xBA459058956D11BB6FFF6C65A6DAFBD533B9B5E992A8D55274FCB0D13C6CD39E.
+// Measured transactions (instructions per input, ! = that input refused; verdict = every input passes):
+//   C_WITHDRAW_reveal_next_link: 95/31 -> valid=true (expected true)
+//   NEG_C_wrong_link: 14!/31 -> valid=false (expected false)
+//   NEG_C_replay_the_head_itself: 14!/31 -> valid=false (expected false)
+//   NEG_C_payout_redirected: 77!/31 -> valid=false (expected false)
+//   C_FRONTRUN_same_link_whole_vault_still_valid: 100/28 -> valid=true (expected true)
+LET op=STATE(8)
+ASSERT @INPUT EQ 0
+ASSERT SHA2(STATE(2)) EQ PREVSTATE(2)
+IF op EQ 2 THEN
+ASSERT STATE(11) EQ @AMOUNT
+RETURN VERIFYOUT(0 PREVSTATE(3) STATE(11) @TOKENID FALSE)
+ENDIF
+ASSERT SAMESTATE(0 1)
+ASSERT SAMESTATE(3 3)
+ASSERT SAMESTATE(12 12)
+ASSERT op EQ 1
+LET w=STATE(7)
+ASSERT w GT 0
+ASSERT STATE(11) EQ @AMOUNT
+LET t=PREVSTATE(12)
+LET d=0
+IF @TOKENID EQ t THEN
+LET d=@AMOUNT
+ENDIF
+LET c=SUMINPUTS(t)-d-w
+ASSERT STATE(10) EQ c
+ASSERT VERIFYOUT(0 PREVSTATE(3) w t FALSE)
+IF c GT 0 THEN
+ASSERT @TOTOUT EQ 3
+ELSE
+ASSERT c EQ 0
+ASSERT @TOTOUT EQ 2
+ENDIF
+RETURN VERIFYOUT(@TOTOUT-1 @ADDRESS STATE(11) @TOKENID TRUE)

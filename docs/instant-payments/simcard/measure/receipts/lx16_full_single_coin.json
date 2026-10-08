@@ -1,0 +1,23 @@
+{
+  "measurement": "lx16_full_single_coin",
+  "purpose": "Whole labelled-XOR Lamport (n=16) verification in ONE script (expected to exceed 1,024 instructions)",
+  "note": "whole signature in a single coin",
+  "node": {
+    "version": "1.0.45.15",
+    "block": 2336831,
+    "rpcPort": 9105
+  },
+  "timestamp": "2026-09-27T15:22:10.368Z",
+  "command": "runscript (POST, dry run)",
+  "scriptChars": 22624,
+  "stateBytes": 8465,
+  "result": {
+    "success": false,
+    "parseok": true,
+    "monotonic": true,
+    "instructions": 1025,
+    "executionError": "org.minima.kissvm.exceptions.ExecutionException: MAX instruction number reached! 1025",
+    "rpcMs": 1102,
+    "address": "0x3B20F0E37EA643D9F5F5A203F545444E5C39D409DF80FE6A84D1AAA31306C915"
+  }
+}

@@ -1,0 +1,24 @@
+// release_q_template.kiss
+// Release coin Q: LET h=<summary hash> LET rec=<NOTES> + body. Settles a cashing into payout + stamped record.
+// Measured: see measure/receipts/covenant-branches.json (node 1.0.45.15 jar, in-process) and templateChecks there.
+// Placeholders used in the measured copy: STAMP/USDW token ids, BURN/NOTES/POOL addresses and the helper body hash are random test values.
+//   T2_settle_Q_stamp: 73 instructions, success=true (expected true)
+//   T2_settle_Q_value: 30 instructions, success=true (expected true)
+//   NEG_T2_wrong_summary: 12 instructions, success=false (expected false)
+//   NEG_T2_record_not_stored: 73 instructions, success=false (expected false)
+
+LET h=0x<summary-hash>
+LET rec=0x<NOTES>
+LET s=STATE(200)
+ASSERT SHA2(s) EQ h
+IF @TOKENID EQ STAMPID THEN
+ASSERT @INPUT EQ 0
+LET pay=SUBSET(LEN(s)-32 LEN(s) s)
+ASSERT GETINADDR(1) EQ @ADDRESS
+ASSERT STATE(202) EQ GETINAMT(1)
+ASSERT STATE(99) EQ 2
+ASSERT STATE(201) LTE @BLOCK
+ASSERT STATE(201) GTE @BLOCK-20
+ASSERT VERIFYOUT(0 pay GETINAMT(1) GETINTOK(1) FALSE)
+RETURN VERIFYOUT(1 rec 1 @TOKENID TRUE)
+ENDIF RETURN @INPUT EQ 1 AND GETINADDR(0) EQ @ADDRESS AND GETINTOK(0) EQ STAMPID

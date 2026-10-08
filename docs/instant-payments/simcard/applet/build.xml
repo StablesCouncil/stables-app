@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Stables Stage 2 applet: CAP build (ant-javacard, Java Card 3.0.4 target) and the jCardSim host harnesses.
+  Run through tools/build.ps1, which checks the dependency lock and sets JAVA_HOME to the installed JDK 17.
+
+  Toolchain: the JC 3.0.4 SDK's own converter needs JDK 8 to 11 (ant-javacard compatibility matrix); only JDK 17 is
+  installed, so the 3.0.5u4 converter (JDK 8 to 17) is used with targetsdk = the 3.0.4 kit: the sources compile
+  against the 3.0.4 API jar and link against the 3.0.4 export files, and the CAP is converted for 3.0.4.
+-->
+<project name="stables-applet" default="all" basedir=".">
+  <property name="lib" location="lib"/>
+  <property name="jckit" location="${lib}/sdks/jc305u4_kit"/>
+  <property name="target304" location="${lib}/sdks/jc304_kit"/>
+  <property name="build" location="build"/>
+  <property name="jcardsim" location="${lib}/jcardsim-3.0.6.0.jar"/>
+
+  <taskdef name="javacard" classname="pro.javacard.ant.JavaCard" classpath="${lib}/ant-javacard.jar"/>
+
+  <target name="cap" description="Build the CAP files against the Java Card 3.0.4 API">
+    <mkdir dir="${build}/cap"/>
+    <javacard jckit="${jckit}">
+      <!-- test cards: the applet and the benchmark applet -->
+      <cap targetsdk="${target304}" aid="F05354424C01" package="org.stables.card" version="1.0"
+           sources="src/main/javacard" output="${build}/cap/stables-test.cap" jca="${build}/cap/stables-test.jca">
+        <applet class="org.stables.card.StablesApplet" aid="F05354424C0101"/>
+        <applet class="org.stables.card.BenchApplet" aid="F05354424C0102"/>
+      </cap>
+      <!-- production: the applet only (what a vendor would load, decision 11) -->
+      <cap targetsdk="${target304}" aid="F05354424C02" package="org.stables.card" version="1.0"
+           sources="src/main/javacard" excludes="**/BenchApplet.java" output="${build}/cap/stables-prod.cap">
+        <applet class="org.stables.card.StablesApplet" aid="F05354424C0201"/>
+      </cap>
+    </javacard>
+  </target>
+
+  <!-- Host build: the applet compiled for jCardSim twice, (1) as shipped and (2) with the instrumented Persist/Ram
+       (src/tear), plus the host harnesses. The instrumented classes never go into a CAP. -->
+  <target name="host" description="Compile the applet for jCardSim and the host harnesses">
+    <mkdir dir="${build}/sim-card"/>
+    <mkdir dir="${build}/sim-tear"/>
+    <mkdir dir="${build}/host"/>
+    <mkdir dir="${build}/simshim"/>
+    <!-- seeded replacement for jCardSim's unseeded key/nonce generator (see src/simshim); goes ahead of jCardSim -->
+    <javac srcdir="src/simshim" destdir="${build}/simshim" includeantruntime="false" release="11" encoding="UTF-8"/>
+    <javac srcdir="src/main/javacard" destdir="${build}/sim-card" classpath="${jcardsim}" includeantruntime="false"
+           release="11" encoding="UTF-8" debug="true"/>
+    <!-- tear build: shipped sources with Persist/Ram replaced by the instrumented versions -->
+    <delete dir="${build}/tear-src"/>
+    <copy todir="${build}/tear-src">
+      <fileset dir="src/main/javacard" excludes="org/stables/card/Persist.java,org/stables/card/Ram.java"/>
+      <fileset dir="src/tear"/>
+    </copy>
+    <javac srcdir="${build}/tear-src" destdir="${build}/sim-tear" classpath="${jcardsim}" includeantruntime="false"
+           release="11" encoding="UTF-8" debug="true"/>
+    <javac srcdir="src/host" destdir="${build}/host" includeantruntime="false" release="11" encoding="UTF-8" debug="true">
+      <classpath>
+        <pathelement location="${jcardsim}"/>
+        <pathelement location="${build}/sim-tear"/>
+      </classpath>
+    </javac>
+  </target>
+
+  <target name="all" depends="cap,host"/>
+
+  <target name="clean">
+    <delete dir="${build}"/>
+  </target>
+</project>
